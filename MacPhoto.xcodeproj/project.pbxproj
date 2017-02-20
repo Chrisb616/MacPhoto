@@ -12,6 +12,10 @@
 		1319F4701E5B6DA30070DBF3 /* MacPhoto.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1319F46E1E5B6DA30070DBF3 /* MacPhoto.xcdatamodeld */; };
 		1319F4721E5B6DA30070DBF3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1319F4711E5B6DA30070DBF3 /* Assets.xcassets */; };
 		1319F4751E5B6DA30070DBF3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1319F4731E5B6DA30070DBF3 /* Main.storyboard */; };
+		1319F4801E5B6E190070DBF3 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1319F47C1E5B6E190070DBF3 /* DataManager.swift */; };
+		1319F4811E5B6E190070DBF3 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1319F47D1E5B6E190070DBF3 /* Location.swift */; };
+		1319F4821E5B6E190070DBF3 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1319F47E1E5B6E190070DBF3 /* Photo.swift */; };
+		1319F4831E5B6E190070DBF3 /* UniqueIDGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1319F47F1E5B6E190070DBF3 /* UniqueIDGenerator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,10 @@
 		1319F4711E5B6DA30070DBF3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1319F4741E5B6DA30070DBF3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1319F4761E5B6DA30070DBF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1319F47C1E5B6E190070DBF3 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		1319F47D1E5B6E190070DBF3 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		1319F47E1E5B6E190070DBF3 /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		1319F47F1E5B6E190070DBF3 /* UniqueIDGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniqueIDGenerator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +62,10 @@
 		1319F4691E5B6DA30070DBF3 /* MacPhoto */ = {
 			isa = PBXGroup;
 			children = (
+				1319F47C1E5B6E190070DBF3 /* DataManager.swift */,
+				1319F47D1E5B6E190070DBF3 /* Location.swift */,
+				1319F47E1E5B6E190070DBF3 /* Photo.swift */,
+				1319F47F1E5B6E190070DBF3 /* UniqueIDGenerator.swift */,
 				1319F46A1E5B6DA30070DBF3 /* AppDelegate.swift */,
 				1319F46C1E5B6DA30070DBF3 /* ViewController.swift */,
 				1319F4711E5B6DA30070DBF3 /* Assets.xcassets */,
@@ -135,7 +147,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1319F4821E5B6E190070DBF3 /* Photo.swift in Sources */,
+				1319F4831E5B6E190070DBF3 /* UniqueIDGenerator.swift in Sources */,
 				1319F46D1E5B6DA30070DBF3 /* ViewController.swift in Sources */,
+				1319F4801E5B6E190070DBF3 /* DataManager.swift in Sources */,
+				1319F4811E5B6E190070DBF3 /* Location.swift in Sources */,
 				1319F4701E5B6DA30070DBF3 /* MacPhoto.xcdatamodeld in Sources */,
 				1319F46B1E5B6DA30070DBF3 /* AppDelegate.swift in Sources */,
 			);
@@ -290,6 +306,7 @@
 				1319F47B1E5B6DA30070DBF3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

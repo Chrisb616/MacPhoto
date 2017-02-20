@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  MacPhoto
+//  PhotoOrganizer
 //
 //  Created by Christopher Boynton on 2/20/17.
 //  Copyright © 2017 Christopher Boynton. All rights reserved.
@@ -14,7 +14,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        // Insert code here to initialize your application
+        DataManager.loadIDs()
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
@@ -32,7 +32,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     lazy var managedObjectModel: NSManagedObjectModel = {
         // The managed object model for the application. This property is not optional. It is a fatal error for the application not to be able to find and load its model.
-        let modelURL = Bundle.main.url(forResource: "MacPhoto", withExtension: "momd")!
+        let modelURL = Bundle.main.url(forResource: "PhotoOrganizer", withExtension: "momd")!
         return NSManagedObjectModel(contentsOf: modelURL)!
     }()
 
@@ -67,7 +67,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         var coordinator: NSPersistentStoreCoordinator? = nil
         if failError == nil {
             coordinator = NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel)
-            let url = self.applicationDocumentsDirectory.appendingPathComponent("MacPhoto.storedata")
+            let url = self.applicationDocumentsDirectory.appendingPathComponent("PhotoOrganizer.storedata")
             do {
                 try coordinator!.addPersistentStore(ofType: NSXMLStoreType, configurationName: nil, at: url, options: nil)
             } catch {
