@@ -7,37 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		131653051E5B7EAB007F4E76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131653041E5B7EAB007F4E76 /* AppDelegate.swift */; };
-		1319F46D1E5B6DA30070DBF3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1319F46C1E5B6DA30070DBF3 /* ViewController.swift */; };
-		1319F4721E5B6DA30070DBF3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1319F4711E5B6DA30070DBF3 /* Assets.xcassets */; };
-		1319F4751E5B6DA30070DBF3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1319F4731E5B6DA30070DBF3 /* Main.storyboard */; };
-		1319F4801E5B6E190070DBF3 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1319F47C1E5B6E190070DBF3 /* DataManager.swift */; };
-		1319F4811E5B6E190070DBF3 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1319F47D1E5B6E190070DBF3 /* Location.swift */; };
-		1319F4821E5B6E190070DBF3 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1319F47E1E5B6E190070DBF3 /* Photo.swift */; };
-		1319F4831E5B6E190070DBF3 /* UniqueIDGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1319F47F1E5B6E190070DBF3 /* UniqueIDGenerator.swift */; };
-		1319F48A1E5B729F0070DBF3 /* ImageFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1319F4891E5B729F0070DBF3 /* ImageFileManager.swift */; };
-		1319F48B1E5B78D90070DBF3 /* MacPhoto.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1319F46E1E5B6DA30070DBF3 /* MacPhoto.xcdatamodeld */; };
-		133CA0FA1E5B7BF3001227A3 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133CA0F91E5B7BF3001227A3 /* DataStore.swift */; };
+		131653131E5B8091007F4E76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131653121E5B8091007F4E76 /* AppDelegate.swift */; };
+		131653151E5B8091007F4E76 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131653141E5B8091007F4E76 /* ViewController.swift */; };
+		131653171E5B8091007F4E76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 131653161E5B8091007F4E76 /* Assets.xcassets */; };
+		1316531A1E5B8091007F4E76 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 131653181E5B8091007F4E76 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		131653041E5B7EAB007F4E76 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = SOURCE_ROOT; };
-		1319F4671E5B6DA30070DBF3 /* MacPhoto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacPhoto.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		1319F46C1E5B6DA30070DBF3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		1319F46F1E5B6DA30070DBF3 /* MacPhoto.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MacPhoto.xcdatamodel; sourceTree = "<group>"; };
-		1319F4711E5B6DA30070DBF3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		1319F4741E5B6DA30070DBF3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		1319F4761E5B6DA30070DBF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1319F47C1E5B6E190070DBF3 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
-		1319F47D1E5B6E190070DBF3 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
-		1319F47E1E5B6E190070DBF3 /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
-		1319F47F1E5B6E190070DBF3 /* UniqueIDGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniqueIDGenerator.swift; sourceTree = "<group>"; };
-		1319F4891E5B729F0070DBF3 /* ImageFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageFileManager.swift; sourceTree = "<group>"; };
-		133CA0F91E5B7BF3001227A3 /* DataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
+		1316530F1E5B8091007F4E76 /* MacPhoto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacPhoto.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		131653121E5B8091007F4E76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		131653141E5B8091007F4E76 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		131653161E5B8091007F4E76 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		131653191E5B8091007F4E76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1316531B1E5B8091007F4E76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		1319F4641E5B6DA30070DBF3 /* Frameworks */ = {
+		1316530C1E5B8091007F4E76 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -47,91 +33,44 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1319F45E1E5B6DA30070DBF3 = {
+		131653061E5B8091007F4E76 = {
 			isa = PBXGroup;
 			children = (
-				1319F4691E5B6DA30070DBF3 /* MacPhoto */,
-				1319F4681E5B6DA30070DBF3 /* Products */,
+				131653111E5B8091007F4E76 /* MacPhoto */,
+				131653101E5B8091007F4E76 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		1319F4681E5B6DA30070DBF3 /* Products */ = {
+		131653101E5B8091007F4E76 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1319F4671E5B6DA30070DBF3 /* MacPhoto.app */,
+				1316530F1E5B8091007F4E76 /* MacPhoto.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		1319F4691E5B6DA30070DBF3 /* MacPhoto */ = {
+		131653111E5B8091007F4E76 /* MacPhoto */ = {
 			isa = PBXGroup;
 			children = (
-				1319F4861E5B723A0070DBF3 /* Model */,
-				1319F4871E5B72590070DBF3 /* Views */,
-				1319F4881E5B72620070DBF3 /* App */,
+				131653121E5B8091007F4E76 /* AppDelegate.swift */,
+				131653141E5B8091007F4E76 /* ViewController.swift */,
+				131653161E5B8091007F4E76 /* Assets.xcassets */,
+				131653181E5B8091007F4E76 /* Main.storyboard */,
+				1316531B1E5B8091007F4E76 /* Info.plist */,
 			);
 			path = MacPhoto;
-			sourceTree = "<group>";
-		};
-		1319F4841E5B721F0070DBF3 /* DataModel */ = {
-			isa = PBXGroup;
-			children = (
-				1319F4891E5B729F0070DBF3 /* ImageFileManager.swift */,
-				1319F47C1E5B6E190070DBF3 /* DataManager.swift */,
-				1319F46E1E5B6DA30070DBF3 /* MacPhoto.xcdatamodeld */,
-				133CA0F91E5B7BF3001227A3 /* DataStore.swift */,
-			);
-			name = DataModel;
-			sourceTree = "<group>";
-		};
-		1319F4851E5B722B0070DBF3 /* Toolbox */ = {
-			isa = PBXGroup;
-			children = (
-				1319F47F1E5B6E190070DBF3 /* UniqueIDGenerator.swift */,
-			);
-			name = Toolbox;
-			sourceTree = "<group>";
-		};
-		1319F4861E5B723A0070DBF3 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				1319F47D1E5B6E190070DBF3 /* Location.swift */,
-				1319F47E1E5B6E190070DBF3 /* Photo.swift */,
-				1319F4851E5B722B0070DBF3 /* Toolbox */,
-				1319F4841E5B721F0070DBF3 /* DataModel */,
-			);
-			name = Model;
-			sourceTree = "<group>";
-		};
-		1319F4871E5B72590070DBF3 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				1319F46C1E5B6DA30070DBF3 /* ViewController.swift */,
-				1319F4731E5B6DA30070DBF3 /* Main.storyboard */,
-			);
-			name = Views;
-			sourceTree = "<group>";
-		};
-		1319F4881E5B72620070DBF3 /* App */ = {
-			isa = PBXGroup;
-			children = (
-				131653041E5B7EAB007F4E76 /* AppDelegate.swift */,
-				1319F4711E5B6DA30070DBF3 /* Assets.xcassets */,
-				1319F4761E5B6DA30070DBF3 /* Info.plist */,
-			);
-			name = App;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1319F4661E5B6DA30070DBF3 /* MacPhoto */ = {
+		1316530E1E5B8091007F4E76 /* MacPhoto */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1319F4791E5B6DA30070DBF3 /* Build configuration list for PBXNativeTarget "MacPhoto" */;
+			buildConfigurationList = 1316531E1E5B8091007F4E76 /* Build configuration list for PBXNativeTarget "MacPhoto" */;
 			buildPhases = (
-				1319F4631E5B6DA30070DBF3 /* Sources */,
-				1319F4641E5B6DA30070DBF3 /* Frameworks */,
-				1319F4651E5B6DA30070DBF3 /* Resources */,
+				1316530B1E5B8091007F4E76 /* Sources */,
+				1316530C1E5B8091007F4E76 /* Frameworks */,
+				1316530D1E5B8091007F4E76 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -139,26 +78,26 @@
 			);
 			name = MacPhoto;
 			productName = MacPhoto;
-			productReference = 1319F4671E5B6DA30070DBF3 /* MacPhoto.app */;
+			productReference = 1316530F1E5B8091007F4E76 /* MacPhoto.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		1319F45F1E5B6DA30070DBF3 /* Project object */ = {
+		131653071E5B8091007F4E76 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0820;
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Christopher Boynton";
 				TargetAttributes = {
-					1319F4661E5B6DA30070DBF3 = {
+					1316530E1E5B8091007F4E76 = {
 						CreatedOnToolsVersion = 8.2.1;
 						ProvisioningStyle = Automatic;
 					};
 				};
 			};
-			buildConfigurationList = 1319F4621E5B6DA30070DBF3 /* Build configuration list for PBXProject "MacPhoto" */;
+			buildConfigurationList = 1316530A1E5B8091007F4E76 /* Build configuration list for PBXProject "MacPhoto" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -166,52 +105,45 @@
 				en,
 				Base,
 			);
-			mainGroup = 1319F45E1E5B6DA30070DBF3;
-			productRefGroup = 1319F4681E5B6DA30070DBF3 /* Products */;
+			mainGroup = 131653061E5B8091007F4E76;
+			productRefGroup = 131653101E5B8091007F4E76 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1319F4661E5B6DA30070DBF3 /* MacPhoto */,
+				1316530E1E5B8091007F4E76 /* MacPhoto */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		1319F4651E5B6DA30070DBF3 /* Resources */ = {
+		1316530D1E5B8091007F4E76 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1319F4721E5B6DA30070DBF3 /* Assets.xcassets in Resources */,
-				1319F4751E5B6DA30070DBF3 /* Main.storyboard in Resources */,
+				131653171E5B8091007F4E76 /* Assets.xcassets in Resources */,
+				1316531A1E5B8091007F4E76 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		1319F4631E5B6DA30070DBF3 /* Sources */ = {
+		1316530B1E5B8091007F4E76 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1319F48B1E5B78D90070DBF3 /* MacPhoto.xcdatamodeld in Sources */,
-				1319F4821E5B6E190070DBF3 /* Photo.swift in Sources */,
-				1319F4831E5B6E190070DBF3 /* UniqueIDGenerator.swift in Sources */,
-				131653051E5B7EAB007F4E76 /* AppDelegate.swift in Sources */,
-				1319F46D1E5B6DA30070DBF3 /* ViewController.swift in Sources */,
-				1319F4801E5B6E190070DBF3 /* DataManager.swift in Sources */,
-				1319F4811E5B6E190070DBF3 /* Location.swift in Sources */,
-				133CA0FA1E5B7BF3001227A3 /* DataStore.swift in Sources */,
-				1319F48A1E5B729F0070DBF3 /* ImageFileManager.swift in Sources */,
+				131653151E5B8091007F4E76 /* ViewController.swift in Sources */,
+				131653131E5B8091007F4E76 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		1319F4731E5B6DA30070DBF3 /* Main.storyboard */ = {
+		131653181E5B8091007F4E76 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				1319F4741E5B6DA30070DBF3 /* Base */,
+				131653191E5B8091007F4E76 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -219,7 +151,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		1319F4771E5B6DA30070DBF3 /* Debug */ = {
+		1316531C1E5B8091007F4E76 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -268,7 +200,7 @@
 			};
 			name = Debug;
 		};
-		1319F4781E5B6DA30070DBF3 /* Release */ = {
+		1316531D1E5B8091007F4E76 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -309,7 +241,7 @@
 			};
 			name = Release;
 		};
-		1319F47A1E5B6DA30070DBF3 /* Debug */ = {
+		1316531F1E5B8091007F4E76 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -322,7 +254,7 @@
 			};
 			name = Debug;
 		};
-		1319F47B1E5B6DA30070DBF3 /* Release */ = {
+		131653201E5B8091007F4E76 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -338,38 +270,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1319F4621E5B6DA30070DBF3 /* Build configuration list for PBXProject "MacPhoto" */ = {
+		1316530A1E5B8091007F4E76 /* Build configuration list for PBXProject "MacPhoto" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1319F4771E5B6DA30070DBF3 /* Debug */,
-				1319F4781E5B6DA30070DBF3 /* Release */,
+				1316531C1E5B8091007F4E76 /* Debug */,
+				1316531D1E5B8091007F4E76 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1319F4791E5B6DA30070DBF3 /* Build configuration list for PBXNativeTarget "MacPhoto" */ = {
+		1316531E1E5B8091007F4E76 /* Build configuration list for PBXNativeTarget "MacPhoto" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1319F47A1E5B6DA30070DBF3 /* Debug */,
-				1319F47B1E5B6DA30070DBF3 /* Release */,
+				1316531F1E5B8091007F4E76 /* Debug */,
+				131653201E5B8091007F4E76 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		1319F46E1E5B6DA30070DBF3 /* MacPhoto.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				1319F46F1E5B6DA30070DBF3 /* MacPhoto.xcdatamodel */,
-			);
-			currentVersion = 1319F46F1E5B6DA30070DBF3 /* MacPhoto.xcdatamodel */;
-			path = MacPhoto.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
-	rootObject = 1319F45F1E5B6DA30070DBF3 /* Project object */;
+	rootObject = 131653071E5B8091007F4E76 /* Project object */;
 }
