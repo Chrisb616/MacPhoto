@@ -13,7 +13,6 @@ class UniqueIDGenerator {
     private init() {}
     static let instance = UniqueIDGenerator()
     
-    
     var photoID: String {
         let resultID = photoIDStorage
         
@@ -28,7 +27,6 @@ class UniqueIDGenerator {
     func loadIDs(photoID: String?) {
         photoIDStorage = photoID ?? "000000"
     }
-
     
     private var photoIDStorage = "000000"
     

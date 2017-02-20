@@ -12,7 +12,6 @@ class Photo {
     
     var uniqueID: String
     
-    
     var dateTaken: Date?
     var dateAdded: Date
     
