@@ -13,13 +13,15 @@ class UniqueIDGenerator {
     private init() {}
     static let instance = UniqueIDGenerator()
     
+    private let dataManager = DataManager.instance
+    
     var photoID: String {
         let resultID = photoIDStorage
         
         let newID = advanced(resultID)
         photoIDStorage = newID
         
-        DataManager.savePhotoID(newID)
+        dataManager.savePhotoID(newID)
         
         return resultID
     }
