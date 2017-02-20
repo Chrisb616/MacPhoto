@@ -6,6 +6,8 @@
 //  Copyright © 2017 Christopher Boynton. All rights reserved.
 //
 
+typealias Pixel = Int
+
 import Cocoa
 
 @NSApplicationMain

@@ -23,6 +23,11 @@ class Photo {
     
     var url: URL
     
+    var height: Pixel
+    var width: Pixel
+    
+    var megapixels: Double { return Double(height * width) / 1_048_576 }
+    
     static func new(dateTaken: Date?, location: Location?, urlString: String) -> Photo {
         let url = URL(fileURLWithPath: urlString)
         
@@ -38,7 +43,10 @@ class Photo {
         self.location = location
         self.url = url
         
+        self.image = ImageFileManager.retrieveImage(at: url)
         
+        self.height = 0
+        self.width = 0
     }
     
     private init(uniqueID: String, dateTaken: Date?, dateAdded: Date, location: Location?, url: URL) {
@@ -47,9 +55,10 @@ class Photo {
         self.dateAdded = dateAdded
         self.location = location
         self.url = url
-    }
-    
-    private static func retreiveImage(at url: URL) {
         
+        self.image = ImageFileManager.retrieveImage(at: url)
+        
+        self.height = 0
+        self.width = 0
     }
 }

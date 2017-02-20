@@ -16,6 +16,7 @@
 		1319F4811E5B6E190070DBF3 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1319F47D1E5B6E190070DBF3 /* Location.swift */; };
 		1319F4821E5B6E190070DBF3 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1319F47E1E5B6E190070DBF3 /* Photo.swift */; };
 		1319F4831E5B6E190070DBF3 /* UniqueIDGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1319F47F1E5B6E190070DBF3 /* UniqueIDGenerator.swift */; };
+		1319F48A1E5B729F0070DBF3 /* ImageFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1319F4891E5B729F0070DBF3 /* ImageFileManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		1319F47D1E5B6E190070DBF3 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		1319F47E1E5B6E190070DBF3 /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		1319F47F1E5B6E190070DBF3 /* UniqueIDGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniqueIDGenerator.swift; sourceTree = "<group>"; };
+		1319F4891E5B729F0070DBF3 /* ImageFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageFileManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 		1319F4841E5B721F0070DBF3 /* DataModel */ = {
 			isa = PBXGroup;
 			children = (
+				1319F4891E5B729F0070DBF3 /* ImageFileManager.swift */,
 				1319F47C1E5B6E190070DBF3 /* DataManager.swift */,
 				1319F46E1E5B6DA30070DBF3 /* MacPhoto.xcdatamodeld */,
 			);
@@ -194,6 +197,7 @@
 				1319F4811E5B6E190070DBF3 /* Location.swift in Sources */,
 				1319F4701E5B6DA30070DBF3 /* MacPhoto.xcdatamodeld in Sources */,
 				1319F46B1E5B6DA30070DBF3 /* AppDelegate.swift in Sources */,
+				1319F48A1E5B729F0070DBF3 /* ImageFileManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
