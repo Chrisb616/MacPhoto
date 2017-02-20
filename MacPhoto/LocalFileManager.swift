@@ -6,7 +6,7 @@
 //  Copyright © 2017 Christopher Boynton. All rights reserved.
 //
 
-import Foundation
+import Cocoa
 
 class LocalFileManager {
     
@@ -18,11 +18,12 @@ class LocalFileManager {
     
     private var programDirectory: URL { return programDirectoryHome.appendingPathComponent("MacPhoto") }
     
-    private var imageDirectory: URL { return programDirectory.appendingPathComponent("Images")
+    private var imageDirectory: URL { return programDirectory.appendingPathComponent("Images") }
     
     //MARK: - Retrieve Image
-    private func retrieveImage(for photo: Photo) {
+    func retrieveImage(for uniqueID: String) -> NSImage {
         
+        return NSImage()
     }
     
 }

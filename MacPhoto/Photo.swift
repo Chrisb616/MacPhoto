@@ -70,7 +70,7 @@ class Photo {
         self.location = location
         self.url = url
         
-        self.image = ImageFileManager.retrieveImage(at: url)
+        self.image = LocalFileManager.instance.retrieveImage(for: uniqueID)
         
         self.height = 0
         self.width = 0
@@ -83,7 +83,7 @@ class Photo {
         self.location = location
         self.url = url
         
-        self.image = ImageFileManager.retrieveImage(at: url)
+        self.image = LocalFileManager.instance.retrieveImage(for: uniqueID)
         
         self.height = 0
         self.width = 0
