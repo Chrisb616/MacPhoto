@@ -62,18 +62,58 @@
 		1319F4691E5B6DA30070DBF3 /* MacPhoto */ = {
 			isa = PBXGroup;
 			children = (
-				1319F47C1E5B6E190070DBF3 /* DataManager.swift */,
-				1319F47D1E5B6E190070DBF3 /* Location.swift */,
-				1319F47E1E5B6E190070DBF3 /* Photo.swift */,
-				1319F47F1E5B6E190070DBF3 /* UniqueIDGenerator.swift */,
-				1319F46A1E5B6DA30070DBF3 /* AppDelegate.swift */,
-				1319F46C1E5B6DA30070DBF3 /* ViewController.swift */,
-				1319F4711E5B6DA30070DBF3 /* Assets.xcassets */,
-				1319F4731E5B6DA30070DBF3 /* Main.storyboard */,
-				1319F4761E5B6DA30070DBF3 /* Info.plist */,
-				1319F46E1E5B6DA30070DBF3 /* MacPhoto.xcdatamodeld */,
+				1319F4861E5B723A0070DBF3 /* Model */,
+				1319F4871E5B72590070DBF3 /* Views */,
+				1319F4881E5B72620070DBF3 /* App */,
 			);
 			path = MacPhoto;
+			sourceTree = "<group>";
+		};
+		1319F4841E5B721F0070DBF3 /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				1319F47C1E5B6E190070DBF3 /* DataManager.swift */,
+				1319F46E1E5B6DA30070DBF3 /* MacPhoto.xcdatamodeld */,
+			);
+			name = DataModel;
+			sourceTree = "<group>";
+		};
+		1319F4851E5B722B0070DBF3 /* Toolbox */ = {
+			isa = PBXGroup;
+			children = (
+				1319F47F1E5B6E190070DBF3 /* UniqueIDGenerator.swift */,
+			);
+			name = Toolbox;
+			sourceTree = "<group>";
+		};
+		1319F4861E5B723A0070DBF3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1319F47D1E5B6E190070DBF3 /* Location.swift */,
+				1319F47E1E5B6E190070DBF3 /* Photo.swift */,
+				1319F4851E5B722B0070DBF3 /* Toolbox */,
+				1319F4841E5B721F0070DBF3 /* DataModel */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		1319F4871E5B72590070DBF3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1319F46C1E5B6DA30070DBF3 /* ViewController.swift */,
+				1319F4731E5B6DA30070DBF3 /* Main.storyboard */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		1319F4881E5B72620070DBF3 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				1319F46A1E5B6DA30070DBF3 /* AppDelegate.swift */,
+				1319F4711E5B6DA30070DBF3 /* Assets.xcassets */,
+				1319F4761E5B6DA30070DBF3 /* Info.plist */,
+			);
+			name = App;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

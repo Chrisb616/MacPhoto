@@ -6,11 +6,13 @@
 //  Copyright © 2017 Christopher Boynton. All rights reserved.
 //
 
-import Foundation
+import Cocoa
 
 class Photo {
     
     var uniqueID: String
+    
+    var image: NSImage
     
     var dateTaken: Date?
     var dateAdded: Date
@@ -35,6 +37,8 @@ class Photo {
         self.dateAdded = Date()
         self.location = location
         self.url = url
+        
+        
     }
     
     private init(uniqueID: String, dateTaken: Date?, dateAdded: Date, location: Location?, url: URL) {
@@ -43,5 +47,9 @@ class Photo {
         self.dateAdded = dateAdded
         self.location = location
         self.url = url
+    }
+    
+    private static func retreiveImage(at url: URL) {
+        
     }
 }
