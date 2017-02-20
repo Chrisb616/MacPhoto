@@ -13,7 +13,7 @@ class UniqueIDGenerator {
     private init() {}
     static let instance = UniqueIDGenerator()
     
-    private let dataManager = DataManager.instance
+    private let userDefaultsManager = UserDefaultsManager.instance
     
     var photoID: String {
         let resultID = photoIDStorage
@@ -21,7 +21,7 @@ class UniqueIDGenerator {
         let newID = advanced(resultID)
         photoIDStorage = newID
         
-        dataManager.savePhotoID(newID)
+        userDefaultsManager.savePhotoID(newID)
         
         return resultID
     }

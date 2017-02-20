@@ -1,5 +1,5 @@
 //
-//  DataManager.swift
+//  UserDefaultsManager.swift
 //  PhotoOrganizer
 //
 //  Created by Christopher Boynton on 2/20/17.
@@ -8,15 +8,19 @@
 
 import CoreData
 
-class DataManager {
+class UserDefaultsManager {
     
     private init() {}
-    static let instance = DataManager()
+    static let instance = UserDefaultsManager()
     
+    //MARK: - User Defaults
     private let defaults = UserDefaults.standard
     
+    //MARK: Keys
     private let photoIDKey = "photoID"
     
+    
+    //MARK: - ID Management
     func savePhotoID(_ ID: String) {
         print("Saving \(ID)")
         defaults.set(ID, forKey: photoIDKey)
@@ -39,14 +43,15 @@ class DataManager {
         return photoID
     }
     
-    func destroyAllSaveData(passcode: String) {
+    //MARK: - Remove UserDefault Data
+    func RemoveSaveData(passcode: String) {
         print("Destroy all data initialzed. Passcode: \(passcode)")
         if passcode.contains("DESTROY") {
-            destroyPhotoIDSaveData(passcode: passcode)
+            removePhotoIDSaveData(passcode: passcode)
         }
     }
     
-    func destroyPhotoIDSaveData(passcode: String) {
+    func removePhotoIDSaveData(passcode: String) {
         if passcode.contains("PHOTOS") {
             defaults.removeObject(forKey: photoIDKey)
             print("Destroyed Photo Data")
