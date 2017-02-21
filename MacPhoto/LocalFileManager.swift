@@ -14,16 +14,45 @@ class LocalFileManager {
     static let instance = LocalFileManager()
     
     
+    //MARK: - Utility Properties
+    private let fileManager = FileManager.default
+    
     //MARK: - Local File Paths
     private var programDirectoryHome = URL(fileURLWithPath: Factbook.picturesPath)
     
-    private var programDirectory: URL { return programDirectoryHome.appendingPathComponent("MacPhoto") }
+    var programDirectory: URL { return programDirectoryHome.appendingPathComponent("MacPhoto") }
     
     private var imageDirectory: URL { return programDirectory.appendingPathComponent("Images") }
     
-    //MARK: - Retrieve Image
+    //MARK: - Directory Management
+    func check(for file: URL) -> Bool {
+        var isDir : ObjCBool = ObjCBool(true)
+        
+        if fileManager.fileExists(atPath: file.relativePath, isDirectory:&isDir) {
+            if isDir.boolValue {
+                print(1)
+                return true
+            } else {
+                print(2)
+                return true
+            }
+        } else {
+            print(3)
+            return false
+        }
+    }
+    
+    //MARK: - Image Management
     func save(image: NSImage, withID uniqueID: String) {
         let url = imageDirectory.appendingPathComponent("\(uniqueID).jpg")
+        
+        if !check(for: url) {
+            do {
+                try fileManager.createDirectory(at: imageDirectory, withIntermediateDirectories: true, attributes: [:])
+            } catch {
+                
+            }
+        }
         
         if let bits = image.representations.first as? NSBitmapImageRep {
             print(url)
