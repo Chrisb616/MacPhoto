@@ -15,6 +15,7 @@ class UniqueIDGenerator {
     
     private let userDefaultsManager = UserDefaultsManager.instance
     
+    //MARK: - New IDs
     var photoID: String {
         let resultID = photoIDStorage
         
@@ -26,12 +27,29 @@ class UniqueIDGenerator {
         return resultID
     }
     
-    func loadIDs(photoID: String?) {
-        photoIDStorage = photoID ?? "000000"
+    var personID: String {
+        let resultID = personIDStorage
+        
+        let newID = advanced(resultID)
+        personIDStorage = newID
+        
+        userDefaultsManager.savePersonID(newID)
+        
+        return resultID
     }
     
-    private var photoIDStorage = "000000"
+    //MARK: - ID Value Storage
     
+    func loadIDs(photoID: String?, personID: String?) {
+        photoIDStorage = photoID ?? "000000"
+        personIDStorage = personID ?? "000000"
+        
+    }
+
+    private var photoIDStorage = "000000"
+    private var personIDStorage = "000000"
+    
+    //MARK: - Advance Functions
     private func advanced(_ ID: String) -> String {
         var characters = ID.characters
         

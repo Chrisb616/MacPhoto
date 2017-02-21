@@ -13,7 +13,7 @@ class Photo {
     //MARK: - Properties
     
     //MARK: Unique ID
-    var uniqueID: String
+    let uniqueID: String
     
     //MARK: Image
     var image: NSImage
@@ -31,7 +31,7 @@ class Photo {
     var location: Location?
     
     //MARK: People
-    var people = [String]()
+    var people = [String:Bool]()
     
     //MARK: Size
     var height: Pixel

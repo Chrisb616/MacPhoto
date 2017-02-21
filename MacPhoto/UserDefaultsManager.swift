@@ -18,6 +18,7 @@ class UserDefaultsManager {
     
     //MARK: Keys
     private let photoIDKey = "photoID"
+    private let personIDKey = "personID"
     
     
     //MARK: - ID Management
@@ -26,11 +27,16 @@ class UserDefaultsManager {
         defaults.set(ID, forKey: photoIDKey)
     }
     
+    func savePersonID(_ ID: String) {
+        defaults.set(ID, forKey: personIDKey)
+    }
+    
     func loadIDs() {
         print("Loading!")
         let photoID = loadPhotoID()
+        let personID = loadPersonID()
         
-        UniqueIDGenerator.instance.loadIDs(photoID: photoID)
+        UniqueIDGenerator.instance.loadIDs(photoID: photoID, personID: personID)
     }
     
     private func loadPhotoID() -> String? {
@@ -41,6 +47,15 @@ class UserDefaultsManager {
         print("photoID is \(photoID)")
         
         return photoID
+    }
+    
+    private func loadPersonID() -> String? {
+        
+        guard let personIDRaw = defaults.object(forKey: personIDKey) else { return nil }
+        guard let personID = personIDRaw as? String else { return nil }
+        
+        return personID
+        
     }
     
     //MARK: - Remove UserDefault Data
