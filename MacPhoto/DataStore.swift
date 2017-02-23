@@ -15,6 +15,6 @@ class DataStore {
     
     var photos = [String:Photo]()
     var people = [String:Person]()
-    
+    var locations = [String:Location]()
     
 }

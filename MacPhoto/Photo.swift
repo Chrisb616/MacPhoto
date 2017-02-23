@@ -49,6 +49,16 @@ class Photo {
         dump(new)
     }
     
+    //MARK: - Access Through ID
+    static func with(uniqueID: String) -> Photo? {
+        if let photo = DataStore.instance.photos[uniqueID] {
+            return photo
+        } else {
+            print("WARNING: Photo not found for unique ID: \(uniqueID)")
+            return nil
+        }
+    }
+    
     //MARK: - Private Initializers
     private init(image: NSImage, title: String?, shortDescription: String?, longDescription: String?, dateTaken: Date?, location: Location?) {
         self.uniqueID = UniqueIDGenerator.instance.photoID
