@@ -44,7 +44,7 @@ class Photo {
         
         let new = Photo(image: image, title: title, shortDescription: shortDescription, longDescription: longDescription, dateTaken: dateTaken, location: location)
         
-        DataStore.instance.photos.append(new)
+        DataStore.instance.photos.updateValue(new, forKey: new.uniqueID)
         LocalFileManager.instance.save(image: image, withID: new.uniqueID)
         dump(new)
     }

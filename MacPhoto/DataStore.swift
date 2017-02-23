@@ -13,5 +13,8 @@ class DataStore {
     private init() {}
     static let instance = DataStore()
     
-    var photos = [Photo]()
+    var photos = [String:Photo]()
+    var people = [String:Person]()
+    
+    
 }
