@@ -18,6 +18,8 @@
 		1316532C1E5B8157007F4E76 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1316532B1E5B8157007F4E76 /* UserDefaultsManager.swift */; };
 		131653311E5B874A007F4E76 /* Factbook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131653301E5B874A007F4E76 /* Factbook.swift */; };
 		131653331E5B8B76007F4E76 /* LocalFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131653321E5B8B76007F4E76 /* LocalFileManager.swift */; };
+		13D1BA8D1E5D1FD6007E7EFA /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D1BA8C1E5D1FD6007E7EFA /* Person.swift */; };
+		13D1BA8F1E5D2229007E7EFA /* PersonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D1BA8E1E5D2229007E7EFA /* PersonData.swift */; };
 		8401977F1E5BAE7800555C17 /* AddImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8401977E1E5BAE7800555C17 /* AddImageViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +37,8 @@
 		1316532B1E5B8157007F4E76 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		131653301E5B874A007F4E76 /* Factbook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Factbook.swift; sourceTree = "<group>"; };
 		131653321E5B8B76007F4E76 /* LocalFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalFileManager.swift; sourceTree = "<group>"; };
+		13D1BA8C1E5D1FD6007E7EFA /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		13D1BA8E1E5D2229007E7EFA /* PersonData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonData.swift; sourceTree = "<group>"; };
 		8401977E1E5BAE7800555C17 /* AddImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddImageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -104,6 +108,8 @@
 				1316532E1E5B81AA007F4E76 /* Toolbox */,
 				1316532D1E5B8190007F4E76 /* DataModel */,
 				131653231E5B8130007F4E76 /* Location.swift */,
+				13D1BA8C1E5D1FD6007E7EFA /* Person.swift */,
+				13D1BA8E1E5D2229007E7EFA /* PersonData.swift */,
 				131653241E5B8130007F4E76 /* Photo.swift */,
 			);
 			name = Model;
@@ -180,10 +186,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13D1BA8F1E5D2229007E7EFA /* PersonData.swift in Sources */,
 				131653291E5B8130007F4E76 /* Photo.swift in Sources */,
 				1316532C1E5B8157007F4E76 /* UserDefaultsManager.swift in Sources */,
 				131653331E5B8B76007F4E76 /* LocalFileManager.swift in Sources */,
 				1316532A1E5B8130007F4E76 /* UniqueIDGenerator.swift in Sources */,
+				13D1BA8D1E5D1FD6007E7EFA /* Person.swift in Sources */,
 				131653151E5B8091007F4E76 /* ViewController.swift in Sources */,
 				131653261E5B8130007F4E76 /* DataStore.swift in Sources */,
 				131653311E5B874A007F4E76 /* Factbook.swift in Sources */,
