@@ -66,7 +66,7 @@ class Photo {
         self.dateAdded = Date()
         self.location = location
         
-        self.image = LocalFileManager.instance.retrieveImage(for: uniqueID)
+        self.image = LocalFileManager.instance.retrieve(imageWithID: uniqueID) ?? NSImage()
         
         self.height = 0
         self.width = 0
@@ -78,7 +78,7 @@ class Photo {
         self.dateAdded = dateAdded
         self.location = location
         
-        self.image = LocalFileManager.instance.retrieveImage(for: uniqueID)
+        self.image = LocalFileManager.instance.retrieve(imageWithID: uniqueID) ?? NSImage()
         
         self.height = 0
         self.width = 0

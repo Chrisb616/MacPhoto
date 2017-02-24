@@ -20,9 +20,11 @@ class LocalFileManager {
     //MARK: - Local File Paths
     private var programDirectoryHome = URL(fileURLWithPath: Factbook.picturesPath)
     
-    var programDirectory: URL { return programDirectoryHome.appendingPathComponent("MacPhoto") }
+    private var programDirectory: URL { return programDirectoryHome.appendingPathComponent("MacPhoto") }
     
     private var imageDirectory: URL { return programDirectory.appendingPathComponent("Images") }
+    
+    private var infoDirectory: URL { return programDirectory.appendingPathComponent("Info") }
     
     //MARK: - Directory Management
     func check(for file: URL) -> Bool {
@@ -72,4 +74,9 @@ class LocalFileManager {
         return NSImage(contentsOf: path)
     }
     
+    //MARK: ImageInfoManagement
+    
+    func checkForImageInfoFile() -> Bool {
+        return check(for: infoDirectory.appendingPathComponent("imageInfo.csv"))
+    }
 }
