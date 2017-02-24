@@ -39,16 +39,6 @@ class Photo {
     
     var megapixels: Double { return Double(height * width) / 1_048_576 }
     
-    //MARK: - Object Creation
-    static func new(image: NSImage, title: String?, shortDescription: String?, longDescription: String?, dateTaken: Date?, location: Location?) {
-        
-        let new = Photo(image: image, title: title, shortDescription: shortDescription, longDescription: longDescription, dateTaken: dateTaken, location: location)
-        
-        DataStore.instance.photos.updateValue(new, forKey: new.uniqueID)
-        LocalFileManager.instance.save(image: image, withID: new.uniqueID)
-        dump(new)
-    }
-    
     //MARK: - Access Through ID
     static func with(uniqueID: String) -> Photo? {
         if let photo = DataStore.instance.photos[uniqueID] {
@@ -59,6 +49,22 @@ class Photo {
         }
     }
     
+    //MARK: - Object Creation
+    static func new(image: NSImage, title: String?, shortDescription: String?, longDescription: String?, dateTaken: Date?, location: Location?) {
+        
+        let new = Photo(image: image, title: title, shortDescription: shortDescription, longDescription: longDescription, dateTaken: dateTaken, location: location)
+        
+        DataStore.instance.photos.updateValue(new, forKey: new.uniqueID)
+        LocalFileManager.instance.save(image: image, withID: new.uniqueID)
+    }
+    
+    static func load(uniqueID: String, title: String?, shortDescription: String?, longDescription: String?, dateTaken: Date?, location: Location?, dateAdded: Date) {
+    
+        let new = Photo(uniqueID: uniqueID, title: title, shortDescription: shortDescription, longDescription: longDescription, dateTaken: dateTaken, dateAdded: dateAdded, location: location)
+        
+        DataStore.instance.photos.updateValue(new, forKey: new.uniqueID)
+    }
+    
     //MARK: - Private Initializers
     private init(image: NSImage, title: String?, shortDescription: String?, longDescription: String?, dateTaken: Date?, location: Location?) {
         self.uniqueID = UniqueIDGenerator.instance.photoID
@@ -66,21 +72,25 @@ class Photo {
         self.dateAdded = Date()
         self.location = location
         
-        self.image = LocalFileManager.instance.retrieve(imageWithID: uniqueID) ?? NSImage()
+        self.image = LocalFileManager.instance.load(imageWithID: uniqueID) ?? NSImage()
         
         self.height = 0
         self.width = 0
     }
     
-    private init(uniqueID: String, dateTaken: Date?, dateAdded: Date, location: Location?, url: URL) {
+    private init(uniqueID: String, title: String?, shortDescription: String?, longDescription: String?, dateTaken: Date?, dateAdded: Date, location: Location?) {
         self.uniqueID = uniqueID
+        self.title = title
+        self.shortDescription = shortDescription
+        self.longDescription = longDescription
         self.dateTaken = dateTaken
         self.dateAdded = dateAdded
         self.location = location
         
-        self.image = LocalFileManager.instance.retrieve(imageWithID: uniqueID) ?? NSImage()
+        self.image = LocalFileManager.instance.load(imageWithID: uniqueID) ?? NSImage()
         
         self.height = 0
         self.width = 0
     }
+
 }

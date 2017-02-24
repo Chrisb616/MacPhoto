@@ -10,18 +10,27 @@ import CoreLocation
 
 class Location {
     
+    //MARK: - Properties
+    
     var uniqueID: String
     
     var name: String
+    
     var coordinates: CLLocationCoordinate2D
     
     var photoKeys = [String:Bool]()
     
-    init(name: String, coordinates: CLLocationCoordinate2D) {
-        self.name = name
-        self.coordinates = coordinates
-        self.uniqueID = UniqueIDGenerator.instance.personID
+    //MARK: - Access Through ID
+    static func with(uniqueID: String) -> Location? {
+        if let location = DataStore.instance.locations[uniqueID] {
+            return location
+        } else {
+            print("WARNING: Location not found for unique ID: \(uniqueID)")
+            return nil
+        }
     }
+    
+    //MARK: - Object relationships
     
     func associatePhoto(withUniqueID uniqueID: String) {
         
@@ -30,8 +39,10 @@ class Location {
         if let oldLocation = photo.location {
             oldLocation.disassociatePhoto(withUniqueID: uniqueID)
         }
+        
         photo.location = self
         self.photoKeys.updateValue(true, forKey: uniqueID)
+        
     }
     func disassociatePhoto(withUniqueID uniqueID: String) {
         
@@ -39,6 +50,13 @@ class Location {
         
         photo.location = nil
         self.photoKeys.removeValue(forKey: uniqueID)
+        
     }
     
+    //MARK: - Initializers
+    init(name: String, coordinates: CLLocationCoordinate2D) {
+        self.name = name
+        self.coordinates = coordinates
+        self.uniqueID = UniqueIDGenerator.instance.personID
+    }
 }
