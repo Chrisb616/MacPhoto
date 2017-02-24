@@ -44,9 +44,9 @@ class LocalFileManager {
     
     //MARK: - Image Management
     func save(image: NSImage, withID uniqueID: String) {
-        let url = imageDirectory.appendingPathComponent("\(uniqueID).jpg")
+        let path = imageDirectory.appendingPathComponent("\(uniqueID).jpg")
         
-        if !check(for: url) {
+        if !check(for: path) {
             do {
                 try fileManager.createDirectory(at: imageDirectory, withIntermediateDirectories: true, attributes: [:])
             } catch {
@@ -55,11 +55,11 @@ class LocalFileManager {
         }
         
         if let bits = image.representations.first as? NSBitmapImageRep {
-            print(url)
+            print(path)
             let imageData = bits.representation(using: .JPEG, properties: [:])
             
             do {
-                try imageData?.write(to: url)
+                try imageData?.write(to: path)
             } catch {
                 
             }
@@ -67,9 +67,9 @@ class LocalFileManager {
         
     }
     
-    func retrieveImage(for uniqueID: String) -> NSImage {
-        
-        return NSImage()
+    func retrieve(imageWithID uniqueID: String) -> NSImage? {
+        let path = imageDirectory.appendingPathComponent("\(uniqueID).jpg")
+        return NSImage(contentsOf: path)
     }
     
 }
