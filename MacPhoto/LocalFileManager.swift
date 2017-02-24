@@ -26,7 +26,26 @@ class LocalFileManager {
     
     private var infoDirectory: URL { return programDirectory.appendingPathComponent("Info") }
     
-    //MARK: - Directory Management
+    //MARK: - CSV Tools
+    func writeCSV(to path: URL, withName name: String, withContent string: String){
+        
+        do{
+            try string.write(to: path.appendingPathComponent("\(name).csv"), atomically: true, encoding: String.Encoding.utf8)
+        } catch{
+            print("FAILURE: Could not write \(name).csv to \(path)")
+        }
+    }
+    func readCSV(from path: URL, withName name: String) -> String? {
+        do {
+            let contents = try String(contentsOf: path.appendingPathComponent("\(name).csv"), encoding: String.Encoding.utf8)
+            return contents
+        } catch {
+            print("FAILURE: Could not read from file path: \(path)")
+            return nil
+        }
+    }
+    
+    //MARK: - Directory Tools
     func check(for file: URL) -> Bool {
         var isDir : ObjCBool = ObjCBool(true)
         
