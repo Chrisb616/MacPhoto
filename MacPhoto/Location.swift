@@ -10,6 +10,8 @@ import CoreLocation
 
 class Location {
     
+    var uniqueID: String
+    
     var name: String
     var coordinates: CLLocationCoordinate2D
     
@@ -18,6 +20,7 @@ class Location {
     init(name: String, coordinates: CLLocationCoordinate2D) {
         self.name = name
         self.coordinates = coordinates
+        self.uniqueID = UniqueIDGenerator.instance.personID
     }
     
     func associatePhoto(withUniqueID uniqueID: String) {

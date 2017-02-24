@@ -19,11 +19,12 @@ class UserDefaultsManager {
     //MARK: Keys
     private let photoIDKey = "photoID"
     private let personIDKey = "personID"
-    
+    private let locationIDKey = "locationID"
     
     //MARK: - ID Management
+    
+    //MARK: Save IDs
     func savePhotoID(_ ID: String) {
-        print("Saving \(ID)")
         defaults.set(ID, forKey: photoIDKey)
     }
     
@@ -31,46 +32,48 @@ class UserDefaultsManager {
         defaults.set(ID, forKey: personIDKey)
     }
     
-    func loadIDs() {
-        print("Loading!")
-        let photoID = loadPhotoID()
-        let personID = loadPersonID()
-        
-        UniqueIDGenerator.instance.loadIDs(photoID: photoID, personID: personID)
+    func saveLocationID(_ ID: String) {
+        defaults.set(ID, forKey: locationIDKey)
     }
-    
-    private func loadPhotoID() -> String? {
+
+    //MARK: Load IDs
+    func loadPhotoID() -> String? {
         
         guard let photoIDRaw = defaults.object(forKey: photoIDKey) else { return nil }
-        guard let photoID = photoIDRaw as? String else { return nil }
-        
-        print("photoID is \(photoID)")
-        
-        return photoID
+        return photoIDRaw as? String
     }
     
-    private func loadPersonID() -> String? {
+    func loadPersonID() -> String? {
         
         guard let personIDRaw = defaults.object(forKey: personIDKey) else { return nil }
-        guard let personID = personIDRaw as? String else { return nil }
+        return personIDRaw as? String
         
-        return personID
-        
+    }
+    
+    func loadLocationID() -> String? {
+        guard let locationIDRaw = defaults.object(forKey: locationIDKey) else { return nil }
+        return locationIDRaw as? String
     }
     
     //MARK: - Remove UserDefault Data
-    func RemoveSaveData(passcode: String) {
-        print("Destroy all data initialzed. Passcode: \(passcode)")
-        if passcode.contains("DESTROY") {
-            removePhotoIDSaveData(passcode: passcode)
-        }
+    func removeSaveData() {
+        removePhotoIDSaveData()
     }
     
-    func removePhotoIDSaveData(passcode: String) {
-        if passcode.contains("PHOTOS") {
-            defaults.removeObject(forKey: photoIDKey)
-            print("Destroyed Photo Data")
-        }
+    func removeAllIDData() {
+        removePhotoIDSaveData()
+    }
+    
+    func removePhotoIDSaveData() {
+        defaults.removeObject(forKey: photoIDKey)
+    }
+    
+    func removePersonIDSaveData() {
+        defaults.removeObject(forKey: personIDKey)
+    }
+    
+    func removeLocationIDSaveData() {
+        defaults.removeObject(forKey: locationIDKey)
     }
 
 }

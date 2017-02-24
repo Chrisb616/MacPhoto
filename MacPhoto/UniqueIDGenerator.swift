@@ -17,37 +17,31 @@ class UniqueIDGenerator {
     
     //MARK: - New IDs
     var photoID: String {
-        let resultID = photoIDStorage
+        let resultID = userDefaultsManager.loadPhotoID() ?? "000000"
         
         let newID = advanced(resultID)
-        photoIDStorage = newID
-        
         userDefaultsManager.savePhotoID(newID)
         
-        return resultID
+        return newID
     }
     
     var personID: String {
-        let resultID = personIDStorage
+        let resultID = userDefaultsManager.loadPersonID() ?? "000000"
         
         let newID = advanced(resultID)
-        personIDStorage = newID
-        
         userDefaultsManager.savePersonID(newID)
         
-        return resultID
+        return newID
     }
     
-    //MARK: - ID Value Storage
-    
-    func loadIDs(photoID: String?, personID: String?) {
-        photoIDStorage = photoID ?? "000000"
-        personIDStorage = personID ?? "000000"
+    var locationID: String {
+        let resultID = userDefaultsManager.loadLocationID() ?? "000000"
         
+        let newID = advanced(resultID)
+        userDefaultsManager.savePhotoID(newID)
+        
+        return newID
     }
-
-    private var photoIDStorage = "000000"
-    private var personIDStorage = "000000"
     
     //MARK: - Advance Functions
     private func advanced(_ ID: String) -> String {
