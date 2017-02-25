@@ -29,7 +29,7 @@ class AddImageViewController: NSViewController {
                       location: nil)
             LocalFileManager.instance.savePhotoInfo()
         } else {
-            print("No image found, please drag an image into the well.")
+            print("WARING: No image found, please drag an image into the well.")
         }
         
         

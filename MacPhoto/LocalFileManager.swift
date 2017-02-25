@@ -31,6 +31,44 @@ class LocalFileManager {
         return dateFormatter.string(from: date)
     }
     
+    func removeCommas(from string: String) -> String {
+        print(string)
+        
+        var result = String()
+        
+        let components = string.components(separatedBy: ",")
+        
+        if components.count > 1 {
+            for (index, component) in components.enumerated() {
+                result += component
+                
+                if index != components.count - 1 {
+                    result += "&COMMA"
+                }
+            }
+        }
+        
+        return result
+    }
+    
+    func replaceCommas(in string: String) -> String {
+        var result = String()
+        
+        let components = string.components(separatedBy: "&COMMA")
+        
+        if components.count > 1 {
+            for (index, component) in components.enumerated() {
+                result += component
+                
+                if index != components.count - 1 {
+                    result += ","
+                }
+            }
+        }
+        
+        return result
+    }
+    
     //MARK: - Local File Paths
     private var programDirectoryHome = URL(fileURLWithPath: Factbook.picturesPath)
     
@@ -42,26 +80,18 @@ class LocalFileManager {
     
     
     //MARK: - CSV Tools
-    func writeCSV(to path: URL, withName name: String = "", withContent string: String){
-        
-        var fileName: String = name
-        
-        if fileName != "" { fileName += ".csv" }
+    func writeCSV(to path: URL, withContent string: String){
         
         do{
-            try string.write(to: path.appendingPathComponent("\(name)"), atomically: true, encoding: String.Encoding.utf8)
+            try string.write(to: path, atomically: true, encoding: String.Encoding.utf8)
         } catch{
-            print("FAILURE: Could not write \(name).csv to \(path) \(error)")
+            print("FAILURE: Could not write csv to \(path) \(error)")
         }
     }
-    func readCSV(from path: URL, withName name: String = "") -> String? {
-        
-        var fileName: String = name
-        
-        if fileName !=  "" { fileName += ".csv" }
+    func readCSV(from path: URL) -> String? {
         
         do {
-            let contents = try String(contentsOf: path.appendingPathComponent("\(name)"), encoding: String.Encoding.utf8)
+            let contents = try String(contentsOf: path, encoding: String.Encoding.utf8)
             return contents
         } catch {
             print("FAILURE: Could not read from file path: \(path) \(error)")
@@ -75,14 +105,11 @@ class LocalFileManager {
         
         if fileManager.fileExists(atPath: file.relativePath, isDirectory:&isDir) {
             if isDir.boolValue {
-                print(1)
                 return true
             } else {
-                print(2)
                 return true
             }
         } else {
-            print(3)
             return false
         }
     }
@@ -101,11 +128,11 @@ class LocalFileManager {
         }
         
         if let bits = image.representations.first as? NSBitmapImageRep {
-            print(path)
             let imageData = bits.representation(using: .JPEG, properties: [:])
             
             do {
                 try imageData?.write(to: path)
+                print("SUCCESS: Image written to \(path)")
             } catch {
                 
             }
@@ -118,7 +145,7 @@ class LocalFileManager {
         return NSImage(contentsOf: path)
     }
     
-    //MARK: PhotoInfoManagement
+    //MARK: - Photo Info Management
     
     private var photoInfoFile: URL { return infoDirectory.appendingPathComponent("PhotoInfo.csv") }
     
@@ -189,43 +216,5 @@ class LocalFileManager {
             Photo.load(uniqueID: uniqueID, title: title, shortDescription: shortDescription, longDescription: longDescription, dateTaken: dateTaken, location: location, dateAdded: dateAdded)
             
         }
-    }
-    
-    func removeCommas(from string: String) -> String {
-        print(string)
-        
-        var result = String()
-        
-        let components = string.components(separatedBy: ",")
-        
-        if components.count > 1 {
-            for (index, component) in components.enumerated() {
-                result += component
-                
-                if index != components.count - 1 {
-                    result += "&COMMA"
-                }
-            }
-        }
-        
-        return result
-    }
-    
-    func replaceCommas(in string: String) -> String {
-        var result = String()
-        
-        let components = string.components(separatedBy: "&COMMA")
-        
-        if components.count > 1 {
-            for (index, component) in components.enumerated() {
-                result += component
-                
-                if index != components.count - 1 {
-                    result += ","
-                }
-            }
-        }
-        
-        return result
     }
 }
