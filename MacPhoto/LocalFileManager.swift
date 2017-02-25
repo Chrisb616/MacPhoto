@@ -17,10 +17,18 @@ class LocalFileManager {
     //MARK: - Utilities
     private let fileManager = FileManager.default
     
+    private let dateFormat = "YYYY_MM_dd_HH_mm_ss"
+    
     private func parseDate(_ string: String) -> Date? {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "YYYY_MM_dd_HH_mm_ss"
+        dateFormatter.dateFormat = dateFormat
         return dateFormatter.date(from: string)
+    }
+    
+    private func parseDate(_ date: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = dateFormat
+        return dateFormatter.string(from: date)
     }
     
     //MARK: - Local File Paths
@@ -34,12 +42,16 @@ class LocalFileManager {
     
     
     //MARK: - CSV Tools
-    func writeCSV(to path: URL, withName name: String, withContent string: String){
+    func writeCSV(to path: URL, withName name: String = "", withContent string: String){
+        
+        var fileName: String = name
+        
+        if fileName != "" { fileName += ".csv" }
         
         do{
-            try string.write(to: path.appendingPathComponent("\(name).csv"), atomically: true, encoding: String.Encoding.utf8)
+            try string.write(to: path.appendingPathComponent("\(name)"), atomically: true, encoding: String.Encoding.utf8)
         } catch{
-            print("FAILURE: Could not write \(name).csv to \(path)")
+            print("FAILURE: Could not write \(name).csv to \(path) \(error)")
         }
     }
     func readCSV(from path: URL, withName name: String = "") -> String? {
@@ -47,7 +59,7 @@ class LocalFileManager {
             let contents = try String(contentsOf: path.appendingPathComponent("\(name).csv"), encoding: String.Encoding.utf8)
             return contents
         } catch {
-            print("FAILURE: Could not read from file path: \(path)")
+            print("FAILURE: Could not read from file path: \(path) \(error)")
             return nil
         }
     }
@@ -107,6 +119,45 @@ class LocalFileManager {
     
     func checkForPhotoInfoFile() -> Bool {
         return check(for: photoInfoFile)
+    }
+    
+    func savePhotoInfo() {
+        var csvData = CSVContent()
+        
+        for photoKey in DataStore.instance.photos {
+            let photo = photoKey.value
+            
+            var row = [String]()
+            
+            let dateTakenString: String
+            let locationID: String
+            
+            if let dateTaken = photo.dateTaken {
+                dateTakenString = parseDate(dateTaken)
+            } else {
+                dateTakenString = ""
+            }
+            
+            if let location = photo.location {
+                locationID = location.uniqueID
+            } else {
+                locationID = ""
+            }
+            
+            row.append(photo.uniqueID)
+            row.append(photo.title ?? "")
+            row.append(photo.shortDescription ?? "")
+            row.append(photo.longDescription ?? "")
+            row.append(dateTakenString)
+            row.append(locationID)
+            row.append(parseDate(photo.dateAdded))
+            
+            csvData.add(row: row)
+        }
+        
+        let string = csvData.string
+        
+        writeCSV(to: photoInfoFile, withContent: string)
     }
     
     func loadPhotoInfo() {

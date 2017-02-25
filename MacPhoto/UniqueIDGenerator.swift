@@ -17,7 +17,7 @@ class UniqueIDGenerator {
     
     //MARK: - New IDs
     var photoID: String {
-        let resultID = userDefaultsManager.loadPhotoID() ?? "000000"
+        let resultID = userDefaultsManager.loadPhotoID() ?? "PH000000"
         
         let newID = advanced(resultID)
         userDefaultsManager.savePhotoID(newID)
@@ -26,7 +26,7 @@ class UniqueIDGenerator {
     }
     
     var personID: String {
-        let resultID = userDefaultsManager.loadPersonID() ?? "000000"
+        let resultID = userDefaultsManager.loadPersonID() ?? "PN000000"
         
         let newID = advanced(resultID)
         userDefaultsManager.savePersonID(newID)
@@ -35,7 +35,7 @@ class UniqueIDGenerator {
     }
     
     var locationID: String {
-        let resultID = userDefaultsManager.loadLocationID() ?? "000000"
+        let resultID = userDefaultsManager.loadLocationID() ?? "LN000000"
         
         let newID = advanced(resultID)
         userDefaultsManager.savePhotoID(newID)

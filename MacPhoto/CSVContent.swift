@@ -12,6 +12,8 @@ struct CSVContent {
     
     
     //MARK: - Initialization Logic
+    init() {}
+    
     init(_ string: String) {
         var content = parse(string)
         normalize(&content)
@@ -90,7 +92,25 @@ struct CSVContent {
         
         return row[columnIndex]
     }
+    
+    var string: String {
+        var string = String()
+        
+        for row in content {
+            for cell in row {
+                string.append(cell)
+                string.append(",")
+            }
+            string.append("\n")
+        }
+        
+        return string
+    }
 
+    //MARK: - Add items
+    mutating func add(row: [String]) {
+        content.append(row)
+    }
     
     
 }
