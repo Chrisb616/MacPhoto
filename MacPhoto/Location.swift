@@ -22,6 +22,8 @@ class Location {
     
     //MARK: - Access Through ID
     static func with(uniqueID: String) -> Location? {
+        if uniqueID == "" { return nil }
+        
         if let location = DataStore.instance.locations[uniqueID] {
             return location
         } else {
