@@ -156,8 +156,8 @@ class LocalFileManager {
     func savePhotoInfo() {
         var csvData = CSVContent()
         
-        for photoKey in DataStore.instance.photos {
-            let photo = photoKey.value
+        for uniqueID in DataStore.instance.photos.uniqueIDs {
+            guard let photo = DataStore.instance.photos.with(uniqueID: uniqueID) else { print("FAILURE: Failed to save photos");return }
             
             var row = [String]()
             
@@ -176,7 +176,7 @@ class LocalFileManager {
                 locationID = ""
             }
             
-            row.append(photo.uniqueID)
+            row.append(uniqueID)
             row.append(removeCommas(from: photo.title ?? ""))
             row.append(removeCommas(from: photo.shortDescription ?? ""))
             row.append(removeCommas(from: photo.longDescription ?? ""))

@@ -8,12 +8,12 @@
 
 import Cocoa
 
-class Photo {
+class Photo: HasUniqueID {
     
     //MARK: - Properties
     
     //MARK: Unique ID
-    let uniqueID: String
+    var uniqueID: String
     
     //MARK: Image
     var image: NSImage
@@ -41,7 +41,7 @@ class Photo {
     
     //MARK: - Access Through ID
     static func with(uniqueID: String) -> Photo? {
-        if let photo = DataStore.instance.photos[uniqueID] {
+        if let photo = DataStore.instance.photos.with(uniqueID: uniqueID) {
             return photo
         } else {
             print("WARNING: Photo not found for unique ID: \(uniqueID)")
@@ -54,7 +54,7 @@ class Photo {
         
         let new = Photo(image: image, title: title, shortDescription: shortDescription, longDescription: longDescription, dateTaken: dateTaken, location: location)
         
-        DataStore.instance.photos.updateValue(new, forKey: new.uniqueID)
+        DataStore.instance.photos.add(new)
         LocalFileManager.instance.save(image: image, withID: new.uniqueID)
     }
     
@@ -62,7 +62,7 @@ class Photo {
     
         let new = Photo(uniqueID: uniqueID, title: title, shortDescription: shortDescription, longDescription: longDescription, dateTaken: dateTaken, dateAdded: dateAdded, location: location)
         
-        DataStore.instance.photos.updateValue(new, forKey: new.uniqueID)
+        DataStore.instance.photos.add(new)
     }
     
     //MARK: - Private Initializers

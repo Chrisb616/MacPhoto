@@ -8,9 +8,9 @@
 
 import Foundation
 
-class Person {
+class Person: HasUniqueID {
     
-    let uniqueID: String
+    var uniqueID: String
     
     var name: String
     var firstName: String?

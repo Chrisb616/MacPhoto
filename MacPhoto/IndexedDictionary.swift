@@ -12,6 +12,18 @@ struct IndexedDictionary<T: HasUniqueID> {
     private var keys = [String:Int]()
     private var values = [T]()
     
+    var uniqueIDs: [String] {
+        var uniqueIDs = [String]()
+        
+        for key in keys.keys {
+            uniqueIDs.append(key)
+        }
+        
+        return uniqueIDs
+    }
+    
+    var count: Int { return values.count }
+    
     //MARK: - Change Values
     mutating func add(_ item: T) {
         let newIndex = values.count

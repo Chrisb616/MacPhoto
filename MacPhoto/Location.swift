@@ -8,7 +8,7 @@
 
 import CoreLocation
 
-class Location {
+class Location: HasUniqueID {
     
     //MARK: - Properties
     
@@ -24,7 +24,7 @@ class Location {
     static func with(uniqueID: String) -> Location? {
         if uniqueID == "" { return nil }
         
-        if let location = DataStore.instance.locations[uniqueID] {
+        if let location = DataStore.instance.locations.with(uniqueID: uniqueID) {
             return location
         } else {
             print("WARNING: Location not found for unique ID: \(uniqueID)")

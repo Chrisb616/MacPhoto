@@ -13,8 +13,8 @@ class DataStore {
     private init() {}
     static let instance = DataStore()
     
-    var photos = [String:Photo]()
-    var people = [String:Person]()
-    var locations = [String:Location]()
+    var photos = IndexedDictionary<Photo>()
+    var people = IndexedDictionary<Person>()
+    var locations = IndexedDictionary<Location>()
     
 }
