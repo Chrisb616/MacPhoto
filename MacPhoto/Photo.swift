@@ -68,6 +68,9 @@ class Photo {
     //MARK: - Private Initializers
     private init(image: NSImage, title: String?, shortDescription: String?, longDescription: String?, dateTaken: Date?, location: Location?) {
         self.uniqueID = UniqueIDGenerator.instance.photoID
+        self.title = title
+        self.shortDescription = shortDescription
+        self.longDescription = longDescription
         self.dateTaken = dateTaken
         self.dateAdded = Date()
         self.location = location
