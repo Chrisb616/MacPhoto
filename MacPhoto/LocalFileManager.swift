@@ -55,8 +55,13 @@ class LocalFileManager {
         }
     }
     func readCSV(from path: URL, withName name: String = "") -> String? {
+        
+        var fileName: String = name
+        
+        if fileName !=  "" { fileName += ".csv" }
+        
         do {
-            let contents = try String(contentsOf: path.appendingPathComponent("\(name).csv"), encoding: String.Encoding.utf8)
+            let contents = try String(contentsOf: path.appendingPathComponent("\(name)"), encoding: String.Encoding.utf8)
             return contents
         } catch {
             print("FAILURE: Could not read from file path: \(path) \(error)")
@@ -145,9 +150,9 @@ class LocalFileManager {
             }
             
             row.append(photo.uniqueID)
-            row.append(photo.title ?? "")
-            row.append(photo.shortDescription ?? "")
-            row.append(photo.longDescription ?? "")
+            row.append(removeCommas(from: photo.title ?? ""))
+            row.append(removeCommas(from: photo.shortDescription ?? ""))
+            row.append(removeCommas(from: photo.longDescription ?? ""))
             row.append(dateTakenString)
             row.append(locationID)
             row.append(parseDate(photo.dateAdded))
@@ -184,5 +189,43 @@ class LocalFileManager {
             Photo.load(uniqueID: uniqueID, title: title, shortDescription: shortDescription, longDescription: longDescription, dateTaken: dateTaken, location: location, dateAdded: dateAdded)
             
         }
+    }
+    
+    func removeCommas(from string: String) -> String {
+        print(string)
+        
+        var result = String()
+        
+        let components = string.components(separatedBy: ",")
+        
+        if components.count > 1 {
+            for (index, component) in components.enumerated() {
+                result += component
+                
+                if index != components.count - 1 {
+                    result += "&COMMA"
+                }
+            }
+        }
+        
+        return result
+    }
+    
+    func replaceCommas(in string: String) -> String {
+        var result = String()
+        
+        let components = string.components(separatedBy: "&COMMA")
+        
+        if components.count > 1 {
+            for (index, component) in components.enumerated() {
+                result += component
+                
+                if index != components.count - 1 {
+                    result += ","
+                }
+            }
+        }
+        
+        return result
     }
 }
