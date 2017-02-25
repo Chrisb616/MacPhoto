@@ -21,7 +21,12 @@ class AddImageViewController: NSViewController {
     
     @IBAction func saveButtonTapped(_ sender: Any) {
         if let image = addImageWell.image {
-            Photo.new(image: image, title: titleTextField.stringValue, shortDescription: shortDescriptionTextView.string, longDescription: longDescriptionTextView.string, dateTaken: dateTakenDatePicker.dateValue, location: nil)
+            Photo.new(image: image,
+                      title: titleTextField.stringValue,
+                      shortDescription: shortDescriptionTextView.string,
+                      longDescription: longDescriptionTextView.string,
+                      dateTaken: dateTakenDatePicker.dateValue,
+                      location: nil)
             LocalFileManager.instance.savePhotoInfo()
         } else {
             print("No image found, please drag an image into the well.")
