@@ -122,15 +122,23 @@
 		1316532F1E5B81B1007F4E76 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1361F82D1E65BE7000D65337 /* Protocols */,
 				1316532E1E5B81AA007F4E76 /* Toolbox */,
 				1316532D1E5B8190007F4E76 /* DataModel */,
 				131653231E5B8130007F4E76 /* Location.swift */,
 				13D1BA8C1E5D1FD6007E7EFA /* Person.swift */,
-				137B7B781E61E3A500F9A69E /* HasUniqueID.swift */,
 				13D1BA8E1E5D2229007E7EFA /* PersonData.swift */,
 				131653241E5B8130007F4E76 /* Photo.swift */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		1361F82D1E65BE7000D65337 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				137B7B781E61E3A500F9A69E /* HasUniqueID.swift */,
+			);
+			name = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
