@@ -18,7 +18,7 @@ class Location: HasUniqueID {
     
     var coordinates: CLLocationCoordinate2D
     
-    var photoKeys = [String:Bool]()
+    var photos = [String:Bool]()
     
     //MARK: - Access Through ID
     static func with(uniqueID: String) -> Location? {
@@ -30,29 +30,6 @@ class Location: HasUniqueID {
             print("WARNING: Location not found for unique ID: \(uniqueID)")
             return nil
         }
-    }
-    
-    //MARK: - Object relationships
-    
-    func associatePhoto(withUniqueID uniqueID: String) {
-        
-        guard let photo = Photo.with(uniqueID: uniqueID) else { return }
-        
-        if let oldLocation = photo.location {
-            oldLocation.disassociatePhoto(withUniqueID: uniqueID)
-        }
-        
-        photo.location = self
-        self.photoKeys.updateValue(true, forKey: uniqueID)
-        
-    }
-    func disassociatePhoto(withUniqueID uniqueID: String) {
-        
-        guard let photo = Photo.with(uniqueID: uniqueID) else { return }
-        
-        photo.location = nil
-        self.photoKeys.removeValue(forKey: uniqueID)
-        
     }
     
     //MARK: - Initializers

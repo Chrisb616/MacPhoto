@@ -28,10 +28,12 @@ class Photo: HasUniqueID {
     var dateAdded: Date
     
     //MARK: Location
-    var location: Location?
+    var location: Location? { return safeLocation }
+    weak var safeLocation: Location?
     
     //MARK: People
-    var people = [String:Bool]()
+    var people: [String:Bool] { return safePeople }
+    private var safePeople = [String:Bool]()
     
     //MARK: Size
     var height: Pixel
@@ -52,7 +54,10 @@ class Photo: HasUniqueID {
     //MARK: - Object Creation
     static func new(image: NSImage, title: String?, shortDescription: String?, longDescription: String?, dateTaken: Date?, location: Location?) {
         
-        let new = Photo(image: image, title: title, shortDescription: shortDescription, longDescription: longDescription, dateTaken: dateTaken, location: location)
+        let new = Photo(image: image, title: title, shortDescription: shortDescription, longDescription: longDescription, dateTaken: dateTaken)
+        if let location = location {
+            new.associate(location: location)
+        }
         
         DataStore.instance.photos.add(new)
         LocalFileManager.instance.save(image: image, withID: new.uniqueID)
@@ -60,20 +65,22 @@ class Photo: HasUniqueID {
     
     static func load(uniqueID: String, title: String?, shortDescription: String?, longDescription: String?, dateTaken: Date?, location: Location?, dateAdded: Date) {
     
-        let new = Photo(uniqueID: uniqueID, title: title, shortDescription: shortDescription, longDescription: longDescription, dateTaken: dateTaken, dateAdded: dateAdded, location: location)
+        let new = Photo(uniqueID: uniqueID, title: title, shortDescription: shortDescription, longDescription: longDescription, dateTaken: dateTaken, dateAdded: dateAdded)
+        if let location = location {
+            new.associate(location: location)
+        }
         
         DataStore.instance.photos.add(new)
     }
     
     //MARK: - Private Initializers
-    private init(image: NSImage, title: String?, shortDescription: String?, longDescription: String?, dateTaken: Date?, location: Location?) {
+    private init(image: NSImage, title: String?, shortDescription: String?, longDescription: String?, dateTaken: Date?) {
         self.uniqueID = UniqueIDGenerator.instance.photoID
         self.title = title
         self.shortDescription = shortDescription
         self.longDescription = longDescription
         self.dateTaken = dateTaken
         self.dateAdded = Date()
-        self.location = location
         
         self.image = LocalFileManager.instance.load(imageWithID: uniqueID) ?? NSImage()
         
@@ -81,19 +88,81 @@ class Photo: HasUniqueID {
         self.width = 0
     }
     
-    private init(uniqueID: String, title: String?, shortDescription: String?, longDescription: String?, dateTaken: Date?, dateAdded: Date, location: Location?) {
+    private init(uniqueID: String, title: String?, shortDescription: String?, longDescription: String?, dateTaken: Date?, dateAdded: Date) {
         self.uniqueID = uniqueID
         self.title = title
         self.shortDescription = shortDescription
         self.longDescription = longDescription
         self.dateTaken = dateTaken
         self.dateAdded = dateAdded
-        self.location = location
         
         self.image = LocalFileManager.instance.load(imageWithID: uniqueID) ?? NSImage()
         
         self.height = 0
         self.width = 0
+    }
+
+    //MARK: - Update Associations
+    
+    //MARK: Person
+    func associate(personWithID uniqueID: String) {
+        guard let person = DataStore.instance.people.with(uniqueID: uniqueID) else { print("WARNING: Person not found for unique ID: \(uniqueID)"); return }
+        person.photos.updateValue(true, forKey: self.uniqueID)
+        self.safePeople.updateValue(true, forKey: person.uniqueID)
+    }
+    
+    func associate(person: Person) {
+        person.photos.updateValue(true, forKey: self.uniqueID)
+        self.safePeople.updateValue(true, forKey: person.uniqueID)
+    }
+    
+    func disassociate(personWithID uniqueID: String) {
+        if let person = DataStore.instance.people.with(uniqueID: uniqueID) {
+            person.photos.removeValue(forKey: self.uniqueID)
+        } else {
+            print("WARNING: Person not found for unique ID: \(uniqueID)")
+        }
+        
+        if self.people[uniqueID] == nil {
+            print("WARNING: Person for unqiueID: \(uniqueID) not found to be associated with photo")
+        } else {
+            safePeople.removeValue(forKey: uniqueID)
+        }
+    }
+    
+    func disassociate(person: Person) {
+        person.photos.removeValue(forKey: self.uniqueID)
+        
+        if self.people[person.uniqueID] == nil {
+            print("WARNING: Person for unqiueID: \(person.uniqueID) not found to be associated with photo")
+        } else {
+            safePeople.removeValue(forKey: person.uniqueID)
+        }
+    }
+    
+    //MARK: Location
+    func associate(locationWithUniqueID uniqueID: String) {
+        if location != nil { disassociateLocation() }
+        
+        guard let location = DataStore.instance.locations.with(uniqueID: uniqueID) else { print("WARNING: Location not found for uniqueID: \(uniqueID)"); return }
+        location.photos.updateValue(true, forKey: self.uniqueID)
+        safeLocation = location
+    }
+    
+    func associate(location: Location) {
+        if self.location != nil { disassociateLocation() }
+        
+        location.photos.updateValue(true, forKey: self.uniqueID)
+        safeLocation = location
+    }
+    
+    func disassociateLocation() {
+        if let location = self.location {
+            location.photos.removeValue(forKey: self.uniqueID)
+            self.safeLocation = nil
+        } else {
+            print("WARNING: No location found which to dissociate with.")
+        }
     }
 
 }
