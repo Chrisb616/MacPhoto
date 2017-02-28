@@ -48,6 +48,7 @@ extension ViewImagesViewController: NSCollectionViewDataSource {
         let item = collectionView.makeItem(withIdentifier: "CollectionViewItem", for: indexPath)
         guard let collectionViewItem = item as? PhotoCollectionViewItem else { return item }
         
+        return collectionViewItem
     }
     
 }
