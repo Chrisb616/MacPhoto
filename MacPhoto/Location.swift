@@ -18,7 +18,7 @@ class Location: HasUniqueID {
     
     var coordinates: CLLocationCoordinate2D
     
-    var photoKeys = [String:Bool]()
+    var photos = [String:Bool]()
     
     //MARK: - Access Through ID
     static func with(uniqueID: String) -> Location? {
