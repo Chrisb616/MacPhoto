@@ -19,8 +19,6 @@ class Person: HasUniqueID {
     
     var photos = [String:Bool]()
     
-    var data: PersonData
-    
     static func new(name:String) -> Person {
         let person = Person(name: name)
         let data = PersonData(person)
@@ -42,6 +40,36 @@ class Person: HasUniqueID {
         self.middleName = middleName
         self.lastName = lastName
         self.data = PersonData()
+    }
+    
+}
+
+extension Person {
+    
+    //MARK: - Name
+    
+    var fullName: String {
+        var fullName = ""
+        
+        if let firstName = firstName {
+            fullName += firstName
+            
+            if firstName != name {
+                fullName += " \"\(name)\""
+            }
+        } else {
+            fullName += name
+        }
+        
+        if let middleName = middleName {
+            fullName += " " + middleName
+        }
+        
+        if let lastName = lastName {
+            fullName += " " + lastName
+        }
+        
+        return fullName
     }
     
 }
