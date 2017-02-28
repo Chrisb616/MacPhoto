@@ -95,5 +95,8 @@ class Photo: HasUniqueID {
         self.height = 0
         self.width = 0
     }
+    
+    //MARK: - Update Associations
+    func associate(personWithID uniqueID: String)
 
 }

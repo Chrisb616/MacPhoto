@@ -17,7 +17,7 @@ class LocalFileManager {
     //MARK: - Utilities
     private let fileManager = FileManager.default
     
-    private let dateFormat = "YYYY_MM_dd_HH_mm_ss"
+    private let dateFormat = "YYYY_MM_dd_HH_mm_sszzz"
     
     private func parseDate(_ string: String) -> Date? {
         let dateFormatter = DateFormatter()
@@ -31,7 +31,26 @@ class LocalFileManager {
         return dateFormatter.string(from: date)
     }
     
-    func removeCommas(from string: String) -> String {
+    private func parseIDString(_ dictionary: [String:Bool]) -> String {
+        //MARK: People
+        var string = String()
+        for uniqueID in dictionary.keys {
+            string += uniqueID + ";"
+        }
+        string.remove(at: string.index(before: string.endIndex))
+        
+        return string
+    }
+    
+    private func parseIDString(_ string: String) -> [String:Bool] {
+        var dictionary = [String:Bool]()
+        for uniqueID in string.components(separatedBy: ";"){
+            dictionary.updateValue(true, forKey: uniqueID)
+        }
+        return dictionary
+    }
+    
+    private func removeCommas(from string: String) -> String {
         print(string)
         
         var result = String()
@@ -51,7 +70,7 @@ class LocalFileManager {
         return result
     }
     
-    func replaceCommas(in string: String) -> String {
+    private func replaceCommas(in string: String) -> String {
         var result = String()
         
         let components = string.components(separatedBy: "&COMMA")
@@ -153,16 +172,19 @@ class LocalFileManager {
         return check(for: photoInfoFile)
     }
     
+    
     func savePhotoInfo() {
         var csvData = CSVContent()
         
         for uniqueID in DataStore.instance.photos.uniqueIDs {
+            
+            //MARK: - Serialize Photo Info
             guard let photo = DataStore.instance.photos.with(uniqueID: uniqueID) else { print("FAILURE: Failed to save photos");return }
             
             var row = [String]()
             
+            //MARK: Date Taken
             let dateTakenString: String
-            let locationID: String
             
             if let dateTaken = photo.dateTaken {
                 dateTakenString = parseDate(dateTaken)
@@ -170,19 +192,24 @@ class LocalFileManager {
                 dateTakenString = ""
             }
             
+            //MARK: Location
+            let locationID: String
             if let location = photo.location {
                 locationID = location.uniqueID
             } else {
                 locationID = ""
             }
             
-            row.append(uniqueID)
-            row.append(removeCommas(from: photo.title ?? ""))
-            row.append(removeCommas(from: photo.shortDescription ?? ""))
-            row.append(removeCommas(from: photo.longDescription ?? ""))
-            row.append(dateTakenString)
-            row.append(locationID)
-            row.append(parseDate(photo.dateAdded))
+            
+            //MARK: Apply data
+            row.append(uniqueID) // 0
+            row.append(removeCommas(from: photo.title ?? "")) // 1
+            row.append(removeCommas(from: photo.shortDescription ?? "")) // 2
+            row.append(removeCommas(from: photo.longDescription ?? "")) // 3
+            row.append(dateTakenString) // 4
+            row.append(locationID) // 5
+            row.append(parseDate(photo.dateAdded)) // 6
+            row.append(parseIDString(photo.people)) // 7
             
             csvData.add(row: row)
         }
@@ -203,18 +230,28 @@ class LocalFileManager {
             let row = content.at(row: i)
             
             let uniqueID = row[0]
+            
             let title = row[1].isEmpty ? nil : row[1]
+            
             let shortDescription = row[2].isEmpty ? nil : row[2]
+            
             let longDescription = row[3].isEmpty ? nil : row[3]
+            
             let dateTakenString = row[4].isEmpty ? nil : row[4]
             let dateTaken = parseDate(dateTakenString ?? "")
+            
             let locationID = row[5].isEmpty ? nil : row[5]
             let location = Location.with(uniqueID: locationID ?? "")
-            let dateAddedString = row[5].isEmpty ? nil : row[5]
+            
+            let dateAddedString = row[6].isEmpty ? nil : row[6]
             let dateAdded = parseDate(dateAddedString ?? "") ?? Date()
+            
+            let peopleString = row[7]
+            let people = parseIDString(peopleString)
             
             Photo.load(uniqueID: uniqueID, title: title, shortDescription: shortDescription, longDescription: longDescription, dateTaken: dateTaken, location: location, dateAdded: dateAdded)
             
         }
     }
+
 }
