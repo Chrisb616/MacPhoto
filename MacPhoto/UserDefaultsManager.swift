@@ -19,7 +19,7 @@ class UserDefaultsManager {
     //MARK: Keys
     private let photoIDKey = "photoID"
     private let personIDKey = "personID"
-    private let locationIDKey = "locationID"
+    private let spotIDKey = "spotID"
     
     //MARK: - ID Management
     
@@ -32,8 +32,8 @@ class UserDefaultsManager {
         defaults.set(ID, forKey: personIDKey)
     }
     
-    func saveLocationID(_ ID: String) {
-        defaults.set(ID, forKey: locationIDKey)
+    func saveSpotID(_ ID: String) {
+        defaults.set(ID, forKey: spotIDKey)
     }
 
     //MARK: Load IDs
@@ -50,9 +50,9 @@ class UserDefaultsManager {
         
     }
     
-    func loadLocationID() -> String? {
-        guard let locationIDRaw = defaults.object(forKey: locationIDKey) else { return nil }
-        return locationIDRaw as? String
+    func loadSpotID() -> String? {
+        guard let spotIDRaw = defaults.object(forKey: spotIDKey) else { return nil }
+        return spotIDRaw as? String
     }
     
     //MARK: - Remove UserDefault Data
@@ -72,8 +72,8 @@ class UserDefaultsManager {
         defaults.removeObject(forKey: personIDKey)
     }
     
-    func removeLocationIDSaveData() {
-        defaults.removeObject(forKey: locationIDKey)
+    func removeSpotIDSaveData() {
+        defaults.removeObject(forKey: spotIDKey)
     }
 
 }

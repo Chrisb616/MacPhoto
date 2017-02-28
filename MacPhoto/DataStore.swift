@@ -15,6 +15,6 @@ class DataStore {
     
     var photos = IndexedDictionary<Photo>()
     var people = IndexedDictionary<Person>()
-    var locations = IndexedDictionary<Location>()
+    var spots = IndexedDictionary<Spot>()
     
 }

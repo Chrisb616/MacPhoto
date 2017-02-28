@@ -192,12 +192,12 @@ class LocalFileManager {
                 dateTakenString = ""
             }
             
-            //MARK: Location
-            let locationID: String
-            if let location = photo.location {
-                locationID = location.uniqueID
+            //MARK: Spot
+            let spotID: String
+            if let spot = photo.spot {
+                spotID = spot.uniqueID
             } else {
-                locationID = ""
+                spotID = ""
             }
             
             
@@ -207,7 +207,7 @@ class LocalFileManager {
             row.append(removeCommas(from: photo.shortDescription ?? "")) // 2
             row.append(removeCommas(from: photo.longDescription ?? "")) // 3
             row.append(dateTakenString) // 4
-            row.append(locationID) // 5
+            row.append(spotID) // 5
             row.append(parseDate(photo.dateAdded)) // 6
             row.append(parseIDString(photo.people)) // 7
             
@@ -240,8 +240,8 @@ class LocalFileManager {
             let dateTakenString = row[4].isEmpty ? nil : row[4]
             let dateTaken = parseDate(dateTakenString ?? "")
             
-            let locationID = row[5].isEmpty ? nil : row[5]
-            let location = Location.with(uniqueID: locationID ?? "")
+            let spotID = row[5].isEmpty ? nil : row[5]
+            let spot = Spot.with(uniqueID: spotID ?? "")
             
             let dateAddedString = row[6].isEmpty ? nil : row[6]
             let dateAdded = parseDate(dateAddedString ?? "") ?? Date()
@@ -249,7 +249,7 @@ class LocalFileManager {
             let peopleString = row[7]
             let people = parseIDString(peopleString)
             
-            Photo.load(uniqueID: uniqueID, title: title, shortDescription: shortDescription, longDescription: longDescription, dateTaken: dateTaken, location: location, dateAdded: dateAdded)
+            Photo.load(uniqueID: uniqueID, title: title, shortDescription: shortDescription, longDescription: longDescription, dateTaken: dateTaken, spot: spot, dateAdded: dateAdded)
             
         }
     }

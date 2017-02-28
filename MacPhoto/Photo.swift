@@ -27,9 +27,9 @@ class Photo: HasUniqueID {
     var dateTaken: Date?
     var dateAdded: Date
     
-    //MARK: Location
-    var location: Location? { return safeLocation }
-    weak var safeLocation: Location?
+    //MARK: Spot
+    var spot: Spot? { return safeSpot }
+    weak var safeSpot: Spot?
     
     //MARK: People
     var people: [String:Bool] { return safePeople }
@@ -52,22 +52,22 @@ class Photo: HasUniqueID {
     }
     
     //MARK: - Object Creation
-    static func new(image: NSImage, title: String?, shortDescription: String?, longDescription: String?, dateTaken: Date?, location: Location?) {
+    static func new(image: NSImage, title: String?, shortDescription: String?, longDescription: String?, dateTaken: Date?, spot: Spot?) {
         
         let new = Photo(image: image, title: title, shortDescription: shortDescription, longDescription: longDescription, dateTaken: dateTaken)
-        if let location = location {
-            new.associate(location: location)
+        if let spot = spot {
+            new.associate(spot: spot)
         }
         
         DataStore.instance.photos.add(new)
         LocalFileManager.instance.save(image: image, withID: new.uniqueID)
     }
     
-    static func load(uniqueID: String, title: String?, shortDescription: String?, longDescription: String?, dateTaken: Date?, location: Location?, dateAdded: Date) {
+    static func load(uniqueID: String, title: String?, shortDescription: String?, longDescription: String?, dateTaken: Date?, spot: Spot?, dateAdded: Date) {
     
         let new = Photo(uniqueID: uniqueID, title: title, shortDescription: shortDescription, longDescription: longDescription, dateTaken: dateTaken, dateAdded: dateAdded)
-        if let location = location {
-            new.associate(location: location)
+        if let spot = spot {
+            new.associate(spot: spot)
         }
         
         DataStore.instance.photos.add(new)
@@ -140,28 +140,28 @@ class Photo: HasUniqueID {
         }
     }
     
-    //MARK: Location
-    func associate(locationWithUniqueID uniqueID: String) {
-        if location != nil { disassociateLocation() }
+    //MARK: Spot
+    func associate(spotWithUniqueID uniqueID: String) {
+        if spot != nil { disassociateSpot() }
         
-        guard let location = DataStore.instance.locations.with(uniqueID: uniqueID) else { print("WARNING: Location not found for uniqueID: \(uniqueID)"); return }
-        location.photos.updateValue(true, forKey: self.uniqueID)
-        safeLocation = location
+        guard let spot = DataStore.instance.spots.with(uniqueID: uniqueID) else { print("WARNING: Spot not found for uniqueID: \(uniqueID)"); return }
+        spot.photos.updateValue(true, forKey: self.uniqueID)
+        safeSpot = spot
     }
     
-    func associate(location: Location) {
-        if self.location != nil { disassociateLocation() }
+    func associate(spot: Spot) {
+        if self.spot != nil { disassociateSpot() }
         
-        location.photos.updateValue(true, forKey: self.uniqueID)
-        safeLocation = location
+        spot.photos.updateValue(true, forKey: self.uniqueID)
+        safeSpot = spot
     }
     
-    func disassociateLocation() {
-        if let location = self.location {
-            location.photos.removeValue(forKey: self.uniqueID)
-            self.safeLocation = nil
+    func disassociateSpot() {
+        if let spot = self.spot {
+            spot.photos.removeValue(forKey: self.uniqueID)
+            self.safeSpot = nil
         } else {
-            print("WARNING: No location found which to dissociate with.")
+            print("WARNING: No spot found which to dissociate with.")
         }
     }
 
