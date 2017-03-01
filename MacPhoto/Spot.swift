@@ -42,12 +42,18 @@ class Spot: HasUniqueID {
     }
     
     //MARK: - Object Creation
-    static func new(name: String, coordinates: CLLocationCoordinate2D) -> Spot {
+    static func new(name: String, coordinates: CLLocationCoordinate2D) {
         let new = Spot(name: name, coordinates: coordinates)
         
         DataStore.instance.spots.add(new)
+    }
+    
+    static func load(uniqueID: String, name: String, shortDescription: String, longDescription: String, coordinates: CLLocationCoordinate2D, generalAreaID: String) {
+        guard let generalArea = DataStore.instance.areas.with(uniqueID: generalAreaID) else { print() return }
         
-        return new
+        let new = Spot(uniqueID: uniqueID, name: name, shortDescription: shortDescription, longDescription: longDescription, coordinates: coordinates, generalArea: generalArea)
+        
+        DataStore.instance.spots.add(new)
     }
     
     //MARK: - Private Initializers
@@ -58,6 +64,15 @@ class Spot: HasUniqueID {
         self.name = ""
         self.shortDescription = ""
         self.longDescription = ""
+    }
+    
+    private init(uniqueID: String, name: String, shortDescription: String, longDescription: String, coordinates: CLLocationCoordinate2D, generalArea: Area) {
+        self.uniqueID = uniqueID
+        self.name = name
+        self.shortDescription = shortDescription
+        self.longDescription = longDescription
+        self.coordinates = coordinates
+        self.safeArea = generalArea
     }
     
     func set(area: Area) {

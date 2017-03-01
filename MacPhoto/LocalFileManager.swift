@@ -179,7 +179,7 @@ class LocalFileManager {
         for uniqueID in DataStore.instance.photos.uniqueIDs {
             
             //MARK: - Serialize Photo Info
-            guard let photo = DataStore.instance.photos.with(uniqueID: uniqueID) else { print("FAILURE: Failed to save photos");return }
+            guard let photo = DataStore.instance.photos.with(uniqueID: uniqueID) else { print("FAILURE: Failed to save photo info for unique ID \(uniqueID)"); continue }
             
             var row = [String]()
             
@@ -253,5 +253,70 @@ class LocalFileManager {
             
         }
     }
+    
+    //MARK: - Spot Info Management
+    
+    private var spotInfoFile: URL { return infoDirectory.appendingPathComponent("SpotInfo.csv") }
+    
+    func checkForSpotInfoFile() -> Bool {
+        return check(for: spotInfoFile)
+    }
+    
+    func saveSpotInfo() {
+        var csvData = CSVContent()
+        
+        for uniqueID in DataStore.instance.photos.uniqueIDs {
+            
+            //MARK: - Serialize Photo Info
+            guard let spot = DataStore.instance.spots.with(uniqueID: uniqueID) else { print("FAILURE: Failed to save spot info for unique ID \(uniqueID)"); continue }
+            
+            var row = [String]()
+            
+            
+        }
+    }
+    func loadSpotInfo() {
+        guard checkForSpotInfoFile() else { print("WARNING: No PhotoInfo.csv file to read from"); return }
+        
+        guard let contentString = readCSV(from: spotInfoFile) else { print("FAILURE: Could not read content of SpotInfo.csv"); return }
+        
+        let content = CSVContent(contentString)
+        
+        for i in 0..<content.numOfRows {
+            
+            
+            
+        }
+    }
 
+    //MARK: - Area Info Management
+    
+    private var areaInfoFile: URL { return infoDirectory.appendingPathComponent("AreaInfo.csv") }
+    
+    func checkForAreaInfoFile() -> Bool {
+        return check(for: areaInfoFile)
+    }
+    
+    func saveAreaInfo() {
+        var csvData = CSVContent()
+    }
+    func loadAreaInfo() {
+        guard checkForAreaInfoFile() else { return }
+    }
+    
+    //MARK: - Region Info Management
+    
+    private var regionInfoFile: URL { return infoDirectory.appendingPathComponent("RegionInfo.csv") }
+    
+    func checkForRegionInfoFile() -> Bool {
+        return check(for: regionInfoFile)
+    }
+    
+    func saveRegionInfo() {
+        var csvData = CSVContent()
+    }
+    
+    func loadRegionInfo() {
+        guard checkForRegionInfoFile() else { return }
+    }
 }
