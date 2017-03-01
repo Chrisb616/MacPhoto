@@ -22,18 +22,25 @@ class Region: HasUniqueID {
     var generalArea: Area
     var areas: [String:Bool]
     
+    //MARK: Regions
+    weak var superRegion: Region?
+    var subRegions = [String:Bool]()
+    
     //MARK: Object Creation
     static func new(name: String, generalCoordinates: CLLocationCoordinate2D) {
         let new = Region(name: name, generalCoordinates: generalCoordinates)
         
         new.generalArea.set(region: new)
         
+        DataStore.instance.regions.add(new)
     }
     
     static func load(uniqueID: String, name: String, generalAreaUniqueID: String) {
         guard let area = DataStore.instance.areas.with(uniqueID: generalAreaUniqueID) else { return }
         
         let new = Region(uniqueID: uniqueID, name: name, generalArea: area)
+        
+        area.set(region: new)
         
         DataStore.instance.regions.add(new)
     }
