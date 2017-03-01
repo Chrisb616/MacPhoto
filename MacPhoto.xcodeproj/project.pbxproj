@@ -27,7 +27,6 @@
 		137B7B771E61E20300F9A69E /* IndexedDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137B7B761E61E20300F9A69E /* IndexedDictionary.swift */; };
 		137B7B791E61E3A500F9A69E /* HasUniqueID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137B7B781E61E3A500F9A69E /* HasUniqueID.swift */; };
 		13D1BA8D1E5D1FD6007E7EFA /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D1BA8C1E5D1FD6007E7EFA /* Person.swift */; };
-		13D1BA8F1E5D2229007E7EFA /* PersonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D1BA8E1E5D2229007E7EFA /* PersonData.swift */; };
 		8401977F1E5BAE7800555C17 /* AddImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8401977E1E5BAE7800555C17 /* AddImageViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -54,7 +53,6 @@
 		137B7B761E61E20300F9A69E /* IndexedDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexedDictionary.swift; sourceTree = "<group>"; };
 		137B7B781E61E3A500F9A69E /* HasUniqueID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HasUniqueID.swift; sourceTree = "<group>"; };
 		13D1BA8C1E5D1FD6007E7EFA /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
-		13D1BA8E1E5D2229007E7EFA /* PersonData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonData.swift; sourceTree = "<group>"; };
 		8401977E1E5BAE7800555C17 /* AddImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddImageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -131,7 +129,6 @@
 				1316532D1E5B8190007F4E76 /* DataModel */,
 				1361F82E1E661F1C00D65337 /* Location */,
 				13D1BA8C1E5D1FD6007E7EFA /* Person.swift */,
-				13D1BA8E1E5D2229007E7EFA /* PersonData.swift */,
 				131653241E5B8130007F4E76 /* Photo.swift */,
 			);
 			name = Model;
@@ -227,7 +224,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				13D1BA8F1E5D2229007E7EFA /* PersonData.swift in Sources */,
 				131653291E5B8130007F4E76 /* Photo.swift in Sources */,
 				1316532C1E5B8157007F4E76 /* UserDefaultsManager.swift in Sources */,
 				131653331E5B8B76007F4E76 /* LocalFileManager.swift in Sources */,
