@@ -10,6 +10,7 @@ import Foundation
 
 class Person: HasUniqueID {
     
+    //MARK: - Stored Properties
     var uniqueID: String
     
     var name: String
@@ -19,17 +20,29 @@ class Person: HasUniqueID {
     
     var photos = [String:Bool]()
     
-    static func new(name:String) -> Person {
-        let person = Person(name: name)
+    //MARK: Object Creation
+    static func new(name:String, firstName: String?, middleName: String?, lastName: String?) {
+        let new = Person(name: name, firstName: firstName, middleName: middleName, lastName: lastName)
     
-        return person
+        DataStore.instance.people.add(new)
     }
     
-    private init(name: String) {
+    static func load(uniqueID: String, name: String, firstName: String?, middleName: String?, lastName: String?) {
+        let new = Person(uniqueID: uniqueID, name: name, firstName: firstName, middleName: middleName, lastName: lastName)
+        
+        DataStore.instance.people.add(new)
+    }
+    
+    //MARK: Private Initializers
+    private init(name: String, firstName: String?, middleName: String?, lastName: String?) {
         uniqueID = UniqueIDGenerator.instance.personID
         self.name = name
+        self.firstName = firstName
+        self.middleName = middleName
+        self.lastName = lastName
     }
-    init(uniqueID: String, name: String, firstName: String?, middleName: String?, lastName: String?) {
+    
+    private init(uniqueID: String, name: String, firstName: String?, middleName: String?, lastName: String?) {
         self.uniqueID = uniqueID
         self.name = name
         self.firstName = firstName
