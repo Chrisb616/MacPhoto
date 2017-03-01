@@ -38,7 +38,25 @@ class UniqueIDGenerator {
         let resultID = userDefaultsManager.loadSpotID() ?? "SP000000"
         
         let newID = advanced(resultID)
-        userDefaultsManager.savePhotoID(newID)
+        userDefaultsManager.saveSpotID(newID)
+        
+        return newID
+    }
+    
+    var areaID: String {
+        let resultID = userDefaultsManager.loadAreaID() ?? "AR000000"
+        
+        let newID = advanced(resultID)
+        userDefaultsManager.saveAreaID(newID)
+        
+        return newID
+    }
+    
+    var regionID: String {
+        let resultID = userDefaultsManager.loadRegionID() ?? "RE000000"
+        
+        let newID = advanced(resultID)
+        userDefaultsManager.saveRegionID(newID)
         
         return newID
     }

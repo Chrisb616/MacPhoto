@@ -20,6 +20,8 @@ class UserDefaultsManager {
     private let photoIDKey = "photoID"
     private let personIDKey = "personID"
     private let spotIDKey = "spotID"
+    private let areaIDKey = "areaID"
+    private let regionIDKey = "regionID"
     
     //MARK: - ID Management
     
@@ -35,19 +37,24 @@ class UserDefaultsManager {
     func saveSpotID(_ ID: String) {
         defaults.set(ID, forKey: spotIDKey)
     }
+    
+    func saveAreaID(_ ID: String) {
+        defaults.set(ID, forKey: areaIDKey)
+    }
+    
+    func saveRegionID(_ ID: String) {
+        defaults.set(ID, forKey: regionIDKey)
+    }
 
     //MARK: Load IDs
     func loadPhotoID() -> String? {
-        
         guard let photoIDRaw = defaults.object(forKey: photoIDKey) else { return nil }
         return photoIDRaw as? String
     }
     
     func loadPersonID() -> String? {
-        
         guard let personIDRaw = defaults.object(forKey: personIDKey) else { return nil }
         return personIDRaw as? String
-        
     }
     
     func loadSpotID() -> String? {
@@ -55,13 +62,27 @@ class UserDefaultsManager {
         return spotIDRaw as? String
     }
     
+    func loadAreaID() -> String? {
+        guard let areaIDRaw = defaults.object(forKey: areaIDKey) else { return nil }
+        return areaIDRaw as? String
+    }
+    
+    func loadRegionID() -> String? {
+        guard let regionIDRaw = defaults.object(forKey: regionIDKey) else { return nil }
+        return regionIDRaw as? String
+    }
+    
     //MARK: - Remove UserDefault Data
     func removeSaveData() {
-        removePhotoIDSaveData()
+        removeAllIDData()
     }
     
     func removeAllIDData() {
         removePhotoIDSaveData()
+        removePersonIDSaveData()
+        removeSpotIDSaveData()
+        removeAreaIDSaveData()
+        removeRegionIDSaveData()
     }
     
     func removePhotoIDSaveData() {
@@ -74,6 +95,14 @@ class UserDefaultsManager {
     
     func removeSpotIDSaveData() {
         defaults.removeObject(forKey: spotIDKey)
+    }
+    
+    func removeAreaIDSaveData() {
+        defaults.removeObject(forKey: areaIDKey)
+    }
+    
+    func removeRegionIDSaveData() {
+        defaults.removeObject(forKey: regionIDKey)
     }
 
 }
