@@ -5,7 +5,7 @@ Built in Swift on Xcode for OSX
 
 ##Project Basics ToDo
 
-1. Drag and drop photo into window to save in program directory.
+1. <del>Drag and drop photo into window to save in program directory.</del>
 2. Select directory to load photos from to save in program directory.
 3. Save photo info in CSV format in program directory.
 4. Load photo info from CSV to populate program with photos.
