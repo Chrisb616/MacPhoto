@@ -16,7 +16,6 @@
 		131653281E5B8130007F4E76 /* Spot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131653231E5B8130007F4E76 /* Spot.swift */; };
 		131653291E5B8130007F4E76 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131653241E5B8130007F4E76 /* Photo.swift */; };
 		1316532A1E5B8130007F4E76 /* UniqueIDGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131653251E5B8130007F4E76 /* UniqueIDGenerator.swift */; };
-		1316532C1E5B8157007F4E76 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1316532B1E5B8157007F4E76 /* UserDefaultsManager.swift */; };
 		131653311E5B874A007F4E76 /* Factbook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131653301E5B874A007F4E76 /* Factbook.swift */; };
 		131653331E5B8B76007F4E76 /* LocalFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131653321E5B8B76007F4E76 /* LocalFileManager.swift */; };
 		134AF3361E609BA6000566F3 /* CSVContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134AF3351E609BA6000566F3 /* CSVContent.swift */; };
@@ -42,7 +41,6 @@
 		131653231E5B8130007F4E76 /* Spot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spot.swift; sourceTree = "<group>"; };
 		131653241E5B8130007F4E76 /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		131653251E5B8130007F4E76 /* UniqueIDGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniqueIDGenerator.swift; sourceTree = "<group>"; };
-		1316532B1E5B8157007F4E76 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		131653301E5B874A007F4E76 /* Factbook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Factbook.swift; sourceTree = "<group>"; };
 		131653321E5B8B76007F4E76 /* LocalFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalFileManager.swift; sourceTree = "<group>"; };
 		134AF3351E609BA6000566F3 /* CSVContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSVContent.swift; sourceTree = "<group>"; };
@@ -153,7 +151,6 @@
 		13F9DC891E673D3A00018B7F /* Data Managers */ = {
 			isa = PBXGroup;
 			children = (
-				1316532B1E5B8157007F4E76 /* UserDefaultsManager.swift */,
 				131653321E5B8B76007F4E76 /* LocalFileManager.swift */,
 			);
 			name = "Data Managers";
@@ -241,7 +238,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				131653291E5B8130007F4E76 /* Photo.swift in Sources */,
-				1316532C1E5B8157007F4E76 /* UserDefaultsManager.swift in Sources */,
 				131653331E5B8B76007F4E76 /* LocalFileManager.swift in Sources */,
 				137B7B791E61E3A500F9A69E /* HasUniqueID.swift in Sources */,
 				1316532A1E5B8130007F4E76 /* UniqueIDGenerator.swift in Sources */,

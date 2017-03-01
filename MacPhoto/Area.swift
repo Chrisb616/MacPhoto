@@ -45,7 +45,7 @@ class Area: HasUniqueID {
     
     //MARK: - Private initializers
     private init(name: String, generalCoordinates: CLLocationCoordinate2D){
-        self.uniqueID = ""
+        self.uniqueID = UniqueIDGenerator.instance.areaID
         self.name = name
         self.generalSpot = Spot.new(name: "\(name) (Area)", coordinates: generalCoordinates)
         self.spots = [generalSpot.uniqueID:true]

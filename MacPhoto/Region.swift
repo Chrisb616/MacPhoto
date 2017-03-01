@@ -40,7 +40,7 @@ class Region: HasUniqueID {
     
     //MARK: Private initializers
     private init(name: String, generalCoordinates: CLLocationCoordinate2D) {
-        self.uniqueID = ""
+        self.uniqueID = UniqueIDGenerator.instance.regionID
         self.name = name
         self.generalArea = Area.new(name: name, generalCoordinates: generalCoordinates)
         self.areas = [self.generalArea.uniqueID:true]

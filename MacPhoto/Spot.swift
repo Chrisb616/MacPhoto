@@ -60,9 +60,9 @@ class Spot: HasUniqueID {
     
     //MARK: - Private Initializers
     private init(name: String, coordinates: CLLocationCoordinate2D) {
+        self.uniqueID = UniqueIDGenerator.instance.spotID
         self.name = name
         self.coordinates = coordinates
-        self.uniqueID = UniqueIDGenerator.instance.personID
         self.name = ""
         self.shortDescription = ""
         self.longDescription = ""
