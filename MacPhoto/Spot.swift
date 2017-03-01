@@ -42,14 +42,16 @@ class Spot: HasUniqueID {
     }
     
     //MARK: - Object Creation
-    static func new(name: String, coordinates: CLLocationCoordinate2D) {
+    static func new(name: String, coordinates: CLLocationCoordinate2D) -> Spot {
         let new = Spot(name: name, coordinates: coordinates)
         
         DataStore.instance.spots.add(new)
+        
+        return new
     }
     
     static func load(uniqueID: String, name: String, shortDescription: String, longDescription: String, coordinates: CLLocationCoordinate2D, generalAreaID: String) {
-        guard let generalArea = DataStore.instance.areas.with(uniqueID: generalAreaID) else { print() return }
+        guard let generalArea = DataStore.instance.areas.with(uniqueID: generalAreaID) else { print("FAILURE: Could not find area with unique ID: \(generalAreaID)"); return }
         
         let new = Spot(uniqueID: uniqueID, name: name, shortDescription: shortDescription, longDescription: longDescription, coordinates: coordinates, generalArea: generalArea)
         

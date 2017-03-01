@@ -35,11 +35,25 @@ class Area: HasUniqueID {
         return new
     }
     
+    static func load(uniqueID: String, name: String, generalSpotUniqueID: String) {
+        guard let generalSpot = DataStore.instance.spots.with(uniqueID: uniqueID) else { print("FAILURE: Could not load area with unique ID \(uniqueID) because the spot with ID \(uniqueID) could not be found.");return }
+        
+        let new = Area(uniqueID: uniqueID, name: name, generalSpot: generalSpot)
+        
+        DataStore.instance.areas.add(new)
+    }
+    
     //MARK: - Private initializers
     private init(name: String, generalCoordinates: CLLocationCoordinate2D){
         self.uniqueID = ""
         self.name = name
         self.generalSpot = Spot.new(name: "\(name) (Area)", coordinates: generalCoordinates)
+        self.spots = [generalSpot.uniqueID:true]
+    }
+    private init(uniqueID: String, name: String, generalSpot: Spot) {
+        self.uniqueID = uniqueID
+        self.name = name
+        self.generalSpot = generalSpot
         self.spots = [generalSpot.uniqueID:true]
     }
     

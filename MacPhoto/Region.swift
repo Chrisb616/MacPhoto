@@ -23,20 +23,33 @@ class Region: HasUniqueID {
     var areas: [String:Bool]
     
     //MARK: Object Creation
-    static func new(name: String, generalCoordinates: CLLocationCoordinate2D) -> Region {
+    static func new(name: String, generalCoordinates: CLLocationCoordinate2D) {
         let new = Region(name: name, generalCoordinates: generalCoordinates)
         
         new.generalArea.set(region: new)
         
-        return new
+    }
+    
+    static func load(uniqueID: String, name: String, generalAreaUniqueID: String) {
+        guard let area = DataStore.instance.areas.with(uniqueID: generalAreaUniqueID) else { return }
+        
+        let new = Region(uniqueID: uniqueID, name: name, generalArea: area)
+        
+        DataStore.instance.regions.add(new)
     }
     
     //MARK: Private initializers
-    init(name: String, generalCoordinates: CLLocationCoordinate2D) {
+    private init(name: String, generalCoordinates: CLLocationCoordinate2D) {
         self.uniqueID = ""
         self.name = name
         self.generalArea = Area.new(name: name, generalCoordinates: generalCoordinates)
         self.areas = [self.generalArea.uniqueID:true]
     }
     
+    private init(uniqueID: String, name: String, generalArea: Area) {
+        self.uniqueID = uniqueID
+        self.name = name
+        self.generalArea = generalArea
+        self.areas = [generalArea.uniqueID:true]
+    }
 }
