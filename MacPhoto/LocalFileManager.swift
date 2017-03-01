@@ -249,7 +249,7 @@ class LocalFileManager {
             let peopleString = row[7]
             let people = parseIDString(peopleString)
             
-            Photo.load(uniqueID: uniqueID, title: title, shortDescription: shortDescription, longDescription: longDescription, dateTaken: dateTaken, spot: spot, dateAdded: dateAdded)
+            Photo.load(uniqueID: uniqueID, title: title, shortDescription: shortDescription, longDescription: longDescription, dateTaken: dateTaken, spot: spot, dateAdded: dateAdded, people: people)
             
         }
     }

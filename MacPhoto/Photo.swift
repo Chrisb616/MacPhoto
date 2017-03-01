@@ -63,9 +63,9 @@ class Photo: HasUniqueID {
         LocalFileManager.instance.save(image: image, withID: new.uniqueID)
     }
     
-    static func load(uniqueID: String, title: String?, shortDescription: String?, longDescription: String?, dateTaken: Date?, spot: Spot?, dateAdded: Date) {
+    static func load(uniqueID: String, title: String?, shortDescription: String?, longDescription: String?, dateTaken: Date?, spot: Spot?, dateAdded: Date, people: [String:Bool]) {
     
-        let new = Photo(uniqueID: uniqueID, title: title, shortDescription: shortDescription, longDescription: longDescription, dateTaken: dateTaken, dateAdded: dateAdded)
+        let new = Photo(uniqueID: uniqueID, title: title, shortDescription: shortDescription, longDescription: longDescription, dateTaken: dateTaken, dateAdded: dateAdded, people: people)
         if let spot = spot {
             new.associate(spot: spot)
         }
@@ -74,6 +74,8 @@ class Photo: HasUniqueID {
     }
     
     //MARK: - Private Initializers
+    
+    //New
     private init(image: NSImage, title: String?, shortDescription: String?, longDescription: String?, dateTaken: Date?) {
         self.uniqueID = UniqueIDGenerator.instance.photoID
         self.title = title
@@ -88,7 +90,8 @@ class Photo: HasUniqueID {
         self.width = 0
     }
     
-    private init(uniqueID: String, title: String?, shortDescription: String?, longDescription: String?, dateTaken: Date?, dateAdded: Date) {
+    //Load
+    private init(uniqueID: String, title: String?, shortDescription: String?, longDescription: String?, dateTaken: Date?, dateAdded: Date, people: [String:Bool]) {
         self.uniqueID = uniqueID
         self.title = title
         self.shortDescription = shortDescription
@@ -97,6 +100,8 @@ class Photo: HasUniqueID {
         self.dateAdded = dateAdded
         
         self.image = LocalFileManager.instance.load(imageWithID: uniqueID) ?? NSImage()
+        
+        self.safePeople = people
         
         self.height = 0
         self.width = 0
