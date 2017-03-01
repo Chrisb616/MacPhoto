@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1300BEB91E66387300CA88CA /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1300BEB81E66387300CA88CA /* Region.swift */; };
 		131653131E5B8091007F4E76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131653121E5B8091007F4E76 /* AppDelegate.swift */; };
 		131653151E5B8091007F4E76 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131653141E5B8091007F4E76 /* ViewController.swift */; };
 		131653171E5B8091007F4E76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 131653161E5B8091007F4E76 /* Assets.xcassets */; };
@@ -31,6 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1300BEB81E66387300CA88CA /* Region.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Region.swift; sourceTree = "<group>"; };
 		1316530F1E5B8091007F4E76 /* MacPhoto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacPhoto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		131653121E5B8091007F4E76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		131653141E5B8091007F4E76 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 			children = (
 				131653231E5B8130007F4E76 /* Spot.swift */,
 				1361F82F1E661F2700D65337 /* Area.swift */,
+				1300BEB81E66387300CA88CA /* Region.swift */,
 			);
 			name = Location;
 			sourceTree = "<group>";
@@ -232,6 +235,7 @@
 				1316532A1E5B8130007F4E76 /* UniqueIDGenerator.swift in Sources */,
 				13D1BA8D1E5D1FD6007E7EFA /* Person.swift in Sources */,
 				131653151E5B8091007F4E76 /* ViewController.swift in Sources */,
+				1300BEB91E66387300CA88CA /* Region.swift in Sources */,
 				131653261E5B8130007F4E76 /* DataStore.swift in Sources */,
 				131653311E5B874A007F4E76 /* Factbook.swift in Sources */,
 				137B7B771E61E20300F9A69E /* IndexedDictionary.swift in Sources */,

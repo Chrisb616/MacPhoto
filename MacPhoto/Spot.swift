@@ -18,6 +18,9 @@ class Spot: HasUniqueID {
     //MARK: Location
     var coordinates: CLLocationCoordinate2D
     
+    private weak var safeArea: Area?
+    var area: Area? { return safeArea }
+    
     //MARK: Story Info
     var name: String
     var shortDescription: String
@@ -38,13 +41,27 @@ class Spot: HasUniqueID {
         }
     }
     
-    //MARK: - Initializers
-    init(name: String, coordinates: CLLocationCoordinate2D) {
+    //MARK: - Object Creation
+    static func new(name: String, coordinates: CLLocationCoordinate2D) -> Spot {
+        let new = Spot(name: name, coordinates: coordinates)
+        
+        DataStore.instance.spots.add(new)
+        
+        return new
+    }
+    
+    //MARK: - Private Initializers
+    private init(name: String, coordinates: CLLocationCoordinate2D) {
         self.name = name
         self.coordinates = coordinates
         self.uniqueID = UniqueIDGenerator.instance.personID
         self.name = ""
         self.shortDescription = ""
         self.longDescription = ""
+    }
+    
+    func set(area: Area) {
+        safeArea = area
+        area.spots.updateValue(true, forKey: self.uniqueID)
     }
 }
