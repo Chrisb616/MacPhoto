@@ -100,16 +100,14 @@
 			path = MacPhoto;
 			sourceTree = "<group>";
 		};
-		1316532D1E5B8190007F4E76 /* DataModel */ = {
+		1316532D1E5B8190007F4E76 /* Data Model */ = {
 			isa = PBXGroup;
 			children = (
+				13F9DC8A1E673E4100018B7F /* Data Types */,
+				13F9DC891E673D3A00018B7F /* Data Managers */,
 				131653211E5B8130007F4E76 /* DataStore.swift */,
-				1316532B1E5B8157007F4E76 /* UserDefaultsManager.swift */,
-				131653321E5B8B76007F4E76 /* LocalFileManager.swift */,
-				134AF3351E609BA6000566F3 /* CSVContent.swift */,
-				137B7B761E61E20300F9A69E /* IndexedDictionary.swift */,
 			);
-			name = DataModel;
+			name = "Data Model";
 			sourceTree = "<group>";
 		};
 		1316532E1E5B81AA007F4E76 /* Toolbox */ = {
@@ -126,7 +124,7 @@
 			children = (
 				1361F82D1E65BE7000D65337 /* Protocols */,
 				1316532E1E5B81AA007F4E76 /* Toolbox */,
-				1316532D1E5B8190007F4E76 /* DataModel */,
+				1316532D1E5B8190007F4E76 /* Data Model */,
 				1361F82E1E661F1C00D65337 /* Location */,
 				13D1BA8C1E5D1FD6007E7EFA /* Person.swift */,
 				131653241E5B8130007F4E76 /* Photo.swift */,
@@ -150,6 +148,24 @@
 				1300BEB81E66387300CA88CA /* Region.swift */,
 			);
 			name = Location;
+			sourceTree = "<group>";
+		};
+		13F9DC891E673D3A00018B7F /* Data Managers */ = {
+			isa = PBXGroup;
+			children = (
+				1316532B1E5B8157007F4E76 /* UserDefaultsManager.swift */,
+				131653321E5B8B76007F4E76 /* LocalFileManager.swift */,
+			);
+			name = "Data Managers";
+			sourceTree = "<group>";
+		};
+		13F9DC8A1E673E4100018B7F /* Data Types */ = {
+			isa = PBXGroup;
+			children = (
+				134AF3351E609BA6000566F3 /* CSVContent.swift */,
+				137B7B761E61E20300F9A69E /* IndexedDictionary.swift */,
+			);
+			name = "Data Types";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
