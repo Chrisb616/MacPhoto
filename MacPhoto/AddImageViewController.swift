@@ -21,6 +21,8 @@ class AddImageViewController: NSViewController {
     @IBOutlet weak var openButton: NSButton!
     @IBOutlet weak var pathControl: NSPathControl!
     
+    var unchangedDate = Date()
+    
     @IBAction func saveButtonTapped(_ sender: Any) {
         if let image = addImageWell.image {
             Photo.new(image: image,
@@ -39,24 +41,25 @@ class AddImageViewController: NSViewController {
     @IBAction func openButtonTapped(_ sender: Any) {
         let dialog = NSOpenPanel()
         
-        dialog.title = "Testing Testing"
+        dialog.title = "Select File to import"
         dialog.showsResizeIndicator = true
         dialog.showsHiddenFiles = false
-        dialog.canChooseDirectories = true
+        dialog.canChooseDirectories = false
+        dialog.canChooseFiles = true
         dialog.canCreateDirectories = true
         dialog.allowsMultipleSelection = false
-        dialog.allowedFileTypes = ["png"]
+        dialog.allowedFileTypes = ["jpeg","jpg","png"]
         
         if dialog.runModal() == NSModalResponseOK {
             let result = dialog.url
             
             if let result = result {
                 pathControl.url = result
+                let image = NSImage(contentsOf: result)
+                print("\(image?.size.width)x\(image?.size.height)")
+                addImageWell.image = image
             }
         }
-    }
-    @IBAction func addImageWellActivated(_ sender: Any) {
-        
     }
     
     override func viewDidLoad() {
@@ -64,6 +67,7 @@ class AddImageViewController: NSViewController {
         // Do view setup here.
         
         pathControl.url = nil
+        
 
     }
     

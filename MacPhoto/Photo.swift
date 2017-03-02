@@ -35,9 +35,13 @@ class Photo: HasUniqueID {
     var people: [String:Bool] { return safePeople }
     private var safePeople = [String:Bool]()
     
+    //MARK: - Computed Properties
+    
     //MARK: Size
-    var height: Pixel
-    var width: Pixel
+    var size: CGSize { return image.size }
+    
+    var height: CGFloat { return size.height }
+    var width: CGFloat { return size.width }
     
     var megapixels: Double { return Double(height * width) / 1_048_576 }
     
@@ -85,9 +89,6 @@ class Photo: HasUniqueID {
         self.dateAdded = Date()
         
         self.image = LocalFileManager.instance.load(imageWithID: uniqueID) ?? NSImage()
-        
-        self.height = 0
-        self.width = 0
     }
     
     //Load
@@ -102,9 +103,6 @@ class Photo: HasUniqueID {
         self.image = LocalFileManager.instance.load(imageWithID: uniqueID) ?? NSImage()
         
         self.safePeople = people
-        
-        self.height = 0
-        self.width = 0
     }
 
     //MARK: - Update Associations

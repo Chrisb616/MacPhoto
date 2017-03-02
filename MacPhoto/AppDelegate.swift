@@ -8,8 +8,6 @@
 
 import Cocoa
 
-typealias Pixel = Int
-
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
