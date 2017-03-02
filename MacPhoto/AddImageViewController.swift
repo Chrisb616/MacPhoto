@@ -18,6 +18,8 @@ class AddImageViewController: NSViewController {
     @IBOutlet weak var dateTakenDatePicker: NSDatePicker!
     
     @IBOutlet weak var saveButton: NSButton!
+    @IBOutlet weak var openButton: NSButton!
+    @IBOutlet weak var pathControl: NSPathControl!
     
     @IBAction func saveButtonTapped(_ sender: Any) {
         if let image = addImageWell.image {
@@ -34,11 +36,35 @@ class AddImageViewController: NSViewController {
         
         
     }
+    @IBAction func openButtonTapped(_ sender: Any) {
+        let dialog = NSOpenPanel()
+        
+        dialog.title = "Testing Testing"
+        dialog.showsResizeIndicator = true
+        dialog.showsHiddenFiles = false
+        dialog.canChooseDirectories = true
+        dialog.canCreateDirectories = true
+        dialog.allowsMultipleSelection = false
+        dialog.allowedFileTypes = ["png"]
+        
+        if dialog.runModal() == NSModalResponseOK {
+            let result = dialog.url
+            
+            if let result = result {
+                pathControl.url = result
+            }
+        }
+    }
+    @IBAction func addImageWellActivated(_ sender: Any) {
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
         
-        
+        pathControl.url = nil
+
     }
     
 }

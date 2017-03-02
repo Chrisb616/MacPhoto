@@ -774,9 +774,13 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fkW-QM-aBn">
-                                <rect key="frame" x="17" y="17" width="943" height="1046"/>
+                                <rect key="frame" x="17" y="43" width="943" height="1020"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <imageCell key="cell" selectable="YES" editable="YES" alignment="left" imageScaling="proportionallyDown" imageFrameStyle="grayBezel" id="e9Z-Pd-WtT"/>
+                                <imageCell key="cell" selectable="YES" editable="YES" alignment="left" imageScaling="proportionallyDown" imageFrameStyle="grayBezel" id="e9Z-Pd-WtT">
+                                    <connections>
+                                        <action selector="addImageWellActivated:" target="4RZ-26-7Yd" id="JGL-EX-5Un"/>
+                                    </connections>
+                                </imageCell>
                             </imageView>
                             <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="e6f-HW-2Q0">
                                 <rect key="frame" x="965" y="1038" width="436" height="22"/>
@@ -892,12 +896,33 @@
                                     <action selector="saveButtonTapped:" target="4RZ-26-7Yd" id="4gX-Sg-mQX"/>
                                 </connections>
                             </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jbk-8F-dGl">
+                                <rect key="frame" x="12" y="13" width="85" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="Open..." bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Yus-c1-Jmi">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="openButtonTapped:" target="4RZ-26-7Yd" id="mla-7W-33U"/>
+                                </connections>
+                            </button>
+                            <pathControl verticalHuggingPriority="750" fixedFrame="YES" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y3L-QT-OnE">
+                                <rect key="frame" x="99" y="20" width="858" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <pathCell key="cell" selectable="YES" editable="YES" alignment="left" id="0I8-xR-zN9">
+                                    <font key="font" metaFont="system"/>
+                                    <url key="url" string="file://localhost/Applications/"/>
+                                </pathCell>
+                            </pathControl>
                         </subviews>
                     </view>
                     <connections>
                         <outlet property="addImageWell" destination="fkW-QM-aBn" id="cNe-NG-37n"/>
                         <outlet property="dateTakenDatePicker" destination="UVp-Go-uzy" id="R64-u3-blB"/>
                         <outlet property="longDescriptionTextView" destination="gdh-e8-s1V" id="wrJ-Il-qis"/>
+                        <outlet property="openButton" destination="Jbk-8F-dGl" id="hqt-4d-ZAi"/>
+                        <outlet property="pathControl" destination="y3L-QT-OnE" id="hHk-4L-zI0"/>
                         <outlet property="saveButton" destination="RTP-P7-1Gr" id="Ivl-pk-qBe"/>
                         <outlet property="shortDescriptionTextView" destination="UC1-7h-A0r" id="1nl-q1-cfr"/>
                         <outlet property="titleTextField" destination="e6f-HW-2Q0" id="wjO-ce-Lvl"/>
