@@ -693,9 +693,6 @@
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
-                                <connections>
-                                    <segue destination="ocx-r9-KnD" kind="modal" id="aRc-AG-qHX"/>
-                                </connections>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vus-BK-Bfr">
                                 <rect key="frame" x="888" y="1032" width="145" height="32"/>
@@ -714,56 +711,6 @@
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-629" y="1098"/>
-        </scene>
-        <!--View Images View Controller-->
-        <scene sceneID="0yA-MO-LrR">
-            <objects>
-                <viewController id="ocx-r9-KnD" customClass="ViewImagesViewController" customModule="MacPhoto" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" id="Dmv-h5-7bB">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <subviews>
-                            <scrollView wantsLayer="YES" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jzv-Qy-Taf">
-                                <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
-                                <clipView key="contentView" drawsBackground="NO" id="tDW-2p-TJP">
-                                    <rect key="frame" x="1" y="1" width="448" height="298"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    <subviews>
-                                        <collectionView id="K6S-4E-RST">
-                                            <rect key="frame" x="0.0" y="0.0" width="448" height="298"/>
-                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                            <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="10" minimumLineSpacing="10" id="FFc-bp-Y9D">
-                                                <size key="itemSize" width="50" height="50"/>
-                                            </collectionViewFlowLayout>
-                                            <color key="primaryBackgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                        </collectionView>
-                                    </subviews>
-                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                </clipView>
-                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="2kE-Ra-4le">
-                                    <rect key="frame" x="1" y="144" width="233" height="15"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </scroller>
-                                <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="ygT-In-fTx">
-                                    <rect key="frame" x="234" y="1" width="15" height="143"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </scroller>
-                            </scrollView>
-                        </subviews>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="Jzv-Qy-Taf" secondAttribute="trailing" id="4Xu-Qg-0TR"/>
-                            <constraint firstAttribute="bottom" secondItem="Jzv-Qy-Taf" secondAttribute="bottom" id="Po0-aE-ewe"/>
-                            <constraint firstItem="Jzv-Qy-Taf" firstAttribute="leading" secondItem="Dmv-h5-7bB" secondAttribute="leading" id="jAS-4a-D5J"/>
-                            <constraint firstItem="Jzv-Qy-Taf" firstAttribute="top" secondItem="Dmv-h5-7bB" secondAttribute="top" id="yX1-9f-aPX"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="collectionView" destination="K6S-4E-RST" id="CLD-SQ-rdJ"/>
-                    </connections>
-                </viewController>
-                <customObject id="vJZ-OT-Cds" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1342" y="1974"/>
         </scene>
         <!--Add Image View Controller-->
         <scene sceneID="7Cc-2j-8hL">
