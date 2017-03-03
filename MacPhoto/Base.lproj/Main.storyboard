@@ -807,7 +807,7 @@
                                 </textFieldCell>
                             </textField>
                             <datePicker verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UVp-Go-uzy">
-                                <rect key="frame" x="1006" y="811" width="244" height="27"/>
+                                <rect key="frame" x="1074" y="800" width="335" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <datePickerCell key="cell" borderStyle="bezel" alignment="left" id="9C7-rZ-45d">
                                     <font key="font" metaFont="system"/>
@@ -850,29 +850,45 @@
                                 </pathCell>
                             </pathControl>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GKb-O9-eKR">
-                                <rect key="frame" x="1249" y="805" width="93" height="32"/>
+                                <rect key="frame" x="959" y="794" width="36" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="push" title="Remove" bezelStyle="rounded" image="NSGoLeftTemplate" imagePosition="left" alignment="right" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="imF-hJ-gG8">
+                                <buttonCell key="cell" type="push" bezelStyle="rounded" image="NSRemoveTemplate" imagePosition="only" alignment="right" scrollable="YES" lineBreakMode="clipping" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="imF-hJ-gG8">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                     <string key="keyEquivalent" base64-UTF8="YES">
 Gw
 </string>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="collapseDateTakenButtonTapped:" target="4RZ-26-7Yd" id="VbR-qf-pql"/>
+                                </connections>
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OFx-np-ljr">
-                                <rect key="frame" x="963" y="809" width="37" height="28"/>
+                                <rect key="frame" x="989" y="798" width="79" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="Date Taken" id="ISK-UL-Abb">
-                                    <font key="font" metaFont="smallSystem"/>
+                                    <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XMz-lO-wXU">
+                                <rect key="frame" x="1864" y="1032" width="42" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" bezelStyle="rounded" image="NSStopProgressFreestandingTemplate" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Mmf-0z-rue">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="closeButtonTapped:" target="4RZ-26-7Yd" id="bLR-aB-v9w"/>
+                                </connections>
+                            </button>
                         </subviews>
                     </view>
                     <connections>
                         <outlet property="addImageWell" destination="fkW-QM-aBn" id="cNe-NG-37n"/>
+                        <outlet property="closeButton" destination="XMz-lO-wXU" id="0Fk-kD-Kji"/>
+                        <outlet property="collapseDateTakenButton" destination="GKb-O9-eKR" id="kYb-8h-aUO"/>
                         <outlet property="dateTakenDatePicker" destination="UVp-Go-uzy" id="R64-u3-blB"/>
                         <outlet property="longDescriptionTextView" destination="gdh-e8-s1V" id="wrJ-Il-qis"/>
                         <outlet property="openButton" destination="Jbk-8F-dGl" id="hqt-4d-ZAi"/>
@@ -888,6 +904,7 @@ Gw
         </scene>
     </scenes>
     <resources>
-        <image name="NSGoLeftTemplate" width="9" height="12"/>
+        <image name="NSRemoveTemplate" width="11" height="11"/>
+        <image name="NSStopProgressFreestandingTemplate" width="14" height="14"/>
     </resources>
 </document>

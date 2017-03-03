@@ -19,6 +19,8 @@ class AddImageViewController: NSViewController {
     
     @IBOutlet weak var saveButton: NSButton!
     @IBOutlet weak var openButton: NSButton!
+    @IBOutlet weak var closeButton: NSButton!
+    @IBOutlet weak var collapseDateTakenButton: NSButton!
     @IBOutlet weak var pathControl: NSPathControl!
     
     var unchangedDate = Date()
@@ -29,7 +31,7 @@ class AddImageViewController: NSViewController {
                       title: titleTextField.stringValue,
                       shortDescription: shortDescriptionTextView.string,
                       longDescription: longDescriptionTextView.string,
-                      dateTaken: dateTakenDatePicker.dateValue,
+                      dateTaken: dateTakenDatePicker.isHidden ? nil : dateTakenDatePicker.dateValue,
                       spot: nil)
             LocalFileManager.instance.savePhotoInfo()
         } else {
@@ -59,6 +61,18 @@ class AddImageViewController: NSViewController {
                 print("\(image?.size.width)x\(image?.size.height)")
                 addImageWell.image = image
             }
+        }
+    }
+    @IBAction func closeButtonTapped(_ sender: Any) {
+        self.dismiss(sender)
+    }
+    @IBAction func collapseDateTakenButtonTapped(_ sender: Any) {
+        if dateTakenDatePicker.isHidden {
+            dateTakenDatePicker.isHidden = false
+            collapseDateTakenButton.image = NSImage(named: "NSRemoveTemplate")
+        } else {
+            dateTakenDatePicker.isHidden = true
+            collapseDateTakenButton.image = NSImage(named: "NSAddTemplate")
         }
     }
     
