@@ -683,20 +683,11 @@
             <objects>
                 <viewController id="hzK-cG-Vt3" sceneMemberID="viewController">
                     <view key="view" id="9Q2-XT-2qT">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <textField verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LDq-Rr-OKW">
-                                <rect key="frame" x="20" y="265" width="410" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="Name" drawsBackground="YES" id="lBY-4C-dwF">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
                             <textField verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sea-0o-F2Z">
-                                <rect key="frame" x="20" y="233" width="410" height="22"/>
+                                <rect key="frame" x="20" y="1013" width="410" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="First Name" drawsBackground="YES" id="WZk-2N-Yxq">
                                     <font key="font" metaFont="system"/>
@@ -705,7 +696,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Frc-84-wQq">
-                                <rect key="frame" x="20" y="201" width="410" height="22"/>
+                                <rect key="frame" x="20" y="981" width="410" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="Middle Name" drawsBackground="YES" id="EhD-qX-Smo">
                                     <font key="font" metaFont="system"/>
@@ -714,7 +705,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qsC-5d-Zab">
-                                <rect key="frame" x="20" y="169" width="410" height="22"/>
+                                <rect key="frame" x="20" y="949" width="410" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="Last Name" drawsBackground="YES" id="j8A-8e-MYD">
                                     <font key="font" metaFont="system"/>
@@ -722,12 +713,53 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <textField verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LDq-Rr-OKW">
+                                <rect key="frame" x="20" y="1045" width="410" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="Name" drawsBackground="YES" id="lBY-4C-dwF">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9TN-zj-8BJ">
+                                <rect key="frame" x="18" y="925" width="140" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="check" title="Birthdate" bezelStyle="regularSquare" imagePosition="right" alignment="right" state="on" inset="2" id="PxK-aH-Ksv">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
+                            <datePicker verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BQx-8Z-OVg">
+                                <rect key="frame" x="178" y="922" width="255" height="27"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <datePickerCell key="cell" borderStyle="bezel" alignment="left" id="xYh-Wd-5ac">
+                                    <font key="font" metaFont="system"/>
+                                    <calendarDate key="date" timeIntervalSinceReferenceDate="-595929600" calendarFormat="%Y-%m-%d %H:%M:%S %z">
+                                        <!--1982-02-12 08:00:00 -0800-->
+                                        <timeZone key="timeZone" name="US/Pacific"/>
+                                    </calendarDate>
+                                    <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                </datePickerCell>
+                            </datePicker>
+                            <segmentedControl verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aA5-xu-sHK">
+                                <rect key="frame" x="436" y="1043" width="71" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <segmentedCell key="cell" borderStyle="border" alignment="left" style="rounded" trackingMode="selectOne" id="2Hf-ko-XCT">
+                                    <font key="font" metaFont="system"/>
+                                    <segments>
+                                        <segment label="♀" width="32"/>
+                                        <segment label="♂" width="32" tag="1"/>
+                                    </segments>
+                                </segmentedCell>
+                            </segmentedControl>
                         </subviews>
                     </view>
                 </viewController>
                 <customObject id="uZF-kh-D22" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1568" y="2101"/>
+            <point key="canvasLocation" x="-1617" y="2550"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
