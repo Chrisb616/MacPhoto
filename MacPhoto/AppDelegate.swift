@@ -16,7 +16,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
         
-        LocalFileManager.instance.loadPhotoInfo()
+        LocalFileManager.instance.loadPersonInfo()
+        //Person.new(name: "Evy", firstName: "Evelyn", middleName: "Claire", lastName: "Miller")
+        //LocalFileManager.instance.savePersonInfo()
+        dump(DataStore.instance.people.at(index: 0))
+        dump(DataStore.instance.people.at(index: 1))
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {

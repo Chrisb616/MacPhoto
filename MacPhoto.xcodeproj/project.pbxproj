@@ -18,7 +18,8 @@
 		1316532A1E5B8130007F4E76 /* UniqueIDGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131653251E5B8130007F4E76 /* UniqueIDGenerator.swift */; };
 		131653311E5B874A007F4E76 /* Factbook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131653301E5B874A007F4E76 /* Factbook.swift */; };
 		131653331E5B8B76007F4E76 /* LocalFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131653321E5B8B76007F4E76 /* LocalFileManager.swift */; };
-		134AF3361E609BA6000566F3 /* CSVContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134AF3351E609BA6000566F3 /* CSVContent.swift */; };
+		13505FB61E6B06FF00D85D5A /* JSONManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13505FB51E6B06FF00D85D5A /* JSONManager.swift */; };
+		13505FBB1E6B1B9E00D85D5A /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13505FBA1E6B1B9E00D85D5A /* Date.swift */; };
 		1361F8301E661F2700D65337 /* Area.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1361F82F1E661F2700D65337 /* Area.swift */; };
 		137B7B771E61E20300F9A69E /* IndexedDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137B7B761E61E20300F9A69E /* IndexedDictionary.swift */; };
 		137B7B791E61E3A500F9A69E /* HasUniqueID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137B7B781E61E3A500F9A69E /* HasUniqueID.swift */; };
@@ -40,7 +41,8 @@
 		131653251E5B8130007F4E76 /* UniqueIDGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniqueIDGenerator.swift; sourceTree = "<group>"; };
 		131653301E5B874A007F4E76 /* Factbook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Factbook.swift; sourceTree = "<group>"; };
 		131653321E5B8B76007F4E76 /* LocalFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalFileManager.swift; sourceTree = "<group>"; };
-		134AF3351E609BA6000566F3 /* CSVContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSVContent.swift; sourceTree = "<group>"; };
+		13505FB51E6B06FF00D85D5A /* JSONManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONManager.swift; sourceTree = "<group>"; };
+		13505FBA1E6B1B9E00D85D5A /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		1361F82F1E661F2700D65337 /* Area.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Area.swift; sourceTree = "<group>"; };
 		137B7B761E61E20300F9A69E /* IndexedDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexedDictionary.swift; sourceTree = "<group>"; };
 		137B7B781E61E3A500F9A69E /* HasUniqueID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HasUniqueID.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 		1316532F1E5B81B1007F4E76 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				13505FB91E6B1B9600D85D5A /* Extensions */,
 				1361F82D1E65BE7000D65337 /* Protocols */,
 				1316532E1E5B81AA007F4E76 /* Toolbox */,
 				1316532D1E5B8190007F4E76 /* Data Model */,
@@ -119,6 +122,14 @@
 				131653241E5B8130007F4E76 /* Photo.swift */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		13505FB91E6B1B9600D85D5A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				13505FBA1E6B1B9E00D85D5A /* Date.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 		1361F82D1E65BE7000D65337 /* Protocols */ = {
@@ -143,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				131653321E5B8B76007F4E76 /* LocalFileManager.swift */,
+				13505FB51E6B06FF00D85D5A /* JSONManager.swift */,
 			);
 			name = "Data Managers";
 			sourceTree = "<group>";
@@ -150,7 +162,6 @@
 		13F9DC8A1E673E4100018B7F /* Data Types */ = {
 			isa = PBXGroup;
 			children = (
-				134AF3351E609BA6000566F3 /* CSVContent.swift */,
 				137B7B761E61E20300F9A69E /* IndexedDictionary.swift */,
 			);
 			name = "Data Types";
@@ -230,6 +241,7 @@
 				131653291E5B8130007F4E76 /* Photo.swift in Sources */,
 				131653331E5B8B76007F4E76 /* LocalFileManager.swift in Sources */,
 				137B7B791E61E3A500F9A69E /* HasUniqueID.swift in Sources */,
+				13505FBB1E6B1B9E00D85D5A /* Date.swift in Sources */,
 				1316532A1E5B8130007F4E76 /* UniqueIDGenerator.swift in Sources */,
 				13D1BA8D1E5D1FD6007E7EFA /* Person.swift in Sources */,
 				131653151E5B8091007F4E76 /* ViewController.swift in Sources */,
@@ -238,9 +250,9 @@
 				131653311E5B874A007F4E76 /* Factbook.swift in Sources */,
 				137B7B771E61E20300F9A69E /* IndexedDictionary.swift in Sources */,
 				131653281E5B8130007F4E76 /* Spot.swift in Sources */,
-				134AF3361E609BA6000566F3 /* CSVContent.swift in Sources */,
 				8401977F1E5BAE7800555C17 /* AddImageViewController.swift in Sources */,
 				131653131E5B8091007F4E76 /* AppDelegate.swift in Sources */,
+				13505FB61E6B06FF00D85D5A /* JSONManager.swift in Sources */,
 				1361F8301E661F2700D65337 /* Area.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

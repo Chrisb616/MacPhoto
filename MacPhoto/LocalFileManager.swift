@@ -17,20 +17,6 @@ class LocalFileManager {
     //MARK: - Utilities
     private let fileManager = FileManager.default
     
-    private let dateFormat = "YYYY_MM_dd_HH_mm_sszzz"
-    
-    private func parseDate(_ string: String) -> Date? {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = dateFormat
-        return dateFormatter.date(from: string)
-    }
-    
-    private func parseDate(_ date: Date) -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = dateFormat
-        return dateFormatter.string(from: date)
-    }
-    
     private func parseIDString(_ dictionary: [String:Bool]) -> String {
         //MARK: People
         var string = String()
@@ -50,44 +36,6 @@ class LocalFileManager {
         return dictionary
     }
     
-    private func removeCommas(from string: String) -> String {
-        print(string)
-        
-        var result = String()
-        
-        let components = string.components(separatedBy: ",")
-        
-        if components.count > 1 {
-            for (index, component) in components.enumerated() {
-                result += component
-                
-                if index != components.count - 1 {
-                    result += "&COMMA"
-                }
-            }
-        }
-        
-        return result
-    }
-    
-    private func replaceCommas(in string: String) -> String {
-        var result = String()
-        
-        let components = string.components(separatedBy: "&COMMA")
-        
-        if components.count > 1 {
-            for (index, component) in components.enumerated() {
-                result += component
-                
-                if index != components.count - 1 {
-                    result += ","
-                }
-            }
-        }
-        
-        return result
-    }
-    
     //MARK: - Local File Paths
     private var programDirectoryHome = URL(fileURLWithPath: Factbook.picturesPath)
     
@@ -99,23 +47,33 @@ class LocalFileManager {
     
     
     //MARK: - CSV Tools
-    func writeCSV(to path: URL, withContent string: String){
+    
+    private func writeJSON(to url: URL, withContent dictionary: [String:Any]) {
         
-        do{
-            try string.write(to: path, atomically: true, encoding: String.Encoding.utf8)
-        } catch{
-            print("FAILURE: Could not write csv to \(path) \(error)")
-        }
-    }
-    func readCSV(from path: URL) -> String? {
+        let data: Data
         
         do {
-            let contents = try String(contentsOf: path, encoding: String.Encoding.utf8)
-            return contents
+            data = try JSONSerialization.data(withJSONObject: dictionary, options: [])
+            try data.write(to: url)
+            print("SUCCESS: Saveed to \(url.path)")
         } catch {
-            print("FAILURE: Could not read from file path: \(path) \(error)")
-            return nil
+            print(error)
+            return
         }
+        
+    }
+    private func readJSON(from url: URL) -> [String:Any] {
+        let dictionary: [String:Any]?
+        
+        do {
+            let data = try Data(contentsOf: url)
+            dictionary = try JSONSerialization.jsonObject(with: data, options: []) as? [String:Any]
+        } catch {
+            print(error)
+            return [:]
+        }
+        
+        return dictionary ?? [:]
     }
     
     //MARK: - Directory Tools
@@ -164,6 +122,36 @@ class LocalFileManager {
         return NSImage(contentsOf: path)
     }
     
+    //MARK: - Person Info Management
+    
+    private var personInfoFile: URL { return infoDirectory.appendingPathComponent("PersonInfo.json") }
+    
+    func checkForPersonInfoFile() -> Bool {
+        return check(for: personInfoFile)
+    }
+    
+    func savePersonInfo() {
+        var dictionary = [String:Any]()
+        
+        for uniqueID in DataStore.instance.people.uniqueIDs {
+            guard let person = DataStore.instance.people.with(uniqueID: uniqueID) else { print("FAILURE: Failed to save photo info for unique ID \(uniqueID)"); continue }
+            
+            JSONManager.save(person: person, to: &dictionary)
+        }
+        
+        writeJSON(to: personInfoFile, withContent: dictionary)
+    }
+    
+    func loadPersonInfo() {
+        let dictionary = readJSON(from: personInfoFile)
+        
+        for (key,value) in dictionary {
+            guard let personDictionary = value as? [String:Any] else { print("FAILURE: Could not create dictionary for person with uniqueID \(key)"); continue }
+            
+            JSONManager.loadPerson(from: personDictionary)
+        }
+    }
+    
     //MARK: - Photo Info Management
     
     private var photoInfoFile: URL { return infoDirectory.appendingPathComponent("PhotoInfo.csv") }
@@ -172,151 +160,4 @@ class LocalFileManager {
         return check(for: photoInfoFile)
     }
     
-    
-    func savePhotoInfo() {
-        var csvData = CSVContent()
-        
-        for uniqueID in DataStore.instance.photos.uniqueIDs {
-            
-            //MARK: - Serialize Photo Info
-            guard let photo = DataStore.instance.photos.with(uniqueID: uniqueID) else { print("FAILURE: Failed to save photo info for unique ID \(uniqueID)"); continue }
-            
-            var row = [String]()
-            
-            //MARK: Date Taken
-            let dateTakenString: String
-            
-            if let dateTaken = photo.dateTaken {
-                dateTakenString = parseDate(dateTaken)
-            } else {
-                dateTakenString = ""
-            }
-            
-            //MARK: Spot
-            let spotID: String
-            if let spot = photo.spot {
-                spotID = spot.uniqueID
-            } else {
-                spotID = ""
-            }
-            
-            
-            //MARK: Apply data
-            row.append(uniqueID) // 0
-            row.append(removeCommas(from: photo.title ?? "")) // 1
-            row.append(removeCommas(from: photo.shortDescription ?? "")) // 2
-            row.append(removeCommas(from: photo.longDescription ?? "")) // 3
-            row.append(dateTakenString) // 4
-            row.append(spotID) // 5
-            row.append(parseDate(photo.dateAdded)) // 6
-            row.append(parseIDString(photo.people)) // 7
-            
-            csvData.add(row: row)
-        }
-        
-        let string = csvData.string
-        
-        writeCSV(to: photoInfoFile, withContent: string)
-    }
-    
-    func loadPhotoInfo() {
-        if !checkForPhotoInfoFile() { return }
-        
-        guard let contentString = readCSV(from: photoInfoFile) else { print("FAILURE: Could not read content of PhotoInfo.csv");return }
-        
-        let content = CSVContent(contentString)
-        
-        for i in 0..<content.numOfRows {
-            let row = content.at(row: i)
-            
-            let uniqueID = row[0]
-            
-            let title = row[1].isEmpty ? nil : row[1]
-            
-            let shortDescription = row[2].isEmpty ? nil : row[2]
-            
-            let longDescription = row[3].isEmpty ? nil : row[3]
-            
-            let dateTakenString = row[4].isEmpty ? nil : row[4]
-            let dateTaken = parseDate(dateTakenString ?? "")
-            
-            let spotID = row[5].isEmpty ? nil : row[5]
-            let spot = Spot.with(uniqueID: spotID ?? "")
-            
-            let dateAddedString = row[6].isEmpty ? nil : row[6]
-            let dateAdded = parseDate(dateAddedString ?? "") ?? Date()
-            
-            let peopleString = row[7]
-            let people = parseIDString(peopleString)
-            
-            Photo.load(uniqueID: uniqueID, title: title, shortDescription: shortDescription, longDescription: longDescription, dateTaken: dateTaken, spot: spot, dateAdded: dateAdded, people: people)
-            
-        }
-    }
-    
-    //MARK: - Spot Info Management
-    
-    private var spotInfoFile: URL { return infoDirectory.appendingPathComponent("SpotInfo.csv") }
-    
-    func checkForSpotInfoFile() -> Bool {
-        return check(for: spotInfoFile)
-    }
-    
-    func saveSpotInfo() {
-        var csvData = CSVContent()
-        
-        for uniqueID in DataStore.instance.photos.uniqueIDs {
-            
-            //MARK: - Serialize Photo Info
-            guard let spot = DataStore.instance.spots.with(uniqueID: uniqueID) else { print("FAILURE: Failed to save spot info for unique ID \(uniqueID)"); continue }
-            
-            var row = [String]()
-            
-            
-        }
-    }
-    func loadSpotInfo() {
-        guard checkForSpotInfoFile() else { print("WARNING: No PhotoInfo.csv file to read from"); return }
-        
-        guard let contentString = readCSV(from: spotInfoFile) else { print("FAILURE: Could not read content of SpotInfo.csv"); return }
-        
-        let content = CSVContent(contentString)
-        
-        for i in 0..<content.numOfRows {
-            
-            
-            
-        }
-    }
-
-    //MARK: - Area Info Management
-    
-    private var areaInfoFile: URL { return infoDirectory.appendingPathComponent("AreaInfo.csv") }
-    
-    func checkForAreaInfoFile() -> Bool {
-        return check(for: areaInfoFile)
-    }
-    
-    func saveAreaInfo() {
-        var csvData = CSVContent()
-    }
-    func loadAreaInfo() {
-        guard checkForAreaInfoFile() else { return }
-    }
-    
-    //MARK: - Region Info Management
-    
-    private var regionInfoFile: URL { return infoDirectory.appendingPathComponent("RegionInfo.csv") }
-    
-    func checkForRegionInfoFile() -> Bool {
-        return check(for: regionInfoFile)
-    }
-    
-    func saveRegionInfo() {
-        var csvData = CSVContent()
-    }
-    
-    func loadRegionInfo() {
-        guard checkForRegionInfoFile() else { return }
-    }
 }
