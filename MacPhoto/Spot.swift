@@ -23,8 +23,8 @@ class Spot: HasUniqueID {
     
     //MARK: Story Info
     var name: String
-    var shortDescription: String
-    var longDescription: String
+    var shortDescription: String?
+    var longDescription: String?
     
     //MARK: Photos
     var photos = [String:Bool]()
@@ -50,8 +50,9 @@ class Spot: HasUniqueID {
         return new
     }
     
-    static func load(uniqueID: String, name: String, shortDescription: String, longDescription: String, coordinates: CLLocationCoordinate2D, generalAreaID: String) {
-        guard let generalArea = DataStore.instance.areas.with(uniqueID: generalAreaID) else { print("FAILURE: Could not find area with unique ID: \(generalAreaID)"); return }
+    static func load(uniqueID: String, name: String, shortDescription: String, longDescription: String, latitude: CLLocationDegrees, longitude: CLLocationDegrees, area: String) {
+        guard let generalArea = DataStore.instance.areas.with(uniqueID: area) else { print("FAILURE: Could not find area with unique ID: \(area)"); return }
+        let coordinates = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
         
         let new = Spot(uniqueID: uniqueID, name: name, shortDescription: shortDescription, longDescription: longDescription, coordinates: coordinates, generalArea: generalArea)
         

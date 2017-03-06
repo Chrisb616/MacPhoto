@@ -14,35 +14,37 @@ struct JSONManager {
 }
 extension JSONManager {
     //MARK: - Person
-
-    private static var uniqueIDKey = "uniqueID"
-    private static var nameKey = "name"
-    private static var firstNameKey = "firstName"
-    private static var middleNameKey = "middleName"
-    private static var lastNameKey = "lastName"
+    
+    private enum PersonKey: String {
+        case uniqueID = "uniqueID"
+        case name = "name"
+        case firstName = "firstName"
+        case middleName = "middleName"
+        case lastName = "lastName"
+    }
     
     static func save(person: Person, to dictionary: inout [String:Any]) {
         
         
         var tempDictionary = [String:Any]()
 
-        tempDictionary.updateValue(person.uniqueID, forKey: uniqueIDKey)
-        tempDictionary.updateValue(person.name, forKey: nameKey)
-        tempDictionary.updateValue(person.firstName as Any, forKey: firstNameKey)
-        tempDictionary.updateValue(person.middleName as Any, forKey: middleNameKey)
-        tempDictionary.updateValue(person.lastName as Any, forKey: lastNameKey)
+        tempDictionary.updateValue(person.uniqueID, forKey: PersonKey.uniqueID.rawValue)
+        tempDictionary.updateValue(person.name, forKey: PersonKey.name.rawValue)
+        tempDictionary.updateValue(person.firstName as Any, forKey: PersonKey.firstName.rawValue)
+        tempDictionary.updateValue(person.middleName as Any, forKey: PersonKey.middleName.rawValue)
+        tempDictionary.updateValue(person.lastName as Any, forKey: PersonKey.lastName.rawValue)
         
         dictionary.updateValue(tempDictionary, forKey: person.uniqueID)
         
     }
     
     static func loadPerson(from dictionary: [String:Any]) {
-        guard let uniqueID = dictionary[uniqueIDKey] as? String else { print("FAILURE: Could not parse uniqueID"); return }
-        guard let name = dictionary[nameKey] as? String else { print("FAILURE: Could not parse name for person with uniqueID: \(uniqueID)"); return }
+        guard let uniqueID = dictionary[PersonKey.uniqueID.rawValue] as? String else { print("FAILURE: Could not parse person uniqueID"); return }
+        guard let name = dictionary[PersonKey.name.rawValue] as? String else { print("FAILURE: Could not parse name for person with uniqueID: \(uniqueID)"); return }
         
-        let firstName = dictionary[firstNameKey] as? String
-        let middleName = dictionary[middleNameKey] as? String
-        let lastName = dictionary[lastNameKey] as? String
+        let firstName = dictionary[PersonKey.firstName.rawValue] as? String
+        let middleName = dictionary[PersonKey.middleName.rawValue] as? String
+        let lastName = dictionary[PersonKey.lastName.rawValue] as? String
         
         Person.load(uniqueID: uniqueID, name: name, firstName: firstName, middleName: middleName, lastName: lastName)
     }
@@ -50,42 +52,44 @@ extension JSONManager {
 extension JSONManager {
     //MARK: - Photo
     
-    private static var uniqueIDKey = "uniqueID"
-    private static var titleKey = "title"
-    private static var shortDescriptionKey = "shortDescription"
-    private static var longDescriptionKey = "longDescription"
-    private static var dateAddedKey = "dateAdded"
-    private static var dateTakenKey = "dateTaken"
-    private static var spotIDKey = "spotID"
-    private static var peopleKey = "people"
+    private enum PhotoKey: String {
+        case uniqueID = "uniqueID"
+        case title = "title"
+        case shortDescription = "shortDescription"
+        case longDescription = "longDescription"
+        case dateAdded = "dateAdded"
+        case dateTaken = "dateTaken"
+        case spotID = "spotID"
+        case people = "people"
+    }
 
     static func save(photo: Photo, to dictionary: inout [String:Any]) {
         
         var tempDictionary = [String:Any]()
         
-        tempDictionary.updateValue(photo.uniqueID, forKey: uniqueIDKey)
-        tempDictionary.updateValue(photo.title as Any, forKey: titleKey)
-        tempDictionary.updateValue(photo.shortDescription as Any, forKey: shortDescriptionKey)
-        tempDictionary.updateValue(photo.longDescription as Any, forKey: longDescriptionKey)
-        tempDictionary.updateValue(photo.dateAdded.standardFormatString, forKey: dateAddedKey)
-        tempDictionary.updateValue(photo.dateTaken?.standardFormatString as Any, forKey: dateTakenKey)
-        tempDictionary.updateValue(photo.spot?.uniqueID as Any, forKey: spotIDKey)
-        tempDictionary.updateValue(photo.people, forKey: peopleKey)
+        tempDictionary.updateValue(photo.uniqueID, forKey: PhotoKey.uniqueID.rawValue)
+        tempDictionary.updateValue(photo.title as Any, forKey: PhotoKey.title.rawValue)
+        tempDictionary.updateValue(photo.shortDescription as Any, forKey: PhotoKey.shortDescription.rawValue)
+        tempDictionary.updateValue(photo.longDescription as Any, forKey: PhotoKey.longDescription.rawValue)
+        tempDictionary.updateValue(photo.dateAdded.standardFormatString, forKey: PhotoKey.dateAdded.rawValue)
+        tempDictionary.updateValue(photo.dateTaken?.standardFormatString as Any, forKey: PhotoKey.dateTaken.rawValue)
+        tempDictionary.updateValue(photo.spot?.uniqueID as Any, forKey: PhotoKey.spotID.rawValue)
+        tempDictionary.updateValue(photo.people, forKey: PhotoKey.people.rawValue)
     }
     
     static func loadPhoto(from dictionary: [String:Any]) {
-        guard let uniqueID = dictionary[uniqueIDKey] as? String else { print("FAILURE: Could not parse uniqueID"); return }
+        guard let uniqueID = dictionary[PhotoKey.uniqueID.rawValue] as? String else { print("FAILURE: Could not parse photo uniqueID"); return }
         
-        let title = dictionary[titleKey] as? String
-        let shortDescription = dictionary[shortDescriptionKey] as? String
-        let longDescription = dictionary[longDescriptionKey] as? String
-        let dateTakenString = dictionary[dateTakenKey] as? String ?? ""
+        let title = dictionary[PhotoKey.title.rawValue] as? String
+        let shortDescription = dictionary[PhotoKey.shortDescription.rawValue] as? String
+        let longDescription = dictionary[PhotoKey.longDescription.rawValue] as? String
+        let dateTakenString = dictionary[PhotoKey.dateTaken.rawValue] as? String ?? ""
         let dateTaken = Date.from(standardFormatString: dateTakenString)
-        let dateAddedString = dictionary[dateAddedKey] as? String ?? ""
+        let dateAddedString = dictionary[PhotoKey.dateAdded.rawValue] as? String ?? ""
         let dateAdded = Date.from(standardFormatString: dateAddedString) ?? Date()
-        let spotID = dictionary[spotIDKey] as? String ?? ""
+        let spotID = dictionary[PhotoKey.spotID.rawValue] as? String ?? ""
         let spot = DataStore.instance.spots.with(uniqueID: spotID)
-        let people = dictionary[peopleKey] as? [String:Bool] ?? [:]
+        let people = dictionary[PhotoKey.people.rawValue] as? [String:Bool] ?? [:]
         
         Photo.load(uniqueID: uniqueID, title: title, shortDescription: shortDescription, longDescription: longDescription, dateTaken: dateTaken, spot: spot, dateAdded: dateAdded, people: people)
     }
