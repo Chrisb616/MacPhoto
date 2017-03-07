@@ -8,7 +8,7 @@
 
 import CoreLocation
 
-class Spot: HasUniqueID {
+class Spot: Location {
     
     //MARK: - Properties
     
@@ -16,7 +16,7 @@ class Spot: HasUniqueID {
     var uniqueID: String
     
     //MARK: Location
-    var coordinates: CLLocationCoordinate2D
+    var location: CLLocationCoordinate2D
     
     private weak var safeArea: Area?
     var area: Area? { return safeArea }
@@ -43,7 +43,7 @@ class Spot: HasUniqueID {
     
     //MARK: - Object Creation
     static func new(name: String, coordinates: CLLocationCoordinate2D) -> Spot {
-        let new = Spot(name: name, coordinates: coordinates)
+        let new = Spot(name: name, location: coordinates)
         
         DataStore.instance.spots.add(new)
         
@@ -52,29 +52,26 @@ class Spot: HasUniqueID {
     
     static func load(uniqueID: String, name: String, shortDescription: String, longDescription: String, latitude: CLLocationDegrees, longitude: CLLocationDegrees, area: String) {
         guard let generalArea = DataStore.instance.areas.with(uniqueID: area) else { print("FAILURE: Could not find area with unique ID: \(area)"); return }
-        let coordinates = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+        let location = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
         
-        let new = Spot(uniqueID: uniqueID, name: name, shortDescription: shortDescription, longDescription: longDescription, coordinates: coordinates, generalArea: generalArea)
+        let new = Spot(uniqueID: uniqueID, name: name, shortDescription: shortDescription, longDescription: longDescription, location: location, generalArea: generalArea)
         
         DataStore.instance.spots.add(new)
     }
     
     //MARK: - Private Initializers
-    private init(name: String, coordinates: CLLocationCoordinate2D) {
-        self.uniqueID = UniqueIDGenerator.instance.spotID
+    private init(name: String, location: CLLocationCoordinate2D) {
+        self.uniqueID = UniqueIDGenerator.instance.locationID
         self.name = name
-        self.coordinates = coordinates
-        self.name = ""
-        self.shortDescription = ""
-        self.longDescription = ""
+        self.location = location
     }
     
-    private init(uniqueID: String, name: String, shortDescription: String, longDescription: String, coordinates: CLLocationCoordinate2D, generalArea: Area) {
+    private init(uniqueID: String, name: String, shortDescription: String, longDescription: String, location: CLLocationCoordinate2D, generalArea: Area) {
         self.uniqueID = uniqueID
         self.name = name
         self.shortDescription = shortDescription
         self.longDescription = longDescription
-        self.coordinates = coordinates
+        self.location = location
         self.safeArea = generalArea
     }
     
