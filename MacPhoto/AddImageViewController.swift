@@ -33,6 +33,8 @@ class AddImageViewController: NSViewController {
                       longDescription: longDescriptionTextView.string,
                       dateTaken: dateTakenDatePicker.isHidden ? nil : dateTakenDatePicker.dateValue,
                       spot: nil)
+            
+            LocalFileManager.instance.savePhotoInfo()
             //LocalFileManager.instance.savePhotoInfo()
         } else {
             print("WARING: No image found, please drag an image into the well.")

@@ -91,6 +91,70 @@ class LocalFileManager {
         }
     }
     
+    private func createInfoDirectoryIfNeeded() {
+        if !check(for: infoDirectory) {
+            do {
+                try fileManager.createDirectory(at: infoDirectory, withIntermediateDirectories: true, attributes: [:])
+            } catch {
+                
+            }
+        }
+    }
+    
+    //MARK: - Person Info Management
+    
+    private var personInfoFile: URL { return infoDirectory.appendingPathComponent("PersonInfo.json") }
+    
+    func checkForPersonInfoFile() -> Bool {
+        return check(for: personInfoFile)
+    }
+    
+    func savePersonInfo() {
+        var dictionary = [String:Any]()
+        
+        for uniqueID in DataStore.instance.people.uniqueIDs {
+            guard let person = DataStore.instance.people.with(uniqueID: uniqueID) else { print("FAILURE: Failed to save person info for unique ID \(uniqueID)"); continue }
+            
+            JSONManager.save(person: person, to: &dictionary)
+        }
+        
+        createInfoDirectoryIfNeeded()
+        writeJSON(to: personInfoFile, withContent: dictionary)
+    }
+    
+    func loadPersonInfo() {
+        let dictionary = readJSON(from: personInfoFile)
+        
+        for (key,value) in dictionary {
+            guard let personDictionary = value as? [String:Any] else { print("FAILURE: Could not create dictionary for person with uniqueID \(key)"); continue }
+            
+            JSONManager.loadPerson(from: personDictionary)
+        }
+    }
+    
+    //MARK: - Photo Info Management
+    
+    private var photoInfoFile: URL { return infoDirectory.appendingPathComponent("PhotoInfo.json") }
+    
+    func checkForPhotoInfoFile() -> Bool {
+        return check(for: photoInfoFile)
+    }
+    
+    func savePhotoInfo() {
+        var dictionary = [String:Any]()
+        
+        for uniqueID in DataStore.instance.photos.uniqueIDs {
+            guard let photo = DataStore.instance.photos.with(uniqueID: uniqueID) else { print("FAILURE: Failed to save person info for unique ID \(uniqueID)"); continue }
+            
+            JSONManager.save(photo: photo, to: &dictionary)
+    
+        }
+        
+        createInfoDirectoryIfNeeded()
+        writeJSON(to: photoInfoFile, withContent: dictionary)
+    }
+    
+    
     //MARK: - Image Management
     
     func save(image: NSImage, withID uniqueID: String) {
@@ -121,43 +185,4 @@ class LocalFileManager {
         let path = imageDirectory.appendingPathComponent("\(uniqueID).jpg")
         return NSImage(contentsOf: path)
     }
-    
-    //MARK: - Person Info Management
-    
-    private var personInfoFile: URL { return infoDirectory.appendingPathComponent("PersonInfo.json") }
-    
-    func checkForPersonInfoFile() -> Bool {
-        return check(for: personInfoFile)
-    }
-    
-    func savePersonInfo() {
-        var dictionary = [String:Any]()
-        
-        for uniqueID in DataStore.instance.people.uniqueIDs {
-            guard let person = DataStore.instance.people.with(uniqueID: uniqueID) else { print("FAILURE: Failed to save photo info for unique ID \(uniqueID)"); continue }
-            
-            JSONManager.save(person: person, to: &dictionary)
-        }
-        
-        writeJSON(to: personInfoFile, withContent: dictionary)
-    }
-    
-    func loadPersonInfo() {
-        let dictionary = readJSON(from: personInfoFile)
-        
-        for (key,value) in dictionary {
-            guard let personDictionary = value as? [String:Any] else { print("FAILURE: Could not create dictionary for person with uniqueID \(key)"); continue }
-            
-            JSONManager.loadPerson(from: personDictionary)
-        }
-    }
-    
-    //MARK: - Photo Info Management
-    
-    private var photoInfoFile: URL { return infoDirectory.appendingPathComponent("PhotoInfo.csv") }
-    
-    func checkForPhotoInfoFile() -> Bool {
-        return check(for: photoInfoFile)
-    }
-    
 }

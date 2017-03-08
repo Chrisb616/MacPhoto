@@ -75,6 +75,8 @@ extension JSONManager {
         tempDictionary.updateValue(photo.dateTaken?.standardFormatString as Any, forKey: PhotoKey.dateTaken.rawValue)
         tempDictionary.updateValue(photo.spot?.uniqueID as Any, forKey: PhotoKey.spotID.rawValue)
         tempDictionary.updateValue(photo.people, forKey: PhotoKey.people.rawValue)
+        
+        dictionary.updateValue(tempDictionary, forKey: photo.uniqueID)
     }
     
     static func loadPhoto(from dictionary: [String:Any]) {

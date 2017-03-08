@@ -91,16 +91,6 @@
 			path = MacPhoto;
 			sourceTree = "<group>";
 		};
-		1316532D1E5B8190007F4E76 /* Data Model */ = {
-			isa = PBXGroup;
-			children = (
-				13F9DC8A1E673E4100018B7F /* Data Types */,
-				13F9DC891E673D3A00018B7F /* Data Managers */,
-				131653211E5B8130007F4E76 /* DataStore.swift */,
-			);
-			name = "Data Model";
-			sourceTree = "<group>";
-		};
 		1316532E1E5B81AA007F4E76 /* Toolbox */ = {
 			isa = PBXGroup;
 			children = (
@@ -113,10 +103,12 @@
 		1316532F1E5B81B1007F4E76 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				13F9DC8A1E673E4100018B7F /* Data Types */,
+				13F9DC891E673D3A00018B7F /* Data Managers */,
+				131653211E5B8130007F4E76 /* DataStore.swift */,
 				13505FB91E6B1B9600D85D5A /* Extensions */,
 				1361F82D1E65BE7000D65337 /* Protocols */,
 				1316532E1E5B81AA007F4E76 /* Toolbox */,
-				1316532D1E5B8190007F4E76 /* Data Model */,
 				1361F82E1E661F1C00D65337 /* Location */,
 				13D1BA8C1E5D1FD6007E7EFA /* Person.swift */,
 				131653241E5B8130007F4E76 /* Photo.swift */,
