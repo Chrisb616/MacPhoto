@@ -13,6 +13,9 @@ class ViewController: NSViewController {
     @IBOutlet weak var mainCollectionView: NSCollectionView!
     @IBOutlet weak var mainCollectionViewLayout: NSCollectionViewFlowLayout!
     
+    @IBAction func reloadButtonTapped(_ sender: Any) {
+        mainCollectionView.reloadData()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
