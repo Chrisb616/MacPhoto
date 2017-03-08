@@ -59,7 +59,7 @@ extension JSONManager {
         case longDescription = "longDescription"
         case dateAdded = "dateAdded"
         case dateTaken = "dateTaken"
-        case spotID = "spotID"
+        case spotID = "locationID"
         case people = "people"
     }
 
@@ -73,7 +73,7 @@ extension JSONManager {
         tempDictionary.updateValue(photo.longDescription as Any, forKey: PhotoKey.longDescription.rawValue)
         tempDictionary.updateValue(photo.dateAdded.standardFormatString, forKey: PhotoKey.dateAdded.rawValue)
         tempDictionary.updateValue(photo.dateTaken?.standardFormatString as Any, forKey: PhotoKey.dateTaken.rawValue)
-        tempDictionary.updateValue(photo.spot?.uniqueID as Any, forKey: PhotoKey.spotID.rawValue)
+        tempDictionary.updateValue(photo.location?.uniqueID as Any, forKey: PhotoKey.spotID.rawValue)
         tempDictionary.updateValue(photo.people, forKey: PhotoKey.people.rawValue)
         
         dictionary.updateValue(tempDictionary, forKey: photo.uniqueID)
@@ -89,11 +89,11 @@ extension JSONManager {
         let dateTaken = Date.from(standardFormatString: dateTakenString)
         let dateAddedString = dictionary[PhotoKey.dateAdded.rawValue] as? String ?? ""
         let dateAdded = Date.from(standardFormatString: dateAddedString) ?? Date()
-        let spotID = dictionary[PhotoKey.spotID.rawValue] as? String ?? ""
-        let spot = DataStore.instance.spots.with(uniqueID: spotID)
+        let locationID = dictionary[PhotoKey.spotID.rawValue] as? String ?? ""
+        let location = Spot.with(uniqueID: locationID)
         let people = dictionary[PhotoKey.people.rawValue] as? [String:Bool] ?? [:]
         
-        Photo.load(uniqueID: uniqueID, title: title, shortDescription: shortDescription, longDescription: longDescription, dateTaken: dateTaken, spot: spot, dateAdded: dateAdded, people: people)
+        Photo.load(uniqueID: uniqueID, title: title, shortDescription: shortDescription, longDescription: longDescription, dateTaken: dateTaken, location: location, dateAdded: dateAdded, people: people)
     }
     
 }

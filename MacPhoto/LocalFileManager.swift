@@ -154,6 +154,16 @@ class LocalFileManager {
         writeJSON(to: photoInfoFile, withContent: dictionary)
     }
     
+    func loadPhotoInfo() {
+        let dictionary = readJSON(from: photoInfoFile)
+        
+        for (key,value) in dictionary {
+            guard let photoDictionary = value as? [String:Any] else { print("FAILURE: Could not create dictionary for phot with uniqueID \(key)"); continue}
+            
+            JSONManager.loadPhoto(from: photoDictionary)
+        }
+    }
+    
     
     //MARK: - Image Management
     

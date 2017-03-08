@@ -17,6 +17,5 @@ class DataStore {
     var people = IndexedDictionary<Person>()
     var spots = IndexedDictionary<Spot>()
     var areas = IndexedDictionary<Area>()
-    var regions = IndexedDictionary<Region>()
     
 }
