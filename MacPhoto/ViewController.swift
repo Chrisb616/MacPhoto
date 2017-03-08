@@ -19,6 +19,7 @@ class ViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        LocalFileManager.instance.loadPhotoInfo()
         configureCollectionView()
     }
 
@@ -39,6 +40,7 @@ class ViewController: NSViewController {
         
         mainCollectionView.layer = CALayer()
         mainCollectionView.layer?.backgroundColor = NSColor.black.cgColor
+        
     }
 
 }
