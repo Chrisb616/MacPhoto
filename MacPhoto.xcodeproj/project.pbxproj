@@ -19,6 +19,8 @@
 		1316532A1E5B8130007F4E76 /* UniqueIDGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131653251E5B8130007F4E76 /* UniqueIDGenerator.swift */; };
 		131653311E5B874A007F4E76 /* Factbook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131653301E5B874A007F4E76 /* Factbook.swift */; };
 		131653331E5B8B76007F4E76 /* LocalFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131653321E5B8B76007F4E76 /* LocalFileManager.swift */; };
+		1338CA2C1E7221F600E3041B /* PersonSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1338CA2A1E7221F600E3041B /* PersonSelectionViewController.swift */; };
+		1338CA2D1E7221F600E3041B /* PersonSelectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1338CA2B1E7221F600E3041B /* PersonSelectionViewController.xib */; };
 		13505FB61E6B06FF00D85D5A /* JSONManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13505FB51E6B06FF00D85D5A /* JSONManager.swift */; };
 		13505FBB1E6B1B9E00D85D5A /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13505FBA1E6B1B9E00D85D5A /* Date.swift */; };
 		1361F8301E661F2700D65337 /* Area.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1361F82F1E661F2700D65337 /* Area.swift */; };
@@ -46,6 +48,8 @@
 		131653251E5B8130007F4E76 /* UniqueIDGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniqueIDGenerator.swift; sourceTree = "<group>"; };
 		131653301E5B874A007F4E76 /* Factbook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Factbook.swift; sourceTree = "<group>"; };
 		131653321E5B8B76007F4E76 /* LocalFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalFileManager.swift; sourceTree = "<group>"; };
+		1338CA2A1E7221F600E3041B /* PersonSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonSelectionViewController.swift; sourceTree = "<group>"; };
+		1338CA2B1E7221F600E3041B /* PersonSelectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonSelectionViewController.xib; sourceTree = "<group>"; };
 		13505FB51E6B06FF00D85D5A /* JSONManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONManager.swift; sourceTree = "<group>"; };
 		13505FBA1E6B1B9E00D85D5A /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		1361F82F1E661F2700D65337 /* Area.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Area.swift; sourceTree = "<group>"; };
@@ -88,6 +92,7 @@
 		131653111E5B8091007F4E76 /* MacPhoto */ = {
 			isa = PBXGroup;
 			children = (
+				1338CA291E7221B100E3041B /* PersonSelectionViewController */,
 				1316532F1E5B81B1007F4E76 /* Model */,
 				131653121E5B8091007F4E76 /* AppDelegate.swift */,
 				138DEF911E6F933100795A08 /* PhotoCollectionViewItem.swift */,
@@ -126,6 +131,15 @@
 				131653241E5B8130007F4E76 /* Photo.swift */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		1338CA291E7221B100E3041B /* PersonSelectionViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1338CA2A1E7221F600E3041B /* PersonSelectionViewController.swift */,
+				1338CA2B1E7221F600E3041B /* PersonSelectionViewController.xib */,
+			);
+			name = PersonSelectionViewController;
 			sourceTree = "<group>";
 		};
 		13505FB91E6B1B9600D85D5A /* Extensions */ = {
@@ -230,6 +244,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1338CA2D1E7221F600E3041B /* PersonSelectionViewController.xib in Resources */,
 				131653171E5B8091007F4E76 /* Assets.xcassets in Resources */,
 				1316531A1E5B8091007F4E76 /* Main.storyboard in Resources */,
 				130694941E71DB820097BDD4 /* PhotoDetailViewController.xib in Resources */,
@@ -247,6 +262,7 @@
 				131653291E5B8130007F4E76 /* Photo.swift in Sources */,
 				131653331E5B8B76007F4E76 /* LocalFileManager.swift in Sources */,
 				137B7B791E61E3A500F9A69E /* HasUniqueID.swift in Sources */,
+				1338CA2C1E7221F600E3041B /* PersonSelectionViewController.swift in Sources */,
 				13505FBB1E6B1B9E00D85D5A /* Date.swift in Sources */,
 				1316532A1E5B8130007F4E76 /* UniqueIDGenerator.swift in Sources */,
 				138DEF8A1E6F464900795A08 /* Location.swift in Sources */,

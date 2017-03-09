@@ -82,7 +82,7 @@ extension JSONManager {
     static func loadPhoto(from dictionary: [String:Any]) {
         guard let uniqueID = dictionary[PhotoKey.uniqueID.rawValue] as? String else { print("FAILURE: Could not parse photo uniqueID"); return }
         
-        let title = dictionary[PhotoKey.title.rawValue] as? String
+        let title = dictionary[PhotoKey.title.rawValue] as? String ?? ""
         let shortDescription = dictionary[PhotoKey.shortDescription.rawValue] as? String
         let longDescription = dictionary[PhotoKey.longDescription.rawValue] as? String
         let dateTakenString = dictionary[PhotoKey.dateTaken.rawValue] as? String ?? ""

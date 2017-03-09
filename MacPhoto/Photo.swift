@@ -19,7 +19,7 @@ class Photo: HasUniqueID {
     var image: NSImage
     
     //MARK: Story Info
-    var title: String?
+    var title: String
     var shortDescription: String?
     var longDescription: String?
     
@@ -56,7 +56,7 @@ class Photo: HasUniqueID {
     }
     
     //MARK: - Object Creation
-    static func new(image: NSImage, title: String?, shortDescription: String?, longDescription: String?, dateTaken: Date?, location: Location?) {
+    static func new(image: NSImage, title: String, shortDescription: String?, longDescription: String?, dateTaken: Date?, location: Location?) {
         
         let new = Photo(image: image, title: title, shortDescription: shortDescription, longDescription: longDescription, dateTaken: dateTaken)
         if let location = location {
@@ -67,7 +67,7 @@ class Photo: HasUniqueID {
         LocalFileManager.instance.save(image: image, withID: new.uniqueID)
     }
     
-    static func load(uniqueID: String, title: String?, shortDescription: String?, longDescription: String?, dateTaken: Date?, location: Location?, dateAdded: Date, people: [String:Bool]) {
+    static func load(uniqueID: String, title: String, shortDescription: String?, longDescription: String?, dateTaken: Date?, location: Location?, dateAdded: Date, people: [String:Bool]) {
     
         let new = Photo(uniqueID: uniqueID, title: title, shortDescription: shortDescription, longDescription: longDescription, dateTaken: dateTaken, dateAdded: dateAdded, people: people)
         if let location = location {
@@ -80,7 +80,7 @@ class Photo: HasUniqueID {
     //MARK: - Private Initializers
     
     //New
-    private init(image: NSImage, title: String?, shortDescription: String?, longDescription: String?, dateTaken: Date?) {
+    private init(image: NSImage, title: String, shortDescription: String?, longDescription: String?, dateTaken: Date?) {
         self.uniqueID = UniqueIDGenerator.instance.photoID
         self.title = title
         self.shortDescription = shortDescription
@@ -92,7 +92,7 @@ class Photo: HasUniqueID {
     }
     
     //Load
-    private init(uniqueID: String, title: String?, shortDescription: String?, longDescription: String?, dateTaken: Date?, dateAdded: Date, people: [String:Bool]) {
+    private init(uniqueID: String, title: String, shortDescription: String?, longDescription: String?, dateTaken: Date?, dateAdded: Date, people: [String:Bool]) {
         self.uniqueID = uniqueID
         self.title = title
         self.shortDescription = shortDescription

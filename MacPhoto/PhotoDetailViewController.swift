@@ -9,10 +9,15 @@
 import Cocoa
 
 class PhotoDetailViewController: NSViewController {
-
-    @IBOutlet weak var photoImageView: NSImageView!
+    
     var photo: Photo
 
+    @IBOutlet weak var photoImageView: NSImageView!
+
+    @IBOutlet weak var titleTextField: NSTextField!
+    
+    @IBOutlet weak var uniqueIDLabel: NSTextField!
+    
     init(photo: Photo) {
         self.photo = photo
         super.init(nibName: "PhotoDetailViewController", bundle: nil)!
@@ -25,6 +30,14 @@ class PhotoDetailViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.photoImageView.image = photo.image
+        self.titleTextField.stringValue = photo.title
+        self.uniqueIDLabel.stringValue = photo.uniqueID
+    }
+    @IBAction func saveButtonTapped(_ sender: Any) {
+        
+        self.photo.title = titleTextField.stringValue
+        LocalFileManager.instance.savePhotoInfo()
+        self.dismiss(nil)
     }
     
 }

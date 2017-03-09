@@ -12,7 +12,7 @@ class PhotoCollectionViewItem: NSCollectionViewItem, NSGestureRecognizerDelegate
     
     func load(photo: Photo) {
         imageView?.image = photo.image
-        textField?.stringValue = photo.title ?? ""
+        textField?.stringValue = photo.title
     }
     
     override func viewDidLoad() {
