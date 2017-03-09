@@ -88,7 +88,7 @@ class Photo: HasUniqueID {
         self.dateTaken = dateTaken
         self.dateAdded = Date()
         
-        self.image = LocalFileManager.instance.load(imageWithID: uniqueID) ?? NSImage()
+        self.image = image
     }
     
     //Load
