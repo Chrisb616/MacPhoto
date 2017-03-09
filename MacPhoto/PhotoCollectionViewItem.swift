@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class PhotoCollectionViewItem: NSCollectionViewItem {
+class PhotoCollectionViewItem: NSCollectionViewItem, NSGestureRecognizerDelegate {
     
     func load(photo: Photo) {
         imageView?.image = photo.image
@@ -21,4 +21,5 @@ class PhotoCollectionViewItem: NSCollectionViewItem {
         view.layer = CALayer()
         view.layer?.backgroundColor = NSColor.lightGray.cgColor
     }
+    
 }

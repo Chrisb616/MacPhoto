@@ -44,6 +44,7 @@ class ViewController: NSViewController {
     }
 
 }
+
 extension ViewController: NSCollectionViewDataSource {
     
     func numberOfSections(in collectionView: NSCollectionView) -> Int {
@@ -60,4 +61,18 @@ extension ViewController: NSCollectionViewDataSource {
         collectionViewItem.load(photo: photo)
         return collectionViewItem
     }
+}
+
+extension ViewController: NSCollectionViewDelegate {
+    
+    func collectionView(_ collectionView: NSCollectionView, didSelectItemsAt indexPaths: Set<IndexPath>) {
+        guard let indexPath = indexPaths.first else { return }
+        
+        let photo = DataStore.instance.photos.at(index: indexPath.item)
+        
+        let detailVC = PhotoDetailViewController(photo: photo)
+        
+        presentViewControllerAsSheet(detailVC)
+    }
+    
 }

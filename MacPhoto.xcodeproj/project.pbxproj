@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		130694931E71DB820097BDD4 /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130694911E71DB820097BDD4 /* PhotoDetailViewController.swift */; };
+		130694941E71DB820097BDD4 /* PhotoDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 130694921E71DB820097BDD4 /* PhotoDetailViewController.xib */; };
 		131653131E5B8091007F4E76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131653121E5B8091007F4E76 /* AppDelegate.swift */; };
 		131653151E5B8091007F4E76 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131653141E5B8091007F4E76 /* ViewController.swift */; };
 		131653171E5B8091007F4E76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 131653161E5B8091007F4E76 /* Assets.xcassets */; };
@@ -30,6 +32,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		130694911E71DB820097BDD4 /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
+		130694921E71DB820097BDD4 /* PhotoDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotoDetailViewController.xib; sourceTree = "<group>"; };
 		1316530F1E5B8091007F4E76 /* MacPhoto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacPhoto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		131653121E5B8091007F4E76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		131653141E5B8091007F4E76 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -90,6 +94,8 @@
 				138DEF921E6F933100795A08 /* PhotoCollectionViewItem.xib */,
 				131653141E5B8091007F4E76 /* ViewController.swift */,
 				8401977E1E5BAE7800555C17 /* AddImageViewController.swift */,
+				130694911E71DB820097BDD4 /* PhotoDetailViewController.swift */,
+				130694921E71DB820097BDD4 /* PhotoDetailViewController.xib */,
 				131653161E5B8091007F4E76 /* Assets.xcassets */,
 				131653181E5B8091007F4E76 /* Main.storyboard */,
 				1316531B1E5B8091007F4E76 /* Info.plist */,
@@ -226,6 +232,7 @@
 			files = (
 				131653171E5B8091007F4E76 /* Assets.xcassets in Resources */,
 				1316531A1E5B8091007F4E76 /* Main.storyboard in Resources */,
+				130694941E71DB820097BDD4 /* PhotoDetailViewController.xib in Resources */,
 				138DEF941E6F933100795A08 /* PhotoCollectionViewItem.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -243,6 +250,7 @@
 				13505FBB1E6B1B9E00D85D5A /* Date.swift in Sources */,
 				1316532A1E5B8130007F4E76 /* UniqueIDGenerator.swift in Sources */,
 				138DEF8A1E6F464900795A08 /* Location.swift in Sources */,
+				130694931E71DB820097BDD4 /* PhotoDetailViewController.swift in Sources */,
 				138DEF931E6F933100795A08 /* PhotoCollectionViewItem.swift in Sources */,
 				13D1BA8D1E5D1FD6007E7EFA /* Person.swift in Sources */,
 				131653151E5B8091007F4E76 /* ViewController.swift in Sources */,

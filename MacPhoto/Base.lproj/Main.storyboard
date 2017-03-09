@@ -649,6 +649,19 @@
                                     </items>
                                 </menu>
                             </menuItem>
+                            <menuItem title="Library" id="qtv-Jv-gD2">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="Library" id="ThT-bZ-sEF">
+                                    <items>
+                                        <menuItem title="Clear Library" id="pnM-hC-9h6" userLabel="Clear Library">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                        </menuItem>
+                                        <menuItem title="Change Library..." id="V4c-L4-R9b">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
                         </items>
                     </menu>
                     <connections>
@@ -658,7 +671,7 @@
                 <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="MacPhoto" customModuleProvider="target"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="0.0"/>
+            <point key="canvasLocation" x="-284" y="-836"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
@@ -798,7 +811,7 @@
                                     <rect key="frame" x="1" y="1" width="1878" height="997"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <collectionView ambiguous="YES" id="eaw-bi-lWY">
+                                        <collectionView ambiguous="YES" selectable="YES" id="eaw-bi-lWY">
                                             <rect key="frame" x="0.0" y="0.0" width="1878" height="997"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="10" minimumLineSpacing="10" id="Yct-FU-S1S">
