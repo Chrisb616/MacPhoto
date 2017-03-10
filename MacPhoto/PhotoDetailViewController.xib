@@ -9,6 +9,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="PhotoDetailViewController" customModule="MacPhoto" customModuleProvider="target">
             <connections>
+                <outlet property="personSelectionContainer" destination="Srx-Wg-SIE" id="818-Q2-ie3"/>
                 <outlet property="photoImageView" destination="oQh-93-qUx" id="aCR-6E-6zU"/>
                 <outlet property="titleTextField" destination="ygG-nC-GzU" id="YMR-8B-Wq6"/>
                 <outlet property="uniqueIDLabel" destination="zMh-qV-yE9" id="zva-1c-Dwz"/>

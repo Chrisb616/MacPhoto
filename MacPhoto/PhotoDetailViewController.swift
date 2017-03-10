@@ -15,6 +15,7 @@ class PhotoDetailViewController: NSViewController {
     @IBOutlet weak var photoImageView: NSImageView!
 
     @IBOutlet weak var titleTextField: NSTextField!
+    @IBOutlet weak var personSelectionContainer: NSView!
     
     @IBOutlet weak var uniqueIDLabel: NSTextField!
     
@@ -32,6 +33,9 @@ class PhotoDetailViewController: NSViewController {
         self.photoImageView.image = photo.image
         self.titleTextField.stringValue = photo.title
         self.uniqueIDLabel.stringValue = photo.uniqueID
+        
+        let personSelectionView = PersonSelectionView()
+        personSelectionContainer.addSubview(personSelectionView.view)
     }
     @IBAction func saveButtonTapped(_ sender: Any) {
         
