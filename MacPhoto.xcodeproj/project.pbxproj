@@ -30,6 +30,7 @@
 		13D1BA8D1E5D1FD6007E7EFA /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D1BA8C1E5D1FD6007E7EFA /* Person.swift */; };
 		13FDC0AF1E7341A800244CE7 /* PersonSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FDC0AD1E7341A800244CE7 /* PersonSelectionView.swift */; };
 		13FDC0B01E7341A800244CE7 /* PersonSelectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13FDC0AE1E7341A800244CE7 /* PersonSelectionView.xib */; };
+		13FDC0B21E73455800244CE7 /* PersonSelectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FDC0B11E73455800244CE7 /* PersonSelectionViewDelegate.swift */; };
 		8401977F1E5BAE7800555C17 /* AddImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8401977E1E5BAE7800555C17 /* AddImageViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +60,7 @@
 		13D1BA8C1E5D1FD6007E7EFA /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		13FDC0AD1E7341A800244CE7 /* PersonSelectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonSelectionView.swift; sourceTree = "<group>"; };
 		13FDC0AE1E7341A800244CE7 /* PersonSelectionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonSelectionView.xib; sourceTree = "<group>"; };
+		13FDC0B11E73455800244CE7 /* PersonSelectionViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonSelectionViewDelegate.swift; sourceTree = "<group>"; };
 		8401977E1E5BAE7800555C17 /* AddImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddImageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -138,6 +140,7 @@
 			children = (
 				13FDC0AD1E7341A800244CE7 /* PersonSelectionView.swift */,
 				13FDC0AE1E7341A800244CE7 /* PersonSelectionView.xib */,
+				13FDC0B11E73455800244CE7 /* PersonSelectionViewDelegate.swift */,
 			);
 			name = PersonSelectionViewController;
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13FDC0B21E73455800244CE7 /* PersonSelectionViewDelegate.swift in Sources */,
 				131653291E5B8130007F4E76 /* Photo.swift in Sources */,
 				131653331E5B8B76007F4E76 /* LocalFileManager.swift in Sources */,
 				137B7B791E61E3A500F9A69E /* HasUniqueID.swift in Sources */,
