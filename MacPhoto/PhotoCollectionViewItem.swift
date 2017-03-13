@@ -10,9 +10,18 @@ import Cocoa
 
 class PhotoCollectionViewItem: NSCollectionViewItem, NSGestureRecognizerDelegate {
     
+    var photo: Photo?
+    
     func load(photo: Photo) {
-        imageView?.image = photo.image
-        textField?.stringValue = photo.title
+        self.photo = photo
+        reload()
+    }
+    
+    func reload() {
+        guard let unwrappedPhoto = photo else { print("WARNING: No photo found for collection view item"); return }
+        
+        imageView?.image = unwrappedPhoto.image
+        textField?.stringValue = unwrappedPhoto.title
     }
     
     override func viewDidLoad() {
@@ -20,6 +29,21 @@ class PhotoCollectionViewItem: NSCollectionViewItem, NSGestureRecognizerDelegate
         view.wantsLayer = true
         view.layer = CALayer()
         view.layer?.backgroundColor = NSColor.lightGray.cgColor
+        
     }
+    
+    override func mouseDown(with event: NSEvent) {
+        super.mouseDown(with: event)
+        print(event.clickCount)
+        
+        if event.clickCount > 1 {
+            guard let unwrappedPhoto = photo else { print("WARNING: No photo found for collection view item"); return }
+            
+            let detailVC = PhotoDetailViewController(photo: unwrappedPhoto)
+            
+            presentViewControllerAsSheet(detailVC)
+        }
+    }
+    
     
 }

@@ -34,8 +34,8 @@ class PhotoDetailViewController: NSViewController {
         self.titleTextField.stringValue = photo.title
         self.uniqueIDLabel.stringValue = photo.uniqueID
         
-        let personSelectionView = PersonSelectionView()
-        personSelectionContainer.addSubview(personSelectionView.view)
+        let personSelectionView = PersonSelectionView().view
+        personSelectionContainer.addSubview(personSelectionView)
     }
     @IBAction func saveButtonTapped(_ sender: Any) {
         
