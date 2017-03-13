@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MainViewController.swift
 //  MacPhoto
 //
 //  Created by Christopher Boynton on 2/20/17.
@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class ViewController: NSViewController {
+class MainViewController: NSViewController {
 
     @IBOutlet weak var mainCollectionView: NSCollectionView!
     @IBOutlet weak var mainCollectionViewLayout: NSCollectionViewFlowLayout!
@@ -45,7 +45,7 @@ class ViewController: NSViewController {
 
 }
 
-extension ViewController: NSCollectionViewDataSource {
+extension MainViewController: NSCollectionViewDataSource {
     
     func numberOfSections(in collectionView: NSCollectionView) -> Int {
         return 1
@@ -63,7 +63,7 @@ extension ViewController: NSCollectionViewDataSource {
     }
 }
 
-extension ViewController: NSCollectionViewDelegate {
+extension MainViewController: NSCollectionViewDelegate {
     
     func collectionView(_ collectionView: NSCollectionView, didSelectItemsAt indexPaths: Set<IndexPath>) {
     }
