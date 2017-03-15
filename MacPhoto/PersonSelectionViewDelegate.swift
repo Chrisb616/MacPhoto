@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol PersonSelectionViewDelegate {
-    func add(_ person: Person)
+protocol PersonSelectionViewDelegate: class {
+    func added(_ person: Person)
     func removed(_ person: Person)
 }
