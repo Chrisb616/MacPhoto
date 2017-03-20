@@ -30,7 +30,7 @@
 		138DEF941E6F933100795A08 /* PhotoCollectionViewItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 138DEF921E6F933100795A08 /* PhotoCollectionViewItem.xib */; };
 		13D1BA8D1E5D1FD6007E7EFA /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D1BA8C1E5D1FD6007E7EFA /* Person.swift */; };
 		13FDC0AF1E7341A800244CE7 /* PersonSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FDC0AD1E7341A800244CE7 /* PersonSelectionViewController.swift */; };
-		13FDC0B01E7341A800244CE7 /* PersonSelectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13FDC0AE1E7341A800244CE7 /* PersonSelectionView.xib */; };
+		13FDC0B01E7341A800244CE7 /* PersonSelectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13FDC0AE1E7341A800244CE7 /* PersonSelectionViewController.xib */; };
 		13FDC0B21E73455800244CE7 /* PersonSelectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FDC0B11E73455800244CE7 /* PersonSelectionViewDelegate.swift */; };
 		8401977F1E5BAE7800555C17 /* AddImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8401977E1E5BAE7800555C17 /* AddImageViewController.swift */; };
 /* End PBXBuildFile section */
@@ -61,7 +61,7 @@
 		138DEF921E6F933100795A08 /* PhotoCollectionViewItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotoCollectionViewItem.xib; sourceTree = "<group>"; };
 		13D1BA8C1E5D1FD6007E7EFA /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		13FDC0AD1E7341A800244CE7 /* PersonSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonSelectionViewController.swift; sourceTree = "<group>"; };
-		13FDC0AE1E7341A800244CE7 /* PersonSelectionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonSelectionView.xib; sourceTree = "<group>"; };
+		13FDC0AE1E7341A800244CE7 /* PersonSelectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonSelectionViewController.xib; sourceTree = "<group>"; };
 		13FDC0B11E73455800244CE7 /* PersonSelectionViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonSelectionViewDelegate.swift; sourceTree = "<group>"; };
 		8401977E1E5BAE7800555C17 /* AddImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddImageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -141,7 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				13FDC0AD1E7341A800244CE7 /* PersonSelectionViewController.swift */,
-				13FDC0AE1E7341A800244CE7 /* PersonSelectionView.xib */,
+				13FDC0AE1E7341A800244CE7 /* PersonSelectionViewController.xib */,
 				133ECCC01E79CCF8002619A0 /* PersonSelectionTableCellView.swift */,
 				13FDC0B11E73455800244CE7 /* PersonSelectionViewDelegate.swift */,
 			);
@@ -254,7 +254,7 @@
 				1316531A1E5B8091007F4E76 /* MainViewController.storyboard in Resources */,
 				130694941E71DB820097BDD4 /* PhotoDetailViewController.xib in Resources */,
 				138DEF941E6F933100795A08 /* PhotoCollectionViewItem.xib in Resources */,
-				13FDC0B01E7341A800244CE7 /* PersonSelectionView.xib in Resources */,
+				13FDC0B01E7341A800244CE7 /* PersonSelectionViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

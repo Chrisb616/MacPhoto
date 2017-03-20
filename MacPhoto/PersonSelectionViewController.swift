@@ -18,7 +18,7 @@ class PersonSelectionViewController: NSViewController {
     var people = [Person]()
     
     init(){
-        super.init(nibName: "PersonSelectionView", bundle: nil)!
+        super.init(nibName: "PersonSelectionViewController", bundle: nil)!
     }
     
     required init?(coder: NSCoder) {
