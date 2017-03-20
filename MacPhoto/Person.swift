@@ -24,20 +24,21 @@ class Person: HasUniqueID {
     
     //MARK: Object Creation
     static func new(name:String, firstName: String?, middleName: String?, lastName: String?, isFemale: Bool? = nil) {
-        let new = Person(name: name, firstName: firstName, middleName: middleName, lastName: lastName)
+        let new = Person(name: name, firstName: firstName, middleName: middleName, lastName: lastName, isFemale: isFemale)
     
         DataStore.instance.people.add(new)
         newest = new
+        LocalFileManager.instance.savePersonInfo()
     }
     
-    static func load(uniqueID: String, name: String, firstName: String?, middleName: String?, lastName: String?) {
-        let new = Person(uniqueID: uniqueID, name: name, firstName: firstName, middleName: middleName, lastName: lastName)
+    static func load(uniqueID: String, name: String, firstName: String?, middleName: String?, lastName: String?, isFemale: Bool?) {
+        let new = Person(uniqueID: uniqueID, name: name, firstName: firstName, middleName: middleName, lastName: lastName, isFemale: isFemale)
         
         DataStore.instance.people.add(new)
     }
     
     //MARK: Private Initializers
-    private init(name: String, firstName: String?, middleName: String?, lastName: String?) {
+    private init(name: String, firstName: String?, middleName: String?, lastName: String?, isFemale: Bool?) {
         uniqueID = UniqueIDGenerator.instance.personID
         self.name = name
         self.firstName = firstName
@@ -45,12 +46,13 @@ class Person: HasUniqueID {
         self.lastName = lastName
     }
     
-    private init(uniqueID: String, name: String, firstName: String?, middleName: String?, lastName: String?) {
+    private init(uniqueID: String, name: String, firstName: String?, middleName: String?, lastName: String?, isFemale: Bool?) {
         self.uniqueID = uniqueID
         self.name = name
         self.firstName = firstName
         self.middleName = middleName
         self.lastName = lastName
+        self.isFemale = isFemale
     }
     
     static var newest: Person?

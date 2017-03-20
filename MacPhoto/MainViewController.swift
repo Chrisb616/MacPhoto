@@ -20,6 +20,7 @@ class MainViewController: NSViewController {
         super.viewDidLoad()
 
         LocalFileManager.instance.loadPhotoInfo()
+        LocalFileManager.instance.loadPersonInfo()
         configureCollectionView()
     }
 

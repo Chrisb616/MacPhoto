@@ -21,6 +21,7 @@ extension JSONManager {
         case firstName = "firstName"
         case middleName = "middleName"
         case lastName = "lastName"
+        case isFemale = "isFemale"
     }
     
     static func save(person: Person, to dictionary: inout [String:Any]) {
@@ -33,6 +34,7 @@ extension JSONManager {
         tempDictionary.updateValue(person.firstName as Any, forKey: PersonKey.firstName.rawValue)
         tempDictionary.updateValue(person.middleName as Any, forKey: PersonKey.middleName.rawValue)
         tempDictionary.updateValue(person.lastName as Any, forKey: PersonKey.lastName.rawValue)
+        tempDictionary.updateValue(person.isFemale as Any, forKey: PersonKey.isFemale.rawValue)
         
         dictionary.updateValue(tempDictionary, forKey: person.uniqueID)
         
@@ -45,8 +47,9 @@ extension JSONManager {
         let firstName = dictionary[PersonKey.firstName.rawValue] as? String
         let middleName = dictionary[PersonKey.middleName.rawValue] as? String
         let lastName = dictionary[PersonKey.lastName.rawValue] as? String
+        let isFemale = dictionary[PersonKey.isFemale.rawValue] as? Bool
         
-        Person.load(uniqueID: uniqueID, name: name, firstName: firstName, middleName: middleName, lastName: lastName)
+        Person.load(uniqueID: uniqueID, name: name, firstName: firstName, middleName: middleName, lastName: lastName, isFemale: isFemale)
     }
 }
 extension JSONManager {

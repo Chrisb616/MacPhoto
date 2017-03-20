@@ -46,7 +46,7 @@ class LocalFileManager {
     private var infoDirectory: URL { return programDirectory.appendingPathComponent("Info") }
     
     
-    //MARK: - CSV Tools
+    //MARK: - JSON Tools
     
     private func writeJSON(to url: URL, withContent dictionary: [String:Any]) {
         
