@@ -12,6 +12,8 @@ struct IndexedDictionary<T: HasUniqueID> {
     private var keys = [String:Int]()
     private var values = [T]()
     
+    var all: [T] { return values }
+    
     var uniqueIDs: [String] {
         var uniqueIDs = [String]()
         

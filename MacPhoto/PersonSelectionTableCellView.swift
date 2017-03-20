@@ -11,25 +11,41 @@ import Cocoa
 class PersonSelectionTableCellView: NSTableCellView {
     
     var check: NSButton!
+    var background: NSView!
     
     private weak var delegate: PersonSelectionViewDelegate?
     private weak var person: Person!
 
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
-
+        
+        self.wantsLayer = true
+        
         // Drawing code here.
     }
     
     func initializeCheckBox() {
-        self.layer?.backgroundColor = NSColor.red.cgColor
+        background = NSView()
+        
+        self.addSubview(background)
+        background.frame = self.frame
+        
+        let layer = CALayer()
+        layer.bounds = self.frame
+        layer.backgroundColor = NSColor.white.cgColor
+        background.layer = layer
+        
         check = NSButton()
+        
         self.addSubview(check)
         check.frame = self.frame
         check.setButtonType(.switch)
         check.target = self
         check.action = #selector(selected)
-
+        
+    }
+    func refreshLayer() {
+    
     }
     
     func set(person: Person) {
@@ -42,9 +58,9 @@ class PersonSelectionTableCellView: NSTableCellView {
     
     func selected(_ sender: NSButton) {
         if sender.state == 0 {
-            delegate?.removed(person)
+            delegate?.tableView(deselect: person)
         } else if sender.state == 1 {
-            delegate?.added(person)
+            delegate?.tableView(select: person)
         }
     }
     

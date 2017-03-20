@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11762"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -31,11 +32,11 @@
                     <constraints>
                         <constraint firstAttribute="width" constant="70" id="9yM-t1-3qr"/>
                     </constraints>
-                    <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Km9-rT-Fjl">
+                    <buttonCell key="cell" type="push" title="OK" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Km9-rT-Fjl">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                         <string key="keyEquivalent" base64-UTF8="YES">
-Gw
+DQ
 </string>
                     </buttonCell>
                     <connections>
@@ -69,33 +70,20 @@ Gw
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="o9h-vN-Sl0">
-                    <rect key="frame" x="1747" y="3" width="82" height="32"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="70" id="pxe-sD-vnK"/>
-                    </constraints>
-                    <buttonCell key="cell" type="push" title="Save" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="DVN-S3-RSU">
-                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="system"/>
-                    </buttonCell>
-                    <connections>
-                        <action selector="saveButtonTapped:" target="-2" id="4Si-8p-1YB"/>
-                    </connections>
-                </button>
                 <customView translatesAutoresizingMaskIntoConstraints="NO" id="Srx-Wg-SIE">
                     <rect key="frame" x="884" y="27" width="500" height="500"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="Srx-Wg-SIE" secondAttribute="height" multiplier="1:1" id="Xkx-6V-jnJ"/>
+                    </constraints>
                 </customView>
             </subviews>
             <constraints>
                 <constraint firstItem="ygG-nC-GzU" firstAttribute="top" secondItem="oQh-93-qUx" secondAttribute="top" id="3o1-WN-44t"/>
                 <constraint firstItem="oQh-93-qUx" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="10" id="4Jf-EK-wR4"/>
                 <constraint firstItem="02o-Mq-VNt" firstAttribute="leading" secondItem="oQh-93-qUx" secondAttribute="trailing" constant="10" id="50E-qD-2e4"/>
-                <constraint firstItem="o9h-vN-Sl0" firstAttribute="bottom" secondItem="Yvc-XF-hda" secondAttribute="bottom" id="6JO-fA-mJZ"/>
                 <constraint firstItem="Yvc-XF-hda" firstAttribute="bottom" secondItem="oQh-93-qUx" secondAttribute="bottom" id="6cV-K0-EaI"/>
-                <constraint firstItem="Yvc-XF-hda" firstAttribute="leading" secondItem="o9h-vN-Sl0" secondAttribute="trailing" constant="17" id="7mJ-Cw-19U"/>
                 <constraint firstItem="Srx-Wg-SIE" firstAttribute="leading" secondItem="zMh-qV-yE9" secondAttribute="leading" id="8r4-vS-coD"/>
                 <constraint firstItem="oQh-93-qUx" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="10" id="Dpf-ja-J5B"/>
-                <constraint firstItem="o9h-vN-Sl0" firstAttribute="leading" secondItem="Srx-Wg-SIE" secondAttribute="trailing" constant="369" id="FF2-N1-1hW"/>
                 <constraint firstItem="zMh-qV-yE9" firstAttribute="top" secondItem="Srx-Wg-SIE" secondAttribute="bottom" id="O1i-Ft-eSS"/>
                 <constraint firstAttribute="trailing" secondItem="ygG-nC-GzU" secondAttribute="trailing" constant="5" id="ODB-R6-coy"/>
                 <constraint firstAttribute="trailing" secondItem="Yvc-XF-hda" secondAttribute="trailing" constant="10" id="VDY-Kc-EaF"/>

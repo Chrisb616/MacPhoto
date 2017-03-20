@@ -10,6 +10,8 @@ import Cocoa
 
 class PhotoDetailViewController: NSViewController {
     
+    var personSelectionViewController: PersonSelectionViewController
+    
     var photo: Photo
 
     @IBOutlet weak var photoImageView: NSImageView!
@@ -20,6 +22,7 @@ class PhotoDetailViewController: NSViewController {
     @IBOutlet weak var uniqueIDLabel: NSTextField!
     
     init(photo: Photo) {
+        personSelectionViewController = PersonSelectionViewController()
         self.photo = photo
         super.init(nibName: "PhotoDetailViewController", bundle: nil)!
     }
@@ -34,9 +37,10 @@ class PhotoDetailViewController: NSViewController {
         self.titleTextField.stringValue = photo.title
         self.uniqueIDLabel.stringValue = photo.uniqueID
         
-        let personSelectionView = PersonSelectionView()
-        personSelectionView.delegate = self
-        personSelectionContainer.addSubview(personSelectionView.view)
+        personSelectionViewController.delegate = self
+        personSelectionViewController.populate(selectedPeople: photo.people)
+        personSelectionViewController.placeIn(container: personSelectionContainer)
+        //PersonSelectionViewController.populate(selectedPeople: [:], delegate: self, container: personSelectionContainer)
     }
     @IBAction func saveButtonTapped(_ sender: Any) {
         
@@ -50,8 +54,10 @@ class PhotoDetailViewController: NSViewController {
 extension PhotoDetailViewController: PersonSelectionViewDelegate {
     func added(_ person: Person) {
         print("Added \(person.fullName)")
+        photo.associate(person: person)
     }
     func removed(_ person: Person) {
         print("Removed \(person.fullName)")
+        photo.disassociate(person: person)
     }
 }
