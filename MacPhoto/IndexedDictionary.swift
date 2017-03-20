@@ -51,4 +51,10 @@ struct IndexedDictionary<T: HasUniqueID> {
         guard let index = keys[uniqueID] else { return nil }
         return values[index]
     }
+    
+    //MARK: - Clear Values
+    mutating func clear() {
+        keys.removeAll()
+        values.removeAll()
+    }
 }

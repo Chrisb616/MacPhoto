@@ -13,21 +13,59 @@ class MainViewController: NSViewController {
     @IBOutlet weak var mainCollectionView: NSCollectionView!
     @IBOutlet weak var mainCollectionViewLayout: NSCollectionViewFlowLayout!
     
+    @IBOutlet weak var pathControl: NSPathControl!
+    var pathControlClickHandler: NSClickGestureRecognizer!
+    
     @IBAction func reloadButtonTapped(_ sender: Any) {
         mainCollectionView.reloadData()
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        LocalFileManager.instance.loadPhotoInfo()
-        LocalFileManager.instance.loadPersonInfo()
+    
+        LocalFileManager.instance.loadAllInfo()
+        
         configureCollectionView()
+        configurePathController()
     }
 
     override var representedObject: Any? {
         didSet {
         // Update the view, if already loaded.
         }
+    }
+    
+    private func configurePathController() {
+        pathControl.url = LocalFileManager.instance.programDirectoryHome
+        
+        pathControlClickHandler = NSClickGestureRecognizer()
+        pathControlClickHandler.action = #selector(pathControlClicked)
+        pathControlClickHandler.numberOfClicksRequired = 2
+        pathControl.addGestureRecognizer(pathControlClickHandler)
+        
+    }
+    @objc private func pathControlClicked() {
+        let dialog = NSOpenPanel()
+        
+        dialog.title = "Select new directory"
+        dialog.showsResizeIndicator = true
+        dialog.showsHiddenFiles = false
+        dialog.canChooseDirectories = true
+        dialog.canChooseFiles = false
+        dialog.canCreateDirectories = false
+        dialog.allowsMultipleSelection = false
+        
+        if dialog.runModal() == NSModalResponseOK {
+            let result = dialog.url
+            
+            if let result = result {
+                pathControl.url = result
+                LocalFileManager.instance.saveProgramDirectoryHome(at: result.path)
+                DataStore.instance.clear()
+                LocalFileManager.instance.loadAllInfo()
+                self.mainCollectionView.reloadData()
+            }
+        }
+
     }
     
     private func configureCollectionView() {

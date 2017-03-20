@@ -18,4 +18,11 @@ class DataStore {
     var spots = IndexedDictionary<Spot>()
     var areas = IndexedDictionary<Area>()
     
+    func clear() {
+        photos.clear()
+        people.clear()
+        spots.clear()
+        areas.clear()
+    }
+    
 }

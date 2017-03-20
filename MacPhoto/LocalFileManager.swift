@@ -37,7 +37,27 @@ class LocalFileManager {
     }
     
     //MARK: - Local File Paths
-    private var programDirectoryHome = URL(fileURLWithPath: Factbook.picturesPath)
+    private let userDefaults = UserDefaults.standard
+    private let userDefaultsKey: String = "Program Directory"
+    
+    func loadProgramDirectoryHome() {
+        
+        if let path = userDefaults.value(forKey: userDefaultsKey) as? String {
+            safeProgramDirectoryHome = URL(fileURLWithPath: path)
+        }
+        
+    }
+    
+    func saveProgramDirectoryHome(at path: String) {
+        
+        userDefaults.set(path, forKey: userDefaultsKey)
+        safeProgramDirectoryHome = URL(fileURLWithPath: path)
+        
+    }
+    
+    
+    var programDirectoryHome: URL { return safeProgramDirectoryHome }
+    private var safeProgramDirectoryHome = URL(fileURLWithPath: Factbook.picturesPath)
     
     private var programDirectory: URL { return programDirectoryHome.appendingPathComponent("MacPhoto") }
     
@@ -99,6 +119,14 @@ class LocalFileManager {
                 
             }
         }
+    }
+    
+    //MARK: - Load All Info
+    
+    func loadAllInfo() {
+        loadProgramDirectoryHome()
+        loadPersonInfo()
+        loadPhotoInfo()
     }
     
     //MARK: - Person Info Management
@@ -195,4 +223,5 @@ class LocalFileManager {
         let path = imageDirectory.appendingPathComponent("\(uniqueID).jpg")
         return NSImage(contentsOf: path)
     }
+    
 }
