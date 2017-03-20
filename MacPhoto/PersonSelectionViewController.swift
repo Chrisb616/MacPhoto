@@ -14,6 +14,40 @@ class PersonSelectionViewController: NSViewController {
     var selected = [String:Bool]()
     @IBOutlet weak var tableView: NSTableView!
     @IBOutlet weak var searchField: NSSearchField!
+    @IBOutlet weak var quickAddButton: NSButton!
+    
+    var personSelectionQuickAddViewController: PersonSelectionQuickAddViewController?
+    
+    @IBAction func quickAddButtonTapped(_ sender: Any) {
+        
+        if personSelectionQuickAddViewController == nil {
+            personSelectionQuickAddViewController = PersonSelectionQuickAddViewController()
+            personSelectionQuickAddViewController?.delegate = self
+            
+            guard let quickAdd = personSelectionQuickAddViewController else {
+                print("FAILURE: Failed to load Person Selection Quick Add View Controller")
+                return
+            }
+            
+            presentViewController(quickAdd,
+                                  asPopoverRelativeTo: PersonSelectionQuickAddViewController.standardFrame,
+                                  of: quickAddButton,
+                                  preferredEdge: NSRectEdge.minY,
+                                  behavior: .applicationDefined)
+            
+            
+            
+        }
+        else {
+            dismissQuickAddPopover()
+        }
+        
+    }
+    
+    func dismissQuickAddPopover() {
+        personSelectionQuickAddViewController?.dismiss(nil)
+        personSelectionQuickAddViewController = nil
+    }
     
     var people = [Person]()
     

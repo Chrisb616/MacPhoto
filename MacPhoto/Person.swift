@@ -18,13 +18,16 @@ class Person: HasUniqueID {
     var middleName: String?
     var lastName: String?
     
+    var isFemale: Bool?
+    
     var photos = [String:Bool]()
     
     //MARK: Object Creation
-    static func new(name:String, firstName: String?, middleName: String?, lastName: String?) {
+    static func new(name:String, firstName: String?, middleName: String?, lastName: String?, isFemale: Bool? = nil) {
         let new = Person(name: name, firstName: firstName, middleName: middleName, lastName: lastName)
     
         DataStore.instance.people.add(new)
+        newest = new
     }
     
     static func load(uniqueID: String, name: String, firstName: String?, middleName: String?, lastName: String?) {
@@ -49,6 +52,8 @@ class Person: HasUniqueID {
         self.middleName = middleName
         self.lastName = lastName
     }
+    
+    static var newest: Person?
     
 }
 
