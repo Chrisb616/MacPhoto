@@ -35,7 +35,6 @@
 		13FDC0AF1E7341A800244CE7 /* PersonSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FDC0AD1E7341A800244CE7 /* PersonSelectionViewController.swift */; };
 		13FDC0B01E7341A800244CE7 /* PersonSelectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13FDC0AE1E7341A800244CE7 /* PersonSelectionViewController.xib */; };
 		13FDC0B21E73455800244CE7 /* PersonSelectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FDC0B11E73455800244CE7 /* PersonSelectionViewDelegate.swift */; };
-		8401977F1E5BAE7800555C17 /* AddImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8401977E1E5BAE7800555C17 /* AddImageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,7 +68,6 @@
 		13FDC0AD1E7341A800244CE7 /* PersonSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonSelectionViewController.swift; sourceTree = "<group>"; };
 		13FDC0AE1E7341A800244CE7 /* PersonSelectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonSelectionViewController.xib; sourceTree = "<group>"; };
 		13FDC0B11E73455800244CE7 /* PersonSelectionViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonSelectionViewDelegate.swift; sourceTree = "<group>"; };
-		8401977E1E5BAE7800555C17 /* AddImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddImageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,17 +102,8 @@
 			children = (
 				1338CA291E7221B100E3041B /* PersonSelectionViewController */,
 				1316532F1E5B81B1007F4E76 /* Model */,
-				131653121E5B8091007F4E76 /* AppDelegate.swift */,
-				138DEF911E6F933100795A08 /* PhotoCollectionViewItem.swift */,
-				138DEF921E6F933100795A08 /* PhotoCollectionViewItem.xib */,
-				131653141E5B8091007F4E76 /* PhotoCollectionViewController.swift */,
-				8401977E1E5BAE7800555C17 /* AddImageViewController.swift */,
-				130694911E71DB820097BDD4 /* PhotoDetailViewController.swift */,
-				130694921E71DB820097BDD4 /* PhotoDetailViewController.xib */,
-				131653161E5B8091007F4E76 /* Assets.xcassets */,
-				131653181E5B8091007F4E76 /* Main.storyboard */,
-				133CCEA41E8167DA00E8DEA7 /* MainWindowController.swift */,
-				1316531B1E5B8091007F4E76 /* Info.plist */,
+				133CCEA81E81BDF600E8DEA7 /* View */,
+				133CCEA91E81BE1100E8DEA7 /* App */,
 			);
 			path = MacPhoto;
 			sourceTree = "<group>";
@@ -155,6 +144,46 @@
 				134BB9EE1E805B650083243B /* PersonSelectionQuickAddViewController.swift */,
 			);
 			name = PersonSelectionViewController;
+			sourceTree = "<group>";
+		};
+		133CCEA61E81BDB200E8DEA7 /* MainViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				133CCEA41E8167DA00E8DEA7 /* MainWindowController.swift */,
+				131653181E5B8091007F4E76 /* Main.storyboard */,
+				133CCEA71E81BDC700E8DEA7 /* PhotoCollectionViewController */,
+			);
+			name = MainViewControllers;
+			sourceTree = "<group>";
+		};
+		133CCEA71E81BDC700E8DEA7 /* PhotoCollectionViewController */ = {
+			isa = PBXGroup;
+			children = (
+				138DEF911E6F933100795A08 /* PhotoCollectionViewItem.swift */,
+				138DEF921E6F933100795A08 /* PhotoCollectionViewItem.xib */,
+				131653141E5B8091007F4E76 /* PhotoCollectionViewController.swift */,
+			);
+			name = PhotoCollectionViewController;
+			sourceTree = "<group>";
+		};
+		133CCEA81E81BDF600E8DEA7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				130694911E71DB820097BDD4 /* PhotoDetailViewController.swift */,
+				130694921E71DB820097BDD4 /* PhotoDetailViewController.xib */,
+				133CCEA61E81BDB200E8DEA7 /* MainViewControllers */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		133CCEA91E81BE1100E8DEA7 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				131653121E5B8091007F4E76 /* AppDelegate.swift */,
+				131653161E5B8091007F4E76 /* Assets.xcassets */,
+				1316531B1E5B8091007F4E76 /* Info.plist */,
+			);
+			name = App;
 			sourceTree = "<group>";
 		};
 		13505FB91E6B1B9600D85D5A /* Extensions */ = {
@@ -294,7 +323,6 @@
 				131653311E5B874A007F4E76 /* Factbook.swift in Sources */,
 				137B7B771E61E20300F9A69E /* IndexedDictionary.swift in Sources */,
 				131653281E5B8130007F4E76 /* Spot.swift in Sources */,
-				8401977F1E5BAE7800555C17 /* AddImageViewController.swift in Sources */,
 				131653131E5B8091007F4E76 /* AppDelegate.swift in Sources */,
 				13505FB61E6B06FF00D85D5A /* JSONManager.swift in Sources */,
 				1361F8301E661F2700D65337 /* Area.swift in Sources */,
