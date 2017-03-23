@@ -18,7 +18,6 @@ class PhotoCollectionViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     
-        LocalFileManager.instance.loadAllInfo()
         
         configureCollectionView()
     }

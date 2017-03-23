@@ -20,6 +20,9 @@
 		131653311E5B874A007F4E76 /* Factbook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131653301E5B874A007F4E76 /* Factbook.swift */; };
 		131653331E5B8B76007F4E76 /* LocalFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131653321E5B8B76007F4E76 /* LocalFileManager.swift */; };
 		133CCEA51E8167DA00E8DEA7 /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133CCEA41E8167DA00E8DEA7 /* MainWindowController.swift */; };
+		133CCEB01E8442F000E8DEA7 /* PeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133CCEAF1E8442F000E8DEA7 /* PeopleViewController.swift */; };
+		133CCEB41E84454C00E8DEA7 /* PreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133CCEB21E84454C00E8DEA7 /* PreferencesViewController.swift */; };
+		133CCEB51E84454C00E8DEA7 /* PreferencesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 133CCEB31E84454C00E8DEA7 /* PreferencesViewController.xib */; };
 		133ECCC11E79CCF8002619A0 /* PersonSelectionTableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133ECCC01E79CCF8002619A0 /* PersonSelectionTableCellView.swift */; };
 		134BB9ED1E805B500083243B /* PersonSelectionQuickAddViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 134BB9EC1E805B500083243B /* PersonSelectionQuickAddViewController.xib */; };
 		134BB9EF1E805B650083243B /* PersonSelectionQuickAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134BB9EE1E805B650083243B /* PersonSelectionQuickAddViewController.swift */; };
@@ -53,6 +56,9 @@
 		131653301E5B874A007F4E76 /* Factbook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Factbook.swift; sourceTree = "<group>"; };
 		131653321E5B8B76007F4E76 /* LocalFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalFileManager.swift; sourceTree = "<group>"; };
 		133CCEA41E8167DA00E8DEA7 /* MainWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
+		133CCEAF1E8442F000E8DEA7 /* PeopleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleViewController.swift; sourceTree = "<group>"; };
+		133CCEB21E84454C00E8DEA7 /* PreferencesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesViewController.swift; sourceTree = "<group>"; };
+		133CCEB31E84454C00E8DEA7 /* PreferencesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PreferencesViewController.xib; sourceTree = "<group>"; };
 		133ECCC01E79CCF8002619A0 /* PersonSelectionTableCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonSelectionTableCellView.swift; sourceTree = "<group>"; };
 		134BB9EC1E805B500083243B /* PersonSelectionQuickAddViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonSelectionQuickAddViewController.xib; sourceTree = "<group>"; };
 		134BB9EE1E805B650083243B /* PersonSelectionQuickAddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonSelectionQuickAddViewController.swift; sourceTree = "<group>"; };
@@ -146,14 +152,15 @@
 			name = PersonSelectionViewController;
 			sourceTree = "<group>";
 		};
-		133CCEA61E81BDB200E8DEA7 /* MainViewControllers */ = {
+		133CCEA61E81BDB200E8DEA7 /* MainWindow */ = {
 			isa = PBXGroup;
 			children = (
 				133CCEA41E8167DA00E8DEA7 /* MainWindowController.swift */,
 				131653181E5B8091007F4E76 /* Main.storyboard */,
+				133CCEAF1E8442F000E8DEA7 /* PeopleViewController.swift */,
 				133CCEA71E81BDC700E8DEA7 /* PhotoCollectionViewController */,
 			);
-			name = MainViewControllers;
+			name = MainWindow;
 			sourceTree = "<group>";
 		};
 		133CCEA71E81BDC700E8DEA7 /* PhotoCollectionViewController */ = {
@@ -169,9 +176,8 @@
 		133CCEA81E81BDF600E8DEA7 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				130694911E71DB820097BDD4 /* PhotoDetailViewController.swift */,
-				130694921E71DB820097BDD4 /* PhotoDetailViewController.xib */,
-				133CCEA61E81BDB200E8DEA7 /* MainViewControllers */,
+				133CCEA61E81BDB200E8DEA7 /* MainWindow */,
+				133CCEAC1E843FA800E8DEA7 /* OtherViewControllers */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -184,6 +190,33 @@
 				1316531B1E5B8091007F4E76 /* Info.plist */,
 			);
 			name = App;
+			sourceTree = "<group>";
+		};
+		133CCEAC1E843FA800E8DEA7 /* OtherViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				133CCEB11E84451C00E8DEA7 /* PhotoDetailViewController */,
+				133CCEB61E84459100E8DEA7 /* PreferencesViewController */,
+			);
+			name = OtherViewControllers;
+			sourceTree = "<group>";
+		};
+		133CCEB11E84451C00E8DEA7 /* PhotoDetailViewController */ = {
+			isa = PBXGroup;
+			children = (
+				130694911E71DB820097BDD4 /* PhotoDetailViewController.swift */,
+				130694921E71DB820097BDD4 /* PhotoDetailViewController.xib */,
+			);
+			name = PhotoDetailViewController;
+			sourceTree = "<group>";
+		};
+		133CCEB61E84459100E8DEA7 /* PreferencesViewController */ = {
+			isa = PBXGroup;
+			children = (
+				133CCEB21E84454C00E8DEA7 /* PreferencesViewController.swift */,
+				133CCEB31E84454C00E8DEA7 /* PreferencesViewController.xib */,
+			);
+			name = PreferencesViewController;
 			sourceTree = "<group>";
 		};
 		13505FB91E6B1B9600D85D5A /* Extensions */ = {
@@ -289,6 +322,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				131653171E5B8091007F4E76 /* Assets.xcassets in Resources */,
+				133CCEB51E84454C00E8DEA7 /* PreferencesViewController.xib in Resources */,
 				1316531A1E5B8091007F4E76 /* Main.storyboard in Resources */,
 				130694941E71DB820097BDD4 /* PhotoDetailViewController.xib in Resources */,
 				138DEF941E6F933100795A08 /* PhotoCollectionViewItem.xib in Resources */,
@@ -308,12 +342,14 @@
 				133CCEA51E8167DA00E8DEA7 /* MainWindowController.swift in Sources */,
 				13FDC0B21E73455800244CE7 /* PersonSelectionViewDelegate.swift in Sources */,
 				131653291E5B8130007F4E76 /* Photo.swift in Sources */,
+				133CCEB01E8442F000E8DEA7 /* PeopleViewController.swift in Sources */,
 				133ECCC11E79CCF8002619A0 /* PersonSelectionTableCellView.swift in Sources */,
 				131653331E5B8B76007F4E76 /* LocalFileManager.swift in Sources */,
 				137B7B791E61E3A500F9A69E /* HasUniqueID.swift in Sources */,
 				13505FBB1E6B1B9E00D85D5A /* Date.swift in Sources */,
 				1316532A1E5B8130007F4E76 /* UniqueIDGenerator.swift in Sources */,
 				138DEF8A1E6F464900795A08 /* Location.swift in Sources */,
+				133CCEB41E84454C00E8DEA7 /* PreferencesViewController.swift in Sources */,
 				130694931E71DB820097BDD4 /* PhotoDetailViewController.swift in Sources */,
 				138DEF931E6F933100795A08 /* PhotoCollectionViewItem.swift in Sources */,
 				13D1BA8D1E5D1FD6007E7EFA /* Person.swift in Sources */,

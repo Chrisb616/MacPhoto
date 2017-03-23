@@ -28,7 +28,6 @@ class PhotoCollectionViewItem: NSCollectionViewItem, NSGestureRecognizerDelegate
         super.viewDidLoad()
         view.wantsLayer = true
         view.layer = CALayer()
-        view.layer?.backgroundColor = NSColor.lightGray.cgColor
         
     }
     

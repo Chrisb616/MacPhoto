@@ -678,12 +678,46 @@
             <objects>
                 <windowController id="B8D-0N-5wS" customClass="MainWindowController" customModule="MacPhoto" customModuleProvider="target" sceneMemberID="viewController">
                     <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
-                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" texturedBackground="YES" unifiedTitleAndToolbar="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="-240" y="-53" width="560" height="480"/>
+                        <rect key="contentRect" x="-240" y="-53" width="960" height="720"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
+                        <toolbar key="toolbar" implicitIdentifier="E608471B-78F6-4F44-833D-4C20CE7B9734" autosavesConfiguration="NO" displayMode="iconAndLabel" sizeMode="regular" id="xT5-Ty-36N">
+                            <allowedToolbarItems>
+                                <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="pYW-YO-j6b"/>
+                                <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="Jpb-k3-ROI"/>
+                                <toolbarItem implicitItemIdentifier="9DA19EBD-0A09-4848-A738-BA8B1F290068" label="Photos" paletteLabel="Photos" tag="-1" image="PhotosIconFilled" id="f64-fv-9RA">
+                                    <connections>
+                                        <action selector="photosToolbarItemSelected:" target="B8D-0N-5wS" id="7E7-T2-xc7"/>
+                                    </connections>
+                                </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="F73CCD57-C30D-4AAE-B9E0-1B789CA777A4" label="People" paletteLabel="People" tag="-1" image="PeopleIconFilled" id="TK2-Vt-j41">
+                                    <connections>
+                                        <action selector="peopleToolbarItemSelected:" target="B8D-0N-5wS" id="S4z-nH-kHS"/>
+                                    </connections>
+                                </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="723E1FE8-4D92-4F19-82A6-7A3DD6EA572B" label="Places" paletteLabel="Places" tag="-1" image="MapIconFilled" id="sij-IS-wgG">
+                                    <connections>
+                                        <action selector="placesToolbarItemSelected:" target="B8D-0N-5wS" id="gVR-EB-0yD"/>
+                                    </connections>
+                                </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="02CB841E-EFB4-4ED4-9B19-C6C7F99345E3" label="Preferences" paletteLabel="Preferences" tag="-1" image="GearsIconFilled" id="fOf-jh-269">
+                                    <connections>
+                                        <action selector="preferencesToolbarItemSelected:" target="B8D-0N-5wS" id="EpY-Yd-sF5"/>
+                                    </connections>
+                                </toolbarItem>
+                            </allowedToolbarItems>
+                            <defaultToolbarItems>
+                                <toolbarItem reference="f64-fv-9RA"/>
+                                <toolbarItem reference="TK2-Vt-j41"/>
+                                <toolbarItem reference="sij-IS-wgG"/>
+                                <toolbarItem reference="Jpb-k3-ROI"/>
+                                <toolbarItem reference="fOf-jh-269"/>
+                            </defaultToolbarItems>
+                        </toolbar>
                     </window>
                     <connections>
+                        <outlet property="toolbar" destination="xT5-Ty-36N" id="ff5-AM-u7n"/>
                         <segue destination="9sR-Lb-5xb" kind="relationship" relationship="window.shadowedContentViewController" id="8yG-OF-Loa"/>
                     </connections>
                 </windowController>
@@ -696,7 +730,7 @@
             <objects>
                 <viewController id="9sR-Lb-5xb" sceneMemberID="viewController">
                     <containerView key="view" id="U8b-8L-bDu">
-                        <rect key="frame" x="0.0" y="0.0" width="1143" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="960" height="720"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <connections>
                             <segue destination="XfG-lQ-9wD" kind="embed" id="0pq-TG-OxR"/>
@@ -704,22 +738,21 @@
                     </containerView>
                 </viewController>
                 <customObject id="mpI-FE-bkq" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-                <toolbar implicitIdentifier="09D11707-F4A3-4FD5-970E-AC5832E91C2B" autosavesConfiguration="NO" displayMode="iconAndLabel" sizeMode="regular" id="945-HW-Ud5">
-                    <allowedToolbarItems>
-                        <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="c8U-u9-oYj"/>
-                        <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="1z9-e7-DXc"/>
-                        <toolbarItem implicitItemIdentifier="99920143-1166-458E-BACB-240538FDBA2D" label="Photos" paletteLabel="Photos Window" tag="-1" image="PhotosIconFilled" id="Gxz-yb-Rms"/>
-                        <toolbarItem implicitItemIdentifier="C4CA2922-97D2-434D-A476-893E144AC0FA" label="People" paletteLabel="People Window" tag="-1" image="PeopleIconFilled" id="wVg-eN-nls"/>
-                        <toolbarItem implicitItemIdentifier="AC82D238-F985-4354-A6CF-8BD6D53B97D4" label="Toolbar Item" paletteLabel="Toolbar Item" tag="-1" image="MapIconFilled" id="3c7-pN-7XN"/>
-                    </allowedToolbarItems>
-                    <defaultToolbarItems>
-                        <toolbarItem reference="Gxz-yb-Rms"/>
-                        <toolbarItem reference="wVg-eN-nls"/>
-                        <toolbarItem reference="3c7-pN-7XN"/>
-                    </defaultToolbarItems>
-                </toolbar>
             </objects>
             <point key="canvasLocation" x="-120" y="679"/>
+        </scene>
+        <!--People View Controller-->
+        <scene sceneID="kJI-cd-nh5">
+            <objects>
+                <viewController id="0cP-iS-Pdj" customClass="PeopleViewController" customModule="MacPhoto" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="4yg-6c-f96">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </view>
+                </viewController>
+                <customObject id="sI6-Wj-Bgb" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="733" y="405"/>
         </scene>
         <!--Photo Collection View Controller-->
         <scene sceneID="hIz-AP-VOD">
@@ -729,42 +762,56 @@
                         <rect key="frame" x="0.0" y="0.0" width="1256" height="843"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <scrollView wantsLayer="YES" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zcm-m8-sYi">
+                            <splitView arrangesAllSubviews="NO" dividerStyle="paneSplitter" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5dC-gH-ce5">
                                 <rect key="frame" x="0.0" y="0.0" width="1256" height="843"/>
-                                <clipView key="contentView" drawsBackground="NO" id="fRt-FP-ugz">
-                                    <rect key="frame" x="1" y="1" width="1254" height="841"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    <subviews>
-                                        <collectionView selectable="YES" id="eaw-bi-lWY">
-                                            <rect key="frame" x="0.0" y="0.0" width="1254" height="841"/>
+                                <subviews>
+                                    <customView fixedFrame="YES" id="A6U-Wt-cgo">
+                                        <rect key="frame" x="0.0" y="0.0" width="242" height="843"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                    </customView>
+                                    <scrollView wantsLayer="YES" fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" id="zcm-m8-sYi">
+                                        <rect key="frame" x="252" y="0.0" width="1004" height="843"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <clipView key="contentView" drawsBackground="NO" id="fRt-FP-ugz">
+                                            <rect key="frame" x="1" y="1" width="1002" height="841"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                            <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="10" minimumLineSpacing="10" id="Yct-FU-S1S">
-                                                <size key="itemSize" width="50" height="50"/>
-                                            </collectionViewFlowLayout>
-                                            <color key="primaryBackgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                            <connections>
-                                                <outlet property="dataSource" destination="XfG-lQ-9wD" id="dcM-xP-Vb2"/>
-                                                <outlet property="delegate" destination="XfG-lQ-9wD" id="l82-8b-sZk"/>
-                                            </connections>
-                                        </collectionView>
-                                    </subviews>
-                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                </clipView>
-                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="79B-WB-uRh">
-                                    <rect key="frame" x="1" y="826" width="1254" height="16"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </scroller>
-                                <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="eCh-Hz-7Xg">
-                                    <rect key="frame" x="1903" y="1" width="16" height="841"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </scroller>
-                            </scrollView>
+                                            <subviews>
+                                                <collectionView selectable="YES" id="eaw-bi-lWY">
+                                                    <rect key="frame" x="0.0" y="0.0" width="1002" height="841"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="10" minimumLineSpacing="10" id="Yct-FU-S1S">
+                                                        <size key="itemSize" width="50" height="50"/>
+                                                    </collectionViewFlowLayout>
+                                                    <color key="primaryBackgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                    <connections>
+                                                        <outlet property="dataSource" destination="XfG-lQ-9wD" id="dcM-xP-Vb2"/>
+                                                        <outlet property="delegate" destination="XfG-lQ-9wD" id="l82-8b-sZk"/>
+                                                    </connections>
+                                                </collectionView>
+                                            </subviews>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </clipView>
+                                        <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="79B-WB-uRh">
+                                            <rect key="frame" x="1" y="826" width="1002" height="16"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </scroller>
+                                        <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="eCh-Hz-7Xg">
+                                            <rect key="frame" x="1903" y="1" width="16" height="841"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </scroller>
+                                    </scrollView>
+                                </subviews>
+                                <holdingPriorities>
+                                    <real value="250"/>
+                                    <real value="250"/>
+                                </holdingPriorities>
+                            </splitView>
                         </subviews>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="zcm-m8-sYi" secondAttribute="bottom" id="6KJ-5T-cS8"/>
-                            <constraint firstItem="zcm-m8-sYi" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="HBn-r9-zhL"/>
-                            <constraint firstAttribute="trailing" secondItem="zcm-m8-sYi" secondAttribute="trailing" id="kJD-HH-jMc"/>
-                            <constraint firstItem="zcm-m8-sYi" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="zab-lQ-mQO"/>
+                            <constraint firstAttribute="bottom" secondItem="5dC-gH-ce5" secondAttribute="bottom" id="9Tm-Qq-GFI"/>
+                            <constraint firstItem="5dC-gH-ce5" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="FP2-1j-5Mo"/>
+                            <constraint firstAttribute="trailing" secondItem="5dC-gH-ce5" secondAttribute="trailing" id="Gdf-2G-utg"/>
+                            <constraint firstItem="5dC-gH-ce5" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="T4K-vP-yTQ"/>
                         </constraints>
                     </view>
                     <connections>
@@ -774,10 +821,11 @@
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-409" y="1862"/>
+            <point key="canvasLocation" x="-409" y="1861.5"/>
         </scene>
     </scenes>
     <resources>
+        <image name="GearsIconFilled" width="50" height="50"/>
         <image name="MapIconFilled" width="50" height="50"/>
         <image name="PeopleIconFilled" width="50" height="50"/>
         <image name="PhotosIconFilled" width="50" height="50"/>
