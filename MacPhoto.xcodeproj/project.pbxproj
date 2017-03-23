@@ -10,7 +10,6 @@
 		130694931E71DB820097BDD4 /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130694911E71DB820097BDD4 /* PhotoDetailViewController.swift */; };
 		130694941E71DB820097BDD4 /* PhotoDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 130694921E71DB820097BDD4 /* PhotoDetailViewController.xib */; };
 		131653131E5B8091007F4E76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131653121E5B8091007F4E76 /* AppDelegate.swift */; };
-		131653151E5B8091007F4E76 /* PhotoCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131653141E5B8091007F4E76 /* PhotoCollectionViewController.swift */; };
 		131653171E5B8091007F4E76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 131653161E5B8091007F4E76 /* Assets.xcassets */; };
 		1316531A1E5B8091007F4E76 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 131653181E5B8091007F4E76 /* Main.storyboard */; };
 		131653261E5B8130007F4E76 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131653211E5B8130007F4E76 /* DataStore.swift */; };
@@ -20,9 +19,10 @@
 		131653311E5B874A007F4E76 /* Factbook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131653301E5B874A007F4E76 /* Factbook.swift */; };
 		131653331E5B8B76007F4E76 /* LocalFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131653321E5B8B76007F4E76 /* LocalFileManager.swift */; };
 		133CCEA51E8167DA00E8DEA7 /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133CCEA41E8167DA00E8DEA7 /* MainWindowController.swift */; };
-		133CCEB01E8442F000E8DEA7 /* PeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133CCEAF1E8442F000E8DEA7 /* PeopleViewController.swift */; };
 		133CCEB41E84454C00E8DEA7 /* PreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133CCEB21E84454C00E8DEA7 /* PreferencesViewController.swift */; };
 		133CCEB51E84454C00E8DEA7 /* PreferencesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 133CCEB31E84454C00E8DEA7 /* PreferencesViewController.xib */; };
+		133CCEB91E845BBC00E8DEA7 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133CCEB71E845BBC00E8DEA7 /* PhotoViewController.swift */; };
+		133CCEBA1E845BBC00E8DEA7 /* PhotoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 133CCEB81E845BBC00E8DEA7 /* PhotoViewController.xib */; };
 		133ECCC11E79CCF8002619A0 /* PersonSelectionTableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133ECCC01E79CCF8002619A0 /* PersonSelectionTableCellView.swift */; };
 		134BB9ED1E805B500083243B /* PersonSelectionQuickAddViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 134BB9EC1E805B500083243B /* PersonSelectionQuickAddViewController.xib */; };
 		134BB9EF1E805B650083243B /* PersonSelectionQuickAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134BB9EE1E805B650083243B /* PersonSelectionQuickAddViewController.swift */; };
@@ -31,6 +31,10 @@
 		1361F8301E661F2700D65337 /* Area.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1361F82F1E661F2700D65337 /* Area.swift */; };
 		137B7B771E61E20300F9A69E /* IndexedDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137B7B761E61E20300F9A69E /* IndexedDictionary.swift */; };
 		137B7B791E61E3A500F9A69E /* HasUniqueID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137B7B781E61E3A500F9A69E /* HasUniqueID.swift */; };
+		138C401C1E8460BE00EED229 /* PeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138C401A1E8460BE00EED229 /* PeopleViewController.swift */; };
+		138C401D1E8460BE00EED229 /* PeopleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 138C401B1E8460BE00EED229 /* PeopleViewController.xib */; };
+		138C40261E847F9300EED229 /* PlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138C40241E847F9300EED229 /* PlacesViewController.swift */; };
+		138C40271E847F9300EED229 /* PlacesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 138C40251E847F9300EED229 /* PlacesViewController.xib */; };
 		138DEF8A1E6F464900795A08 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138DEF891E6F464900795A08 /* Location.swift */; };
 		138DEF931E6F933100795A08 /* PhotoCollectionViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138DEF911E6F933100795A08 /* PhotoCollectionViewItem.swift */; };
 		138DEF941E6F933100795A08 /* PhotoCollectionViewItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 138DEF921E6F933100795A08 /* PhotoCollectionViewItem.xib */; };
@@ -45,7 +49,6 @@
 		130694921E71DB820097BDD4 /* PhotoDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotoDetailViewController.xib; sourceTree = "<group>"; };
 		1316530F1E5B8091007F4E76 /* MacPhoto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacPhoto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		131653121E5B8091007F4E76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		131653141E5B8091007F4E76 /* PhotoCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewController.swift; sourceTree = "<group>"; };
 		131653161E5B8091007F4E76 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		131653191E5B8091007F4E76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1316531B1E5B8091007F4E76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -56,9 +59,10 @@
 		131653301E5B874A007F4E76 /* Factbook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Factbook.swift; sourceTree = "<group>"; };
 		131653321E5B8B76007F4E76 /* LocalFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalFileManager.swift; sourceTree = "<group>"; };
 		133CCEA41E8167DA00E8DEA7 /* MainWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
-		133CCEAF1E8442F000E8DEA7 /* PeopleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleViewController.swift; sourceTree = "<group>"; };
 		133CCEB21E84454C00E8DEA7 /* PreferencesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesViewController.swift; sourceTree = "<group>"; };
 		133CCEB31E84454C00E8DEA7 /* PreferencesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PreferencesViewController.xib; sourceTree = "<group>"; };
+		133CCEB71E845BBC00E8DEA7 /* PhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
+		133CCEB81E845BBC00E8DEA7 /* PhotoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotoViewController.xib; sourceTree = "<group>"; };
 		133ECCC01E79CCF8002619A0 /* PersonSelectionTableCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonSelectionTableCellView.swift; sourceTree = "<group>"; };
 		134BB9EC1E805B500083243B /* PersonSelectionQuickAddViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonSelectionQuickAddViewController.xib; sourceTree = "<group>"; };
 		134BB9EE1E805B650083243B /* PersonSelectionQuickAddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonSelectionQuickAddViewController.swift; sourceTree = "<group>"; };
@@ -67,6 +71,10 @@
 		1361F82F1E661F2700D65337 /* Area.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Area.swift; sourceTree = "<group>"; };
 		137B7B761E61E20300F9A69E /* IndexedDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexedDictionary.swift; sourceTree = "<group>"; };
 		137B7B781E61E3A500F9A69E /* HasUniqueID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HasUniqueID.swift; sourceTree = "<group>"; };
+		138C401A1E8460BE00EED229 /* PeopleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleViewController.swift; sourceTree = "<group>"; };
+		138C401B1E8460BE00EED229 /* PeopleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PeopleViewController.xib; sourceTree = "<group>"; };
+		138C40241E847F9300EED229 /* PlacesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlacesViewController.swift; sourceTree = "<group>"; };
+		138C40251E847F9300EED229 /* PlacesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlacesViewController.xib; sourceTree = "<group>"; };
 		138DEF891E6F464900795A08 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		138DEF911E6F933100795A08 /* PhotoCollectionViewItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewItem.swift; sourceTree = "<group>"; };
 		138DEF921E6F933100795A08 /* PhotoCollectionViewItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotoCollectionViewItem.xib; sourceTree = "<group>"; };
@@ -157,20 +165,22 @@
 			children = (
 				133CCEA41E8167DA00E8DEA7 /* MainWindowController.swift */,
 				131653181E5B8091007F4E76 /* Main.storyboard */,
-				133CCEAF1E8442F000E8DEA7 /* PeopleViewController.swift */,
-				133CCEA71E81BDC700E8DEA7 /* PhotoCollectionViewController */,
+				133CCEA71E81BDC700E8DEA7 /* PhotoViewController */,
+				138C401E1E8460C500EED229 /* PeopleViewController */,
+				138C40211E847F3800EED229 /* PlacesViewController */,
 			);
 			name = MainWindow;
 			sourceTree = "<group>";
 		};
-		133CCEA71E81BDC700E8DEA7 /* PhotoCollectionViewController */ = {
+		133CCEA71E81BDC700E8DEA7 /* PhotoViewController */ = {
 			isa = PBXGroup;
 			children = (
 				138DEF911E6F933100795A08 /* PhotoCollectionViewItem.swift */,
 				138DEF921E6F933100795A08 /* PhotoCollectionViewItem.xib */,
-				131653141E5B8091007F4E76 /* PhotoCollectionViewController.swift */,
+				133CCEB71E845BBC00E8DEA7 /* PhotoViewController.swift */,
+				133CCEB81E845BBC00E8DEA7 /* PhotoViewController.xib */,
 			);
-			name = PhotoCollectionViewController;
+			name = PhotoViewController;
 			sourceTree = "<group>";
 		};
 		133CCEA81E81BDF600E8DEA7 /* View */ = {
@@ -243,6 +253,24 @@
 				138DEF891E6F464900795A08 /* Location.swift */,
 			);
 			name = Location;
+			sourceTree = "<group>";
+		};
+		138C401E1E8460C500EED229 /* PeopleViewController */ = {
+			isa = PBXGroup;
+			children = (
+				138C401B1E8460BE00EED229 /* PeopleViewController.xib */,
+				138C401A1E8460BE00EED229 /* PeopleViewController.swift */,
+			);
+			name = PeopleViewController;
+			sourceTree = "<group>";
+		};
+		138C40211E847F3800EED229 /* PlacesViewController */ = {
+			isa = PBXGroup;
+			children = (
+				138C40241E847F9300EED229 /* PlacesViewController.swift */,
+				138C40251E847F9300EED229 /* PlacesViewController.xib */,
+			);
+			name = PlacesViewController;
 			sourceTree = "<group>";
 		};
 		13F9DC891E673D3A00018B7F /* Data Managers */ = {
@@ -322,6 +350,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				131653171E5B8091007F4E76 /* Assets.xcassets in Resources */,
+				138C401D1E8460BE00EED229 /* PeopleViewController.xib in Resources */,
+				138C40271E847F9300EED229 /* PlacesViewController.xib in Resources */,
+				133CCEBA1E845BBC00E8DEA7 /* PhotoViewController.xib in Resources */,
 				133CCEB51E84454C00E8DEA7 /* PreferencesViewController.xib in Resources */,
 				1316531A1E5B8091007F4E76 /* Main.storyboard in Resources */,
 				130694941E71DB820097BDD4 /* PhotoDetailViewController.xib in Resources */,
@@ -342,9 +373,10 @@
 				133CCEA51E8167DA00E8DEA7 /* MainWindowController.swift in Sources */,
 				13FDC0B21E73455800244CE7 /* PersonSelectionViewDelegate.swift in Sources */,
 				131653291E5B8130007F4E76 /* Photo.swift in Sources */,
-				133CCEB01E8442F000E8DEA7 /* PeopleViewController.swift in Sources */,
+				133CCEB91E845BBC00E8DEA7 /* PhotoViewController.swift in Sources */,
 				133ECCC11E79CCF8002619A0 /* PersonSelectionTableCellView.swift in Sources */,
 				131653331E5B8B76007F4E76 /* LocalFileManager.swift in Sources */,
+				138C40261E847F9300EED229 /* PlacesViewController.swift in Sources */,
 				137B7B791E61E3A500F9A69E /* HasUniqueID.swift in Sources */,
 				13505FBB1E6B1B9E00D85D5A /* Date.swift in Sources */,
 				1316532A1E5B8130007F4E76 /* UniqueIDGenerator.swift in Sources */,
@@ -353,9 +385,9 @@
 				130694931E71DB820097BDD4 /* PhotoDetailViewController.swift in Sources */,
 				138DEF931E6F933100795A08 /* PhotoCollectionViewItem.swift in Sources */,
 				13D1BA8D1E5D1FD6007E7EFA /* Person.swift in Sources */,
-				131653151E5B8091007F4E76 /* PhotoCollectionViewController.swift in Sources */,
 				131653261E5B8130007F4E76 /* DataStore.swift in Sources */,
 				13FDC0AF1E7341A800244CE7 /* PersonSelectionViewController.swift in Sources */,
+				138C401C1E8460BE00EED229 /* PeopleViewController.swift in Sources */,
 				131653311E5B874A007F4E76 /* Factbook.swift in Sources */,
 				137B7B771E61E20300F9A69E /* IndexedDictionary.swift in Sources */,
 				131653281E5B8130007F4E76 /* Spot.swift in Sources */,

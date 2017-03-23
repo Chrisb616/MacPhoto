@@ -16,13 +16,13 @@ class MainWindowController: NSWindowController {
     //MARK: - Toolbar Actions
 
     @IBAction func photosToolbarItemSelected(_ sender: Any) {
-        print("Photos")
+        show(.photos)
     }
     @IBAction func peopleToolbarItemSelected(_ sender: Any) {
-        print("People")
+        show(.people)
     }
     @IBAction func placesToolbarItemSelected(_ sender: Any) {
-        print("Places")
+        show(.places)
     }
     
     @IBAction func preferencesToolbarItemSelected(_ sender: Any) {
@@ -35,7 +35,59 @@ class MainWindowController: NSWindowController {
         LocalFileManager.instance.loadAllInfo()
         
         window?.styleMask.insert(NSWindowStyleMask.resizable)
+
+        instantiateTabViewController()
+        
+        self.window?.delegate = self
+    }
+    
+    
+    //View Controllers
+    
+    let tabViewController = NSTabViewController()
+    
+    let photosViewController = PhotoViewController()
+    let peopleViewController = PeopleViewController()
+    let placesViewController = PlacesViewController()
+    
+    
+    func instantiateTabViewController() {
+        tabViewController.view.wantsLayer = true
+        tabViewController.tabStyle = .unspecified
+        
+        tabViewController.addChildViewController(photosViewController)
+        tabViewController.addChildViewController(peopleViewController)
+        tabViewController.addChildViewController(placesViewController)
+        self.window?.contentViewController = tabViewController
+        
+        
+    }
+    
+    enum ViewController {
+        case photos
+        case people
+        case places
+        
+        var index: Int {
+            switch self {
+            case .photos: return 0
+            case .people: return 1
+            case .places: return 2
+            }
+        }
+    }
+    
+    func show(_ viewController: ViewController) {
+        tabViewController.selectedTabViewItemIndex = viewController.index
     }
 
+    
+}
+
+extension MainWindowController: NSWindowDelegate {
+    
+    func windowWillClose(_ notification: Notification) {
+        NSApplication.shared().terminate(self)
+    }
     
 }

@@ -1,51 +1,70 @@
 //
-//  PhotoCollectionViewController.swift
+//  PhotoViewController.swift
 //  MacPhoto
 //
-//  Created by Christopher Boynton on 2/20/17.
+//  Created by Christopher Boynton on 3/23/17.
 //  Copyright © 2017 Christopher Boynton. All rights reserved.
 //
 
 import Cocoa
 
-class PhotoCollectionViewController: NSViewController {
-
+class PhotoViewController: NSViewController {
+    
     @IBOutlet weak var photoCollectionView: NSCollectionView!
     @IBOutlet weak var photoCollectionViewLayout: NSCollectionViewFlowLayout!
+    @IBOutlet weak var photoListView: NSView!
+    
+    init() {
+        super.init(nibName: "PhotoViewController", bundle: nil)!
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     var pathControlClickHandler: NSClickGestureRecognizer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        
         
         configureCollectionView()
-    }
+        configurePhotoListView()
 
+    }
+    
     override var representedObject: Any? {
         didSet {
-        // Update the view, if already loaded.
+            // Update the view, if already loaded.
         }
-    
+        
     }
     
     private func configureCollectionView() {
         photoCollectionViewLayout.itemSize = NSSize(width: 160, height: 140)
-        photoCollectionViewLayout.sectionInset = NSEdgeInsetsMake(10, 20, 10, 20)
-        photoCollectionViewLayout.minimumLineSpacing = 20
-        photoCollectionViewLayout.minimumInteritemSpacing = 20
+        photoCollectionViewLayout.sectionInset = NSEdgeInsetsMake(10, 10, 10, 10)
+        photoCollectionViewLayout.minimumLineSpacing = 0
+        photoCollectionViewLayout.minimumInteritemSpacing = 0
         photoCollectionView.collectionViewLayout = photoCollectionViewLayout
         
-        view.wantsLayer = true
+        photoCollectionView.wantsLayer = true
         
         photoCollectionView.layer = CALayer()
         photoCollectionView.layer?.backgroundColor = NSColor.black.cgColor
         
     }
-
+    
+    private func configurePhotoListView() {
+        let layer = CALayer()
+        
+        layer.backgroundColor = NSColor(calibratedRed: 144/255, green: 0/255, blue: 31/255, alpha: 1).cgColor
+        
+        photoListView.layer = layer
+    }
+    
 }
 
-extension PhotoCollectionViewController: NSCollectionViewDataSource {
+extension PhotoViewController: NSCollectionViewDataSource {
     
     func numberOfSections(in collectionView: NSCollectionView) -> Int {
         return 1
@@ -63,9 +82,10 @@ extension PhotoCollectionViewController: NSCollectionViewDataSource {
     }
 }
 
-extension PhotoCollectionViewController: NSCollectionViewDelegate {
+extension PhotoViewController: NSCollectionViewDelegate {
     
     func collectionView(_ collectionView: NSCollectionView, didSelectItemsAt indexPaths: Set<IndexPath>) {
     }
     
 }
+

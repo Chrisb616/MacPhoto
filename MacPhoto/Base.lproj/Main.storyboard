@@ -682,7 +682,7 @@
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="-240" y="-53" width="960" height="720"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
-                        <toolbar key="toolbar" implicitIdentifier="E608471B-78F6-4F44-833D-4C20CE7B9734" autosavesConfiguration="NO" displayMode="iconAndLabel" sizeMode="regular" id="xT5-Ty-36N">
+                        <toolbar key="toolbar" implicitIdentifier="E608471B-78F6-4F44-833D-4C20CE7B9734" autosavesConfiguration="NO" allowsUserCustomization="NO" displayMode="iconAndLabel" sizeMode="regular" id="xT5-Ty-36N">
                             <allowedToolbarItems>
                                 <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="pYW-YO-j6b"/>
                                 <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="Jpb-k3-ROI"/>
@@ -718,110 +718,27 @@
                     </window>
                     <connections>
                         <outlet property="toolbar" destination="xT5-Ty-36N" id="ff5-AM-u7n"/>
-                        <segue destination="9sR-Lb-5xb" kind="relationship" relationship="window.shadowedContentViewController" id="8yG-OF-Loa"/>
+                        <segue destination="qEp-xA-8RS" kind="relationship" relationship="window.shadowedContentViewController" id="uxF-EN-aZT"/>
                     </connections>
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-120" y="-194"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="IqH-eW-wN6">
+        <!--Tab View Controller-->
+        <scene sceneID="etA-K3-fJ3">
             <objects>
-                <viewController id="9sR-Lb-5xb" sceneMemberID="viewController">
-                    <containerView key="view" id="U8b-8L-bDu">
-                        <rect key="frame" x="0.0" y="0.0" width="960" height="720"/>
+                <tabViewController tabStyle="unspecified" id="qEp-xA-8RS" sceneMemberID="viewController">
+                    <tabView key="tabView" id="hmq-fv-pwh">
+                        <rect key="frame" x="0.0" y="0.0" width="643" height="453"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <connections>
-                            <segue destination="XfG-lQ-9wD" kind="embed" id="0pq-TG-OxR"/>
-                        </connections>
-                    </containerView>
-                </viewController>
-                <customObject id="mpI-FE-bkq" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                        <font key="font" metaFont="message"/>
+                        <tabViewItems/>
+                    </tabView>
+                </tabViewController>
+                <customObject id="IYH-A6-Opl" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-120" y="679"/>
-        </scene>
-        <!--People View Controller-->
-        <scene sceneID="kJI-cd-nh5">
-            <objects>
-                <viewController id="0cP-iS-Pdj" customClass="PeopleViewController" customModule="MacPhoto" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" id="4yg-6c-f96">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </view>
-                </viewController>
-                <customObject id="sI6-Wj-Bgb" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="733" y="405"/>
-        </scene>
-        <!--Photo Collection View Controller-->
-        <scene sceneID="hIz-AP-VOD">
-            <objects>
-                <viewController id="XfG-lQ-9wD" customClass="PhotoCollectionViewController" customModule="MacPhoto" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="1256" height="843"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <subviews>
-                            <splitView arrangesAllSubviews="NO" dividerStyle="paneSplitter" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5dC-gH-ce5">
-                                <rect key="frame" x="0.0" y="0.0" width="1256" height="843"/>
-                                <subviews>
-                                    <customView fixedFrame="YES" id="A6U-Wt-cgo">
-                                        <rect key="frame" x="0.0" y="0.0" width="242" height="843"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                    </customView>
-                                    <scrollView wantsLayer="YES" fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" id="zcm-m8-sYi">
-                                        <rect key="frame" x="252" y="0.0" width="1004" height="843"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <clipView key="contentView" drawsBackground="NO" id="fRt-FP-ugz">
-                                            <rect key="frame" x="1" y="1" width="1002" height="841"/>
-                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                            <subviews>
-                                                <collectionView selectable="YES" id="eaw-bi-lWY">
-                                                    <rect key="frame" x="0.0" y="0.0" width="1002" height="841"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                    <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="10" minimumLineSpacing="10" id="Yct-FU-S1S">
-                                                        <size key="itemSize" width="50" height="50"/>
-                                                    </collectionViewFlowLayout>
-                                                    <color key="primaryBackgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                    <connections>
-                                                        <outlet property="dataSource" destination="XfG-lQ-9wD" id="dcM-xP-Vb2"/>
-                                                        <outlet property="delegate" destination="XfG-lQ-9wD" id="l82-8b-sZk"/>
-                                                    </connections>
-                                                </collectionView>
-                                            </subviews>
-                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                        </clipView>
-                                        <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="79B-WB-uRh">
-                                            <rect key="frame" x="1" y="826" width="1002" height="16"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </scroller>
-                                        <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="eCh-Hz-7Xg">
-                                            <rect key="frame" x="1903" y="1" width="16" height="841"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </scroller>
-                                    </scrollView>
-                                </subviews>
-                                <holdingPriorities>
-                                    <real value="250"/>
-                                    <real value="250"/>
-                                </holdingPriorities>
-                            </splitView>
-                        </subviews>
-                        <constraints>
-                            <constraint firstAttribute="bottom" secondItem="5dC-gH-ce5" secondAttribute="bottom" id="9Tm-Qq-GFI"/>
-                            <constraint firstItem="5dC-gH-ce5" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="FP2-1j-5Mo"/>
-                            <constraint firstAttribute="trailing" secondItem="5dC-gH-ce5" secondAttribute="trailing" id="Gdf-2G-utg"/>
-                            <constraint firstItem="5dC-gH-ce5" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="T4K-vP-yTQ"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="photoCollectionView" destination="eaw-bi-lWY" id="lsf-HM-2PP"/>
-                        <outlet property="photoCollectionViewLayout" destination="Yct-FU-S1S" id="xAh-5L-b7S"/>
-                    </connections>
-                </viewController>
-                <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-409" y="1861.5"/>
+            <point key="canvasLocation" x="-8.5" y="748.5"/>
         </scene>
     </scenes>
     <resources>
