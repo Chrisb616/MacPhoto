@@ -114,7 +114,6 @@
 		131653111E5B8091007F4E76 /* MacPhoto */ = {
 			isa = PBXGroup;
 			children = (
-				1338CA291E7221B100E3041B /* PersonSelectionViewController */,
 				1316532F1E5B81B1007F4E76 /* Model */,
 				133CCEA81E81BDF600E8DEA7 /* View */,
 				133CCEA91E81BE1100E8DEA7 /* App */,
@@ -205,6 +204,7 @@
 		133CCEAC1E843FA800E8DEA7 /* OtherViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				1338CA291E7221B100E3041B /* PersonSelectionViewController */,
 				133CCEB11E84451C00E8DEA7 /* PhotoDetailViewController */,
 				133CCEB61E84459100E8DEA7 /* PreferencesViewController */,
 			);
