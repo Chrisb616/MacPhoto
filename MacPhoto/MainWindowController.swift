@@ -26,7 +26,11 @@ class MainWindowController: NSWindowController {
     }
     
     @IBAction func preferencesToolbarItemSelected(_ sender: Any) {
-        contentViewController?.presentViewControllerAsSheet(PreferencesViewController())
+        let preferences = PreferencesViewController()
+        
+        preferences.delegate = self
+        
+        contentViewController?.presentViewControllerAsSheet(preferences)
     }
     
     override func windowDidLoad() {
@@ -88,6 +92,16 @@ extension MainWindowController: NSWindowDelegate {
     
     func windowWillClose(_ notification: Notification) {
         NSApplication.shared().terminate(self)
+    }
+    
+}
+
+extension MainWindowController: PreferencesDelegate {
+    
+    func reloadAll() {
+        DataStore.instance.clear()
+        LocalFileManager.instance.loadAllInfo()
+        photosViewController.photoCollectionView.reloadData()
     }
     
 }

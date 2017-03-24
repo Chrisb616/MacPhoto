@@ -54,6 +54,26 @@ class LocalFileManager {
         safeProgramDirectoryHome = URL(fileURLWithPath: path)
         
     }
+    func saveProgramDirectoryHome(at url: URL) {
+        
+        if url.path.hasSuffix("MacPhoto") {
+            let newURL = url.deletingLastPathComponent()
+            
+            userDefaults.set(newURL.path, forKey: userDefaultsKey)
+            safeProgramDirectoryHome = newURL
+            
+            print(newURL)
+            
+        } else {
+            userDefaults.set(url.path, forKey: userDefaultsKey)
+            safeProgramDirectoryHome = url
+        }
+        
+        DataStore.instance.clear()
+        loadAllInfo()
+        
+        
+    }
     
     
     var programDirectoryHome: URL { return safeProgramDirectoryHome }

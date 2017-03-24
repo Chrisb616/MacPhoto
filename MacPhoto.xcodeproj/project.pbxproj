@@ -18,6 +18,7 @@
 		1316532A1E5B8130007F4E76 /* UniqueIDGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131653251E5B8130007F4E76 /* UniqueIDGenerator.swift */; };
 		131653311E5B874A007F4E76 /* Factbook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131653301E5B874A007F4E76 /* Factbook.swift */; };
 		131653331E5B8B76007F4E76 /* LocalFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131653321E5B8B76007F4E76 /* LocalFileManager.swift */; };
+		13371A9E1E85511F0099C1D0 /* PreferencesDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13371A9D1E85511F0099C1D0 /* PreferencesDelegate.swift */; };
 		133CCEA51E8167DA00E8DEA7 /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133CCEA41E8167DA00E8DEA7 /* MainWindowController.swift */; };
 		133CCEB41E84454C00E8DEA7 /* PreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133CCEB21E84454C00E8DEA7 /* PreferencesViewController.swift */; };
 		133CCEB51E84454C00E8DEA7 /* PreferencesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 133CCEB31E84454C00E8DEA7 /* PreferencesViewController.xib */; };
@@ -58,6 +59,7 @@
 		131653251E5B8130007F4E76 /* UniqueIDGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniqueIDGenerator.swift; sourceTree = "<group>"; };
 		131653301E5B874A007F4E76 /* Factbook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Factbook.swift; sourceTree = "<group>"; };
 		131653321E5B8B76007F4E76 /* LocalFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalFileManager.swift; sourceTree = "<group>"; };
+		13371A9D1E85511F0099C1D0 /* PreferencesDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesDelegate.swift; sourceTree = "<group>"; };
 		133CCEA41E8167DA00E8DEA7 /* MainWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
 		133CCEB21E84454C00E8DEA7 /* PreferencesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesViewController.swift; sourceTree = "<group>"; };
 		133CCEB31E84454C00E8DEA7 /* PreferencesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PreferencesViewController.xib; sourceTree = "<group>"; };
@@ -225,6 +227,7 @@
 			children = (
 				133CCEB21E84454C00E8DEA7 /* PreferencesViewController.swift */,
 				133CCEB31E84454C00E8DEA7 /* PreferencesViewController.xib */,
+				13371A9D1E85511F0099C1D0 /* PreferencesDelegate.swift */,
 			);
 			name = PreferencesViewController;
 			sourceTree = "<group>";
@@ -382,6 +385,7 @@
 				1316532A1E5B8130007F4E76 /* UniqueIDGenerator.swift in Sources */,
 				138DEF8A1E6F464900795A08 /* Location.swift in Sources */,
 				133CCEB41E84454C00E8DEA7 /* PreferencesViewController.swift in Sources */,
+				13371A9E1E85511F0099C1D0 /* PreferencesDelegate.swift in Sources */,
 				130694931E71DB820097BDD4 /* PhotoDetailViewController.swift in Sources */,
 				138DEF931E6F933100795A08 /* PhotoCollectionViewItem.swift in Sources */,
 				13D1BA8D1E5D1FD6007E7EFA /* Person.swift in Sources */,

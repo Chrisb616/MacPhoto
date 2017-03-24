@@ -8,6 +8,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="PreferencesViewController" customModule="MacPhoto" customModuleProvider="target">
             <connections>
+                <outlet property="pathControl" destination="bT3-pg-aph" id="lJH-AG-Mur"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
         </customObject>
@@ -35,11 +36,34 @@
                         <action selector="dismissController:" target="-2" id="e43-cx-BT9"/>
                     </connections>
                 </button>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7x8-DU-iD7">
+                    <rect key="frame" x="18" y="216" width="127" height="17"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="123" id="PuE-5w-639"/>
+                        <constraint firstAttribute="height" constant="17" id="vBU-Sl-6gg"/>
+                    </constraints>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Program Directory" id="S7t-AA-VJX">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <pathControl verticalHuggingPriority="750" fixedFrame="YES" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bT3-pg-aph">
+                    <rect key="frame" x="20" y="186" width="440" height="22"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <pathCell key="cell" selectable="YES" editable="YES" alignment="left" id="28F-KG-1h4">
+                        <font key="font" metaFont="system"/>
+                        <url key="url" string="file://localhost/Applications/"/>
+                        <color key="backgroundColor" name="gridColor" catalog="System" colorSpace="catalog"/>
+                    </pathCell>
+                </pathControl>
             </subviews>
             <constraints>
                 <constraint firstItem="cqW-E2-wbX" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="20" id="6dB-iI-9Cy"/>
                 <constraint firstAttribute="bottom" secondItem="tpA-zD-8EI" secondAttribute="bottom" constant="20" id="6uK-yt-5of"/>
                 <constraint firstItem="cqW-E2-wbX" firstAttribute="centerX" secondItem="Hz6-mo-xeY" secondAttribute="centerX" id="Ged-tP-ic9"/>
+                <constraint firstItem="7x8-DU-iD7" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="gFP-g4-WS9"/>
+                <constraint firstItem="7x8-DU-iD7" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="39" id="gbF-CL-qwK"/>
                 <constraint firstAttribute="trailing" secondItem="tpA-zD-8EI" secondAttribute="trailing" constant="20" id="lp7-OE-Bbe"/>
             </constraints>
         </customView>
