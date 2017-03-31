@@ -13,6 +13,8 @@ class MainWindowController: NSWindowController {
     //MARK: - Toolbar Properties
     @IBOutlet weak var toolbar: NSToolbar!
     
+    static var instance: MainWindowController!
+    
     var activeViewController = ViewController.photos
     
     //MARK: - Toolbar Actions
@@ -38,8 +40,14 @@ class MainWindowController: NSWindowController {
         contentViewController?.presentViewControllerAsSheet(preferences)
     }
     
+    @IBAction func addToolbarItemSelected(_ sender: Any) {
+        let addPhotosViewController = AddPhotosViewController()
+        
+        contentViewController?.presentViewControllerAsSheet(addPhotosViewController)
+    }
     override func windowDidLoad() {
         super.windowDidLoad()
+        MainWindowController.instance = self
         
         LocalFileManager.instance.loadAllInfo()
         

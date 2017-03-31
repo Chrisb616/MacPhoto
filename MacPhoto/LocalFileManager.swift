@@ -236,7 +236,7 @@ class LocalFileManager {
                 
             }
         }
-        
+        savePhotoInfo()
     }
     
     func load(imageWithID uniqueID: String) -> NSImage? {

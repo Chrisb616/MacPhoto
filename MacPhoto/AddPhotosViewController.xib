@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12118"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="AddPhotosViewController" customModule="MacPhoto" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="194" height="205"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="679-k4-MFZ">
+                    <rect key="frame" x="14" y="157" width="166" height="32"/>
+                    <buttonCell key="cell" type="push" title="Add Single Photo..." bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="5Vh-Q7-7ol">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="addSinglePhotoButtonTapped:" target="-2" id="nZU-3E-YgL"/>
+                    </connections>
+                </button>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="rRu-Bm-mL9">
+                    <rect key="frame" x="14" y="124" width="166" height="32"/>
+                    <buttonCell key="cell" type="push" title="Add Photo Group..." bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ltM-Mk-ehs">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="addPhotoGroupButtonTapped:" target="-2" id="jAF-mb-O67"/>
+                    </connections>
+                </button>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="024-aj-qyc">
+                    <rect key="frame" x="14" y="91" width="166" height="32"/>
+                    <buttonCell key="cell" type="push" title="Add Directory..." bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="swL-XH-8lN">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="addDirectoryButtonTapped:" target="-2" id="cfS-gH-Q3w"/>
+                    </connections>
+                </button>
+                <button hidden="YES" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Shv-jW-4S0">
+                    <rect key="frame" x="14" y="58" width="166" height="32"/>
+                    <buttonCell key="cell" type="push" title="Add Directory Tree..." bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="kCt-e1-Qji">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="addDirectoryTreeButtonTapped:" target="-2" id="xWs-Rz-frY"/>
+                    </connections>
+                </button>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="LGR-O3-W2O">
+                    <rect key="frame" x="56" y="13" width="82" height="32"/>
+                    <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="yF0-iM-Hnw">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                        <string key="keyEquivalent" base64-UTF8="YES">
+Gw
+</string>
+                    </buttonCell>
+                    <connections>
+                        <action selector="dismissController:" target="-2" id="qyf-oy-3Ey"/>
+                    </connections>
+                </button>
+            </subviews>
+            <constraints>
+                <constraint firstItem="rRu-Bm-mL9" firstAttribute="top" secondItem="679-k4-MFZ" secondAttribute="bottom" constant="12" id="2F5-39-4OG"/>
+                <constraint firstItem="Shv-jW-4S0" firstAttribute="leading" secondItem="024-aj-qyc" secondAttribute="leading" id="3ja-GQ-jdm"/>
+                <constraint firstItem="024-aj-qyc" firstAttribute="trailing" secondItem="rRu-Bm-mL9" secondAttribute="trailing" id="4LC-7g-aaJ"/>
+                <constraint firstItem="024-aj-qyc" firstAttribute="leading" secondItem="rRu-Bm-mL9" secondAttribute="leading" id="DH5-Bj-1ac"/>
+                <constraint firstItem="679-k4-MFZ" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="H23-Fx-lqJ"/>
+                <constraint firstItem="Shv-jW-4S0" firstAttribute="trailing" secondItem="024-aj-qyc" secondAttribute="trailing" id="Tym-HF-KHk"/>
+                <constraint firstAttribute="trailing" secondItem="679-k4-MFZ" secondAttribute="trailing" constant="20" id="aZ5-55-RFx"/>
+                <constraint firstItem="rRu-Bm-mL9" firstAttribute="trailing" secondItem="679-k4-MFZ" secondAttribute="trailing" id="dBI-bs-Naa"/>
+                <constraint firstItem="Shv-jW-4S0" firstAttribute="top" secondItem="024-aj-qyc" secondAttribute="bottom" constant="12" id="fNb-wC-yZx"/>
+                <constraint firstItem="679-k4-MFZ" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="20" id="hKw-lm-mG6"/>
+                <constraint firstItem="LGR-O3-W2O" firstAttribute="top" secondItem="Shv-jW-4S0" secondAttribute="bottom" constant="24" id="oyx-1R-om1"/>
+                <constraint firstItem="024-aj-qyc" firstAttribute="top" secondItem="rRu-Bm-mL9" secondAttribute="bottom" constant="12" id="rSq-DY-WNl"/>
+                <constraint firstItem="LGR-O3-W2O" firstAttribute="centerX" secondItem="Shv-jW-4S0" secondAttribute="centerX" id="tZ5-tv-GS6"/>
+                <constraint firstItem="rRu-Bm-mL9" firstAttribute="leading" secondItem="679-k4-MFZ" secondAttribute="leading" id="wkw-dL-h3K"/>
+            </constraints>
+            <point key="canvasLocation" x="-13" y="240.5"/>
+        </customView>
+    </objects>
+</document>

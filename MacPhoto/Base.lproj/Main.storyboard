@@ -708,7 +708,11 @@
                                         <action selector="preferencesToolbarItemSelected:" target="B8D-0N-5wS" id="EpY-Yd-sF5"/>
                                     </connections>
                                 </toolbarItem>
-                                <toolbarItem implicitItemIdentifier="E14DE22A-222A-4B90-B234-458880C1323B" label="Add" paletteLabel="Add" tag="-1" image="PlusIconFilled" id="NQZ-FD-XIj"/>
+                                <toolbarItem implicitItemIdentifier="E14DE22A-222A-4B90-B234-458880C1323B" label="Add" paletteLabel="Add" tag="-1" image="PlusIconFilled" id="NQZ-FD-XIj">
+                                    <connections>
+                                        <action selector="addToolbarItemSelected:" target="B8D-0N-5wS" id="t7J-GN-Ida"/>
+                                    </connections>
+                                </toolbarItem>
                             </allowedToolbarItems>
                             <defaultToolbarItems>
                                 <toolbarItem reference="f64-fv-9RA"/>

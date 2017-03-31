@@ -13,4 +13,8 @@ struct Factbook {
     static var documentsPath: String { return NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] }
     static var picturesPath: String { return NSSearchPathForDirectoriesInDomains(.picturesDirectory, .userDomainMask, true)[0] }
     
+    
+    static var allowedImageFileTypes: [String] {
+        return ["jpeg", "jpg", "png"]
+    }
 }

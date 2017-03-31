@@ -30,6 +30,8 @@
 		13505FB61E6B06FF00D85D5A /* JSONManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13505FB51E6B06FF00D85D5A /* JSONManager.swift */; };
 		13505FBB1E6B1B9E00D85D5A /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13505FBA1E6B1B9E00D85D5A /* Date.swift */; };
 		1360159D1E8EDE65006A865B /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1360159C1E8EDE65006A865B /* Album.swift */; };
+		136015AB1E8EF423006A865B /* AddPhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136015A91E8EF423006A865B /* AddPhotosViewController.swift */; };
+		136015AC1E8EF423006A865B /* AddPhotosViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 136015AA1E8EF423006A865B /* AddPhotosViewController.xib */; };
 		1361F8301E661F2700D65337 /* Area.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1361F82F1E661F2700D65337 /* Area.swift */; };
 		137B7B771E61E20300F9A69E /* IndexedDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137B7B761E61E20300F9A69E /* IndexedDictionary.swift */; };
 		137B7B791E61E3A500F9A69E /* HasUniqueID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137B7B781E61E3A500F9A69E /* HasUniqueID.swift */; };
@@ -72,6 +74,8 @@
 		13505FB51E6B06FF00D85D5A /* JSONManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONManager.swift; sourceTree = "<group>"; };
 		13505FBA1E6B1B9E00D85D5A /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		1360159C1E8EDE65006A865B /* Album.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
+		136015A91E8EF423006A865B /* AddPhotosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPhotosViewController.swift; sourceTree = "<group>"; };
+		136015AA1E8EF423006A865B /* AddPhotosViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddPhotosViewController.xib; sourceTree = "<group>"; };
 		1361F82F1E661F2700D65337 /* Area.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Area.swift; sourceTree = "<group>"; };
 		137B7B761E61E20300F9A69E /* IndexedDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexedDictionary.swift; sourceTree = "<group>"; };
 		137B7B781E61E3A500F9A69E /* HasUniqueID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HasUniqueID.swift; sourceTree = "<group>"; };
@@ -211,6 +215,7 @@
 				1338CA291E7221B100E3041B /* PersonSelectionViewController */,
 				133CCEB11E84451C00E8DEA7 /* PhotoDetailViewController */,
 				133CCEB61E84459100E8DEA7 /* PreferencesViewController */,
+				136015AD1E8EF427006A865B /* AddPhotosViewController */,
 			);
 			name = OtherViewControllers;
 			sourceTree = "<group>";
@@ -249,6 +254,15 @@
 				1360159C1E8EDE65006A865B /* Album.swift */,
 			);
 			name = Photos;
+			sourceTree = "<group>";
+		};
+		136015AD1E8EF427006A865B /* AddPhotosViewController */ = {
+			isa = PBXGroup;
+			children = (
+				136015A91E8EF423006A865B /* AddPhotosViewController.swift */,
+				136015AA1E8EF423006A865B /* AddPhotosViewController.xib */,
+			);
+			name = AddPhotosViewController;
 			sourceTree = "<group>";
 		};
 		1361F82D1E65BE7000D65337 /* Protocols */ = {
@@ -366,6 +380,7 @@
 				131653171E5B8091007F4E76 /* Assets.xcassets in Resources */,
 				138C401D1E8460BE00EED229 /* PeopleViewController.xib in Resources */,
 				138C40271E847F9300EED229 /* PlacesViewController.xib in Resources */,
+				136015AC1E8EF423006A865B /* AddPhotosViewController.xib in Resources */,
 				133CCEBA1E845BBC00E8DEA7 /* PhotoViewController.xib in Resources */,
 				133CCEB51E84454C00E8DEA7 /* PreferencesViewController.xib in Resources */,
 				1316531A1E5B8091007F4E76 /* Main.storyboard in Resources */,
@@ -408,6 +423,7 @@
 				131653281E5B8130007F4E76 /* Spot.swift in Sources */,
 				1360159D1E8EDE65006A865B /* Album.swift in Sources */,
 				131653131E5B8091007F4E76 /* AppDelegate.swift in Sources */,
+				136015AB1E8EF423006A865B /* AddPhotosViewController.swift in Sources */,
 				13505FB61E6B06FF00D85D5A /* JSONManager.swift in Sources */,
 				1361F8301E661F2700D65337 /* Area.swift in Sources */,
 			);
