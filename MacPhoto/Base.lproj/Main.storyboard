@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11762"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12118"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -708,12 +708,15 @@
                                         <action selector="preferencesToolbarItemSelected:" target="B8D-0N-5wS" id="EpY-Yd-sF5"/>
                                     </connections>
                                 </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="E14DE22A-222A-4B90-B234-458880C1323B" label="Add" paletteLabel="Add" tag="-1" image="PlusIconFilled" id="NQZ-FD-XIj"/>
                             </allowedToolbarItems>
                             <defaultToolbarItems>
                                 <toolbarItem reference="f64-fv-9RA"/>
                                 <toolbarItem reference="TK2-Vt-j41"/>
                                 <toolbarItem reference="sij-IS-wgG"/>
                                 <toolbarItem reference="Jpb-k3-ROI"/>
+                                <toolbarItem reference="NQZ-FD-XIj"/>
+                                <toolbarItem reference="pYW-YO-j6b"/>
                                 <toolbarItem reference="fOf-jh-269"/>
                             </defaultToolbarItems>
                         </toolbar>
@@ -748,5 +751,6 @@
         <image name="MapIconFilled" width="50" height="50"/>
         <image name="PeopleIconFilled" width="50" height="50"/>
         <image name="PhotosIconFilled" width="50" height="50"/>
+        <image name="PlusIconFilled" width="50" height="50"/>
     </resources>
 </document>

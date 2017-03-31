@@ -13,16 +13,21 @@ class MainWindowController: NSWindowController {
     //MARK: - Toolbar Properties
     @IBOutlet weak var toolbar: NSToolbar!
     
+    var activeViewController = ViewController.photos
+    
     //MARK: - Toolbar Actions
 
     @IBAction func photosToolbarItemSelected(_ sender: Any) {
         show(.photos)
+        activeViewController = .photos
     }
     @IBAction func peopleToolbarItemSelected(_ sender: Any) {
         show(.people)
+        activeViewController = .photos
     }
     @IBAction func placesToolbarItemSelected(_ sender: Any) {
         show(.places)
+        activeViewController = .places
     }
     
     @IBAction func preferencesToolbarItemSelected(_ sender: Any) {
@@ -85,7 +90,6 @@ class MainWindowController: NSWindowController {
         tabViewController.selectedTabViewItemIndex = viewController.index
     }
 
-    
 }
 
 extension MainWindowController: NSWindowDelegate {
