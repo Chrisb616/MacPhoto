@@ -15,6 +15,9 @@ class Photo: HasUniqueID {
     //MARK: Unique ID
     var uniqueID: String
     
+    //MARK: Album
+    weak var album: Album?
+    
     //MARK: Image
     var image: NSImage
     
@@ -39,10 +42,8 @@ class Photo: HasUniqueID {
     
     //MARK: Size
     var size: CGSize { return image.size }
-    
     var height: CGFloat { return size.height }
     var width: CGFloat { return size.width }
-    
     var megapixels: Double { return Double(height * width) / 1_048_576 }
     
     //MARK: - Access Through ID
