@@ -36,7 +36,7 @@ class AddPhotosViewController: NSViewController {
                 
                 Photo.new(image: image, title: title, shortDescription: nil, longDescription: nil, dateTaken: nil, location: nil)
                 
-                self.reloadMainScreen()
+                self.finishImport()
             }
         }
         
@@ -67,7 +67,7 @@ class AddPhotosViewController: NSViewController {
                     
                 }
                 
-                self.reloadMainScreen()
+                self.finishImport()
             }
             
         }
@@ -118,7 +118,7 @@ class AddPhotosViewController: NSViewController {
                     print(error.localizedDescription)
                 }
                 
-                self.reloadMainScreen()
+                self.finishImport()
             }
             
         }
@@ -155,7 +155,7 @@ class AddPhotosViewController: NSViewController {
                     print(error.localizedDescription)
                 }
                 
-                self.reloadMainScreen()
+                self.finishImport()
             }
         }
     }
@@ -198,8 +198,11 @@ class AddPhotosViewController: NSViewController {
        
     }
     
-    private func reloadMainScreen() {
+    private func finishImport() {
+        
         OperationQueue.main.addOperation {
+            self.dismiss(self)
+            
             MainWindowController.instance.photosViewController.photoCollectionView.reloadData()
         }
     }
