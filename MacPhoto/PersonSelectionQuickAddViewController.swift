@@ -42,8 +42,9 @@ class PersonSelectionQuickAddViewController: NSViewController {
                    isFemale: isFemale)
         
         delegate.people = DataStore.instance.people.all
-        if let newest = Person.newest?.uniqueID {
-            delegate.selected.updateValue(true, forKey: newest)
+        if let newest = Person.newest {
+            delegate.selected.updateValue(true, forKey: newest.uniqueID)
+            delegate.delegate?.photo.associate(person: newest)
         }
         delegate.tableView.reloadData()
         delegate.dismissQuickAddPopover()
