@@ -57,4 +57,10 @@ struct IndexedDictionary<T: HasUniqueID> {
         keys.removeAll()
         values.removeAll()
     }
+    
+    var random: T {
+        let rand = Int(arc4random_uniform(UInt32(count)))
+        
+        return at(index: rand)
+    }
 }
