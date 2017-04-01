@@ -10,7 +10,7 @@ import Foundation
 
 protocol PersonSelectionViewDelegate: class {
     
-    var personSelectionViewController: PersonSelectionViewController { get set }
+    var personSelectionViewController: PersonSelectionViewController! { get set }
     
     func added(_ person: Person)
     func removed(_ person: Person)

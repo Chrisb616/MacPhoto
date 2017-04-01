@@ -15,6 +15,17 @@ class PreferencesViewController: NSViewController {
     @IBOutlet weak var pathControl: NSPathControl!
     var pathControlClickRegognizer = NSClickGestureRecognizer()
     
+    @IBOutlet weak var resetAllDataButton: NSButton!
+    @IBAction func resetAllDataButtonTapped(_ sender: Any) {
+        resetAllDataButton.stringValue = "💥"
+        
+        LocalFileManager.instance.deleteAllData()
+        
+        delegate?.reloadAll()
+        
+        resetAllDataButton.stringValue = "💣"
+    }
+    
     init() {
         super.init(nibName: "PreferencesViewController", bundle: nil)!
         

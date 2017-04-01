@@ -141,13 +141,20 @@ class LocalFileManager {
         }
     }
     
-    //MARK: - Load All Info
+    //MARK: - Clustered Functions
     
     func loadAllInfo() {
         loadProgramDirectoryHome()
         loadPersonInfo()
         loadPhotoInfo()
     }
+    
+    func saveAllInfo() {
+        loadProgramDirectoryHome()
+        savePersonInfo()
+        savePhotoInfo()
+    }
+    
     
     //MARK: - Person Info Management
     
@@ -242,6 +249,17 @@ class LocalFileManager {
     func load(imageWithID uniqueID: String) -> NSImage? {
         let path = imageDirectory.appendingPathComponent("\(uniqueID).jpg")
         return NSImage(contentsOf: path)
+    }
+    
+    //MARK: - Delete Info
+    
+    func deleteAllData() {
+        do {
+            try fileManager.removeItem(at: programDirectory)
+            DataStore.instance.clear()
+        } catch {
+            print(error.localizedDescription)
+        }
     }
     
 }

@@ -32,9 +32,9 @@ class AddPhotosViewController: NSViewController {
                 
                 guard let image = NSImage(contentsOf: url) else { return }
                 
-                let backgroundQueue = OperationQueue()
-                backgroundQueue.qualityOfService = .background
-                Photo.new(image: image, title: url.lastPathComponent, shortDescription: nil, longDescription: nil, dateTaken: nil, location: nil)
+                let title = url.lastPathComponent.components(separatedBy: ".")[0]
+                
+                Photo.new(image: image, title: title, shortDescription: nil, longDescription: nil, dateTaken: nil, location: nil)
                 
                 self.reloadMainScreen()
             }
@@ -61,7 +61,9 @@ class AddPhotosViewController: NSViewController {
                     
                     guard let image = NSImage(contentsOf: url) else { return }
                     
-                    Photo.new(image: image, title: url.lastPathComponent, shortDescription: nil, longDescription: nil, dateTaken: nil, location: nil)
+                    let title = url.lastPathComponent.components(separatedBy: ".")[0]
+                    
+                    Photo.new(image: image, title: title, shortDescription: nil, longDescription: nil, dateTaken: nil, location: nil)
                     
                 }
                 
@@ -106,7 +108,9 @@ class AddPhotosViewController: NSViewController {
                         
                         guard let image = NSImage(contentsOf: itemURL) else { return }
                         
-                        Photo.new(image: image, title: itemURL.lastPathComponent, shortDescription: nil, longDescription: nil, dateTaken: nil, location: nil)
+                        let title = url.lastPathComponent.components(separatedBy: ".")[0]
+                        
+                        Photo.new(image: image, title: title, shortDescription: nil, longDescription: nil, dateTaken: nil, location: nil)
                     }
                     
                     dump(filtered)
@@ -180,7 +184,9 @@ class AddPhotosViewController: NSViewController {
                 
                 guard let image = NSImage(contentsOf: url) else { continue }
                 
-                Photo.new(image: image, title: url.lastPathComponent, shortDescription: nil, longDescription: nil, dateTaken: nil, location: nil)
+                let title = url.lastPathComponent.components(separatedBy: ".")[0]
+                
+                Photo.new(image: image, title: title, shortDescription: nil, longDescription: nil, dateTaken: nil, location: nil)
                 
                 
             }

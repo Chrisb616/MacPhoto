@@ -10,7 +10,7 @@ import Cocoa
 
 class PhotoDetailViewController: NSViewController {
     
-    var personSelectionViewController: PersonSelectionViewController
+    var personSelectionViewController: PersonSelectionViewController!
     
     var photo: Photo
 
@@ -22,7 +22,6 @@ class PhotoDetailViewController: NSViewController {
     @IBOutlet weak var uniqueIDLabel: NSTextField!
     
     init(photo: Photo) {
-        personSelectionViewController = PersonSelectionViewController()
         self.photo = photo
         super.init(nibName: "PhotoDetailViewController", bundle: nil)!
     }
@@ -37,6 +36,9 @@ class PhotoDetailViewController: NSViewController {
         self.titleTextField.stringValue = photo.title
         self.uniqueIDLabel.stringValue = photo.uniqueID
         
+        self.titleTextField.delegate = self
+        
+        personSelectionViewController = PersonSelectionViewController()
         personSelectionViewController.delegate = self
         personSelectionViewController.populate(selectedPeople: photo.people)
         personSelectionViewController.placeIn(container: personSelectionContainer)
@@ -47,6 +49,12 @@ class PhotoDetailViewController: NSViewController {
         self.photo.title = titleTextField.stringValue
         LocalFileManager.instance.savePhotoInfo()
         self.dismiss(nil)
+    }
+    
+    override func viewWillDisappear() {
+        super.viewWillDisappear()
+        
+        MainWindowController.instance.photosViewController.photoCollectionView.reloadData()
     }
     
 }
@@ -60,4 +68,12 @@ extension PhotoDetailViewController: PersonSelectionViewDelegate {
         print("Removed \(person.fullName)")
         photo.disassociate(person: person)
     }
+}
+
+extension PhotoDetailViewController: NSTextFieldDelegate {
+    
+    override func controlTextDidChange(_ obj: Notification) {
+        photo.title = titleTextField.stringValue
+    }
+    
 }

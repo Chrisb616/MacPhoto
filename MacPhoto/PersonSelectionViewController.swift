@@ -70,6 +70,13 @@ class PersonSelectionViewController: NSViewController {
 
     func placeIn(container: NSView) {
         container.addSubview(self.view)
+        
+        self.view.translatesAutoresizingMaskIntoConstraints = false
+        
+        self.view.topAnchor.constraint(equalTo: container.topAnchor).isActive = true
+        self.view.bottomAnchor.constraint(equalTo: container.bottomAnchor).isActive = true
+        self.view.leftAnchor.constraint(equalTo: container.leftAnchor).isActive = true
+        self.view.rightAnchor.constraint(equalTo: container.rightAnchor).isActive = true
     }
     
 }
