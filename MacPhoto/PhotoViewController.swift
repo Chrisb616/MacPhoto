@@ -77,7 +77,7 @@ extension PhotoViewController: NSCollectionViewDataSource {
         guard let collectionViewItem = item as? PhotoCollectionViewItem else { return item }
         
         let photo = DataStore.instance.photos.at(index: indexPath.item)
-        collectionViewItem.load(photo: photo)
+        collectionViewItem.load(photo: photo, index: indexPath.item)
         return collectionViewItem
     }
 }

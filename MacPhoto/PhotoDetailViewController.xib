@@ -10,8 +10,10 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="PhotoDetailViewController" customModule="MacPhoto" customModuleProvider="target">
             <connections>
+                <outlet property="nextButton" destination="hxb-M8-w7J" id="b1G-rv-s3S"/>
                 <outlet property="personSelectionContainer" destination="Srx-Wg-SIE" id="818-Q2-ie3"/>
                 <outlet property="photoImageView" destination="oQh-93-qUx" id="aCR-6E-6zU"/>
+                <outlet property="previousButton" destination="Nc2-2X-8f4" id="AAE-b8-iFp"/>
                 <outlet property="titleTextField" destination="ygG-nC-GzU" id="YMR-8B-Wq6"/>
                 <outlet property="uniqueIDLabel" destination="zMh-qV-yE9" id="zva-1c-Dwz"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
@@ -24,11 +26,11 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oQh-93-qUx">
-                    <rect key="frame" x="7" y="7" width="546" height="786"/>
+                    <rect key="frame" x="7" y="38" width="546" height="755"/>
                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" imageFrameStyle="grayBezel" id="DQ6-fO-IXP"/>
                 </imageView>
                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Yvc-XF-hda">
-                    <rect key="frame" x="1114" y="3" width="82" height="32"/>
+                    <rect key="frame" x="1114" y="34" width="82" height="32"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="70" id="9yM-t1-3qr"/>
                     </constraints>
@@ -44,7 +46,7 @@ DQ
                     </connections>
                 </button>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zMh-qV-yE9">
-                    <rect key="frame" x="558" y="10" width="64" height="17"/>
+                    <rect key="frame" x="558" y="41" width="64" height="17"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Unique ID" id="mTg-4p-C7Z">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="disabledControlTextColor" catalog="System" colorSpace="catalog"/>
@@ -71,31 +73,59 @@ DQ
                     </textFieldCell>
                 </textField>
                 <customView translatesAutoresizingMaskIntoConstraints="NO" id="Srx-Wg-SIE">
-                    <rect key="frame" x="560" y="27" width="400" height="400"/>
+                    <rect key="frame" x="560" y="58" width="400" height="400"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="Srx-Wg-SIE" secondAttribute="height" multiplier="1:1" id="Xkx-6V-jnJ"/>
                     </constraints>
                 </customView>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Nc2-2X-8f4">
+                    <rect key="frame" x="4" y="3" width="108" height="32"/>
+                    <buttonCell key="cell" type="push" title="Previous" bezelStyle="rounded" image="NSLeftFacingTriangleTemplate" imagePosition="left" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Hst-NA-5ym">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="previousButtonTapped:" target="-2" id="acD-8s-8TU"/>
+                    </connections>
+                </button>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="hxb-M8-w7J">
+                    <rect key="frame" x="472" y="3" width="84" height="32"/>
+                    <buttonCell key="cell" type="push" title="Next" bezelStyle="rounded" image="NSRightFacingTriangleTemplate" imagePosition="right" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="hTr-IX-agP">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="nextButtonTapped:" target="-2" id="EhW-pw-hYC"/>
+                    </connections>
+                </button>
             </subviews>
             <constraints>
+                <constraint firstAttribute="bottom" secondItem="Nc2-2X-8f4" secondAttribute="bottom" constant="10" id="30H-EJ-KDL"/>
                 <constraint firstItem="ygG-nC-GzU" firstAttribute="top" secondItem="oQh-93-qUx" secondAttribute="top" id="3o1-WN-44t"/>
                 <constraint firstItem="oQh-93-qUx" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="10" id="4Jf-EK-wR4"/>
                 <constraint firstItem="02o-Mq-VNt" firstAttribute="leading" secondItem="oQh-93-qUx" secondAttribute="trailing" constant="10" id="50E-qD-2e4"/>
                 <constraint firstItem="Yvc-XF-hda" firstAttribute="bottom" secondItem="oQh-93-qUx" secondAttribute="bottom" id="6cV-K0-EaI"/>
+                <constraint firstItem="hxb-M8-w7J" firstAttribute="trailing" secondItem="oQh-93-qUx" secondAttribute="trailing" id="770-EL-BKx"/>
                 <constraint firstItem="Srx-Wg-SIE" firstAttribute="leading" secondItem="zMh-qV-yE9" secondAttribute="leading" id="8r4-vS-coD"/>
                 <constraint firstItem="Srx-Wg-SIE" firstAttribute="height" secondItem="Hz6-mo-xeY" secondAttribute="height" multiplier="0.5" id="A50-C2-2DM"/>
                 <constraint firstItem="oQh-93-qUx" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="10" id="Dpf-ja-J5B"/>
+                <constraint firstItem="Nc2-2X-8f4" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="10" id="Fc9-eH-3JF"/>
+                <constraint firstItem="oQh-93-qUx" firstAttribute="bottom" secondItem="Nc2-2X-8f4" secondAttribute="top" constant="-10" id="FnX-Xg-pjY"/>
                 <constraint firstItem="zMh-qV-yE9" firstAttribute="top" secondItem="Srx-Wg-SIE" secondAttribute="bottom" id="O1i-Ft-eSS"/>
                 <constraint firstAttribute="trailing" secondItem="ygG-nC-GzU" secondAttribute="trailing" constant="5" id="ODB-R6-coy"/>
                 <constraint firstAttribute="trailing" secondItem="Yvc-XF-hda" secondAttribute="trailing" constant="10" id="VDY-Kc-EaF"/>
                 <constraint firstItem="zMh-qV-yE9" firstAttribute="bottom" secondItem="oQh-93-qUx" secondAttribute="bottom" id="W9u-zh-vE4"/>
                 <constraint firstItem="02o-Mq-VNt" firstAttribute="bottom" secondItem="ygG-nC-GzU" secondAttribute="bottom" id="XRc-ER-7d4"/>
+                <constraint firstItem="hxb-M8-w7J" firstAttribute="top" secondItem="Nc2-2X-8f4" secondAttribute="bottom" constant="-21" id="hO2-zm-XcS"/>
                 <constraint firstItem="ygG-nC-GzU" firstAttribute="leading" secondItem="02o-Mq-VNt" secondAttribute="trailing" constant="5" id="rsm-q9-qdP"/>
                 <constraint firstItem="oQh-93-qUx" firstAttribute="width" secondItem="Hz6-mo-xeY" secondAttribute="width" multiplier="0.45" id="uQp-uo-dWq"/>
-                <constraint firstAttribute="bottom" secondItem="oQh-93-qUx" secondAttribute="bottom" constant="10" id="xOQ-fn-A5c"/>
                 <constraint firstItem="zMh-qV-yE9" firstAttribute="leading" secondItem="02o-Mq-VNt" secondAttribute="leading" id="ywY-vl-cxM"/>
             </constraints>
             <point key="canvasLocation" x="139" y="158"/>
         </customView>
     </objects>
+    <resources>
+        <image name="NSLeftFacingTriangleTemplate" width="9" height="12"/>
+        <image name="NSRightFacingTriangleTemplate" width="9" height="12"/>
+    </resources>
 </document>

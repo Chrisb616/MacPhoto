@@ -11,9 +11,11 @@ import Cocoa
 class PhotoCollectionViewItem: NSCollectionViewItem, NSGestureRecognizerDelegate {
     
     var photo: Photo?
+    var index: Int!
     
-    func load(photo: Photo) {
+    func load(photo: Photo, index: Int) {
         self.photo = photo
+        self.index = index
         reload()
     }
     
@@ -38,7 +40,7 @@ class PhotoCollectionViewItem: NSCollectionViewItem, NSGestureRecognizerDelegate
         if event.clickCount > 1 {
             guard let unwrappedPhoto = photo else { print("WARNING: No photo found for collection view item"); return }
             
-            let detailVC = PhotoDetailViewController(photo: unwrappedPhoto)
+            let detailVC = PhotoDetailViewController(photo: unwrappedPhoto, photoIndex: index)
             
             presentViewControllerAsSheet(detailVC)
         }

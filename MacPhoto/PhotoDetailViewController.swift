@@ -13,6 +13,8 @@ class PhotoDetailViewController: NSViewController {
     var personSelectionViewController: PersonSelectionViewController!
     
     var photo: Photo
+    
+    var photoIndex: Int
 
     @IBOutlet weak var photoImageView: NSImageView!
 
@@ -21,8 +23,34 @@ class PhotoDetailViewController: NSViewController {
     
     @IBOutlet weak var uniqueIDLabel: NSTextField!
     
-    init(photo: Photo) {
+    @IBOutlet weak var previousButton: NSButton!
+    @IBOutlet weak var nextButton: NSButton!
+    
+    @IBAction func previousButtonTapped(_ sender: Any) {
+        if photoIndex == 0 {
+            photoIndex = DataStore.instance.photos.count - 1
+        } else {
+            photoIndex = photoIndex - 1
+        }
+        self.photo = DataStore.instance.photos.at(index: photoIndex)
+        
+        reload()
+        
+    }
+    @IBAction func nextButtonTapped(_ sender: Any) {
+        if photoIndex == DataStore.instance.photos.count - 1 {
+            self.photoIndex = 0
+        } else {
+            self.photoIndex = photoIndex + 1
+        }
+        self.photo = DataStore.instance.photos.at(index: photoIndex)
+        
+        reload()
+    }
+    
+    init(photo: Photo, photoIndex: Int) {
         self.photo = photo
+        self.photoIndex = photoIndex
         super.init(nibName: "PhotoDetailViewController", bundle: nil)!
     }
     
@@ -32,16 +60,7 @@ class PhotoDetailViewController: NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.photoImageView.image = photo.image
-        self.titleTextField.stringValue = photo.title
-        self.uniqueIDLabel.stringValue = photo.uniqueID
-        
-        self.titleTextField.delegate = self
-        
-        personSelectionViewController = PersonSelectionViewController()
-        personSelectionViewController.delegate = self
-        personSelectionViewController.populate(selectedPeople: photo.people)
-        personSelectionViewController.placeIn(container: personSelectionContainer)
+        reload()
         //PersonSelectionViewController.populate(selectedPeople: [:], delegate: self, container: personSelectionContainer)
     }
     @IBAction func saveButtonTapped(_ sender: Any) {
@@ -55,6 +74,20 @@ class PhotoDetailViewController: NSViewController {
         super.viewWillDisappear()
         
         MainWindowController.instance.photosViewController.photoCollectionView.reloadData()
+    }
+    
+    func reload() {
+        self.photoImageView.image = photo.image
+        self.titleTextField.stringValue = photo.title
+        self.uniqueIDLabel.stringValue = photo.uniqueID
+        
+        self.titleTextField.delegate = self
+        
+        personSelectionViewController = PersonSelectionViewController()
+        personSelectionViewController.delegate = self
+        personSelectionViewController.populate(selectedPeople: photo.people)
+        personSelectionViewController.placeIn(container: personSelectionContainer)
+        
     }
     
 }
