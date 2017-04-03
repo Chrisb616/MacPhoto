@@ -17,8 +17,7 @@ class MainWindowController: NSWindowController {
     
     var activeViewController = ViewController.photos
     
-    let personDetailWindowController = PersonDetailWindowController()
-    
+
     //MARK: - Toolbar Actions
 
     @IBAction func photosToolbarItemSelected(_ sender: Any) {
@@ -52,6 +51,8 @@ class MainWindowController: NSWindowController {
         MainWindowController.instance = self
         
         LocalFileManager.instance.loadAllInfo()
+        
+        
         ConsistencyManager.check()
         
         window?.styleMask.insert(NSWindowStyleMask.resizable)

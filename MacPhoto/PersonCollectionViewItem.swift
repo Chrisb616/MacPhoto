@@ -39,8 +39,6 @@ class PersonCollectionViewItem: NSCollectionViewItem, NSGestureRecognizerDelegat
         if event.clickCount > 1 {
             guard let unwrappedPerson = person else { print("WARNING: No photo found for collection view item"); return }
             
-            MainWindowController.instance.personDetailWindowController.load(unwrappedPerson)
-            MainWindowController.instance.personDetailWindowController.showWindow(MainWindowController.instance)
         }
     }
     
