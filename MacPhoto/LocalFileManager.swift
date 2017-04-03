@@ -262,4 +262,38 @@ class LocalFileManager {
         }
     }
     
+    //MARK: - Import
+    
+    private var importQueue = OperationQueue(qualityOfService: .background)
+    
+    func importPhotos(from urls: [URL]) {
+        importQueue.addOperation {
+            for url in urls {
+                LocalFileManager.instance.importPhoto(from: url)
+            }
+        }
+    }
+    
+    func importPhoto(from url: URL) {
+        
+        importQueue.addOperation {
+    
+            let string = url.lastPathComponent
+            if string == ".DS_Store" { return }
+            
+            guard let image = NSImage(contentsOf: url) else { print("FAILURE: \(url) could not be converted into an image");return }
+            
+            let title = url.lastPathComponent.components(separatedBy: ".")[0]
+            
+            Photo.new(image: image, title: title, shortDescription: nil, longDescription: nil, dateTaken: nil, location: nil)
+            
+            self.updatePhotoViewController()
+        }
+    }
+    
+    private func updatePhotoViewController() {
+        OperationQueue.main.addOperation {
+            MainWindowController.instance.photosViewController.photoCollectionView.reloadData()
+        }
+    }
 }

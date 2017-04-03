@@ -12,7 +12,7 @@ Built in Swift on Xcode for OSX
 5. Create person in app, which can be tagged in photos.
 6. <del>Save person info in JSON format in program directory.</del>
 7. <del>Load person info from JSON to populate program with people.</del>
-8. Associate photos with tagged people upon load.
+8. <del>Associate photos with tagged people upon load.</del>
 9. Create location (abstracted into Spot for geographic coordinates, and Area for non specific regions) in app, which can be tagged on photos.
 10. Save location info in JSON format in program directory.
 11. Load location info from JSON to populate program with Spots, Areas, and Regions.

@@ -47,7 +47,7 @@
                         <action selector="addDirectoryButtonTapped:" target="-2" id="cfS-gH-Q3w"/>
                     </connections>
                 </button>
-                <button hidden="YES" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Shv-jW-4S0">
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Shv-jW-4S0">
                     <rect key="frame" x="14" y="58" width="166" height="32"/>
                     <buttonCell key="cell" type="push" title="Add Directory Tree..." bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="kCt-e1-Qji">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>

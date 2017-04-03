@@ -15,6 +15,12 @@ struct Factbook {
     
     
     static var allowedImageFileTypes: [String] {
-        return ["jpeg", "jpg", "png"]
+        var types = ["jpeg", "jpg", "png"]
+        
+        for type in types {
+            types.append(type.uppercased())
+        }
+        
+        return types
     }
 }

@@ -21,10 +21,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         LocalFileManager.instance.saveAllInfo()
         
-        for person in DataStore.instance.people.all {
-            print(person.photos)
-        }
-        
     }
 }
 
