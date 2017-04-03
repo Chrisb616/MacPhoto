@@ -14,9 +14,12 @@ class PersonDetailWindowController: NSWindowController {
     
     let tabViewController = NSTabViewController()
     
+    var person: Person!
+    
     override func windowDidLoad() {
         super.windowDidLoad()
-
+        
+        personDetailViewController.window = self
         instantiateTabViewController()
     }
     
@@ -26,8 +29,11 @@ class PersonDetailWindowController: NSWindowController {
         
         tabViewController.addChildViewController(personDetailViewController)
         self.window?.contentViewController = tabViewController
-        
-        
+
+    }
+    
+    func load(person: Person) {
+        self.person = person
     }
     
 }

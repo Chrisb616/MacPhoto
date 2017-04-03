@@ -107,9 +107,10 @@ class MainWindowController: NSWindowController {
     
     var personDetailWindow: PersonDetailWindowController!
     
-    func showPersonDetailWindow() {
+    func showPersonDetailWindow(for person: Person) {
         personDetailWindow = PersonDetailWindowController.init(windowNibName: "PersonDetailWindowController")
-        
+        personDetailWindow.person = person
+    
         personDetailWindow.showWindow(self)
 
     }

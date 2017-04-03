@@ -40,7 +40,7 @@ class PersonCollectionViewItem: NSCollectionViewItem, NSGestureRecognizerDelegat
             guard let unwrappedPerson = person else { print("WARNING: No photo found for collection view item"); return }
             
             
-            MainWindowController.instance.showPersonDetailWindow()
+            MainWindowController.instance.showPersonDetailWindow(for: unwrappedPerson)
         }
     }
     

@@ -9,30 +9,69 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="PersonDetailViewController" customModule="MacPhoto" customModuleProvider="target">
             <connections>
+                <outlet property="defaultPhotoBox" destination="H5b-H0-g30" id="CFf-Kh-xPf"/>
+                <outlet property="defaultPhotoImageView" destination="NyF-6A-hec" id="lN6-5V-qoQ"/>
+                <outlet property="nameAndNicknameTextField" destination="xbi-01-B0u" id="yUs-lZ-2ut"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customView id="Hz6-mo-xeY">
-            <rect key="frame" x="0.0" y="0.0" width="480" height="272"/>
+            <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <box boxType="custom" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="KNq-52-csE">
-                    <rect key="frame" x="0.0" y="0.0" width="480" height="272"/>
+                    <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
                     <view key="contentView" id="4Wo-qC-Ete">
-                        <rect key="frame" x="1" y="1" width="478" height="270"/>
+                        <rect key="frame" x="1" y="1" width="1918" height="1078"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <box fixedFrame="YES" boxType="custom" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="H5b-H0-g30">
+                                <rect key="frame" x="0.0" y="780" width="300" height="300"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <view key="contentView" id="mpS-i1-G6E">
+                                    <rect key="frame" x="1" y="1" width="298" height="298"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NyF-6A-hec">
+                                            <rect key="frame" x="-1" y="-1" width="2" height="2"/>
+                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="bTb-iW-Qd4"/>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="NyF-6A-hec" secondAttribute="trailing" constant="-1" id="4uf-0C-f44"/>
+                                        <constraint firstAttribute="bottom" secondItem="NyF-6A-hec" secondAttribute="bottom" constant="-1" id="Q46-FK-Pof"/>
+                                        <constraint firstItem="NyF-6A-hec" firstAttribute="top" secondItem="mpS-i1-G6E" secondAttribute="top" constant="-1" id="XVw-wc-wWL"/>
+                                        <constraint firstItem="NyF-6A-hec" firstAttribute="leading" secondItem="mpS-i1-G6E" secondAttribute="leading" constant="-1" id="Z6B-nk-mKB"/>
+                                    </constraints>
+                                </view>
+                                <color key="borderColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="fillColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </box>
+                            <textField focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xbi-01-B0u">
+                                <rect key="frame" x="310" y="950" width="1590" height="120"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" refusesFirstResponder="YES" sendsActionOnEndEditing="YES" state="on" focusRingType="none" alignment="left" title="Name &quot;Nickname&quot;" drawsBackground="YES" id="tcb-Jy-sCy">
+                                    <font key="font" size="93" name="Athelas-Regular"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
                     </view>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="1920" id="MQw-dI-edK"/>
+                        <constraint firstAttribute="height" constant="1080" id="iGl-mf-QcT"/>
+                    </constraints>
                     <color key="fillColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                 </box>
             </subviews>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="KNq-52-csE" secondAttribute="bottom" id="TD6-ne-JFr"/>
-                <constraint firstAttribute="trailing" secondItem="KNq-52-csE" secondAttribute="trailing" id="em9-CP-rvg"/>
                 <constraint firstItem="KNq-52-csE" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="jfm-MG-VRw"/>
                 <constraint firstItem="KNq-52-csE" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="rFs-Rq-pyq"/>
             </constraints>
+            <point key="canvasLocation" x="154" y="913"/>
         </customView>
     </objects>
 </document>
