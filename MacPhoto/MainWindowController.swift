@@ -50,6 +50,7 @@ class MainWindowController: NSWindowController {
         MainWindowController.instance = self
         
         LocalFileManager.instance.loadAllInfo()
+        ConsistencyManager.check()
         
         window?.styleMask.insert(NSWindowStyleMask.resizable)
 
