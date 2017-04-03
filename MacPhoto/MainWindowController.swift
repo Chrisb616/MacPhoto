@@ -101,6 +101,18 @@ class MainWindowController: NSWindowController {
     func show(_ viewController: ViewController) {
         tabViewController.selectedTabViewItemIndex = viewController.index
     }
+    
+    
+    //Other windows
+    
+    var personDetailWindow: PersonDetailWindowController!
+    
+    func showPersonDetailWindow() {
+        personDetailWindow = PersonDetailWindowController.init(windowNibName: "PersonDetailWindowController")
+        
+        personDetailWindow.showWindow(self)
+
+    }
 
 }
 

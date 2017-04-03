@@ -44,6 +44,10 @@
 		13FDC0AF1E7341A800244CE7 /* PersonSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FDC0AD1E7341A800244CE7 /* PersonSelectionViewController.swift */; };
 		13FDC0B01E7341A800244CE7 /* PersonSelectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13FDC0AE1E7341A800244CE7 /* PersonSelectionViewController.xib */; };
 		13FDC0B21E73455800244CE7 /* PersonSelectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FDC0B11E73455800244CE7 /* PersonSelectionViewDelegate.swift */; };
+		840C76211E92E57100373EC1 /* PersonDetailWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840C761F1E92E57100373EC1 /* PersonDetailWindowController.swift */; };
+		840C76221E92E57100373EC1 /* PersonDetailWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 840C76201E92E57100373EC1 /* PersonDetailWindowController.xib */; };
+		840C76251E92E67D00373EC1 /* PersonDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840C76231E92E67D00373EC1 /* PersonDetailViewController.swift */; };
+		840C76261E92E67D00373EC1 /* PersonDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 840C76241E92E67D00373EC1 /* PersonDetailViewController.xib */; };
 		849EEFFF1E9292C800EFE02D /* PersonCollectionViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849EEFFB1E9292C800EFE02D /* PersonCollectionViewItem.swift */; };
 		849EF0001E9292C800EFE02D /* PersonCollectionViewItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 849EEFFC1E9292C800EFE02D /* PersonCollectionViewItem.xib */; };
 		849EF0011E9292C800EFE02D /* PersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849EEFFD1E9292C800EFE02D /* PersonViewController.swift */; };
@@ -93,6 +97,10 @@
 		13FDC0AD1E7341A800244CE7 /* PersonSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonSelectionViewController.swift; sourceTree = "<group>"; };
 		13FDC0AE1E7341A800244CE7 /* PersonSelectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonSelectionViewController.xib; sourceTree = "<group>"; };
 		13FDC0B11E73455800244CE7 /* PersonSelectionViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonSelectionViewDelegate.swift; sourceTree = "<group>"; };
+		840C761F1E92E57100373EC1 /* PersonDetailWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonDetailWindowController.swift; sourceTree = "<group>"; };
+		840C76201E92E57100373EC1 /* PersonDetailWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonDetailWindowController.xib; sourceTree = "<group>"; };
+		840C76231E92E67D00373EC1 /* PersonDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonDetailViewController.swift; sourceTree = "<group>"; };
+		840C76241E92E67D00373EC1 /* PersonDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonDetailViewController.xib; sourceTree = "<group>"; };
 		849EEFFB1E9292C800EFE02D /* PersonCollectionViewItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonCollectionViewItem.swift; sourceTree = "<group>"; };
 		849EEFFC1E9292C800EFE02D /* PersonCollectionViewItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonCollectionViewItem.xib; sourceTree = "<group>"; };
 		849EEFFD1E9292C800EFE02D /* PersonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonViewController.swift; sourceTree = "<group>"; };
@@ -204,8 +212,9 @@
 		133CCEA81E81BDF600E8DEA7 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				840C761E1E92E55600373EC1 /* PersonDetailWindow */,
 				133CCEA61E81BDB200E8DEA7 /* MainWindow */,
-				133CCEAC1E843FA800E8DEA7 /* OtherViewControllers */,
+				133CCEAC1E843FA800E8DEA7 /* MiscViewControllers */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -220,7 +229,7 @@
 			name = App;
 			sourceTree = "<group>";
 		};
-		133CCEAC1E843FA800E8DEA7 /* OtherViewControllers */ = {
+		133CCEAC1E843FA800E8DEA7 /* MiscViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				1338CA291E7221B100E3041B /* PersonSelectionViewController */,
@@ -228,7 +237,7 @@
 				133CCEB61E84459100E8DEA7 /* PreferencesViewController */,
 				136015AD1E8EF427006A865B /* AddPhotosViewController */,
 			);
-			name = OtherViewControllers;
+			name = MiscViewControllers;
 			sourceTree = "<group>";
 		};
 		133CCEB11E84451C00E8DEA7 /* PhotoDetailViewController */ = {
@@ -332,6 +341,17 @@
 			name = "Data Types";
 			sourceTree = "<group>";
 		};
+		840C761E1E92E55600373EC1 /* PersonDetailWindow */ = {
+			isa = PBXGroup;
+			children = (
+				840C761F1E92E57100373EC1 /* PersonDetailWindowController.swift */,
+				840C76201E92E57100373EC1 /* PersonDetailWindowController.xib */,
+				840C76231E92E67D00373EC1 /* PersonDetailViewController.swift */,
+				840C76241E92E67D00373EC1 /* PersonDetailViewController.xib */,
+			);
+			name = PersonDetailWindow;
+			sourceTree = "<group>";
+		};
 		84CAD6A21E91EC00008F7462 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -401,6 +421,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				131653171E5B8091007F4E76 /* Assets.xcassets in Resources */,
+				840C76221E92E57100373EC1 /* PersonDetailWindowController.xib in Resources */,
 				138C40271E847F9300EED229 /* PlacesViewController.xib in Resources */,
 				136015AC1E8EF423006A865B /* AddPhotosViewController.xib in Resources */,
 				849EF0021E9292C800EFE02D /* PersonViewController.xib in Resources */,
@@ -409,6 +430,7 @@
 				1316531A1E5B8091007F4E76 /* Main.storyboard in Resources */,
 				130694941E71DB820097BDD4 /* PhotoDetailViewController.xib in Resources */,
 				138DEF941E6F933100795A08 /* PhotoCollectionViewItem.xib in Resources */,
+				840C76261E92E67D00373EC1 /* PersonDetailViewController.xib in Resources */,
 				134BB9ED1E805B500083243B /* PersonSelectionQuickAddViewController.xib in Resources */,
 				13FDC0B01E7341A800244CE7 /* PersonSelectionViewController.xib in Resources */,
 				849EF0001E9292C800EFE02D /* PersonCollectionViewItem.xib in Resources */,
@@ -434,6 +456,7 @@
 				137B7B791E61E3A500F9A69E /* HasUniqueID.swift in Sources */,
 				13505FBB1E6B1B9E00D85D5A /* Date.swift in Sources */,
 				849EF0011E9292C800EFE02D /* PersonViewController.swift in Sources */,
+				840C76251E92E67D00373EC1 /* PersonDetailViewController.swift in Sources */,
 				1316532A1E5B8130007F4E76 /* UniqueIDGenerator.swift in Sources */,
 				138DEF8A1E6F464900795A08 /* Location.swift in Sources */,
 				133CCEB41E84454C00E8DEA7 /* PreferencesViewController.swift in Sources */,
@@ -449,6 +472,7 @@
 				137B7B771E61E20300F9A69E /* IndexedDictionary.swift in Sources */,
 				131653281E5B8130007F4E76 /* Spot.swift in Sources */,
 				1360159D1E8EDE65006A865B /* Album.swift in Sources */,
+				840C76211E92E57100373EC1 /* PersonDetailWindowController.swift in Sources */,
 				131653131E5B8091007F4E76 /* AppDelegate.swift in Sources */,
 				136015AB1E8EF423006A865B /* AddPhotosViewController.swift in Sources */,
 				13505FB61E6B06FF00D85D5A /* JSONManager.swift in Sources */,
