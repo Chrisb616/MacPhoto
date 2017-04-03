@@ -65,7 +65,7 @@ class MainWindowController: NSWindowController {
     let tabViewController = NSTabViewController()
     
     let photosViewController = PhotoViewController()
-    let peopleViewController = PeopleViewController()
+    let peopleViewController = PersonViewController()
     let placesViewController = PlacesViewController()
     
     

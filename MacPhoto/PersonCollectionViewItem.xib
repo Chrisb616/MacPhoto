@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12118"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="PersonCollectionViewItem" customModule="MacPhoto" customModuleProvider="target">
+            <connections>
+                <outlet property="imageView" destination="6e9-IZ-5G4" id="mgZ-s0-ozw"/>
+                <outlet property="textField" destination="Ihf-iw-5qS" id="Ugk-HD-aD7"/>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="140" height="160"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6e9-IZ-5G4">
+                    <rect key="frame" x="0.0" y="20" width="140" height="140"/>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="F97-mI-zzh"/>
+                </imageView>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ihf-iw-5qS">
+                    <rect key="frame" x="-2" y="0.0" width="144" height="20"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Label" id="HSv-b6-SQU">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="highlightColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="6e9-IZ-5G4" secondAttribute="bottom" constant="20" id="5eX-Xv-jRc"/>
+                <constraint firstAttribute="trailing" secondItem="6e9-IZ-5G4" secondAttribute="trailing" id="5jh-HC-BUn"/>
+                <constraint firstItem="Ihf-iw-5qS" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="6HC-qZ-7QP"/>
+                <constraint firstItem="Ihf-iw-5qS" firstAttribute="top" secondItem="6e9-IZ-5G4" secondAttribute="bottom" id="AGP-98-oA0"/>
+                <constraint firstItem="6e9-IZ-5G4" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="GYX-zR-WmL"/>
+                <constraint firstAttribute="trailing" secondItem="Ihf-iw-5qS" secondAttribute="trailing" id="Ub5-8F-G1U"/>
+                <constraint firstItem="6e9-IZ-5G4" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="tdj-LJ-OQN"/>
+                <constraint firstAttribute="bottom" secondItem="Ihf-iw-5qS" secondAttribute="bottom" id="x1i-Hu-tft"/>
+            </constraints>
+        </customView>
+        <collectionViewItem id="Fsc-fn-AC8" customClass="PersonCollectionViewItem" customModule="MacPhoto" customModuleProvider="target"/>
+    </objects>
+</document>

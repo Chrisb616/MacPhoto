@@ -35,7 +35,6 @@ class PhotoCollectionViewItem: NSCollectionViewItem, NSGestureRecognizerDelegate
     
     override func mouseDown(with event: NSEvent) {
         super.mouseDown(with: event)
-        print(event.clickCount)
         
         if event.clickCount > 1 {
             guard let unwrappedPhoto = photo else { print("WARNING: No photo found for collection view item"); return }

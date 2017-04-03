@@ -6,11 +6,11 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="PhotoViewController" customModule="MacPhoto" customModuleProvider="target">
+        <customObject id="-2" userLabel="File's Owner" customClass="PersonViewController" customModule="MacPhoto" customModuleProvider="target">
             <connections>
-                <outlet property="photoCollectionView" destination="XPl-vV-t1b" id="vc6-gx-E0l"/>
-                <outlet property="photoCollectionViewLayout" destination="3kv-r4-msE" id="yu2-9P-ffU"/>
-                <outlet property="photoListView" destination="yPs-gJ-IiM" id="utX-hH-eYZ"/>
+                <outlet property="personCollectionView" destination="XPl-vV-t1b" id="dHd-VA-bzG"/>
+                <outlet property="personCollectionViewLayout" destination="3kv-r4-msE" id="ehi-uw-glw"/>
+                <outlet property="personListView" destination="yPs-gJ-IiM" id="gIS-td-u1c"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
         </customObject>
