@@ -61,7 +61,6 @@ class PhotoDetailViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         reload()
-        //PersonSelectionViewController.populate(selectedPeople: [:], delegate: self, container: personSelectionContainer)
     }
     @IBAction func saveButtonTapped(_ sender: Any) {
         
