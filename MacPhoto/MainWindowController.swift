@@ -17,6 +17,8 @@ class MainWindowController: NSWindowController {
     
     var activeViewController = ViewController.photos
     
+    let personDetailWindowController = PersonDetailWindowController()
+    
     //MARK: - Toolbar Actions
 
     @IBAction func photosToolbarItemSelected(_ sender: Any) {

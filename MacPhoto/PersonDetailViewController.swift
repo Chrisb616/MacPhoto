@@ -10,8 +10,13 @@ import Cocoa
 
 class PersonDetailViewController: NSViewController {
     
-    init() {
-        super.init(nibName: "PersonDetailViewControlelr", bundle: nil)!
+    private var windowController: PersonDetailWindowController
+    
+    private var person: Person!
+    
+    init(windowController: PersonDetailWindowController) {
+        self.windowController = windowController
+        super.init(nibName: "PersonDetailViewController", bundle: nil)!
     }
     
     required init?(coder: NSCoder) {
@@ -21,6 +26,10 @@ class PersonDetailViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
+    }
+    
+    func loadPerson() {
+        
     }
     
 }
