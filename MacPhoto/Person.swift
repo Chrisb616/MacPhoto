@@ -31,8 +31,10 @@ class Person: HasUniqueID {
         LocalFileManager.instance.savePersonInfo()
     }
     
-    static func load(uniqueID: String, name: String, firstName: String?, middleName: String?, lastName: String?, isFemale: Bool?) {
+    static func load(uniqueID: String, name: String, firstName: String?, middleName: String?, lastName: String?, isFemale: Bool?, photos: [String:Bool]) {
         let new = Person(uniqueID: uniqueID, name: name, firstName: firstName, middleName: middleName, lastName: lastName, isFemale: isFemale)
+        
+        new.photos = photos
         
         DataStore.instance.people.add(new)
     }
@@ -60,6 +62,37 @@ class Person: HasUniqueID {
 }
 
 extension Person {
+    
+    
+    var allPhotos: [Photo] {
+        var allPhotos = [Photo]()
+        let store = DataStore.instance
+        
+        for uniqueID in photos.keys {
+            guard let photo = store.photos.with(uniqueID: uniqueID) else { continue }
+            
+            allPhotos.append(photo)
+        }
+        
+        return allPhotos
+    }
+    
+    var randomPhoto: Photo? {
+        let store = DataStore.instance
+        
+        for uniqueID in photos.keys {
+            guard let photo = store.photos.with(uniqueID: uniqueID) else { continue }
+            
+            return photo
+        }
+        
+        return nil
+    }
+}
+
+extension Person {
+    
+
     
     //MARK: - Name
     

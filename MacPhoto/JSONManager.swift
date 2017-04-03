@@ -22,19 +22,21 @@ extension JSONManager {
         case middleName = "middleName"
         case lastName = "lastName"
         case isFemale = "isFemale"
+        case photos = "photos"
     }
     
     static func save(person: Person, to dictionary: inout [String:Any]) {
         
         
         var tempDictionary = [String:Any]()
-
+        
         tempDictionary.updateValue(person.uniqueID, forKey: PersonKey.uniqueID.rawValue)
         tempDictionary.updateValue(person.name, forKey: PersonKey.name.rawValue)
         tempDictionary.updateValue(person.firstName as Any, forKey: PersonKey.firstName.rawValue)
         tempDictionary.updateValue(person.middleName as Any, forKey: PersonKey.middleName.rawValue)
         tempDictionary.updateValue(person.lastName as Any, forKey: PersonKey.lastName.rawValue)
         tempDictionary.updateValue(person.isFemale as Any, forKey: PersonKey.isFemale.rawValue)
+        tempDictionary.updateValue(person.photos, forKey: PersonKey.photos.rawValue)
         
         dictionary.updateValue(tempDictionary, forKey: person.uniqueID)
         
@@ -48,8 +50,9 @@ extension JSONManager {
         let middleName = dictionary[PersonKey.middleName.rawValue] as? String
         let lastName = dictionary[PersonKey.lastName.rawValue] as? String
         let isFemale = dictionary[PersonKey.isFemale.rawValue] as? Bool
+        let photos = dictionary[PersonKey.photos.rawValue] as? [String:Bool] ?? [:]
         
-        Person.load(uniqueID: uniqueID, name: name, firstName: firstName, middleName: middleName, lastName: lastName, isFemale: isFemale)
+        Person.load(uniqueID: uniqueID, name: name, firstName: firstName, middleName: middleName, lastName: lastName, isFemale: isFemale, photos: photos)
     }
 }
 extension JSONManager {
@@ -65,7 +68,7 @@ extension JSONManager {
         case spotID = "locationID"
         case people = "people"
     }
-
+    
     static func save(photo: Photo, to dictionary: inout [String:Any]) {
         
         var tempDictionary = [String:Any]()

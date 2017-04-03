@@ -32,7 +32,10 @@ struct ConsistencyManager{
                     continue
                 }
                 
-                if person.photos[uniqueID] == nil {
+                if person.photos[photo.uniqueID] == nil {
+                    
+                    print("CONSISTENCY MANAGER USED: \(person.name) \(person.uniqueID) did not have \(photo.uniqueID) associated with them.")
+                    
                     person.photos.updateValue(true, forKey: photo.uniqueID)
                 }
                 
