@@ -117,11 +117,12 @@ class AddPhotosViewController: NSViewController {
             
             guard let url = dialog.url else { return }
             
-            let list = FileManager.default.listFiles(path: url.path)
+            FileManager.default.listFiles(path: url.path, completion: { (urls) in
+                LocalFileManager.instance.importPhotos(from: urls)
+                
+                self.dismiss(self)
+            })
             
-            LocalFileManager.instance.importPhotos(from: list)
-            
-            self.dismiss(self)
             
         }
     }
@@ -132,6 +133,12 @@ class AddPhotosViewController: NSViewController {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func dismiss(_ sender: Any?) {
+        OperationQueue.main.addOperation {
+            super.dismiss(sender)
+        }
     }
     
     

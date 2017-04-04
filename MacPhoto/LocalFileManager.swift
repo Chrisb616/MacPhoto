@@ -17,6 +17,9 @@ class LocalFileManager {
     //MARK: - Utilities
     private let fileManager = FileManager.default
     
+    private let jsonQueue = OperationQueue(qualityOfService: .utility)
+    private let imageQueue = OperationQueue(qualityOfService: .utility)
+    
     private func parseIDString(_ dictionary: [String:Bool]) -> String {
         //MARK: People
         var string = String()
@@ -72,7 +75,6 @@ class LocalFileManager {
         DataStore.instance.clear()
         loadAllInfo()
         
-        
     }
     
     
@@ -90,6 +92,7 @@ class LocalFileManager {
     
     private func writeJSON(to url: URL, withContent dictionary: [String:Any]) {
         
+        
         let data: Data
         
         do {
@@ -100,6 +103,7 @@ class LocalFileManager {
             print(error)
             return
         }
+        
         
     }
     private func readJSON(from url: URL) -> [String:Any] {
@@ -141,7 +145,7 @@ class LocalFileManager {
         }
     }
     
-    //MARK: - Clustered Functions
+    //MARK: - Cluster Funcs
     
     func loadAllInfo() {
         loadProgramDirectoryHome()
@@ -165,25 +169,43 @@ class LocalFileManager {
     }
     
     func savePersonInfo() {
-        var dictionary = [String:Any]()
         
-        for uniqueID in DataStore.instance.people.uniqueIDs {
-            guard let person = DataStore.instance.people.with(uniqueID: uniqueID) else { print("FAILURE: Failed to save person info for unique ID \(uniqueID)"); continue }
+        jsonQueue.addOperation {
             
-            JSONManager.save(person: person, to: &dictionary)
+            var dictionary = [String:Any]()
+            
+            for uniqueID in DataStore.instance.people.uniqueIDs {
+                guard let person = DataStore.instance.people.with(uniqueID: uniqueID) else { print("FAILURE: Failed to save person info for unique ID \(uniqueID)"); continue }
+                
+                JSONManager.save(person: person, to: &dictionary)
+            }
+            
+            self.createInfoDirectoryIfNeeded()
+            self.writeJSON(to: self.personInfoFile, withContent: dictionary)
         }
-        
-        createInfoDirectoryIfNeeded()
-        writeJSON(to: personInfoFile, withContent: dictionary)
     }
     
     func loadPersonInfo() {
-        let dictionary = readJSON(from: personInfoFile)
-        
-        for (key,value) in dictionary {
-            guard let personDictionary = value as? [String:Any] else { print("FAILURE: Could not create dictionary for person with uniqueID \(key)"); continue }
+        jsonQueue.addOperation {
+            let dictionary = self.readJSON(from: self.personInfoFile)
             
-            JSONManager.loadPerson(from: personDictionary)
+            for (key,value) in dictionary {
+                guard let personDictionary = value as? [String:Any] else { print("FAILURE: Could not create dictionary for person with uniqueID \(key)"); continue }
+                
+                JSONManager.loadPerson(from: personDictionary)
+            }
+        }
+    }
+    func loadPersonInfo(completion: @escaping ()->(Void) ) {
+        jsonQueue.addOperation {
+            let dictionary = self.readJSON(from: self.personInfoFile)
+            
+            for (key,value) in dictionary {
+                guard let personDictionary = value as? [String:Any] else { print("FAILURE: Could not create dictionary for person with uniqueID \(key)"); continue }
+                
+                JSONManager.loadPerson(from: personDictionary)
+            }
+            completion()
         }
     }
     
@@ -196,26 +218,44 @@ class LocalFileManager {
     }
     
     func savePhotoInfo() {
-        var dictionary = [String:Any]()
-        
-        for uniqueID in DataStore.instance.photos.uniqueIDs {
-            guard let photo = DataStore.instance.photos.with(uniqueID: uniqueID) else { print("FAILURE: Failed to save person info for unique ID \(uniqueID)"); continue }
+        jsonQueue.addOperation {
+            var dictionary = [String:Any]()
             
-            JSONManager.save(photo: photo, to: &dictionary)
-    
+            for uniqueID in DataStore.instance.photos.uniqueIDs {
+                guard let photo = DataStore.instance.photos.with(uniqueID: uniqueID) else { print("FAILURE: Failed to save person info for unique ID \(uniqueID)"); continue }
+                
+                JSONManager.save(photo: photo, to: &dictionary)
+                
+            }
+            
+            self.createInfoDirectoryIfNeeded()
+            self.writeJSON(to: self.photoInfoFile, withContent: dictionary)
         }
-        
-        createInfoDirectoryIfNeeded()
-        writeJSON(to: photoInfoFile, withContent: dictionary)
     }
     
     func loadPhotoInfo() {
-        let dictionary = readJSON(from: photoInfoFile)
-        
-        for (key,value) in dictionary {
-            guard let photoDictionary = value as? [String:Any] else { print("FAILURE: Could not create dictionary for phot with uniqueID \(key)"); continue}
+        jsonQueue.addOperation {
+            let dictionary = self.readJSON(from: self.photoInfoFile)
             
-            JSONManager.loadPhoto(from: photoDictionary)
+            for (key,value) in dictionary {
+                guard let photoDictionary = value as? [String:Any] else { print("FAILURE: Could not create dictionary for phot with uniqueID \(key)"); continue}
+                
+                JSONManager.loadPhoto(from: photoDictionary)
+            }
+        }
+    }
+    
+    func loadPhotoInfo(completion: @escaping ()->(Void)) {
+        jsonQueue.addOperation {
+            let dictionary = self.readJSON(from: self.photoInfoFile)
+            
+            for (key,value) in dictionary {
+                guard let photoDictionary = value as? [String:Any] else { print("FAILURE: Could not create dictionary for phot with uniqueID \(key)"); continue}
+                
+                JSONManager.loadPhoto(from: photoDictionary)
+            }
+            
+            completion()
         }
     }
     
@@ -223,27 +263,31 @@ class LocalFileManager {
     //MARK: - Image Management
     
     func save(image: NSImage, withID uniqueID: String) {
-        let path = imageDirectory.appendingPathComponent("\(uniqueID).jpg")
         
-        if !check(for: path) {
-            do {
-                try fileManager.createDirectory(at: imageDirectory, withIntermediateDirectories: true, attributes: [:])
-            } catch {
-                
-            }
-        }
-        
-        if let bits = image.representations.first as? NSBitmapImageRep {
-            let imageData = bits.representation(using: .JPEG, properties: [:])
+        imageQueue.addOperation {
             
-            do {
-                try imageData?.write(to: path)
-                print("SUCCESS: Image written to \(path)")
-            } catch {
-                
+            let path = self.imageDirectory.appendingPathComponent("\(uniqueID).jpg")
+            
+            if !self.check(for: path) {
+                do {
+                    try self.fileManager.createDirectory(at: self.imageDirectory, withIntermediateDirectories: true, attributes: [:])
+                } catch {
+                    
+                }
             }
+            
+            if let bits = image.representations.first as? NSBitmapImageRep {
+                let imageData = bits.representation(using: .JPEG, properties: [:])
+                
+                do {
+                    try imageData?.write(to: path)
+                    print("SUCCESS: Image written to \(path)")
+                } catch {
+                    
+                }
+            }
+            self.savePhotoInfo()
         }
-        savePhotoInfo()
     }
     
     func load(imageWithID uniqueID: String) -> NSImage? {
@@ -269,12 +313,13 @@ class LocalFileManager {
     func importPhotos(from urls: [URL]) {
         importQueue.addOperation {
             for url in urls {
-                LocalFileManager.instance.importPhoto(from: url)
+                LocalFileManager.instance.importPhoto(from: url, shouldUpdatePhotoViewController: false)
             }
+            self.updatePhotoViewController()
         }
     }
     
-    func importPhoto(from url: URL) {
+    func importPhoto(from url: URL, shouldUpdatePhotoViewController: Bool = true) {
         
         importQueue.addOperation {
     
@@ -287,7 +332,10 @@ class LocalFileManager {
             
             Photo.new(image: image, title: title, shortDescription: nil, longDescription: nil, dateTaken: nil, location: nil)
             
-            self.updatePhotoViewController()
+            
+            if shouldUpdatePhotoViewController {
+                self.updatePhotoViewController()
+            }
         }
     }
     

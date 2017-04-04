@@ -15,4 +15,11 @@ extension OperationQueue {
         self.qualityOfService = qualityOfService
     }
     
+    static var importQueue: OperationQueue {
+        return OperationQueue(qualityOfService: .background)
+    }
+    
+    static var photoSaveQueue: OperationQueue {
+        return OperationQueue(qualityOfService: .background)
+    }
 }
