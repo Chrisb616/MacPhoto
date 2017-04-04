@@ -48,7 +48,6 @@
 		840C76221E92E57100373EC1 /* PersonDetailWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 840C76201E92E57100373EC1 /* PersonDetailWindowController.xib */; };
 		840C76251E92E67D00373EC1 /* PersonDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840C76231E92E67D00373EC1 /* PersonDetailViewController.swift */; };
 		840C76261E92E67D00373EC1 /* PersonDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 840C76241E92E67D00373EC1 /* PersonDetailViewController.xib */; };
-		840C76351E92FA8C00373EC1 /* NSTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840C76341E92FA8C00373EC1 /* NSTextField.swift */; };
 		849EEFFF1E9292C800EFE02D /* PersonCollectionViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849EEFFB1E9292C800EFE02D /* PersonCollectionViewItem.swift */; };
 		849EF0001E9292C800EFE02D /* PersonCollectionViewItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 849EEFFC1E9292C800EFE02D /* PersonCollectionViewItem.xib */; };
 		849EF0011E9292C800EFE02D /* PersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849EEFFD1E9292C800EFE02D /* PersonViewController.swift */; };
@@ -102,7 +101,6 @@
 		840C76201E92E57100373EC1 /* PersonDetailWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonDetailWindowController.xib; sourceTree = "<group>"; };
 		840C76231E92E67D00373EC1 /* PersonDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonDetailViewController.swift; sourceTree = "<group>"; };
 		840C76241E92E67D00373EC1 /* PersonDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonDetailViewController.xib; sourceTree = "<group>"; };
-		840C76341E92FA8C00373EC1 /* NSTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSTextField.swift; sourceTree = "<group>"; };
 		849EEFFB1E9292C800EFE02D /* PersonCollectionViewItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonCollectionViewItem.swift; sourceTree = "<group>"; };
 		849EEFFC1E9292C800EFE02D /* PersonCollectionViewItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonCollectionViewItem.xib; sourceTree = "<group>"; };
 		849EEFFD1E9292C800EFE02D /* PersonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonViewController.swift; sourceTree = "<group>"; };
@@ -359,7 +357,6 @@
 			children = (
 				84CAD6A31E91EC10008F7462 /* FileManager.swift */,
 				84CAD6A51E91F57B008F7462 /* OperationQueue.swift */,
-				840C76341E92FA8C00373EC1 /* NSTextField.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -450,7 +447,6 @@
 				134BB9EF1E805B650083243B /* PersonSelectionQuickAddViewController.swift in Sources */,
 				133CCEA51E8167DA00E8DEA7 /* MainWindowController.swift in Sources */,
 				13FDC0B21E73455800244CE7 /* PersonSelectionViewDelegate.swift in Sources */,
-				840C76351E92FA8C00373EC1 /* NSTextField.swift in Sources */,
 				131653291E5B8130007F4E76 /* Photo.swift in Sources */,
 				133CCEB91E845BBC00E8DEA7 /* PhotoViewController.swift in Sources */,
 				133ECCC11E79CCF8002619A0 /* PersonSelectionTableCellView.swift in Sources */,

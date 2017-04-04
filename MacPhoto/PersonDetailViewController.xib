@@ -11,7 +11,10 @@
             <connections>
                 <outlet property="defaultPhotoBox" destination="H5b-H0-g30" id="CFf-Kh-xPf"/>
                 <outlet property="defaultPhotoImageView" destination="NyF-6A-hec" id="lN6-5V-qoQ"/>
-                <outlet property="nameAndNicknameTextField" destination="xbi-01-B0u" id="yUs-lZ-2ut"/>
+                <outlet property="firstNameTextField" destination="Ix0-Oy-k6m" id="hSZ-wI-JEJ"/>
+                <outlet property="lastNameTextField" destination="6Ep-kT-1a1" id="bQB-8l-0ev"/>
+                <outlet property="middleNameTextField" destination="1fZ-hC-Asf" id="GYe-GH-FHK"/>
+                <outlet property="nameTextField" destination="xbi-01-B0u" id="6io-sc-Edh"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
         </customObject>
@@ -49,16 +52,90 @@
                                 <color key="borderColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="fillColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </box>
-                            <textField focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xbi-01-B0u">
-                                <rect key="frame" x="310" y="950" width="1590" height="120"/>
+                            <textField identifier="name" focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xbi-01-B0u">
+                                <rect key="frame" x="310" y="950" width="1590" height="126"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" refusesFirstResponder="YES" sendsActionOnEndEditing="YES" state="on" focusRingType="none" alignment="left" title="Name &quot;Nickname&quot;" drawsBackground="YES" id="tcb-Jy-sCy">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" refusesFirstResponder="YES" sendsActionOnEndEditing="YES" state="on" focusRingType="none" alignment="left" title="Name" drawsBackground="YES" id="tcb-Jy-sCy">
                                     <font key="font" size="93" name="Athelas-Regular"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </textFieldCell>
+                                <connections>
+                                    <outlet property="delegate" destination="-2" id="efF-GW-Gmy"/>
+                                </connections>
                             </textField>
+                            <textField identifier="middle" focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1fZ-hC-Asf">
+                                <rect key="frame" x="330" y="885" width="1570" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" refusesFirstResponder="YES" sendsActionOnEndEditing="YES" state="on" focusRingType="none" alignment="left" title="Middle Name" drawsBackground="YES" id="PEL-kc-XiP">
+                                    <font key="font" size="30" name="Athelas-Regular"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </textFieldCell>
+                                <connections>
+                                    <outlet property="delegate" destination="-2" id="Etf-1X-Ssb"/>
+                                </connections>
+                            </textField>
+                            <textField identifier="first" focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ix0-Oy-k6m">
+                                <rect key="frame" x="320" y="920" width="1580" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" refusesFirstResponder="YES" sendsActionOnEndEditing="YES" state="on" focusRingType="none" alignment="left" title="First Name" placeholderString="" drawsBackground="YES" id="KNB-r4-QWC">
+                                    <font key="font" size="30" name="Athelas-Regular"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </textFieldCell>
+                                <connections>
+                                    <outlet property="delegate" destination="-2" id="xiA-mo-PAn"/>
+                                </connections>
+                            </textField>
+                            <textField identifier="last" focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Ep-kT-1a1">
+                                <rect key="frame" x="340" y="850" width="1560" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" refusesFirstResponder="YES" sendsActionOnEndEditing="YES" state="on" focusRingType="none" alignment="left" title="Last Name" drawsBackground="YES" id="7Ps-jZ-WDP">
+                                    <font key="font" size="30" name="Athelas-Regular"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </textFieldCell>
+                                <connections>
+                                    <outlet property="delegate" destination="-2" id="Yg1-EY-HDh"/>
+                                </connections>
+                            </textField>
+                            <box boxType="custom" cornerRadius="10" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="AhV-6i-TCi">
+                                <rect key="frame" x="1868" y="20" width="30" height="30"/>
+                                <view key="contentView" id="dSd-Cz-nT5">
+                                    <rect key="frame" x="1" y="1" width="28" height="28"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cQ9-eE-zYa">
+                                            <rect key="frame" x="-1" y="-2" width="30" height="32"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="32" id="Fya-uC-72t"/>
+                                            </constraints>
+                                            <buttonCell key="cell" type="bevel" title="💣" bezelStyle="rounded" alignment="center" imageScaling="proportionallyDown" inset="2" id="P2b-jd-t4x">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" size="13" name="AppleColorEmoji"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="bombButtonTapped:" target="-2" id="ZGV-Qm-Z4f"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="7O0-Yf-ISc"/>
+                                    <constraint firstItem="cQ9-eE-zYa" firstAttribute="width" secondItem="AhV-6i-TCi" secondAttribute="width" id="8XH-KV-SLZ"/>
+                                    <constraint firstItem="cQ9-eE-zYa" firstAttribute="centerY" secondItem="AhV-6i-TCi" secondAttribute="centerY" id="QXf-2j-I9U"/>
+                                    <constraint firstItem="cQ9-eE-zYa" firstAttribute="centerX" secondItem="AhV-6i-TCi" secondAttribute="centerX" id="deA-sd-psJ"/>
+                                    <constraint firstAttribute="height" constant="30" id="xca-bb-fet"/>
+                                </constraints>
+                                <color key="borderColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="fillColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </box>
                         </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="AhV-6i-TCi" secondAttribute="trailing" constant="20" id="aky-IA-s6e"/>
+                            <constraint firstAttribute="bottom" secondItem="AhV-6i-TCi" secondAttribute="bottom" constant="20" id="wDo-Hm-wXc"/>
+                        </constraints>
                     </view>
                     <constraints>
                         <constraint firstAttribute="width" constant="1920" id="MQw-dI-edK"/>
