@@ -63,4 +63,8 @@ struct IndexedDictionary<T: HasUniqueID> {
         
         return at(index: rand)
     }
+    
+    var last: T? {
+        return all.last
+    }
 }

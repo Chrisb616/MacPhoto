@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class PersonSelectionQuickAddViewController: NSViewController {
+class PersonQuickAddViewController: NSViewController {
     
     @IBOutlet weak var nameTextField: NSTextField!
     @IBOutlet weak var firstNameTextField: NSTextField!
@@ -41,19 +41,14 @@ class PersonSelectionQuickAddViewController: NSViewController {
                    lastName: lastName.isEmpty ? nil: lastName,
                    isFemale: isFemale)
         
-        delegate.people = DataStore.instance.people.all
-        if let newest = Person.newest {
-            delegate.selected.updateValue(true, forKey: newest.uniqueID)
-            delegate.delegate?.photo.associate(person: newest)
-        }
-        delegate.tableView.reloadData()
-        delegate.dismissQuickAddPopover()
+        guard let person = DataStore.instance.people.last else  { return }
+        delegate.add(new:person)
     }
     
-    var delegate: PersonSelectionViewController!
+    var delegate: PersonQuickAddDelegate!
     
     init(){
-        super.init(nibName: "PersonSelectionQuickAddViewController", bundle: nil)!
+        super.init(nibName: "PersonQuickAddViewController", bundle: nil)!
     }
     
     override func viewDidLoad() {

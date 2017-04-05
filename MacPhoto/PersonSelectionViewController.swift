@@ -16,12 +16,12 @@ class PersonSelectionViewController: NSViewController {
     @IBOutlet weak var searchField: NSSearchField!
     @IBOutlet weak var quickAddButton: NSButton!
     
-    var personSelectionQuickAddViewController: PersonSelectionQuickAddViewController?
+    var personSelectionQuickAddViewController: PersonQuickAddViewController?
     
     @IBAction func quickAddButtonTapped(_ sender: Any) {
         
         if personSelectionQuickAddViewController == nil {
-            personSelectionQuickAddViewController = PersonSelectionQuickAddViewController()
+            personSelectionQuickAddViewController = PersonQuickAddViewController()
             personSelectionQuickAddViewController?.delegate = self
             
             guard let quickAdd = personSelectionQuickAddViewController else {
@@ -30,7 +30,7 @@ class PersonSelectionViewController: NSViewController {
             }
             
             presentViewController(quickAdd,
-                                  asPopoverRelativeTo: PersonSelectionQuickAddViewController.standardFrame,
+                                  asPopoverRelativeTo: PersonQuickAddViewController.standardFrame,
                                   of: quickAddButton,
                                   preferredEdge: NSRectEdge.minY,
                                   behavior: .applicationDefined)
@@ -124,6 +124,20 @@ extension PersonSelectionViewController: NSSearchFieldDelegate {
         tableView.reloadData()
         
         
+    }
+    
+}
+
+extension PersonSelectionViewController: PersonQuickAddDelegate {
+    
+    func add(new person: Person) {
+        self.people = DataStore.instance.people.all
+        self.selected.updateValue(true, forKey: person.uniqueID)
+        self.delegate?.photo.associate(person: person)
+        LocalFileManager.instance.savePhotoInfo()
+        
+        self.tableView.reloadData()
+        self.dismissQuickAddPopover()
     }
     
 }
