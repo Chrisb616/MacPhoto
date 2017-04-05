@@ -50,8 +50,6 @@ class MainWindowController: NSWindowController {
         super.windowDidLoad()
         MainWindowController.instance = self
         
-        LocalFileManager.instance.loadAllInfo()
-        
         
         ConsistencyManager.check()
         

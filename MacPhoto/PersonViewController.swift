@@ -27,7 +27,9 @@ class PersonViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        LocalFileManager.instance.loadPersonInfo {
+            self.personCollectionView.reloadData()
+        }
         configureCollectionView()
         configurePersonListView()
 

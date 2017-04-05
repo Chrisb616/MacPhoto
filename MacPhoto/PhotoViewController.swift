@@ -27,7 +27,10 @@ class PhotoViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+
+        LocalFileManager.instance.loadPhotoInfo {
+            self.photoCollectionView.reloadData()
+        }
         configureCollectionView()
         configurePhotoListView()
 

@@ -152,6 +152,14 @@ class LocalFileManager {
         loadPersonInfo()
         loadPhotoInfo()
     }
+    func loadAllInfo(completion: @escaping (Void)->Void) {
+        loadProgramDirectoryHome()
+        self.loadPersonInfo {
+            self.loadPhotoInfo {
+                completion()
+            }
+        }
+    }
     
     func saveAllInfo() {
         loadProgramDirectoryHome()
