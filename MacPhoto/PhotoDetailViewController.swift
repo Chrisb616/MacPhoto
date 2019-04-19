@@ -51,7 +51,7 @@ class PhotoDetailViewController: NSViewController {
     init(photo: Photo, photoIndex: Int) {
         self.photo = photo
         self.photoIndex = photoIndex
-        super.init(nibName: "PhotoDetailViewController", bundle: nil)!
+        super.init(nibName: "PhotoDetailViewController", bundle: nil)
     }
     
     required init?(coder: NSCoder) {
@@ -103,9 +103,10 @@ extension PhotoDetailViewController: PersonSelectionViewDelegate {
 }
 
 extension PhotoDetailViewController: NSTextFieldDelegate {
-    
+    /*
     override func controlTextDidChange(_ obj: Notification) {
         photo.title = titleTextField.stringValue
     }
+ */
     
 }

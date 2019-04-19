@@ -15,7 +15,7 @@ class PhotoViewController: NSViewController {
     @IBOutlet weak var photoListView: NSView!
     
     init() {
-        super.init(nibName: "PhotoViewController", bundle: nil)!
+        super.init(nibName: "PhotoViewController", bundle: nil)
     }
     
     required init?(coder: NSCoder) {
@@ -76,7 +76,7 @@ extension PhotoViewController: NSCollectionViewDataSource {
         return DataStore.instance.photos.count
     }
     func collectionView(_ collectionView: NSCollectionView, itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {
-        let item = collectionView.makeItem(withIdentifier: "PhotoCollectionViewItem", for: indexPath)
+        let item = collectionView.makeItem(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "PhotoCollectionViewItem"), for: indexPath)
         guard let collectionViewItem = item as? PhotoCollectionViewItem else { return item }
         
         let photo = DataStore.instance.photos.at(index: indexPath.item)

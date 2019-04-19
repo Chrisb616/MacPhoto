@@ -3,117 +3,122 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		130694931E71DB820097BDD4 /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130694911E71DB820097BDD4 /* PhotoDetailViewController.swift */; };
-		130694941E71DB820097BDD4 /* PhotoDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 130694921E71DB820097BDD4 /* PhotoDetailViewController.xib */; };
-		131653131E5B8091007F4E76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131653121E5B8091007F4E76 /* AppDelegate.swift */; };
-		131653171E5B8091007F4E76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 131653161E5B8091007F4E76 /* Assets.xcassets */; };
-		1316531A1E5B8091007F4E76 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 131653181E5B8091007F4E76 /* Main.storyboard */; };
-		131653261E5B8130007F4E76 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131653211E5B8130007F4E76 /* DataStore.swift */; };
-		131653281E5B8130007F4E76 /* Spot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131653231E5B8130007F4E76 /* Spot.swift */; };
-		131653291E5B8130007F4E76 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131653241E5B8130007F4E76 /* Photo.swift */; };
-		1316532A1E5B8130007F4E76 /* UniqueIDGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131653251E5B8130007F4E76 /* UniqueIDGenerator.swift */; };
-		131653311E5B874A007F4E76 /* Factbook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131653301E5B874A007F4E76 /* Factbook.swift */; };
-		131653331E5B8B76007F4E76 /* LocalFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131653321E5B8B76007F4E76 /* LocalFileManager.swift */; };
-		13371A9E1E85511F0099C1D0 /* PreferencesDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13371A9D1E85511F0099C1D0 /* PreferencesDelegate.swift */; };
-		133CCEA51E8167DA00E8DEA7 /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133CCEA41E8167DA00E8DEA7 /* MainWindowController.swift */; };
-		133CCEB41E84454C00E8DEA7 /* PreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133CCEB21E84454C00E8DEA7 /* PreferencesViewController.swift */; };
-		133CCEB51E84454C00E8DEA7 /* PreferencesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 133CCEB31E84454C00E8DEA7 /* PreferencesViewController.xib */; };
-		133CCEB91E845BBC00E8DEA7 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133CCEB71E845BBC00E8DEA7 /* PhotoViewController.swift */; };
-		133CCEBA1E845BBC00E8DEA7 /* PhotoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 133CCEB81E845BBC00E8DEA7 /* PhotoViewController.xib */; };
-		133ECCC11E79CCF8002619A0 /* PersonSelectionTableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133ECCC01E79CCF8002619A0 /* PersonSelectionTableCellView.swift */; };
-		134BB9ED1E805B500083243B /* PersonQuickAddViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 134BB9EC1E805B500083243B /* PersonQuickAddViewController.xib */; };
-		134BB9EF1E805B650083243B /* PersonQuickAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134BB9EE1E805B650083243B /* PersonQuickAddViewController.swift */; };
-		13505FB61E6B06FF00D85D5A /* JSONManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13505FB51E6B06FF00D85D5A /* JSONManager.swift */; };
-		13505FBB1E6B1B9E00D85D5A /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13505FBA1E6B1B9E00D85D5A /* Date.swift */; };
-		1360159D1E8EDE65006A865B /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1360159C1E8EDE65006A865B /* Album.swift */; };
-		136015AB1E8EF423006A865B /* AddPhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136015A91E8EF423006A865B /* AddPhotosViewController.swift */; };
-		136015AC1E8EF423006A865B /* AddPhotosViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 136015AA1E8EF423006A865B /* AddPhotosViewController.xib */; };
-		1361F8301E661F2700D65337 /* Area.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1361F82F1E661F2700D65337 /* Area.swift */; };
-		1372C5991E94372200456B4D /* PersonQuickAddDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1372C5981E94372200456B4D /* PersonQuickAddDelegate.swift */; };
-		137B7B771E61E20300F9A69E /* IndexedDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137B7B761E61E20300F9A69E /* IndexedDictionary.swift */; };
-		137B7B791E61E3A500F9A69E /* HasUniqueID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137B7B781E61E3A500F9A69E /* HasUniqueID.swift */; };
-		138C40261E847F9300EED229 /* PlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138C40241E847F9300EED229 /* PlacesViewController.swift */; };
-		138C40271E847F9300EED229 /* PlacesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 138C40251E847F9300EED229 /* PlacesViewController.xib */; };
-		138DEF8A1E6F464900795A08 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138DEF891E6F464900795A08 /* Location.swift */; };
-		138DEF931E6F933100795A08 /* PhotoCollectionViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138DEF911E6F933100795A08 /* PhotoCollectionViewItem.swift */; };
-		138DEF941E6F933100795A08 /* PhotoCollectionViewItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 138DEF921E6F933100795A08 /* PhotoCollectionViewItem.xib */; };
-		13D1BA8D1E5D1FD6007E7EFA /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D1BA8C1E5D1FD6007E7EFA /* Person.swift */; };
-		13FDC0AF1E7341A800244CE7 /* PersonSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FDC0AD1E7341A800244CE7 /* PersonSelectionViewController.swift */; };
-		13FDC0B01E7341A800244CE7 /* PersonSelectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13FDC0AE1E7341A800244CE7 /* PersonSelectionViewController.xib */; };
-		13FDC0B21E73455800244CE7 /* PersonSelectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FDC0B11E73455800244CE7 /* PersonSelectionViewDelegate.swift */; };
-		840C76211E92E57100373EC1 /* PersonDetailWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840C761F1E92E57100373EC1 /* PersonDetailWindowController.swift */; };
-		840C76221E92E57100373EC1 /* PersonDetailWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 840C76201E92E57100373EC1 /* PersonDetailWindowController.xib */; };
-		840C76251E92E67D00373EC1 /* PersonDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840C76231E92E67D00373EC1 /* PersonDetailViewController.swift */; };
-		840C76261E92E67D00373EC1 /* PersonDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 840C76241E92E67D00373EC1 /* PersonDetailViewController.xib */; };
-		849EEFFF1E9292C800EFE02D /* PersonCollectionViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849EEFFB1E9292C800EFE02D /* PersonCollectionViewItem.swift */; };
-		849EF0001E9292C800EFE02D /* PersonCollectionViewItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 849EEFFC1E9292C800EFE02D /* PersonCollectionViewItem.xib */; };
-		849EF0011E9292C800EFE02D /* PersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849EEFFD1E9292C800EFE02D /* PersonViewController.swift */; };
-		849EF0021E9292C800EFE02D /* PersonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 849EEFFE1E9292C800EFE02D /* PersonViewController.xib */; };
-		84B5A0D91E91CFEE0004F47D /* ConsistencyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B5A0D81E91CFEE0004F47D /* ConsistencyManager.swift */; };
-		84CAD6A41E91EC10008F7462 /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CAD6A31E91EC10008F7462 /* FileManager.swift */; };
-		84CAD6A61E91F57B008F7462 /* OperationQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CAD6A51E91F57B008F7462 /* OperationQueue.swift */; };
+		139DE929226A4300007F8AF9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139DE928226A4300007F8AF9 /* AppDelegate.swift */; };
+		139DE92B226A4301007F8AF9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 139DE92A226A4301007F8AF9 /* Assets.xcassets */; };
+		139DE966226A4370007F8AF9 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139DE936226A436D007F8AF9 /* Date.swift */; };
+		139DE967226A4370007F8AF9 /* PersonCollectionViewItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 139DE937226A436D007F8AF9 /* PersonCollectionViewItem.xib */; };
+		139DE968226A4370007F8AF9 /* PersonDetailWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139DE938226A436D007F8AF9 /* PersonDetailWindowController.swift */; };
+		139DE969226A4370007F8AF9 /* Area.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139DE939226A436D007F8AF9 /* Area.swift */; };
+		139DE96A226A4370007F8AF9 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139DE93A226A436D007F8AF9 /* Location.swift */; };
+		139DE96B226A4370007F8AF9 /* OperationQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139DE93B226A436D007F8AF9 /* OperationQueue.swift */; };
+		139DE96C226A4370007F8AF9 /* Factbook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139DE93C226A436E007F8AF9 /* Factbook.swift */; };
+		139DE96D226A4370007F8AF9 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139DE93D226A436E007F8AF9 /* DataStore.swift */; };
+		139DE96E226A4370007F8AF9 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139DE93E226A436E007F8AF9 /* PhotoViewController.swift */; };
+		139DE96F226A4370007F8AF9 /* PhotoCollectionViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139DE93F226A436E007F8AF9 /* PhotoCollectionViewItem.swift */; };
+		139DE970226A4370007F8AF9 /* UniqueIDGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139DE940226A436E007F8AF9 /* UniqueIDGenerator.swift */; };
+		139DE971226A4370007F8AF9 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139DE941226A436E007F8AF9 /* Album.swift */; };
+		139DE972226A4370007F8AF9 /* PersonQuickAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139DE942226A436E007F8AF9 /* PersonQuickAddViewController.swift */; };
+		139DE973226A4370007F8AF9 /* PhotoCollectionViewItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 139DE943226A436E007F8AF9 /* PhotoCollectionViewItem.xib */; };
+		139DE974226A4370007F8AF9 /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139DE944226A436E007F8AF9 /* FileManager.swift */; };
+		139DE975226A4370007F8AF9 /* AddPhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139DE945226A436E007F8AF9 /* AddPhotosViewController.swift */; };
+		139DE976226A4370007F8AF9 /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139DE946226A436E007F8AF9 /* MainWindowController.swift */; };
+		139DE977226A4370007F8AF9 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139DE947226A436E007F8AF9 /* Photo.swift */; };
+		139DE978226A4370007F8AF9 /* PersonSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139DE948226A436E007F8AF9 /* PersonSelectionViewController.swift */; };
+		139DE979226A4370007F8AF9 /* ConsistencyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139DE949226A436E007F8AF9 /* ConsistencyManager.swift */; };
+		139DE97A226A4370007F8AF9 /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139DE94A226A436E007F8AF9 /* PhotoDetailViewController.swift */; };
+		139DE97B226A4370007F8AF9 /* PhotoDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 139DE94B226A436E007F8AF9 /* PhotoDetailViewController.xib */; };
+		139DE97C226A4370007F8AF9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 139DE94C226A436E007F8AF9 /* Assets.xcassets */; };
+		139DE97D226A4370007F8AF9 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139DE94D226A436E007F8AF9 /* Person.swift */; };
+		139DE97E226A4370007F8AF9 /* AddPhotosViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 139DE94E226A436E007F8AF9 /* AddPhotosViewController.xib */; };
+		139DE97F226A4370007F8AF9 /* PhotoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 139DE94F226A436E007F8AF9 /* PhotoViewController.xib */; };
+		139DE980226A4370007F8AF9 /* PersonSelectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139DE950226A436E007F8AF9 /* PersonSelectionViewDelegate.swift */; };
+		139DE981226A4370007F8AF9 /* PersonSelectionTableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139DE951226A436F007F8AF9 /* PersonSelectionTableCellView.swift */; };
+		139DE982226A4370007F8AF9 /* PersonQuickAddViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 139DE952226A436F007F8AF9 /* PersonQuickAddViewController.xib */; };
+		139DE983226A4370007F8AF9 /* PreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139DE953226A436F007F8AF9 /* PreferencesViewController.swift */; };
+		139DE984226A4370007F8AF9 /* PersonDetailWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 139DE954226A436F007F8AF9 /* PersonDetailWindowController.xib */; };
+		139DE985226A4370007F8AF9 /* PersonQuickAddDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139DE955226A436F007F8AF9 /* PersonQuickAddDelegate.swift */; };
+		139DE986226A4370007F8AF9 /* PersonDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139DE956226A436F007F8AF9 /* PersonDetailViewController.swift */; };
+		139DE987226A4370007F8AF9 /* PersonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 139DE957226A436F007F8AF9 /* PersonViewController.xib */; };
+		139DE988226A4370007F8AF9 /* PlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139DE958226A436F007F8AF9 /* PlacesViewController.swift */; };
+		139DE989226A4370007F8AF9 /* PlacesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 139DE959226A436F007F8AF9 /* PlacesViewController.xib */; };
+		139DE98A226A4370007F8AF9 /* PreferencesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 139DE95A226A436F007F8AF9 /* PreferencesViewController.xib */; };
+		139DE98B226A4370007F8AF9 /* IndexedDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139DE95B226A436F007F8AF9 /* IndexedDictionary.swift */; };
+		139DE98C226A4370007F8AF9 /* Spot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139DE95C226A4370007F8AF9 /* Spot.swift */; };
+		139DE98D226A4370007F8AF9 /* PreferencesDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139DE95D226A4370007F8AF9 /* PreferencesDelegate.swift */; };
+		139DE98E226A4370007F8AF9 /* PersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139DE95E226A4370007F8AF9 /* PersonViewController.swift */; };
+		139DE98F226A4370007F8AF9 /* HasUniqueID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139DE95F226A4370007F8AF9 /* HasUniqueID.swift */; };
+		139DE990226A4370007F8AF9 /* PersonDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 139DE960226A4370007F8AF9 /* PersonDetailViewController.xib */; };
+		139DE991226A4370007F8AF9 /* Base.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 139DE961226A4370007F8AF9 /* Base.lproj */; };
+		139DE992226A4370007F8AF9 /* PersonCollectionViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139DE962226A4370007F8AF9 /* PersonCollectionViewItem.swift */; };
+		139DE993226A4370007F8AF9 /* JSONManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139DE963226A4370007F8AF9 /* JSONManager.swift */; };
+		139DE994226A4370007F8AF9 /* PersonSelectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 139DE964226A4370007F8AF9 /* PersonSelectionViewController.xib */; };
+		139DE995226A4370007F8AF9 /* LocalFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139DE965226A4370007F8AF9 /* LocalFileManager.swift */; };
+		139DE999226A472D007F8AF9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 139DE998226A472D007F8AF9 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		130694911E71DB820097BDD4 /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
-		130694921E71DB820097BDD4 /* PhotoDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotoDetailViewController.xib; sourceTree = "<group>"; };
-		1316530F1E5B8091007F4E76 /* MacPhoto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacPhoto.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		131653121E5B8091007F4E76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		131653161E5B8091007F4E76 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		131653191E5B8091007F4E76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		1316531B1E5B8091007F4E76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		131653211E5B8130007F4E76 /* DataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
-		131653231E5B8130007F4E76 /* Spot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spot.swift; sourceTree = "<group>"; };
-		131653241E5B8130007F4E76 /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
-		131653251E5B8130007F4E76 /* UniqueIDGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniqueIDGenerator.swift; sourceTree = "<group>"; };
-		131653301E5B874A007F4E76 /* Factbook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Factbook.swift; sourceTree = "<group>"; };
-		131653321E5B8B76007F4E76 /* LocalFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalFileManager.swift; sourceTree = "<group>"; };
-		13371A9D1E85511F0099C1D0 /* PreferencesDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesDelegate.swift; sourceTree = "<group>"; };
-		133CCEA41E8167DA00E8DEA7 /* MainWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
-		133CCEB21E84454C00E8DEA7 /* PreferencesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesViewController.swift; sourceTree = "<group>"; };
-		133CCEB31E84454C00E8DEA7 /* PreferencesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PreferencesViewController.xib; sourceTree = "<group>"; };
-		133CCEB71E845BBC00E8DEA7 /* PhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
-		133CCEB81E845BBC00E8DEA7 /* PhotoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotoViewController.xib; sourceTree = "<group>"; };
-		133ECCC01E79CCF8002619A0 /* PersonSelectionTableCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonSelectionTableCellView.swift; sourceTree = "<group>"; };
-		134BB9EC1E805B500083243B /* PersonQuickAddViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonQuickAddViewController.xib; sourceTree = "<group>"; };
-		134BB9EE1E805B650083243B /* PersonQuickAddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonQuickAddViewController.swift; sourceTree = "<group>"; };
-		13505FB51E6B06FF00D85D5A /* JSONManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONManager.swift; sourceTree = "<group>"; };
-		13505FBA1E6B1B9E00D85D5A /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
-		1360159C1E8EDE65006A865B /* Album.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
-		136015A91E8EF423006A865B /* AddPhotosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPhotosViewController.swift; sourceTree = "<group>"; };
-		136015AA1E8EF423006A865B /* AddPhotosViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddPhotosViewController.xib; sourceTree = "<group>"; };
-		1361F82F1E661F2700D65337 /* Area.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Area.swift; sourceTree = "<group>"; };
-		1372C5981E94372200456B4D /* PersonQuickAddDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonQuickAddDelegate.swift; sourceTree = "<group>"; };
-		137B7B761E61E20300F9A69E /* IndexedDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexedDictionary.swift; sourceTree = "<group>"; };
-		137B7B781E61E3A500F9A69E /* HasUniqueID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HasUniqueID.swift; sourceTree = "<group>"; };
-		138C40241E847F9300EED229 /* PlacesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlacesViewController.swift; sourceTree = "<group>"; };
-		138C40251E847F9300EED229 /* PlacesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlacesViewController.xib; sourceTree = "<group>"; };
-		138DEF891E6F464900795A08 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
-		138DEF911E6F933100795A08 /* PhotoCollectionViewItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewItem.swift; sourceTree = "<group>"; };
-		138DEF921E6F933100795A08 /* PhotoCollectionViewItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotoCollectionViewItem.xib; sourceTree = "<group>"; };
-		13D1BA8C1E5D1FD6007E7EFA /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
-		13FDC0AD1E7341A800244CE7 /* PersonSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonSelectionViewController.swift; sourceTree = "<group>"; };
-		13FDC0AE1E7341A800244CE7 /* PersonSelectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonSelectionViewController.xib; sourceTree = "<group>"; };
-		13FDC0B11E73455800244CE7 /* PersonSelectionViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonSelectionViewDelegate.swift; sourceTree = "<group>"; };
-		840C761F1E92E57100373EC1 /* PersonDetailWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonDetailWindowController.swift; sourceTree = "<group>"; };
-		840C76201E92E57100373EC1 /* PersonDetailWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonDetailWindowController.xib; sourceTree = "<group>"; };
-		840C76231E92E67D00373EC1 /* PersonDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonDetailViewController.swift; sourceTree = "<group>"; };
-		840C76241E92E67D00373EC1 /* PersonDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonDetailViewController.xib; sourceTree = "<group>"; };
-		849EEFFB1E9292C800EFE02D /* PersonCollectionViewItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonCollectionViewItem.swift; sourceTree = "<group>"; };
-		849EEFFC1E9292C800EFE02D /* PersonCollectionViewItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonCollectionViewItem.xib; sourceTree = "<group>"; };
-		849EEFFD1E9292C800EFE02D /* PersonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonViewController.swift; sourceTree = "<group>"; };
-		849EEFFE1E9292C800EFE02D /* PersonViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonViewController.xib; sourceTree = "<group>"; };
-		84B5A0D81E91CFEE0004F47D /* ConsistencyManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsistencyManager.swift; sourceTree = "<group>"; };
-		84CAD6A31E91EC10008F7462 /* FileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
-		84CAD6A51E91F57B008F7462 /* OperationQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationQueue.swift; sourceTree = "<group>"; };
+		139DE925226A4300007F8AF9 /* MacPhoto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacPhoto.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		139DE928226A4300007F8AF9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		139DE92A226A4301007F8AF9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		139DE92F226A4301007F8AF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		139DE930226A4301007F8AF9 /* MacPhoto.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MacPhoto.entitlements; sourceTree = "<group>"; };
+		139DE936226A436D007F8AF9 /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		139DE937226A436D007F8AF9 /* PersonCollectionViewItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonCollectionViewItem.xib; sourceTree = "<group>"; };
+		139DE938226A436D007F8AF9 /* PersonDetailWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonDetailWindowController.swift; sourceTree = "<group>"; };
+		139DE939226A436D007F8AF9 /* Area.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Area.swift; sourceTree = "<group>"; };
+		139DE93A226A436D007F8AF9 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		139DE93B226A436D007F8AF9 /* OperationQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationQueue.swift; sourceTree = "<group>"; };
+		139DE93C226A436E007F8AF9 /* Factbook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Factbook.swift; sourceTree = "<group>"; };
+		139DE93D226A436E007F8AF9 /* DataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
+		139DE93E226A436E007F8AF9 /* PhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
+		139DE93F226A436E007F8AF9 /* PhotoCollectionViewItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewItem.swift; sourceTree = "<group>"; };
+		139DE940226A436E007F8AF9 /* UniqueIDGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniqueIDGenerator.swift; sourceTree = "<group>"; };
+		139DE941226A436E007F8AF9 /* Album.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
+		139DE942226A436E007F8AF9 /* PersonQuickAddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonQuickAddViewController.swift; sourceTree = "<group>"; };
+		139DE943226A436E007F8AF9 /* PhotoCollectionViewItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotoCollectionViewItem.xib; sourceTree = "<group>"; };
+		139DE944226A436E007F8AF9 /* FileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
+		139DE945226A436E007F8AF9 /* AddPhotosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPhotosViewController.swift; sourceTree = "<group>"; };
+		139DE946226A436E007F8AF9 /* MainWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
+		139DE947226A436E007F8AF9 /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		139DE948226A436E007F8AF9 /* PersonSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonSelectionViewController.swift; sourceTree = "<group>"; };
+		139DE949226A436E007F8AF9 /* ConsistencyManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsistencyManager.swift; sourceTree = "<group>"; };
+		139DE94A226A436E007F8AF9 /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
+		139DE94B226A436E007F8AF9 /* PhotoDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotoDetailViewController.xib; sourceTree = "<group>"; };
+		139DE94C226A436E007F8AF9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		139DE94D226A436E007F8AF9 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		139DE94E226A436E007F8AF9 /* AddPhotosViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddPhotosViewController.xib; sourceTree = "<group>"; };
+		139DE94F226A436E007F8AF9 /* PhotoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotoViewController.xib; sourceTree = "<group>"; };
+		139DE950226A436E007F8AF9 /* PersonSelectionViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonSelectionViewDelegate.swift; sourceTree = "<group>"; };
+		139DE951226A436F007F8AF9 /* PersonSelectionTableCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonSelectionTableCellView.swift; sourceTree = "<group>"; };
+		139DE952226A436F007F8AF9 /* PersonQuickAddViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonQuickAddViewController.xib; sourceTree = "<group>"; };
+		139DE953226A436F007F8AF9 /* PreferencesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesViewController.swift; sourceTree = "<group>"; };
+		139DE954226A436F007F8AF9 /* PersonDetailWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonDetailWindowController.xib; sourceTree = "<group>"; };
+		139DE955226A436F007F8AF9 /* PersonQuickAddDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonQuickAddDelegate.swift; sourceTree = "<group>"; };
+		139DE956226A436F007F8AF9 /* PersonDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonDetailViewController.swift; sourceTree = "<group>"; };
+		139DE957226A436F007F8AF9 /* PersonViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonViewController.xib; sourceTree = "<group>"; };
+		139DE958226A436F007F8AF9 /* PlacesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlacesViewController.swift; sourceTree = "<group>"; };
+		139DE959226A436F007F8AF9 /* PlacesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlacesViewController.xib; sourceTree = "<group>"; };
+		139DE95A226A436F007F8AF9 /* PreferencesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PreferencesViewController.xib; sourceTree = "<group>"; };
+		139DE95B226A436F007F8AF9 /* IndexedDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexedDictionary.swift; sourceTree = "<group>"; };
+		139DE95C226A4370007F8AF9 /* Spot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spot.swift; sourceTree = "<group>"; };
+		139DE95D226A4370007F8AF9 /* PreferencesDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesDelegate.swift; sourceTree = "<group>"; };
+		139DE95E226A4370007F8AF9 /* PersonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonViewController.swift; sourceTree = "<group>"; };
+		139DE95F226A4370007F8AF9 /* HasUniqueID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HasUniqueID.swift; sourceTree = "<group>"; };
+		139DE960226A4370007F8AF9 /* PersonDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonDetailViewController.xib; sourceTree = "<group>"; };
+		139DE961226A4370007F8AF9 /* Base.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Base.lproj; sourceTree = "<group>"; };
+		139DE962226A4370007F8AF9 /* PersonCollectionViewItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonCollectionViewItem.swift; sourceTree = "<group>"; };
+		139DE963226A4370007F8AF9 /* JSONManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONManager.swift; sourceTree = "<group>"; };
+		139DE964226A4370007F8AF9 /* PersonSelectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonSelectionViewController.xib; sourceTree = "<group>"; };
+		139DE965226A4370007F8AF9 /* LocalFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalFileManager.swift; sourceTree = "<group>"; };
+		139DE998226A472D007F8AF9 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		1316530C1E5B8091007F4E76 /* Frameworks */ = {
+		139DE922226A4300007F8AF9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -123,265 +128,92 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		131653061E5B8091007F4E76 = {
+		139DE91C226A4300007F8AF9 = {
 			isa = PBXGroup;
 			children = (
-				131653111E5B8091007F4E76 /* MacPhoto */,
-				131653101E5B8091007F4E76 /* Products */,
+				139DE927226A4300007F8AF9 /* MacPhoto */,
+				139DE926226A4300007F8AF9 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		131653101E5B8091007F4E76 /* Products */ = {
+		139DE926226A4300007F8AF9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1316530F1E5B8091007F4E76 /* MacPhoto.app */,
+				139DE925226A4300007F8AF9 /* MacPhoto.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		131653111E5B8091007F4E76 /* MacPhoto */ = {
+		139DE927226A4300007F8AF9 /* MacPhoto */ = {
 			isa = PBXGroup;
 			children = (
-				84CAD6A21E91EC00008F7462 /* Extensions */,
-				1316532F1E5B81B1007F4E76 /* Model */,
-				133CCEA81E81BDF600E8DEA7 /* View */,
-				133CCEA91E81BE1100E8DEA7 /* App */,
+				139DE945226A436E007F8AF9 /* AddPhotosViewController.swift */,
+				139DE94E226A436E007F8AF9 /* AddPhotosViewController.xib */,
+				139DE941226A436E007F8AF9 /* Album.swift */,
+				139DE939226A436D007F8AF9 /* Area.swift */,
+				139DE94C226A436E007F8AF9 /* Assets.xcassets */,
+				139DE961226A4370007F8AF9 /* Base.lproj */,
+				139DE93D226A436E007F8AF9 /* DataStore.swift */,
+				139DE949226A436E007F8AF9 /* ConsistencyManager.swift */,
+				139DE936226A436D007F8AF9 /* Date.swift */,
+				139DE93C226A436E007F8AF9 /* Factbook.swift */,
+				139DE944226A436E007F8AF9 /* FileManager.swift */,
+				139DE95F226A4370007F8AF9 /* HasUniqueID.swift */,
+				139DE95B226A436F007F8AF9 /* IndexedDictionary.swift */,
+				139DE963226A4370007F8AF9 /* JSONManager.swift */,
+				139DE965226A4370007F8AF9 /* LocalFileManager.swift */,
+				139DE93A226A436D007F8AF9 /* Location.swift */,
+				139DE946226A436E007F8AF9 /* MainWindowController.swift */,
+				139DE93B226A436D007F8AF9 /* OperationQueue.swift */,
+				139DE94D226A436E007F8AF9 /* Person.swift */,
+				139DE962226A4370007F8AF9 /* PersonCollectionViewItem.swift */,
+				139DE937226A436D007F8AF9 /* PersonCollectionViewItem.xib */,
+				139DE956226A436F007F8AF9 /* PersonDetailViewController.swift */,
+				139DE960226A4370007F8AF9 /* PersonDetailViewController.xib */,
+				139DE938226A436D007F8AF9 /* PersonDetailWindowController.swift */,
+				139DE954226A436F007F8AF9 /* PersonDetailWindowController.xib */,
+				139DE955226A436F007F8AF9 /* PersonQuickAddDelegate.swift */,
+				139DE942226A436E007F8AF9 /* PersonQuickAddViewController.swift */,
+				139DE952226A436F007F8AF9 /* PersonQuickAddViewController.xib */,
+				139DE951226A436F007F8AF9 /* PersonSelectionTableCellView.swift */,
+				139DE998226A472D007F8AF9 /* Main.storyboard */,
+				139DE948226A436E007F8AF9 /* PersonSelectionViewController.swift */,
+				139DE964226A4370007F8AF9 /* PersonSelectionViewController.xib */,
+				139DE950226A436E007F8AF9 /* PersonSelectionViewDelegate.swift */,
+				139DE95E226A4370007F8AF9 /* PersonViewController.swift */,
+				139DE957226A436F007F8AF9 /* PersonViewController.xib */,
+				139DE947226A436E007F8AF9 /* Photo.swift */,
+				139DE93F226A436E007F8AF9 /* PhotoCollectionViewItem.swift */,
+				139DE943226A436E007F8AF9 /* PhotoCollectionViewItem.xib */,
+				139DE94A226A436E007F8AF9 /* PhotoDetailViewController.swift */,
+				139DE94B226A436E007F8AF9 /* PhotoDetailViewController.xib */,
+				139DE93E226A436E007F8AF9 /* PhotoViewController.swift */,
+				139DE94F226A436E007F8AF9 /* PhotoViewController.xib */,
+				139DE958226A436F007F8AF9 /* PlacesViewController.swift */,
+				139DE959226A436F007F8AF9 /* PlacesViewController.xib */,
+				139DE95D226A4370007F8AF9 /* PreferencesDelegate.swift */,
+				139DE953226A436F007F8AF9 /* PreferencesViewController.swift */,
+				139DE95A226A436F007F8AF9 /* PreferencesViewController.xib */,
+				139DE95C226A4370007F8AF9 /* Spot.swift */,
+				139DE940226A436E007F8AF9 /* UniqueIDGenerator.swift */,
+				139DE928226A4300007F8AF9 /* AppDelegate.swift */,
+				139DE92A226A4301007F8AF9 /* Assets.xcassets */,
+				139DE92F226A4301007F8AF9 /* Info.plist */,
+				139DE930226A4301007F8AF9 /* MacPhoto.entitlements */,
 			);
 			path = MacPhoto;
-			sourceTree = "<group>";
-		};
-		1316532E1E5B81AA007F4E76 /* Toolbox */ = {
-			isa = PBXGroup;
-			children = (
-				131653251E5B8130007F4E76 /* UniqueIDGenerator.swift */,
-				131653301E5B874A007F4E76 /* Factbook.swift */,
-			);
-			name = Toolbox;
-			sourceTree = "<group>";
-		};
-		1316532F1E5B81B1007F4E76 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				13F9DC8A1E673E4100018B7F /* Data Types */,
-				13F9DC891E673D3A00018B7F /* Data Managers */,
-				131653211E5B8130007F4E76 /* DataStore.swift */,
-				13505FB91E6B1B9600D85D5A /* Extensions */,
-				1361F82D1E65BE7000D65337 /* Protocols */,
-				1316532E1E5B81AA007F4E76 /* Toolbox */,
-				1361F82E1E661F1C00D65337 /* Location */,
-				13D1BA8C1E5D1FD6007E7EFA /* Person.swift */,
-				1360159B1E8EDE56006A865B /* Photos */,
-			);
-			name = Model;
-			sourceTree = "<group>";
-		};
-		1338CA291E7221B100E3041B /* PersonSelectionViewController */ = {
-			isa = PBXGroup;
-			children = (
-				13FDC0AD1E7341A800244CE7 /* PersonSelectionViewController.swift */,
-				13FDC0AE1E7341A800244CE7 /* PersonSelectionViewController.xib */,
-				133ECCC01E79CCF8002619A0 /* PersonSelectionTableCellView.swift */,
-				13FDC0B11E73455800244CE7 /* PersonSelectionViewDelegate.swift */,
-				1372C59A1E94789200456B4D /* PersonQuickAddViewController */,
-			);
-			name = PersonSelectionViewController;
-			sourceTree = "<group>";
-		};
-		133CCEA61E81BDB200E8DEA7 /* MainWindow */ = {
-			isa = PBXGroup;
-			children = (
-				133CCEA41E8167DA00E8DEA7 /* MainWindowController.swift */,
-				131653181E5B8091007F4E76 /* Main.storyboard */,
-				133CCEA71E81BDC700E8DEA7 /* PhotoViewController */,
-				138C401E1E8460C500EED229 /* PeopleViewController */,
-				138C40211E847F3800EED229 /* PlacesViewController */,
-			);
-			name = MainWindow;
-			sourceTree = "<group>";
-		};
-		133CCEA71E81BDC700E8DEA7 /* PhotoViewController */ = {
-			isa = PBXGroup;
-			children = (
-				138DEF911E6F933100795A08 /* PhotoCollectionViewItem.swift */,
-				138DEF921E6F933100795A08 /* PhotoCollectionViewItem.xib */,
-				133CCEB71E845BBC00E8DEA7 /* PhotoViewController.swift */,
-				133CCEB81E845BBC00E8DEA7 /* PhotoViewController.xib */,
-			);
-			name = PhotoViewController;
-			sourceTree = "<group>";
-		};
-		133CCEA81E81BDF600E8DEA7 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				840C761E1E92E55600373EC1 /* PersonDetailWindow */,
-				133CCEA61E81BDB200E8DEA7 /* MainWindow */,
-				133CCEAC1E843FA800E8DEA7 /* MiscViewControllers */,
-			);
-			name = View;
-			sourceTree = "<group>";
-		};
-		133CCEA91E81BE1100E8DEA7 /* App */ = {
-			isa = PBXGroup;
-			children = (
-				131653121E5B8091007F4E76 /* AppDelegate.swift */,
-				131653161E5B8091007F4E76 /* Assets.xcassets */,
-				1316531B1E5B8091007F4E76 /* Info.plist */,
-			);
-			name = App;
-			sourceTree = "<group>";
-		};
-		133CCEAC1E843FA800E8DEA7 /* MiscViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-				1338CA291E7221B100E3041B /* PersonSelectionViewController */,
-				133CCEB11E84451C00E8DEA7 /* PhotoDetailViewController */,
-				133CCEB61E84459100E8DEA7 /* PreferencesViewController */,
-				136015AD1E8EF427006A865B /* AddPhotosViewController */,
-			);
-			name = MiscViewControllers;
-			sourceTree = "<group>";
-		};
-		133CCEB11E84451C00E8DEA7 /* PhotoDetailViewController */ = {
-			isa = PBXGroup;
-			children = (
-				130694911E71DB820097BDD4 /* PhotoDetailViewController.swift */,
-				130694921E71DB820097BDD4 /* PhotoDetailViewController.xib */,
-			);
-			name = PhotoDetailViewController;
-			sourceTree = "<group>";
-		};
-		133CCEB61E84459100E8DEA7 /* PreferencesViewController */ = {
-			isa = PBXGroup;
-			children = (
-				133CCEB21E84454C00E8DEA7 /* PreferencesViewController.swift */,
-				133CCEB31E84454C00E8DEA7 /* PreferencesViewController.xib */,
-				13371A9D1E85511F0099C1D0 /* PreferencesDelegate.swift */,
-			);
-			name = PreferencesViewController;
-			sourceTree = "<group>";
-		};
-		13505FB91E6B1B9600D85D5A /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				13505FBA1E6B1B9E00D85D5A /* Date.swift */,
-			);
-			name = Extensions;
-			sourceTree = "<group>";
-		};
-		1360159B1E8EDE56006A865B /* Photos */ = {
-			isa = PBXGroup;
-			children = (
-				131653241E5B8130007F4E76 /* Photo.swift */,
-				1360159C1E8EDE65006A865B /* Album.swift */,
-			);
-			name = Photos;
-			sourceTree = "<group>";
-		};
-		136015AD1E8EF427006A865B /* AddPhotosViewController */ = {
-			isa = PBXGroup;
-			children = (
-				136015A91E8EF423006A865B /* AddPhotosViewController.swift */,
-				136015AA1E8EF423006A865B /* AddPhotosViewController.xib */,
-			);
-			name = AddPhotosViewController;
-			sourceTree = "<group>";
-		};
-		1361F82D1E65BE7000D65337 /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				137B7B781E61E3A500F9A69E /* HasUniqueID.swift */,
-			);
-			name = Protocols;
-			sourceTree = "<group>";
-		};
-		1361F82E1E661F1C00D65337 /* Location */ = {
-			isa = PBXGroup;
-			children = (
-				131653231E5B8130007F4E76 /* Spot.swift */,
-				1361F82F1E661F2700D65337 /* Area.swift */,
-				138DEF891E6F464900795A08 /* Location.swift */,
-			);
-			name = Location;
-			sourceTree = "<group>";
-		};
-		1372C59A1E94789200456B4D /* PersonQuickAddViewController */ = {
-			isa = PBXGroup;
-			children = (
-				134BB9EC1E805B500083243B /* PersonQuickAddViewController.xib */,
-				134BB9EE1E805B650083243B /* PersonQuickAddViewController.swift */,
-				1372C5981E94372200456B4D /* PersonQuickAddDelegate.swift */,
-			);
-			name = PersonQuickAddViewController;
-			sourceTree = "<group>";
-		};
-		138C401E1E8460C500EED229 /* PeopleViewController */ = {
-			isa = PBXGroup;
-			children = (
-				849EEFFB1E9292C800EFE02D /* PersonCollectionViewItem.swift */,
-				849EEFFC1E9292C800EFE02D /* PersonCollectionViewItem.xib */,
-				849EEFFD1E9292C800EFE02D /* PersonViewController.swift */,
-				849EEFFE1E9292C800EFE02D /* PersonViewController.xib */,
-			);
-			name = PeopleViewController;
-			sourceTree = "<group>";
-		};
-		138C40211E847F3800EED229 /* PlacesViewController */ = {
-			isa = PBXGroup;
-			children = (
-				138C40241E847F9300EED229 /* PlacesViewController.swift */,
-				138C40251E847F9300EED229 /* PlacesViewController.xib */,
-			);
-			name = PlacesViewController;
-			sourceTree = "<group>";
-		};
-		13F9DC891E673D3A00018B7F /* Data Managers */ = {
-			isa = PBXGroup;
-			children = (
-				131653321E5B8B76007F4E76 /* LocalFileManager.swift */,
-				13505FB51E6B06FF00D85D5A /* JSONManager.swift */,
-				84B5A0D81E91CFEE0004F47D /* ConsistencyManager.swift */,
-			);
-			name = "Data Managers";
-			sourceTree = "<group>";
-		};
-		13F9DC8A1E673E4100018B7F /* Data Types */ = {
-			isa = PBXGroup;
-			children = (
-				137B7B761E61E20300F9A69E /* IndexedDictionary.swift */,
-			);
-			name = "Data Types";
-			sourceTree = "<group>";
-		};
-		840C761E1E92E55600373EC1 /* PersonDetailWindow */ = {
-			isa = PBXGroup;
-			children = (
-				840C761F1E92E57100373EC1 /* PersonDetailWindowController.swift */,
-				840C76201E92E57100373EC1 /* PersonDetailWindowController.xib */,
-				840C76231E92E67D00373EC1 /* PersonDetailViewController.swift */,
-				840C76241E92E67D00373EC1 /* PersonDetailViewController.xib */,
-			);
-			name = PersonDetailWindow;
-			sourceTree = "<group>";
-		};
-		84CAD6A21E91EC00008F7462 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				84CAD6A31E91EC10008F7462 /* FileManager.swift */,
-				84CAD6A51E91F57B008F7462 /* OperationQueue.swift */,
-			);
-			name = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1316530E1E5B8091007F4E76 /* MacPhoto */ = {
+		139DE924226A4300007F8AF9 /* MacPhoto */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1316531E1E5B8091007F4E76 /* Build configuration list for PBXNativeTarget "MacPhoto" */;
+			buildConfigurationList = 139DE933226A4301007F8AF9 /* Build configuration list for PBXNativeTarget "MacPhoto" */;
 			buildPhases = (
-				1316530B1E5B8091007F4E76 /* Sources */,
-				1316530C1E5B8091007F4E76 /* Frameworks */,
-				1316530D1E5B8091007F4E76 /* Resources */,
+				139DE921226A4300007F8AF9 /* Sources */,
+				139DE922226A4300007F8AF9 /* Frameworks */,
+				139DE923226A4300007F8AF9 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -389,151 +221,152 @@
 			);
 			name = MacPhoto;
 			productName = MacPhoto;
-			productReference = 1316530F1E5B8091007F4E76 /* MacPhoto.app */;
+			productReference = 139DE925226A4300007F8AF9 /* MacPhoto.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		131653071E5B8091007F4E76 /* Project object */ = {
+		139DE91D226A4300007F8AF9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0820;
-				LastUpgradeCheck = 0820;
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "Christopher Boynton";
 				TargetAttributes = {
-					1316530E1E5B8091007F4E76 = {
-						CreatedOnToolsVersion = 8.2.1;
-						ProvisioningStyle = Automatic;
+					139DE924226A4300007F8AF9 = {
+						CreatedOnToolsVersion = 10.2.1;
 					};
 				};
 			};
-			buildConfigurationList = 1316530A1E5B8091007F4E76 /* Build configuration list for PBXProject "MacPhoto" */;
-			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			buildConfigurationList = 139DE920226A4300007F8AF9 /* Build configuration list for PBXProject "MacPhoto" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = 131653061E5B8091007F4E76;
-			productRefGroup = 131653101E5B8091007F4E76 /* Products */;
+			mainGroup = 139DE91C226A4300007F8AF9;
+			productRefGroup = 139DE926226A4300007F8AF9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1316530E1E5B8091007F4E76 /* MacPhoto */,
+				139DE924226A4300007F8AF9 /* MacPhoto */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		1316530D1E5B8091007F4E76 /* Resources */ = {
+		139DE923226A4300007F8AF9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				131653171E5B8091007F4E76 /* Assets.xcassets in Resources */,
-				840C76221E92E57100373EC1 /* PersonDetailWindowController.xib in Resources */,
-				138C40271E847F9300EED229 /* PlacesViewController.xib in Resources */,
-				136015AC1E8EF423006A865B /* AddPhotosViewController.xib in Resources */,
-				849EF0021E9292C800EFE02D /* PersonViewController.xib in Resources */,
-				133CCEBA1E845BBC00E8DEA7 /* PhotoViewController.xib in Resources */,
-				133CCEB51E84454C00E8DEA7 /* PreferencesViewController.xib in Resources */,
-				1316531A1E5B8091007F4E76 /* Main.storyboard in Resources */,
-				130694941E71DB820097BDD4 /* PhotoDetailViewController.xib in Resources */,
-				138DEF941E6F933100795A08 /* PhotoCollectionViewItem.xib in Resources */,
-				840C76261E92E67D00373EC1 /* PersonDetailViewController.xib in Resources */,
-				134BB9ED1E805B500083243B /* PersonQuickAddViewController.xib in Resources */,
-				13FDC0B01E7341A800244CE7 /* PersonSelectionViewController.xib in Resources */,
-				849EF0001E9292C800EFE02D /* PersonCollectionViewItem.xib in Resources */,
+				139DE989226A4370007F8AF9 /* PlacesViewController.xib in Resources */,
+				139DE97B226A4370007F8AF9 /* PhotoDetailViewController.xib in Resources */,
+				139DE97F226A4370007F8AF9 /* PhotoViewController.xib in Resources */,
+				139DE973226A4370007F8AF9 /* PhotoCollectionViewItem.xib in Resources */,
+				139DE967226A4370007F8AF9 /* PersonCollectionViewItem.xib in Resources */,
+				139DE98A226A4370007F8AF9 /* PreferencesViewController.xib in Resources */,
+				139DE987226A4370007F8AF9 /* PersonViewController.xib in Resources */,
+				139DE991226A4370007F8AF9 /* Base.lproj in Resources */,
+				139DE982226A4370007F8AF9 /* PersonQuickAddViewController.xib in Resources */,
+				139DE92B226A4301007F8AF9 /* Assets.xcassets in Resources */,
+				139DE994226A4370007F8AF9 /* PersonSelectionViewController.xib in Resources */,
+				139DE999226A472D007F8AF9 /* Main.storyboard in Resources */,
+				139DE97E226A4370007F8AF9 /* AddPhotosViewController.xib in Resources */,
+				139DE990226A4370007F8AF9 /* PersonDetailViewController.xib in Resources */,
+				139DE97C226A4370007F8AF9 /* Assets.xcassets in Resources */,
+				139DE984226A4370007F8AF9 /* PersonDetailWindowController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		1316530B1E5B8091007F4E76 /* Sources */ = {
+		139DE921226A4300007F8AF9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				134BB9EF1E805B650083243B /* PersonQuickAddViewController.swift in Sources */,
-				1372C5991E94372200456B4D /* PersonQuickAddDelegate.swift in Sources */,
-				133CCEA51E8167DA00E8DEA7 /* MainWindowController.swift in Sources */,
-				13FDC0B21E73455800244CE7 /* PersonSelectionViewDelegate.swift in Sources */,
-				131653291E5B8130007F4E76 /* Photo.swift in Sources */,
-				133CCEB91E845BBC00E8DEA7 /* PhotoViewController.swift in Sources */,
-				133ECCC11E79CCF8002619A0 /* PersonSelectionTableCellView.swift in Sources */,
-				131653331E5B8B76007F4E76 /* LocalFileManager.swift in Sources */,
-				84B5A0D91E91CFEE0004F47D /* ConsistencyManager.swift in Sources */,
-				138C40261E847F9300EED229 /* PlacesViewController.swift in Sources */,
-				137B7B791E61E3A500F9A69E /* HasUniqueID.swift in Sources */,
-				13505FBB1E6B1B9E00D85D5A /* Date.swift in Sources */,
-				849EF0011E9292C800EFE02D /* PersonViewController.swift in Sources */,
-				840C76251E92E67D00373EC1 /* PersonDetailViewController.swift in Sources */,
-				1316532A1E5B8130007F4E76 /* UniqueIDGenerator.swift in Sources */,
-				138DEF8A1E6F464900795A08 /* Location.swift in Sources */,
-				133CCEB41E84454C00E8DEA7 /* PreferencesViewController.swift in Sources */,
-				13371A9E1E85511F0099C1D0 /* PreferencesDelegate.swift in Sources */,
-				84CAD6A41E91EC10008F7462 /* FileManager.swift in Sources */,
-				130694931E71DB820097BDD4 /* PhotoDetailViewController.swift in Sources */,
-				138DEF931E6F933100795A08 /* PhotoCollectionViewItem.swift in Sources */,
-				13D1BA8D1E5D1FD6007E7EFA /* Person.swift in Sources */,
-				131653261E5B8130007F4E76 /* DataStore.swift in Sources */,
-				13FDC0AF1E7341A800244CE7 /* PersonSelectionViewController.swift in Sources */,
-				131653311E5B874A007F4E76 /* Factbook.swift in Sources */,
-				84CAD6A61E91F57B008F7462 /* OperationQueue.swift in Sources */,
-				137B7B771E61E20300F9A69E /* IndexedDictionary.swift in Sources */,
-				131653281E5B8130007F4E76 /* Spot.swift in Sources */,
-				1360159D1E8EDE65006A865B /* Album.swift in Sources */,
-				840C76211E92E57100373EC1 /* PersonDetailWindowController.swift in Sources */,
-				131653131E5B8091007F4E76 /* AppDelegate.swift in Sources */,
-				136015AB1E8EF423006A865B /* AddPhotosViewController.swift in Sources */,
-				13505FB61E6B06FF00D85D5A /* JSONManager.swift in Sources */,
-				849EEFFF1E9292C800EFE02D /* PersonCollectionViewItem.swift in Sources */,
-				1361F8301E661F2700D65337 /* Area.swift in Sources */,
+				139DE975226A4370007F8AF9 /* AddPhotosViewController.swift in Sources */,
+				139DE96C226A4370007F8AF9 /* Factbook.swift in Sources */,
+				139DE979226A4370007F8AF9 /* ConsistencyManager.swift in Sources */,
+				139DE978226A4370007F8AF9 /* PersonSelectionViewController.swift in Sources */,
+				139DE970226A4370007F8AF9 /* UniqueIDGenerator.swift in Sources */,
+				139DE96D226A4370007F8AF9 /* DataStore.swift in Sources */,
+				139DE974226A4370007F8AF9 /* FileManager.swift in Sources */,
+				139DE972226A4370007F8AF9 /* PersonQuickAddViewController.swift in Sources */,
+				139DE976226A4370007F8AF9 /* MainWindowController.swift in Sources */,
+				139DE968226A4370007F8AF9 /* PersonDetailWindowController.swift in Sources */,
+				139DE986226A4370007F8AF9 /* PersonDetailViewController.swift in Sources */,
+				139DE96B226A4370007F8AF9 /* OperationQueue.swift in Sources */,
+				139DE98F226A4370007F8AF9 /* HasUniqueID.swift in Sources */,
+				139DE983226A4370007F8AF9 /* PreferencesViewController.swift in Sources */,
+				139DE992226A4370007F8AF9 /* PersonCollectionViewItem.swift in Sources */,
+				139DE929226A4300007F8AF9 /* AppDelegate.swift in Sources */,
+				139DE977226A4370007F8AF9 /* Photo.swift in Sources */,
+				139DE96E226A4370007F8AF9 /* PhotoViewController.swift in Sources */,
+				139DE985226A4370007F8AF9 /* PersonQuickAddDelegate.swift in Sources */,
+				139DE98D226A4370007F8AF9 /* PreferencesDelegate.swift in Sources */,
+				139DE98B226A4370007F8AF9 /* IndexedDictionary.swift in Sources */,
+				139DE98C226A4370007F8AF9 /* Spot.swift in Sources */,
+				139DE981226A4370007F8AF9 /* PersonSelectionTableCellView.swift in Sources */,
+				139DE988226A4370007F8AF9 /* PlacesViewController.swift in Sources */,
+				139DE96A226A4370007F8AF9 /* Location.swift in Sources */,
+				139DE980226A4370007F8AF9 /* PersonSelectionViewDelegate.swift in Sources */,
+				139DE969226A4370007F8AF9 /* Area.swift in Sources */,
+				139DE995226A4370007F8AF9 /* LocalFileManager.swift in Sources */,
+				139DE993226A4370007F8AF9 /* JSONManager.swift in Sources */,
+				139DE96F226A4370007F8AF9 /* PhotoCollectionViewItem.swift in Sources */,
+				139DE966226A4370007F8AF9 /* Date.swift in Sources */,
+				139DE97D226A4370007F8AF9 /* Person.swift in Sources */,
+				139DE97A226A4370007F8AF9 /* PhotoDetailViewController.swift in Sources */,
+				139DE98E226A4370007F8AF9 /* PersonViewController.swift in Sources */,
+				139DE971226A4370007F8AF9 /* Album.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXVariantGroup section */
-		131653181E5B8091007F4E76 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				131653191E5B8091007F4E76 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
-		1316531C1E5B8091007F4E76 /* Debug */ = {
+		139DE931226A4301007F8AF9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -547,8 +380,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				MTL_ENABLE_DEBUG_INFO = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -556,33 +390,44 @@
 			};
 			name = Debug;
 		};
-		1316531D1E5B8091007F4E76 /* Release */ = {
+		139DE932226A4301007F8AF9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -590,63 +435,75 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 			};
 			name = Release;
 		};
-		1316531F1E5B8091007F4E76 /* Debug */ = {
+		139DE934226A4301007F8AF9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MacPhoto/MacPhoto.entitlements;
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 6X2L9APT92;
 				INFOPLIST_FILE = MacPhoto/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = self.MacPhoto;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
-		131653201E5B8091007F4E76 /* Release */ = {
+		139DE935226A4301007F8AF9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MacPhoto/MacPhoto.entitlements;
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 6X2L9APT92;
 				INFOPLIST_FILE = MacPhoto/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = self.MacPhoto;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1316530A1E5B8091007F4E76 /* Build configuration list for PBXProject "MacPhoto" */ = {
+		139DE920226A4300007F8AF9 /* Build configuration list for PBXProject "MacPhoto" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1316531C1E5B8091007F4E76 /* Debug */,
-				1316531D1E5B8091007F4E76 /* Release */,
+				139DE931226A4301007F8AF9 /* Debug */,
+				139DE932226A4301007F8AF9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1316531E1E5B8091007F4E76 /* Build configuration list for PBXNativeTarget "MacPhoto" */ = {
+		139DE933226A4301007F8AF9 /* Build configuration list for PBXNativeTarget "MacPhoto" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1316531F1E5B8091007F4E76 /* Debug */,
-				131653201E5B8091007F4E76 /* Release */,
+				139DE934226A4301007F8AF9 /* Debug */,
+				139DE935226A4301007F8AF9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 131653071E5B8091007F4E76 /* Project object */;
+	rootObject = 139DE91D226A4300007F8AF9 /* Project object */;
 }

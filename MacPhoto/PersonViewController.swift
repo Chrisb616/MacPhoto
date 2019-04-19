@@ -15,7 +15,7 @@ class PersonViewController: NSViewController {
     @IBOutlet weak var personListView: NSView!
     
     init() {
-        super.init(nibName: "PersonViewController", bundle: nil)!
+        super.init(nibName: "PersonViewController", bundle: nil)
     }
     
     required init?(coder: NSCoder) {
@@ -80,7 +80,7 @@ extension PersonViewController: NSCollectionViewDataSource {
         return DataStore.instance.people.count
     }
     func collectionView(_ collectionView: NSCollectionView, itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {
-        let item = collectionView.makeItem(withIdentifier: "PersonCollectionViewItem", for: indexPath)
+        let item = collectionView.makeItem(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "PersonCollectionViewItem"), for: indexPath)
         guard let collectionViewItem = item as? PersonCollectionViewItem else { return item }
         
         let person = DataStore.instance.people.at(index: indexPath.item)

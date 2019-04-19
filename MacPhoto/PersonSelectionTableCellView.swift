@@ -56,10 +56,10 @@ class PersonSelectionTableCellView: NSTableCellView {
         self.delegate = delegate
     }
     
-    func selected(_ sender: NSButton) {
-        if sender.state == 0 {
+    @objc func selected(_ sender: NSButton) {
+        if sender.state.rawValue == 0 {
             delegate?.tableView(deselect: person)
-        } else if sender.state == 1 {
+        } else if sender.state.rawValue == 1 {
             delegate?.tableView(select: person)
         }
     }

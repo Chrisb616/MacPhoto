@@ -27,7 +27,7 @@ class PreferencesViewController: NSViewController {
     }
     
     init() {
-        super.init(nibName: "PreferencesViewController", bundle: nil)!
+        super.init(nibName: "PreferencesViewController", bundle: nil)
         
     }
     
@@ -56,7 +56,7 @@ class PreferencesViewController: NSViewController {
         dialog.canCreateDirectories = true
         dialog.allowsMultipleSelection = false
         
-        if dialog.runModal() == NSModalResponseOK {
+        if dialog.runModal() == NSApplication.ModalResponse.OK {
             let result = dialog.url
             
             if let url = result {

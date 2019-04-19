@@ -41,7 +41,7 @@ class PhotoCollectionViewItem: NSCollectionViewItem, NSGestureRecognizerDelegate
             
             let detailVC = PhotoDetailViewController(photo: unwrappedPhoto, photoIndex: index)
             
-            presentViewControllerAsSheet(detailVC)
+            presentAsSheet(detailVC)
         }
     }
     

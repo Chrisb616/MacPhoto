@@ -27,7 +27,7 @@ class PersonDetailWindowController: NSWindowController {
         tabViewController.view.wantsLayer = true
         tabViewController.tabStyle = .unspecified
         
-        tabViewController.addChildViewController(personDetailViewController)
+        tabViewController.addChild(personDetailViewController)
         self.window?.contentViewController = tabViewController
 
     }

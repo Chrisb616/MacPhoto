@@ -48,7 +48,7 @@ class PersonQuickAddViewController: NSViewController {
     var delegate: PersonQuickAddDelegate!
     
     init(){
-        super.init(nibName: "PersonQuickAddViewController", bundle: nil)!
+        super.init(nibName: "PersonQuickAddViewController", bundle: nil)
     }
     
     override func viewDidLoad() {

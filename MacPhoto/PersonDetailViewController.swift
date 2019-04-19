@@ -30,14 +30,14 @@ class PersonDetailViewController: NSViewController {
     }
     
     init() {
-        super.init(nibName: "PersonDetailViewController", bundle: nil)!
+        super.init(nibName: "PersonDetailViewController", bundle: nil)
         
     }
     
     
     
     @objc func defaultPhotoImageViewClicked() {
-        self.view.addSubview(defaultPhotoBox, positioned: NSWindowOrderingMode.above, relativeTo: nil)
+        self.view.addSubview(defaultPhotoBox, positioned: NSWindow.OrderingMode.above, relativeTo: nil)
         
         if defaultPhotoImageViewWasClicked {
             
@@ -101,7 +101,7 @@ class PersonDetailViewController: NSViewController {
 }
 
 extension PersonDetailViewController: NSTextFieldDelegate {
-    
+    /*
     override func controlTextDidChange(_ obj: Notification) {
         guard let textField = obj.object as? NSTextField else { return }
         guard let person = window.person else { return }
@@ -115,5 +115,5 @@ extension PersonDetailViewController: NSTextFieldDelegate {
         default: return
         }
     }
-    
+    */
 }

@@ -11,7 +11,7 @@ import Cocoa
 class PlacesViewController: NSViewController {
 
     init() {
-        super.init(nibName: "PlacesViewController", bundle: nil)!
+        super.init(nibName: "PlacesViewController", bundle: nil)
     }
     
     required init?(coder: NSCoder) {

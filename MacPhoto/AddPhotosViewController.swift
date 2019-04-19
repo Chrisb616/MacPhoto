@@ -24,7 +24,7 @@ class AddPhotosViewController: NSViewController {
         dialog.allowsMultipleSelection = false
         dialog.allowedFileTypes = Factbook.allowedImageFileTypes
         
-        if dialog.runModal() == NSModalResponseOK {
+        if dialog.runModal() == NSApplication.ModalResponse.OK {
             
             guard let url = dialog.url else { return }
             
@@ -47,7 +47,7 @@ class AddPhotosViewController: NSViewController {
         dialog.allowsMultipleSelection = true
         dialog.allowedFileTypes = Factbook.allowedImageFileTypes
         
-        if dialog.runModal() == NSModalResponseOK {
+        if dialog.runModal() == NSApplication.ModalResponse.OK {
             
             localFileManager.importPhotos(from: dialog.urls)
             dismiss(self)
@@ -66,7 +66,7 @@ class AddPhotosViewController: NSViewController {
         dialog.canCreateDirectories = false
         dialog.allowsMultipleSelection = false
         
-        if dialog.runModal() == NSModalResponseOK {
+        if dialog.runModal() == NSApplication.ModalResponse.OK {
             
             guard let url = dialog.url else { return }
             
@@ -113,7 +113,7 @@ class AddPhotosViewController: NSViewController {
         dialog.canCreateDirectories = false
         dialog.allowsMultipleSelection = false
         
-        if dialog.runModal() == NSModalResponseOK {
+        if dialog.runModal() == NSApplication.ModalResponse.OK {
             
             guard let url = dialog.url else { return }
             
@@ -128,7 +128,7 @@ class AddPhotosViewController: NSViewController {
     }
     
     init() {
-        super.init(nibName: "AddPhotosViewController", bundle: nil)!
+        super.init(nibName: "AddPhotosViewController", bundle: nil)
     }
     
     required init?(coder: NSCoder) {

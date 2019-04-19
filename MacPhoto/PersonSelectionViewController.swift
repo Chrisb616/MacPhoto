@@ -29,7 +29,7 @@ class PersonSelectionViewController: NSViewController {
                 return
             }
             
-            presentViewController(quickAdd,
+            present(quickAdd,
                                   asPopoverRelativeTo: PersonQuickAddViewController.standardFrame,
                                   of: quickAddButton,
                                   preferredEdge: NSRectEdge.minY,
@@ -52,7 +52,7 @@ class PersonSelectionViewController: NSViewController {
     var people = [Person]()
     
     init(){
-        super.init(nibName: "PersonSelectionViewController", bundle: nil)!
+        super.init(nibName: "PersonSelectionViewController", bundle: nil)
     }
     
     required init?(coder: NSCoder) {
@@ -89,13 +89,13 @@ extension PersonSelectionViewController: NSTableViewDataSource, NSTableViewDeleg
     
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
         
-        if let cell = tableView.make(withIdentifier: "personCell", owner: nil) as? PersonSelectionTableCellView {
+        if let cell = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "personCell"), owner: nil) as? PersonSelectionTableCellView {
             let person = people[row]
             
             cell.initializeCheckBox()
             cell.set(person: person)
             
-            if selected[person.uniqueID] != nil { cell.check.state = 1}
+            if selected[person.uniqueID] != nil { cell.check.state = NSControl.StateValue(rawValue: 1)}
             
             cell.set(delegate: delegate)
             cell.refreshLayer()
@@ -107,6 +107,7 @@ extension PersonSelectionViewController: NSTableViewDataSource, NSTableViewDeleg
 
 extension PersonSelectionViewController: NSSearchFieldDelegate {
     
+    /*
     override func controlTextDidChange(_ obj: Notification) {
         let search = searchField.stringValue
         let allPeople = DataStore.instance.people.all
@@ -125,6 +126,7 @@ extension PersonSelectionViewController: NSSearchFieldDelegate {
         
         
     }
+ */
     
 }
 

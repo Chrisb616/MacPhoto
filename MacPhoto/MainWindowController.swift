@@ -38,13 +38,13 @@ class MainWindowController: NSWindowController {
         
         preferences.delegate = self
         
-        contentViewController?.presentViewControllerAsSheet(preferences)
+        contentViewController?.presentAsSheet(preferences)
     }
     
     @IBAction func addToolbarItemSelected(_ sender: Any) {
         let addPhotosViewController = AddPhotosViewController()
         
-        contentViewController?.presentViewControllerAsSheet(addPhotosViewController)
+        contentViewController?.presentAsSheet(addPhotosViewController)
     }
     override func windowDidLoad() {
         super.windowDidLoad()
@@ -53,7 +53,7 @@ class MainWindowController: NSWindowController {
         
         ConsistencyManager.check()
         
-        window?.styleMask.insert(NSWindowStyleMask.resizable)
+        window?.styleMask.insert(NSWindow.StyleMask.resizable)
 
         instantiateTabViewController()
         
@@ -74,9 +74,9 @@ class MainWindowController: NSWindowController {
         tabViewController.view.wantsLayer = true
         tabViewController.tabStyle = .unspecified
         
-        tabViewController.addChildViewController(photosViewController)
-        tabViewController.addChildViewController(peopleViewController)
-        tabViewController.addChildViewController(placesViewController)
+        tabViewController.addChild(photosViewController)
+        tabViewController.addChild(peopleViewController)
+        tabViewController.addChild(placesViewController)
         self.window?.contentViewController = tabViewController
         
         
@@ -118,7 +118,7 @@ class MainWindowController: NSWindowController {
 extension MainWindowController: NSWindowDelegate {
     
     func windowWillClose(_ notification: Notification) {
-        NSApplication.shared().terminate(self)
+        NSApplication.shared.terminate(self)
     }
     
 }

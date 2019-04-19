@@ -152,7 +152,7 @@ class LocalFileManager {
         loadPersonInfo()
         loadPhotoInfo()
     }
-    func loadAllInfo(completion: @escaping (Void)->Void) {
+    func loadAllInfo(completion: @escaping ()->Void) {
         loadProgramDirectoryHome()
         self.loadPersonInfo {
             self.loadPhotoInfo {
@@ -285,7 +285,7 @@ class LocalFileManager {
             }
             
             if let bits = image.representations.first as? NSBitmapImageRep {
-                let imageData = bits.representation(using: .JPEG, properties: [:])
+                let imageData = bits.representation(using: .jpeg, properties: [:])
                 
                 do {
                     try imageData?.write(to: path)
