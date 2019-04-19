@@ -107,8 +107,7 @@ extension PersonSelectionViewController: NSTableViewDataSource, NSTableViewDeleg
 
 extension PersonSelectionViewController: NSSearchFieldDelegate {
     
-    /*
-    override func controlTextDidChange(_ obj: Notification) {
+   func controlTextDidChange(_ obj: Notification) {
         let search = searchField.stringValue
         let allPeople = DataStore.instance.people.all
         
@@ -124,9 +123,7 @@ extension PersonSelectionViewController: NSSearchFieldDelegate {
     
         tableView.reloadData()
         
-        
     }
- */
     
 }
 

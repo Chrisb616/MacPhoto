@@ -101,11 +101,11 @@ class PersonDetailViewController: NSViewController {
 }
 
 extension PersonDetailViewController: NSTextFieldDelegate {
-    /*
-    override func controlTextDidChange(_ obj: Notification) {
+    
+    func controlTextDidChange(_ obj: Notification) {
         guard let textField = obj.object as? NSTextField else { return }
         guard let person = window.person else { return }
-        guard let identifier = textField.identifier else { return }
+        guard let identifier = textField.identifier?.rawValue else { return }
         
         switch identifier {
         case "name": person.name = textField.stringValue
@@ -115,5 +115,4 @@ extension PersonDetailViewController: NSTextFieldDelegate {
         default: return
         }
     }
-    */
 }

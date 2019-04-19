@@ -103,10 +103,8 @@ extension PhotoDetailViewController: PersonSelectionViewDelegate {
 }
 
 extension PhotoDetailViewController: NSTextFieldDelegate {
-    /*
-    override func controlTextDidChange(_ obj: Notification) {
+    func controlTextDidChange(_ obj: Notification) {
         photo.title = titleTextField.stringValue
     }
- */
     
 }
