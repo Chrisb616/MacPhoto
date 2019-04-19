@@ -190,6 +190,7 @@
 		139DE99C226A490F007F8AF9 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				139DE99D226A5D4C007F8AF9 /* Main Window */,
 				139DE998226A472D007F8AF9 /* Main.storyboard */,
 				139DE928226A4300007F8AF9 /* AppDelegate.swift */,
 				139DE945226A436E007F8AF9 /* AddPhotosViewController.swift */,
@@ -204,25 +205,32 @@
 				139DE942226A436E007F8AF9 /* PersonQuickAddViewController.swift */,
 				139DE952226A436F007F8AF9 /* PersonQuickAddViewController.xib */,
 				139DE951226A436F007F8AF9 /* PersonSelectionTableCellView.swift */,
-				139DE946226A436E007F8AF9 /* MainWindowController.swift */,
 				139DE948226A436E007F8AF9 /* PersonSelectionViewController.swift */,
 				139DE964226A4370007F8AF9 /* PersonSelectionViewController.xib */,
 				139DE950226A436E007F8AF9 /* PersonSelectionViewDelegate.swift */,
-				139DE95E226A4370007F8AF9 /* PersonViewController.swift */,
-				139DE957226A436F007F8AF9 /* PersonViewController.xib */,
 				139DE93F226A436E007F8AF9 /* PhotoCollectionViewItem.swift */,
 				139DE943226A436E007F8AF9 /* PhotoCollectionViewItem.xib */,
 				139DE94A226A436E007F8AF9 /* PhotoDetailViewController.swift */,
 				139DE94B226A436E007F8AF9 /* PhotoDetailViewController.xib */,
-				139DE93E226A436E007F8AF9 /* PhotoViewController.swift */,
-				139DE94F226A436E007F8AF9 /* PhotoViewController.xib */,
-				139DE958226A436F007F8AF9 /* PlacesViewController.swift */,
-				139DE959226A436F007F8AF9 /* PlacesViewController.xib */,
 				139DE95D226A4370007F8AF9 /* PreferencesDelegate.swift */,
 				139DE953226A436F007F8AF9 /* PreferencesViewController.swift */,
 				139DE95A226A436F007F8AF9 /* PreferencesViewController.xib */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		139DE99D226A5D4C007F8AF9 /* Main Window */ = {
+			isa = PBXGroup;
+			children = (
+				139DE946226A436E007F8AF9 /* MainWindowController.swift */,
+				139DE93E226A436E007F8AF9 /* PhotoViewController.swift */,
+				139DE94F226A436E007F8AF9 /* PhotoViewController.xib */,
+				139DE95E226A4370007F8AF9 /* PersonViewController.swift */,
+				139DE957226A436F007F8AF9 /* PersonViewController.xib */,
+				139DE958226A436F007F8AF9 /* PlacesViewController.swift */,
+				139DE959226A436F007F8AF9 /* PlacesViewController.xib */,
+			);
+			path = "Main Window";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
