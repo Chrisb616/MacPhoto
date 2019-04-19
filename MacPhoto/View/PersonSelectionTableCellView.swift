@@ -32,7 +32,7 @@ class PersonSelectionTableCellView: NSTableCellView {
         
         let layer = CALayer()
         layer.bounds = self.frame
-        layer.backgroundColor = NSColor.white.cgColor
+        layer.backgroundColor = NSColor.black.cgColor
         background.layer = layer
         
         check = NSButton()
