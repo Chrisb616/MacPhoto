@@ -20,8 +20,6 @@ class PlacesViewController: NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
     }
     
 }

@@ -34,19 +34,11 @@ class PersonViewController: NSViewController {
         }
         configureCollectionView()
         configurePersonListView()
-
     }
     
     override func viewWillAppear() {
         super.viewWillAppear()
         personCollectionView.reloadData()
-    }
-    
-    override var representedObject: Any? {
-        didSet {
-            // Update the view, if already loaded.
-        }
-        
     }
     
     private func configureCollectionView() {

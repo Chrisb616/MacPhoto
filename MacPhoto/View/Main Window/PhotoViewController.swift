@@ -27,22 +27,14 @@ class PhotoViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        configureCollectionView()
+        configurePhotoListView()
 
         LocalFileManager.instance.loadPhotoInfo {
             DispatchQueue.main.async {
                 self.photoCollectionView.reloadData()
             }
         }
-        configureCollectionView()
-        configurePhotoListView()
-
-    }
-    
-    override var representedObject: Any? {
-        didSet {
-            // Update the view, if already loaded.
-        }
-        
     }
     
     private func configureCollectionView() {
@@ -62,8 +54,7 @@ class PhotoViewController: NSViewController {
     private func configurePhotoListView() {
         let layer = CALayer()
         
-        layer.backgroundColor = NSColor(calibratedRed: 144/255, green: 0/255, blue: 31/255, alpha: 1).cgColor
-        
+        layer.backgroundColor = NSColor.white.cgColor
         photoListView.layer = layer
     }
     
@@ -74,9 +65,11 @@ extension PhotoViewController: NSCollectionViewDataSource {
     func numberOfSections(in collectionView: NSCollectionView) -> Int {
         return 1
     }
+    
     func collectionView(_ collectionView: NSCollectionView, numberOfItemsInSection section: Int) -> Int {
         return DataStore.instance.photos.count
     }
+    
     func collectionView(_ collectionView: NSCollectionView, itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {
         let item = collectionView.makeItem(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "PhotoCollectionViewItem"), for: indexPath)
         guard let collectionViewItem = item as? PhotoCollectionViewItem else { return item }
