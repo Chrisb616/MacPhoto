@@ -28,7 +28,9 @@ class PersonViewController: NSViewController {
         super.viewDidLoad()
         
         LocalFileManager.instance.loadPersonInfo {
-            self.personCollectionView.reloadData()
+            DispatchQueue.main.async {
+                self.personCollectionView.reloadData()
+            }
         }
         configureCollectionView()
         configurePersonListView()
