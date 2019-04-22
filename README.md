@@ -3,6 +3,13 @@ Simple Photo Organization App for the Mac. WIP
 
 Built in Swift on Xcode for OSX
 
+# Project Structure
+
+- **View** classes deal with visual user interactable classes. They only communicate with the Service layer. Follows Mac OS conventioon.
+- **Service** classes managage Tool and Model data for access by the view classes. They are organized into major app capabilities. Methods should be named after placement within view processes (i.e. onWindowLoad).
+- **Tools** classes are data classes that handle complex tasks with results too abstract or raw for access directly from the View. Methods should be named based on the task being carried out (i.e. reloadAllData)
+- **Model** classes are functionless data structures which serve the purpose of organizing data into usable parts.
+
 ##Project Basics ToDo
 
 1. <del>Drag and drop photo into window to save in program directory.</del>

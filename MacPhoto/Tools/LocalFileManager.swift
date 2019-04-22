@@ -77,8 +77,8 @@ class LocalFileManager {
         
     }
     
-    
     var programDirectoryHome: URL { return safeProgramDirectoryHome }
+    
     private var safeProgramDirectoryHome = URL(fileURLWithPath: Factbook.picturesPath)
     
     private var programDirectory: URL { return programDirectoryHome.appendingPathComponent("MacPhoto") }

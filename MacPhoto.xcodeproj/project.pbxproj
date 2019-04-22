@@ -136,6 +136,20 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		13908657226E505D000B8F3F /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				139DE949226A436E007F8AF9 /* ConsistencyManager.swift */,
+				139DE963226A4370007F8AF9 /* JSONManager.swift */,
+				139DE940226A436E007F8AF9 /* UniqueIDGenerator.swift */,
+				139DE95B226A436F007F8AF9 /* IndexedDictionary.swift */,
+				139DE965226A4370007F8AF9 /* LocalFileManager.swift */,
+				139DE93C226A436E007F8AF9 /* Factbook.swift */,
+				139DE93D226A436E007F8AF9 /* DataStore.swift */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
 		139DE91C226A4300007F8AF9 = {
 			isa = PBXGroup;
 			children = (
@@ -155,6 +169,8 @@
 		139DE927226A4300007F8AF9 /* MacPhoto */ = {
 			isa = PBXGroup;
 			children = (
+				13908657226E505D000B8F3F /* Tools */,
+				13908652226E420B000B8F3F /* Services */,
 				139DE99C226A490F007F8AF9 /* View */,
 				139DE99B226A490B007F8AF9 /* Model */,
 				139DE99A226A4903007F8AF9 /* Extensions */,
@@ -182,17 +198,10 @@
 				139DE941226A436E007F8AF9 /* Album.swift */,
 				139DE939226A436D007F8AF9 /* Area.swift */,
 				139DE95C226A4370007F8AF9 /* Spot.swift */,
-				139DE93D226A436E007F8AF9 /* DataStore.swift */,
-				139DE940226A436E007F8AF9 /* UniqueIDGenerator.swift */,
 				139DE94D226A436E007F8AF9 /* Person.swift */,
-				139DE963226A4370007F8AF9 /* JSONManager.swift */,
 				139DE947226A436E007F8AF9 /* Photo.swift */,
-				139DE949226A436E007F8AF9 /* ConsistencyManager.swift */,
 				139DE93A226A436D007F8AF9 /* Location.swift */,
 				139DE95F226A4370007F8AF9 /* HasUniqueID.swift */,
-				139DE93C226A436E007F8AF9 /* Factbook.swift */,
-				139DE95B226A436F007F8AF9 /* IndexedDictionary.swift */,
-				139DE965226A4370007F8AF9 /* LocalFileManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -200,7 +209,6 @@
 		139DE99C226A490F007F8AF9 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				13908652226E420B000B8F3F /* Services */,
 				139DE99D226A5D4C007F8AF9 /* Main Window */,
 				139DE998226A472D007F8AF9 /* Main.storyboard */,
 				139DE928226A4300007F8AF9 /* AppDelegate.swift */,
