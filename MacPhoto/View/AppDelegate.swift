@@ -10,10 +10,15 @@ import Cocoa
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
+    
+    var windowController: MainWindowController?
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        // Insert code here to initialize your application
-        LocalFileManager.instance.loadAllInfo()
+        
+        StartupService.instance.onStartup {
+            
+        }
+        
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {

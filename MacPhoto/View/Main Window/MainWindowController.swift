@@ -58,15 +58,14 @@ class MainWindowController: NSWindowController {
     //MARK: - Life Cycle
     override func windowDidLoad() {
         super.windowDidLoad()
-        MainWindowController.instance = self
-        
-        ConsistencyManager.check()
-        
-        window?.styleMask.insert(NSWindow.StyleMask.resizable)
-
-        instantiateTabViewController()
-        
-        self.window?.delegate = self
+        StartupService.instance.onWindowLoad {
+            MainWindowController.instance = self
+            
+            self.window?.styleMask.insert(NSWindow.StyleMask.resizable)
+            self.window?.delegate = self
+            
+            self.instantiateTabViewController()
+        }
     }
     
     //MARK: - View Methods

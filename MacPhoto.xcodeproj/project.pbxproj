@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		13908654226E421A000B8F3F /* StartupService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13908653226E421A000B8F3F /* StartupService.swift */; };
 		139DE929226A4300007F8AF9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139DE928226A4300007F8AF9 /* AppDelegate.swift */; };
 		139DE966226A4370007F8AF9 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139DE936226A436D007F8AF9 /* Date.swift */; };
 		139DE967226A4370007F8AF9 /* PersonCollectionViewItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 139DE937226A436D007F8AF9 /* PersonCollectionViewItem.xib */; };
@@ -60,6 +61,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		13908653226E421A000B8F3F /* StartupService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartupService.swift; sourceTree = "<group>"; };
 		139DE925226A4300007F8AF9 /* MacPhoto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacPhoto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		139DE928226A4300007F8AF9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		139DE92F226A4301007F8AF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -126,6 +128,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		13908652226E420B000B8F3F /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				13908653226E421A000B8F3F /* StartupService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		139DE91C226A4300007F8AF9 = {
 			isa = PBXGroup;
 			children = (
@@ -190,6 +200,7 @@
 		139DE99C226A490F007F8AF9 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				13908652226E420B000B8F3F /* Services */,
 				139DE99D226A5D4C007F8AF9 /* Main Window */,
 				139DE998226A472D007F8AF9 /* Main.storyboard */,
 				139DE928226A4300007F8AF9 /* AppDelegate.swift */,
@@ -343,6 +354,7 @@
 				139DE96A226A4370007F8AF9 /* Location.swift in Sources */,
 				139DE980226A4370007F8AF9 /* PersonSelectionViewDelegate.swift in Sources */,
 				139DE969226A4370007F8AF9 /* Area.swift in Sources */,
+				13908654226E421A000B8F3F /* StartupService.swift in Sources */,
 				139DE995226A4370007F8AF9 /* LocalFileManager.swift in Sources */,
 				139DE993226A4370007F8AF9 /* JSONManager.swift in Sources */,
 				139DE96F226A4370007F8AF9 /* PhotoCollectionViewItem.swift in Sources */,

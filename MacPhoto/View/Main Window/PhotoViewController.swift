@@ -32,12 +32,6 @@ class PhotoViewController: NSViewController {
         
         configureCollectionView()
         configurePhotoListView()
-
-        LocalFileManager.instance.loadPhotoInfo {
-            DispatchQueue.main.async {
-                self.photoCollectionView.reloadData()
-            }
-        }
     }
     
     //MARK: - Private Setup Methods
