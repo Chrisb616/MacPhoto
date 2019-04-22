@@ -93,12 +93,13 @@ class MainWindowController: NSWindowController {
 
 }
 
+//MARK: - Extensions
+
 extension MainWindowController: NSWindowDelegate {
     
     func windowWillClose(_ notification: Notification) {
         NSApplication.shared.terminate(self)
     }
-    
 }
 
 extension MainWindowController: PreferencesDelegate {
@@ -108,7 +109,6 @@ extension MainWindowController: PreferencesDelegate {
         LocalFileManager.instance.loadAllInfo()
         photosViewController.photoCollectionView.reloadData()
     }
-    
 }
 
 extension MainWindowController {

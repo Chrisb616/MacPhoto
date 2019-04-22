@@ -10,10 +10,15 @@ import Cocoa
 
 class PhotoViewController: NSViewController {
     
+    //MARK: - Outlets
     @IBOutlet weak var photoCollectionView: NSCollectionView!
     @IBOutlet weak var photoCollectionViewLayout: NSCollectionViewFlowLayout!
     @IBOutlet weak var photoListView: NSView!
     
+    //MARK: - Other Properties
+    var pathControlClickHandler: NSClickGestureRecognizer!
+    
+    //MARK: - Init and Lifcycle
     init() {
         super.init(nibName: "PhotoViewController", bundle: nil)
     }
@@ -21,8 +26,6 @@ class PhotoViewController: NSViewController {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    var pathControlClickHandler: NSClickGestureRecognizer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +39,8 @@ class PhotoViewController: NSViewController {
             }
         }
     }
+    
+    //MARK: - Private Setup Methods
     
     private func configureCollectionView() {
         photoCollectionViewLayout.itemSize = NSSize(width: 160, height: 140)
@@ -59,6 +64,8 @@ class PhotoViewController: NSViewController {
     }
     
 }
+
+// MARK: - Extensions
 
 extension PhotoViewController: NSCollectionViewDataSource {
     
