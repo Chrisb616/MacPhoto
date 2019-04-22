@@ -22,6 +22,7 @@ class Album {
     func add(_ photo: Photo) {
         safePhotos.add(photo)
     }
+    
     func remove(_ photo: Photo) {
         safePhotos.remove(photo)
     }
