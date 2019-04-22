@@ -13,11 +13,6 @@ class MainWindowController: NSWindowController {
     //MARK: - Toolbar Properties
     @IBOutlet weak var toolbar: NSToolbar!
     
-    static var instance: MainWindowController!
-    
-    var activeViewController = ViewController.photos
-    
-
     //MARK: - Toolbar Actions
 
     @IBAction func photosToolbarItemSelected(_ sender: Any) {
@@ -46,10 +41,24 @@ class MainWindowController: NSWindowController {
         
         contentViewController?.presentAsSheet(addPhotosViewController)
     }
+    
+    //MARK: - Other Properties
+    static var instance: MainWindowController!
+    
+    let tabViewController = NSTabViewController()
+    
+    var activeViewController = ViewController.photos
+    
+    let photosViewController = PhotoViewController()
+    let peopleViewController = PersonViewController()
+    let placesViewController = PlacesViewController()
+    
+    var personDetailWindow: PersonDetailWindowController!
+    
+    //MARK: - Life Cycle
     override func windowDidLoad() {
         super.windowDidLoad()
         MainWindowController.instance = self
-        
         
         ConsistencyManager.check()
         
@@ -60,16 +69,7 @@ class MainWindowController: NSWindowController {
         self.window?.delegate = self
     }
     
-    
-    //View Controllers
-    
-    let tabViewController = NSTabViewController()
-    
-    let photosViewController = PhotoViewController()
-    let peopleViewController = PersonViewController()
-    let placesViewController = PlacesViewController()
-    
-    
+    //MARK: - View Methods
     func instantiateTabViewController() {
         tabViewController.view.wantsLayer = true
         tabViewController.tabStyle = .unspecified
@@ -78,39 +78,17 @@ class MainWindowController: NSWindowController {
         tabViewController.addChild(peopleViewController)
         tabViewController.addChild(placesViewController)
         self.window?.contentViewController = tabViewController
-        
-        
-    }
-    
-    enum ViewController {
-        case photos
-        case people
-        case places
-        
-        var index: Int {
-            switch self {
-            case .photos: return 0
-            case .people: return 1
-            case .places: return 2
-            }
-        }
     }
     
     func show(_ viewController: ViewController) {
         tabViewController.selectedTabViewItemIndex = viewController.index
     }
     
-    
-    //Other windows
-    
-    var personDetailWindow: PersonDetailWindowController!
-    
     func showPersonDetailWindow(for person: Person) {
         personDetailWindow = PersonDetailWindowController.init(windowNibName: "PersonDetailWindowController")
         personDetailWindow.person = person
     
         personDetailWindow.showWindow(self)
-
     }
 
 }
@@ -131,4 +109,20 @@ extension MainWindowController: PreferencesDelegate {
         photosViewController.photoCollectionView.reloadData()
     }
     
+}
+
+extension MainWindowController {
+    enum ViewController {
+        case photos
+        case people
+        case places
+        
+        var index: Int {
+            switch self {
+            case .photos: return 0
+            case .people: return 1
+            case .places: return 2
+            }
+        }
+    }
 }
